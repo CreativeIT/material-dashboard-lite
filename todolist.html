@@ -41,11 +41,11 @@
     <!--
     <link rel="canonical" href="http://www.example.com/">
     -->
-
-    <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/material.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/calendar.css">
+    <link href="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js">
     <style>
         #view-source {
             position: fixed;
@@ -257,109 +257,48 @@
     </div>
     <main class="mdl-layout__content mdl-color--grey-100">
         <div class="mdl-grid">
-            <div class="demo-card-wide mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col-desktop">
-                <div class="mdl-card__title">
-                    <h2 class="mdl-card__title-text">Welcome</h2>
+            <div class="mdl-cell mdl-cell--12-col">
+
+                <div class="demo-card-wide mdl-card mdl-shadow--2dp todoitem">
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">Very Important Item 1</h2>
+                    </div>
+                    <div class="hidden">
+                        <div class="mdl-card__supporting-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Mauris sagittis pellentesque lacus eleifend lacinia...
+                    </div>
+                        <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                            Get Started
+                        </a>
+                    </div>
+                    </div>
+                    <div class="mdl-card__menu">
+                        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                            <i class="material-icons">done</i>
+                        </button>
+                    </div>
                 </div>
-                <div class="mdl-card__supporting-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Mauris sagittis pellentesque lacus eleifend lacinia...
-                </div>
-                <div class="mdl-card__actions mdl-card--border">
-                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                        Get Started
-                    </a>
-                </div>
-                <div class="mdl-card__menu">
-                    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                        <i class="material-icons">share</i>
-                    </button>
-                </div>
-            </div>
-            <div class="demo-card-wide mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col-desktop">
-                <div class="mdl-card__title">
-                    <h2 class="mdl-card__title-text">Welcome</h2>
-                </div>
-                <div class="mdl-card__supporting-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Mauris sagittis pellentesque lacus eleifend lacinia...
-                </div>
-                <div class="mdl-card__actions mdl-card--border">
-                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                        Get Started
-                    </a>
-                </div>
-                <div class="mdl-card__menu">
-                    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                        <i class="material-icons">share</i>
-                    </button>
-                </div>
-            </div>
-            <div class="demo-card-wide mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col-desktop">
-                <div class="mdl-card__title">
-                    <h2 class="mdl-card__title-text">Welcome</h2>
-                </div>
-                <div class="mdl-card__supporting-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Mauris sagittis pellentesque lacus eleifend lacinia...
-                </div>
-                <div class="mdl-card__actions mdl-card--border">
-                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                        Get Started
-                    </a>
-                </div>
-                <div class="mdl-card__menu">
-                    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                        <i class="material-icons">share</i>
-                    </button>
-                </div>
-            </div>
-            <div class="mdl-card my-card mdl-shadow--16dp mdl-cell mdl-cell--4-col-desktop" >
-                <div class="mdl-card__title">
-                    <h2 class="mdl-card__title-text">Auckland Sky Tower<br/>Auckland, New Zealand</h2>
-                </div>
-                <div class="mdl-card__media ">
-                    <img src="images/card.jpg" border="0" alt="">
-                </div>
-                <div class="mdl-card__supporting-text">
-                    The Sky Tower is an observation and telecommunications tower located in Auckland,
-                    New Zealand. It is 328 metres (1,076 ft) tall, making it the tallest man-made structure
-                    in the Southern Hemisphere.
-                </div>
-                <div class="mdl-card__actions">
-                    <a href="http://en.wikipedia.org/wiki/Sky_Tower_%28Auckland%29">Wikipedia entry</a>
-                </div>
-            </div>
-            <div class="mdl-card my-card mdl-shadow--16dp mdl-cell mdl-cell--4-col-desktop" >
-                <div class="mdl-card__title">
-                    <h2 class="mdl-card__title-text">Auckland Sky Tower<br/>Auckland, New Zealand</h2>
-                </div>
-                <div class="mdl-card__media">
-                    <img src="images/card.jpg"  border="0" alt="">
-                </div>
-                <div class="mdl-card__supporting-text">
-                    The Sky Tower is an observation and telecommunications tower located in Auckland,
-                    New Zealand. It is 328 metres (1,076 ft) tall, making it the tallest man-made structure
-                    in the Southern Hemisphere.
-                </div>
-                <div class="mdl-card__actions">
-                    <a href="http://en.wikipedia.org/wiki/Sky_Tower_%28Auckland%29">Wikipedia entry</a>
-                </div>
-            </div>
-            <div class="mdl-card my-card mdl-shadow--16dp mdl-cell mdl-cell--4-col-desktop" >
-                <div class="mdl-card__title">
-                    <h2 class="mdl-card__title-text">Auckland Sky Tower<br/>Auckland, New Zealand</h2>
-                </div>
-                <div class="mdl-card__media">
-                    <img src="images/card.jpg" border="0" alt="">
-                </div>
-                <div class="mdl-card__supporting-text">
-                    The Sky Tower is an observation and telecommunications tower located in Auckland,
-                    New Zealand. It is 328 metres (1,076 ft) tall, making it the tallest man-made structure
-                    in the Southern Hemisphere.
-                </div>
-                <div class="mdl-card__actions">
-                    <a href="http://en.wikipedia.org/wiki/Sky_Tower_%28Auckland%29">Wikipedia entry</a>
+
+                <div class="demo-card-wide mdl-card mdl-shadow--2dp todoitem">
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">Item 2</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Mauris sagittis pellentesque lacus eleifend lacinia...
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                            Get Started
+                        </a>
+                    </div>
+                    <div class="mdl-card__menu">
+                        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                            <i class="material-icons">share</i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

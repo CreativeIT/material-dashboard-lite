@@ -58,7 +58,6 @@ html, body {
           align-items: center;
 }
 .demo-drawer-header {
-  background-image: url("../images/small_gray_background.jpg");
   z-index: 1;
   box-sizing: border-box;
   display: -webkit-box;
@@ -125,7 +124,7 @@ html, body {
 .demo-navigation .mdl-navigation__link .material-icons {
   font-size: 24px;
   color: rgba(255, 255, 255, 0.56);
-  margin-right: 32px;
+  margin-right: 10px;
 }
 #hdrbtnnotification > i.material-icons {
     cursor: pointer;
@@ -147,6 +146,11 @@ a {
       -ms-flex-align: center;
           align-items: center;
 }
+
+.demo-chart {
+    padding: 10px 10px;
+}
+
 .demo-chart:nth-child(1) {
   color: #ACEC00;
 }
@@ -310,7 +314,7 @@ header > div.mdl-layout__header-row > div.mdl-menu__container.is-upgraded.is-vis
 .demo-card-wide.mdl-card {
     width: 512px;
 }
-div.mdl-cell.mdl-card.mdl-shadow--6dp.mdl-cell--4-col.mdl-cell--12-col-tablet > div.mdl-card__title {
+div.mdl-cell.mdl-card.mdl-shadow--4dp.mdl-cell--4-col.mdl-cell--12-col-tablet > div.mdl-card__title {
     color: #fff;
     height: 176px;
     background: url('../images/card.jpg') center / cover;
@@ -410,4 +414,47 @@ button[type = "submit"] {
 }
 #fixed-tab-1 > div > div:nth-child(5) {
     background: url('../images/kira_naytli.jpg') center / cover;
+}
+
+.mdl-grid .mdl-cell .mdl-card.todoitem {
+    margin: auto;
+    margin-bottom: 2px;
+    height: auto;
+    min-height: 0;
+}
+
+.todoitem .mdl-card__title {
+    cursor: pointer;
+    border-bottom: 1px solid #858585;
+}
+
+.legend {
+    vertical-align: middle ;
+    display: inline-block;
+    color: #222222;
+    margin: auto;
+    margin-left: 10px;
+}
+.legend > ul {
+    list-style-type: none;
+    padding: inherit;
+    margin: inherit;
+}
+.legend  .marker {
+    height: 9px;
+    width: 9px;
+    display: inline-block;
+    background: #008000;
+}
+
+#pie_1_1 > .marker{
+     background: rgba(100, 255, 255, 0.75);
+}
+
+#pie_1_2 > .marker{
+     background: rgba(255, 255, 12, 0.75);
+}
+
+#pie_1_3 > .marker {
+    background: rgba(255, 222, 155, 0.75);
 }

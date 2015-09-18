@@ -44,8 +44,6 @@
 
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-
     <link rel="stylesheet" href="css/material.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <style>
@@ -59,6 +57,7 @@
       z-index: 900;
     }
     </style>
+
   </head>
   <body>
     <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
@@ -212,23 +211,91 @@
       </div>
       <main class="mdl-layout__content mdl-color--grey-100">
         <div class="mdl-grid demo-content">
-          <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
-            <svg fill="currentColor" width="200px" height="200px" viewBox="0 0 1 1" class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop">
-              <use xlink:href="#piechart" mask="url(#piemask)" />
-              <text x="0.5" y="0.5" font-family="Roboto" font-size="0.3" fill="#888" text-anchor="middle" dy="0.1">82<tspan font-size="0.2" dy="-0.07">%</tspan></text>
-            </svg>
-            <svg fill="currentColor" width="200px" height="200px" viewBox="0 0 1 1" class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop">
-              <use xlink:href="#piechart" mask="url(#piemask)" />
-              <text x="0.5" y="0.5" font-family="Roboto" font-size="0.3" fill="#888" text-anchor="middle" dy="0.1">82<tspan dy="-0.07" font-size="0.2">%</tspan></text>
-            </svg>
-            <svg fill="currentColor" width="200px" height="200px" viewBox="0 0 1 1" class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop">
-              <use xlink:href="#piechart" mask="url(#piemask)" />
-              <text x="0.5" y="0.5" font-family="Roboto" font-size="0.3" fill="#888" text-anchor="middle" dy="0.1">82<tspan dy="-0.07" font-size="0.2">%</tspan></text>
-            </svg>
-            <svg fill="currentColor" width="200px" height="200px" viewBox="0 0 1 1" class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop">
-              <use xlink:href="#piechart" mask="url(#piemask)" />
-              <text x="0.5" y="0.5" font-family="Roboto" font-size="0.3" fill="#888" text-anchor="middle" dy="0.1">82<tspan dy="-0.07" font-size="0.2">%</tspan></text>
-            </svg>
+
+
+            <div class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop mdl-color--white mdl-shadow--2dp">
+              <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100px" height="100px" viewBox="0 0 1 1">
+                  <path d="M 0.5 0.5  L 0.5 0.1  A 0.4 0.4 0 0 1 0.9 0.5 z"  fill="rgba(100, 255, 255, 0.75)" />
+                  <path d="M 0.5 0.5  L 0.9 0.5  A 0.4 0.4 0 0 1 0.82 0.75 z" stroke="none" fill="rgba(255, 255, 12, 0.75)"  />
+                  <path d="M 0.5 0.5  L 0.82 0.75  A 0.4 0.4 0 0 1 0.5 0.9 A 0.4 0.4 0 0 1 0.5 0.1 z" stroke="none" fill="rgba(255, 222, 155, 0.75)" />
+                  <circle cx="0.5" cy="0.5" r="0.28" fill="white"></circle>
+                  <text x="0.5" y="0.47" font-family="Roboto" font-size="0.2" fill="#888" text-anchor="middle" dy="0.1">82%</text>
+              </svg>
+                <div class="legend">
+                    <ul>
+                        <li id="pie_1_1" onmouseenter="select(event)" onmouseleave="unSelect(event)">
+                            <div class="marker"></div>
+                            First color
+                        </li>
+                        <li id="pie_1_2" onmouseenter="select(event)" onmouseleave="unSelect(event)">
+                            <div class="marker"></div>
+                            Second color
+                        </li>
+                        <li id="pie_1_3" onmouseenter="select(event)" onmouseleave="unSelect(event)">
+                            <div class="marker" ></div>
+                            Thirty color
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop mdl-color--white mdl-shadow--2dp">
+                <svg fill="currentColor" width="100px" height="100px" viewBox="0 0 1 1" >
+                    <use xlink:href="#piechart" mask="url(#piemask)" />
+                    <text x="0.5" y="0.47" font-family="Roboto" font-size="0.2" fill="#888" text-anchor="middle" dy="0.1">82<tspan dy="0" font-size="0.2">%</tspan></text>
+                </svg>
+                <div class="legend">
+                    <ul>
+                        <li id="pie_2_1" onmouseenter="select(event)" onmouseleave="unSelect(event)">
+                            <div class="marker"></div>
+                            First color
+                        </li>
+                        <li id="pie_2_2">
+                            <div class="marker"></div>
+                            Second color
+                        </li>
+                        <li id="pie_2_3">
+                            <div class="marker"></div>
+                            Thirty color
+                        </li>
+                        <li id="pie_2_4">
+                            <div class="marker"></div>
+                            Fourty color
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop mdl-color--white mdl-shadow--2dp">
+                <svg fill="currentColor" width="100px" height="100px" viewBox="0 0 1 1" >
+                    <use xlink:href="#piechart" mask="url(#piemask)" />
+                    <text x="0.5" y="0.47" font-family="Roboto" font-size="0.2" fill="#888" text-anchor="middle" dy="0.1">82<tspan dy="0" font-size="0.2">%</tspan></text>
+                </svg>
+                <div class="legend">
+                    <span class="mdl-badge small-badge" data-badge=""></span>
+                    <span>First color</span><br>
+                    <span class="mdl-badge small-badge" data-badge=""></span>
+                    <span>Second color</span>
+                </div>
+            </div>
+
+            <div class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop mdl-color--white mdl-shadow--2dp">
+               <svg fill="currentColor" width="100px" height="100px" viewBox="0 0 1 1" >
+                    <use xlink:href="#piechart" mask="url(#piemask)" />
+                    <text x="0.5" y="0.47" font-family="Roboto" font-size="0.2" fill="#888" text-anchor="middle" dy="0.1">82<tspan dy="0" font-size="0.2">%</tspan></text>
+               </svg>
+                <div class="legend">
+                    <span class="mdl-badge small-badge" data-badge=""></span>
+                    <span>First color</span><br>
+                    <span class="mdl-badge small-badge" data-badge=""></span>
+                    <span>Second color</span><br>
+                    <span class="mdl-badge small-badge" data-badge=""></span>
+                    <span>Thirty color</span><br>
+                    <span class="mdl-badge small-badge" data-badge=""></span>
+                    <span>Fourty color</span>
+                </div>
+            </div>
+
           </div>
           <div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--8-col">
             <svg fill="currentColor" viewBox="0 0 500 250" class="demo-graph">
@@ -288,18 +355,21 @@
               </div>
             </div>
           </div>
-        </div>
+
       </main>
     </div>
+
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" style="position: fixed; left: -1000px; height: -1000px;">
         <defs>
-          <mask id="piemask" maskContentUnits="objectBoundingBox">
-            <circle cx=0.5 cy=0.5 r=0.49 fill="white" />
-            <circle cx=0.5 cy=0.5 r=0.40 fill="black" />
-          </mask>
+            <mask id="piemask" maskContentUnits="objectBoundingBox">
+                <circle cx="0.5" cy="0.5" r="0.49" fill="white"></circle>
+                <circle cx="0.5" cy="0.5" r="0.35" fill="black"></circle>
+            </mask>
           <g id="piechart">
-            <circle cx=0.5 cy=0.5 r=0.5 />
-            <path d="M 0.5 0.5 0.5 0 A 0.5 0.5 0 0 1 0.95 0.28 z" stroke="none" fill="rgba(255, 255, 255, 0.75)" />
+            <path d="M 0.5 0.5  L 0.5 0  A 0.5 0.5 0 0 1 1 0.5 z" stroke="none" fill="rgba(100, 255, 255, 0.75)" />
+            <path d="M 0.5 0.5  L 1 0.5  A 0.5 0.5 0 0 1 0.92 0.8 z" stroke="none" fill="rgba(255, 255, 12, 0.75)" />
+            <path d="M 0.5 0.5  L 0.92 0.8  A 0.5 0.5 0 0 1 0.5 1 z" stroke="none" fill="rgba(255, 222, 155, 0.75)" />
+            <path d="M 0.5 0.5  L 0.5 1  A 0.5 0.5 0 0 1 0.5 0 z" stroke="none" fill="rgba(12, 12, 12, 0.55)" />
           </g>
         </defs>
       </svg>
@@ -339,5 +409,6 @@
         </defs>
       </svg>
     <script src="js/material.min.js"></script>
+    <script src="js/pieChart.js"></script>
   </body>
 </html>
