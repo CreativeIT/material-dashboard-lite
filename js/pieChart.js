@@ -58,11 +58,17 @@ function calculatePie() {
         if ((angelSum > 180) && (angelSum <= 270)){
             x[key] = r - r * Math.sin(Math.PI * (angelSum/180 - 1));
             y[key] = r + r * Math.sin((3 * Math.PI/2) - angelSum * Math.PI/180);
+            if (angel[key] > 180) {
+                buildPie(0.5, 1); 
+            };
         }
         if ((angelSum > 270) && (angelSum <= 360)){
             x[key] = r - r * Math.sin(2*Math.PI - (Math.PI/180)*angelSum);
             y[key] = r - r * Math.sin(Math.PI/2 - 2 * Math.PI + (Math.PI/180)*angelSum);
-            }
+            if (angel[key] > 180) {
+                buildPie(0.5, 1);
+            };
+        }
         buildPie(x, y);
     }
 }
