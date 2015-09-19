@@ -31,7 +31,7 @@ function unSelect(event) {
 }
 
 function calculatePie() {
-    var data = {a: 90, b: 90, c: 90, d: 90, e: 90, f: 90};
+    var data = {a: 60, b: 90, c: 210};
     var sum = 0;
     var r = 0.5;
 
