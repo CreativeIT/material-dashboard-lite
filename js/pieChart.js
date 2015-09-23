@@ -50,8 +50,12 @@ var start = "L 0.5 0.1 ";
 
 function calculatePie() {
 <<<<<<< HEAD
+    var data = {a: 90, b: 60, c: 210};
+=======
+<<<<<<< HEAD
 =======
     var data = {a: 60, b: 90, c: 210};
+>>>>>>> master
     var sum = 0;
     var r = 0.5;
 >>>>>>> 441f72b1edd333c6d4c5a845ec2caacb0725feff
@@ -120,7 +124,11 @@ arrayLi[i].innerHTML += pies[i].name;
             x[key] = r - r * Math.sin(Math.PI * (angelSum/180 - 1));
             y[key] = r + r * Math.sin((3 * Math.PI/2) - angelSum * Math.PI/180);
             if (angel[key] > 180) {
+<<<<<<< HEAD
+                buildPie(0.5, 1);
+=======
                 buildPie(0.5, 1); 
+>>>>>>> master
             };
         }
         if ((angelSum > 270) && (angelSum <= 360)){
