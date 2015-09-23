@@ -213,63 +213,65 @@
     <div class="mdl-grid demo-content">
 
 
-        <div class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop mdl-color--white mdl-shadow--2dp">
-            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100px" height="100px" viewBox="0 0 1 1">
-                <path d="M 0.5 0.5  L 0.5 0.1  A 0.4 0.4 0 0 1 0.9 0.5 z"  fill="rgba(100, 255, 255, 0.75)" />
-                <path d="M 0.5 0.5  L 0.9 0.5  A 0.4 0.4 0 0 1 0.82 0.75 z" stroke="none" fill="rgba(255, 255, 12, 0.75)"  />
-                <path d="M 0.5 0.5  L 0.82 0.75  A 0.4 0.4 0 0 1 0.5 0.9 A 0.4 0.4 0 0 1 0.5 0.1 z" stroke="none" fill="rgba(255, 222, 155, 0.75)" />
-                <circle cx="0.5" cy="0.5" r="0.28" fill="white"></circle>
-                <text x="0.5" y="0.47" font-family="Roboto" font-size="0.2" fill="#888" text-anchor="middle" dy="0.1">82%</text>
+        <div id="pie1"  class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop mdl-color--white mdl-shadow--2dp" onmouseenter="getPath(event)">
+            <svg id="svg1" fill="currentColor" width="50%" viewBox="0 0 1 1" >
+
             </svg>
             <div class="legend">
                 <ul>
                     <li id="pie_1_1" onmouseenter="select(event)" onmouseleave="unSelect(event)">
                         <div class="marker"></div>
-                        First color
+
                     </li>
                     <li id="pie_1_2" onmouseenter="select(event)" onmouseleave="unSelect(event)">
                         <div class="marker"></div>
-                        Second color
+
                     </li>
                     <li id="pie_1_3" onmouseenter="select(event)" onmouseleave="unSelect(event)">
                         <div class="marker" ></div>
-                        Thirty color
+
+                    </li>
+                    <li id="pie_1_4" onmouseenter="select(event)" onmouseleave="unSelect(event)">
+                        <div class="marker"></div>
+
+                    </li>
+                    <li id="pie_1_5" onmouseenter="select(event)" onmouseleave="unSelect(event)">
+                        <div class="marker"></div>
+
                     </li>
                 </ul>
             </div>
         </div>
 
         <div class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop mdl-color--white mdl-shadow--2dp">
-            <svg fill="currentColor" width="100px" height="100px" viewBox="0 0 1 1" >
-                <use xlink:href="#piechart" mask="url(#piemask)" />
-                <text x="0.5" y="0.47" font-family="Roboto" font-size="0.2" fill="#888" text-anchor="middle" dy="0.1">82<tspan dy="0" font-size="0.2">%</tspan></text>
+            <svg id="svg2" fill="currentColor" width="50%" viewBox="0 0 1 1" >
+
             </svg>
             <div class="legend">
                 <ul>
                     <li id="pie_2_1" onmouseenter="select(event)" onmouseleave="unSelect(event)">
                         <div class="marker"></div>
-                        First color
+                        First co
                     </li>
                     <li id="pie_2_2">
                         <div class="marker"></div>
-                        Second color
+                        Second col
                     </li>
                     <li id="pie_2_3">
                         <div class="marker"></div>
-                        Thirty color
+                        Thirty col
                     </li>
                     <li id="pie_2_4">
                         <div class="marker"></div>
-                        Fourty color
+                        Fourty col
                     </li>
                 </ul>
             </div>
         </div>
 
-        <div class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop mdl-color--white mdl-shadow--2dp">
-            <svg fill="currentColor" width="100px" height="100px" viewBox="0 0 1 1" >
-                <use xlink:href="#piechart" mask="url(#piemask)" />
-                <text x="0.5" y="0.47" font-family="Roboto" font-size="0.2" fill="#888" text-anchor="middle" dy="0.1">82<tspan dy="0" font-size="0.2">%</tspan></text>
+        <div  class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop mdl-color--white mdl-shadow--2dp">
+            <svg id="svg3" fill="currentColor" width="50%" viewBox="0 0 1 1" >
+
             </svg>
             <div class="legend">
                 <span class="mdl-badge small-badge" data-badge=""></span>
@@ -279,19 +281,33 @@
             </div>
         </div>
 
-        <div class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop mdl-color--white mdl-shadow--2dp">
-            <svg id="svg" fill="currentColor" width="100px" height="100px" viewBox="0 0 1 1" >
+        <div id="pie4"  class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop mdl-color--white mdl-shadow--2dp" onmouseenter="getPath(event)">
+            <svg id="svg4" fill="currentColor" width="50%" viewBox="0 0 1 1" >
 
             </svg>
             <div class="legend">
-                <span class="mdl-badge small-badge" data-badge=""></span>
-                <span>First color</span><br>
-                <span class="mdl-badge small-badge" data-badge=""></span>
-                <span>Second color</span><br>
-                <span class="mdl-badge small-badge" data-badge=""></span>
-                <span>Thirty color</span><br>
-                <span class="mdl-badge small-badge" data-badge=""></span>
-                <span>Fourty color</span>
+                <ul>
+                    <li id="pie_4_1" onmouseenter="select(event)" onmouseleave="unSelect(event)">
+                        <div class="marker"></div>
+
+                    </li>
+                    <li id="pie_4_2" onmouseenter="select(event)" onmouseleave="unSelect(event)">
+                        <div class="marker"></div>
+
+                    </li>
+                    <li id="pie_4_3" onmouseenter="select(event)" onmouseleave="unSelect(event)">
+                        <div class="marker" ></div>
+
+                    </li>
+                    <li id="pie_4_4" onmouseenter="select(event)" onmouseleave="unSelect(event)">
+                        <div class="marker"></div>
+
+                    </li>
+                    <li id="pie_4_5" onmouseenter="select(event)" onmouseleave="unSelect(event)">
+                        <div class="marker"></div>
+
+                    </li>
+                </ul>
             </div>
         </div>
 
