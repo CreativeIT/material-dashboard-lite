@@ -434,6 +434,7 @@ button[type = "submit"] {
     color: #222222;
     margin: auto;
     margin-left: 10px;
+
 }
 .legend > ul {
     list-style-type: none;
@@ -444,7 +445,6 @@ button[type = "submit"] {
     height: 9px;
     width: 9px;
     display: inline-block;
-    background: #008000;
 }
 
 #pie_1_1 > .marker{
