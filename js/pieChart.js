@@ -49,16 +49,6 @@ var center = "M 0.5 0.5 ";
 var start = "L 0.5 0.1 ";
 
 function calculatePie() {
-<<<<<<< HEAD
-    var data = {a: 90, b: 60, c: 210};
-=======
-<<<<<<< HEAD
-=======
-    var data = {a: 60, b: 90, c: 210};
->>>>>>> master
-    var sum = 0;
-    var r = 0.5;
->>>>>>> 441f72b1edd333c6d4c5a845ec2caacb0725feff
 
     for (var key in data) {
         sum += data[key];
@@ -89,7 +79,6 @@ function calculatePie() {
             start2 = 'L ' + pies[i].x + ' ' + pies[i].y + ' ';
         };
         if ((angelSum > 180) && (angelSum <= 270)){
-<<<<<<< HEAD
             pies[i].x = 0.5 - 0.5 * Math.sin(Math.PI * (angelSum/180 - 1));
             pies[i].y = 0.5 + 0.5 * Math.sin((3 * Math.PI/2) - angelSum * Math.PI/180);
             pies[i].start = start2;
@@ -120,28 +109,6 @@ var marker = document.querySelectorAll(".demo-chart:last-child .marker");
 var arrayLi = document.querySelectorAll(".demo-chart:last-child .legend li");
 marker[i].style.background = 'rgba(55'  + ', ' + color +', 255, 0.75)';
 arrayLi[i].innerHTML += pies[i].name;
-=======
-            x[key] = r - r * Math.sin(Math.PI * (angelSum/180 - 1));
-            y[key] = r + r * Math.sin((3 * Math.PI/2) - angelSum * Math.PI/180);
-            if (angel[key] > 180) {
-<<<<<<< HEAD
-                buildPie(0.5, 1);
-=======
-                buildPie(0.5, 1); 
->>>>>>> master
-            };
-        }
-        if ((angelSum > 270) && (angelSum <= 360)){
-            x[key] = r - r * Math.sin(2*Math.PI - (Math.PI/180)*angelSum);
-            y[key] = r - r * Math.sin(Math.PI/2 - 2 * Math.PI + (Math.PI/180)*angelSum);
-            if (angel[key] > 180) {
-                buildPie(0.5, 1);
-            };
-        }
-        buildPie(x, y);
-    }
-}
->>>>>>> 441f72b1edd333c6d4c5a845ec2caacb0725feff
 
 var timerId = setInterval(animation, 6);
 
