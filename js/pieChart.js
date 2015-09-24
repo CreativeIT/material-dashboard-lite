@@ -39,7 +39,7 @@ function unSelect(event) {
     //document.querySelector("svg > text").innerHTML = "100%";
 }
 
-var data = {books: 60, magazines: 100, newspapers: 100};
+var data = {books: 60, magazines: 100, newspapers: 100, posters:60, brochures: 40};
 var pies = {};
 var sum = 0;
 var r = 0.4;
