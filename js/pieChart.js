@@ -110,7 +110,7 @@ var arrayLi = document.querySelectorAll(".demo-chart:last-child .legend li");
 marker[i].style.background = 'rgba(55'  + ', ' + color +', 255, 0.75)';
 arrayLi[i].innerHTML += pies[i].name;
 
-var timerId = setInterval(animation, 6);
+var timerId = setInterval(animation, 3);
 
 function animation() {
     var percent = 0;
@@ -160,7 +160,7 @@ function animation() {
     document.querySelector("#svg2").innerHTML = path;
     document.querySelector("#svg3").innerHTML = path;
     document.querySelector("#svg4").innerHTML = path;
-    j++; j++;j++; j++;
+    j++; j++;
 }
 
 
