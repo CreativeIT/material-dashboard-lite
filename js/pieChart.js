@@ -160,7 +160,7 @@ function animation() {
     document.querySelector("#svg2").innerHTML = path;
     document.querySelector("#svg3").innerHTML = path;
     document.querySelector("#svg4").innerHTML = path;
-    j++;
+    j++; j++;j++; j++;
 }
 
 
