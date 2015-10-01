@@ -10,6 +10,8 @@ var str = "";
 var i = 0;
 var paths;
 var idd;
+var end;
+var t = 5;
 function getPath(event) {
     idd = event.target.id;
     paths = document.querySelectorAll("#" + idd + " path")
@@ -18,35 +20,62 @@ function getPath(event) {
 
 function select(event) {
     var id = event.target.id;
+    if (isNaN(id)) {
+        id = id.slice(1);
+    };
 
-    var elem = document.querySelector("#" + id + "> .marker");
-    var color = window.getComputedStyle(elem).backgroundColor;
-    for (i = 0; i < path.length; i++) {
-        if ((paths[i].getAttribute('fill')).slice(0,15) === (color.slice(0,15))) {
-            str = paths[i].getAttribute('d');
-            paths[i].setAttribute('d', '' + center + ' ' + pies[i].start + ' A 0.5 0.5 0 0 1 '+ pies[i].x +' '+ pies[i].y +' z');
-            var text = Math.round(100*pies[i].angel/360) + '%';
+        if (pies[id].radius == 0.4)   {
+            str = paths[id].getAttribute('d');
+            while (r < 0.51) {
+                setTimeout(animationPath, t, pies[id], r, id);
+                r = (r*100 + 1)/100;
+                t += 5;
+            };
+            var text = Math.round(100*(pies[id].angelEnd - pies[id].angelStart)/360) + '%';
             document.querySelector('#'+ idd +" text").innerHTML = text;
-            break;
-        }
-    }
+            pies[id].radius = 0.5;
+            t = 5;
+            paths[id].setAttribute('stroke', '#802420');
+            paths[id].setAttribute('stroke-width', '0.004');
+        } else {
+            while (r > 0.39) {
+                setTimeout(animationPath, t, pies[id], r, id);
+                r = (r*100 - 1)/100;
+                t += 5;
+            }
+            document.querySelector('#'+ idd +" text").innerHTML = "100%";
+            pies[id].radius = 0.4;
+            t = 5;
+            paths[id].setAttribute('stroke', 'none');
+        };
+
 }
 
-function unSelect(event) {
-    paths[i].setAttribute('d', str);
-    paths[i].setAttribute('stroke', "none");
-    document.querySelector('#'+ idd +" text").innerHTML = "100%";
-    //document.querySelector("svg > text").innerHTML = "100%";
+function animationPath(pie, r, i) {
+    var start, end;
+    if ((r > 0.5) || (r < 0.4)) {
+        start = end = 0;
+        return;
+    };
+
+    x = calculateX(pie.angelStart, r);
+    y = calculateY(pie.angelStart, r);
+    start = 'M ' + x + ' ' + y;
+    x = calculateX(pie.angelEnd, r);
+    y = calculateY(pie.angelEnd, r);
+    end = '0 0 1 ' + x + ' ' + y;
+    paths[i].setAttribute('d', start + ' A '+ r +' '+ r +' '+ end + pie.endIn + ' A '+ 0.28 + ' ' + 0.28 + ' ' + pie.startIn );
+
 }
 
-var data = {books: 60, magazines: 100, newspapers: 100, posters:60, brochures: 40};
-var pies = {};
+var data = {books: 80, magazines: 120, newspapers: 30, posters:60, brochures:70};
+var pies = [];
 var sum = 0;
 var r = 0.4;
 var path = '';
 var color = 0;
-var center = "M 0.5 0.5 ";
-var start = "L 0.5 0.1 ";
+var center = "M 0.5 0.5";
+var start = "L 0.5 0.1";
 
 function calculatePie() {
 
@@ -54,42 +83,33 @@ function calculatePie() {
         sum += data[key];
 }
     var deg = sum/360;
-    var angelSum = 0;
     var i = 0;
-    var start2 = "L 0.5 0 ";
-// to do: building when angel > 180
-//        animation building                        !!!!!!!!!!!!!!!!!!!!!!!!!!
-//        hover
-
+    var r = 0.4;
+    var angelStart = 0;
     for (key in data) {
         pies[i] = {};
-        pies[i].angel = data[key]/deg;
-        angelSum += pies[i].angel;
         pies[i].name = key;
-        if (angelSum <=90){
-            pies[i].x = 0.5 + 0.5 * Math.sin(Math.PI * angelSum/180);
-            pies[i].y = 0.5 - 0.5 * Math.sin(Math.PI/2 - (angelSum * Math.PI/180));
-            pies[i].start = start2;
-            start2 = 'L ' + pies[i].x + ' ' + pies[i].y + ' ';
-        };
-        if ((angelSum > 90) && (angelSum <= 180)){
-            pies[i].x = 0.5 + 0.5 * Math.sin(Math.PI - (angelSum*Math.PI/180));
-            pies[i].y = 0.5 + 0.5 * Math.sin(Math.PI * (1/2 - (1 - (angelSum/180))));
-            pies[i].start = start2;
-            start2 = 'L ' + pies[i].x + ' ' + pies[i].y + ' ';
-        };
-        if ((angelSum > 180) && (angelSum <= 270)){
-            pies[i].x = 0.5 - 0.5 * Math.sin(Math.PI * (angelSum/180 - 1));
-            pies[i].y = 0.5 + 0.5 * Math.sin((3 * Math.PI/2) - angelSum * Math.PI/180);
-            pies[i].start = start2;
-            start2 = 'L ' + pies[i].x + ' ' + pies[i].y + ' ';
-        };
-        if ((angelSum > 270) && (angelSum <= 360)){
-            pies[i].x = 0.5 - 0.5 * Math.sin(2*Math.PI - (Math.PI/180)*angelSum);
-            pies[i].y = 0.5 - 0.5 * Math.sin(Math.PI/2 - 2 * Math.PI + (Math.PI/180)*angelSum);
-            pies[i].start = start2;
-            start2 = 'L ' + pies[i].x + ' ' + pies[i].y + ' ';
-        };
+        pies[i].radius = r;
+        pies[i].angelStart = angelStart;
+        pies[i].angelEnd = pies[i].angelStart + data[key]/deg;
+        angelStart = pies[i].angelEnd;
+
+        x = calculateX(pies[i].angelStart, r);
+        y = calculateY(pies[i].angelStart, r);
+        pies[i].start = 'M ' + x + ' ' + y;
+
+        x = calculateX(pies[i].angelEnd, r);
+        y = calculateY(pies[i].angelEnd, r);
+        pies[i].end = '0 0 1 ' + x + ' ' + y;
+
+        x = calculateX(pies[i].angelEnd, 0.28);
+        y = calculateY(pies[i].angelEnd, 0.28);
+        pies[i].endIn = ' L ' + x + ' ' + y;
+
+        x = calculateX(pies[i].angelStart, 0.28);
+        y = calculateY(pies[i].angelStart, 0.28);
+        pies[i].startIn = '0 0 0 ' + x + ' ' + y + ' z';
+
         pies[i].color = color;
         color += 60;
         i++;
@@ -97,12 +117,13 @@ function calculatePie() {
 
 };
 calculatePie();
-
+var percent = 0;
 var x = 0, y = 0;
+var x1 = 0, y1 = 0;
 var j = 0;
 var stat = "";
 i = 0;
-sum = pies[i].angel;
+sum = pies[i].angelEnd;
 color = pies[i].color;
 
 var marker = document.querySelectorAll(".demo-chart:last-child .marker");
@@ -110,52 +131,40 @@ var arrayLi = document.querySelectorAll(".demo-chart:last-child .legend li");
 marker[i].style.background = 'rgba(55'  + ', ' + color +', 255, 0.75)';
 arrayLi[i].innerHTML += pies[i].name;
 
-var timerId = setInterval(animation, 6);
+var timerId = setInterval(animation, 10);
 
 function animation() {
-    var percent = 0;
+
 
     if (j == 360) {
         clearInterval(timerId);
     };
 
     if (j > sum) {
+
+
+        stat = stat + '<path id=\"p' + i +'\"  d=\"' + pies[i].start + ' A ' + r + ' ' + r + ' ' + pies[i].end + pies[i].endIn + ' A '+ 0.28 + ' ' + 0.28 + ' ' + pies[i].startIn + '\" ' +
+            'fill=\"rgba(55'  +', ' + color +', 255, 0.75)\" onmouseenter=\"select(event)\" onmouseleave=\"select(event)\"/>';
         i++;
-
-        stat = stat + '<path d=\"' + center + start + 'A ' + r +' '+ r +' 0 0 1 ' + x + ' ' + y + ' z\" ' +
-            'fill=\"rgba(55'  +', ' + color +', 255, 0.75)\" />';
-
         start = 'L ' + x + ' ' + y + ' ';
         color = pies[i].color;
         marker[i].style.background = 'rgba(55'  + ', ' + color +', 255, 0.75)';
         arrayLi[i].innerHTML += pies[i].name;
-        sum += pies[i].angel
+        sum = sum + (pies[i].angelEnd - pies[i].angelStart);
     }
 
-    if (j <=90){
-        x = 0.5 + r * Math.sin(Math.PI * j/180);
-        y = 0.5 - r * Math.sin(Math.PI/2 - (j * Math.PI/180));
-    }
-    if ((j > 90) && (j <= 180)){
-        x = 0.5 + r * Math.sin(Math.PI - (j*Math.PI/180));
-        y = 0.5 + r * Math.sin(Math.PI * (1/2 - (1 - (j/180))));
-    }
-    if ((j > 180) && (j <= 270)){
-        x = 0.5 - r * Math.sin(Math.PI * (j/180 - 1));
-        y = 0.5 + r * Math.sin((3 * Math.PI/2) - j * Math.PI/180);
+    x = calculateX(j, r);
+    y = calculateY(j, r);
+    x1 = calculateX(j, 0.28);
+    y1 = calculateY(j, 0.28);
 
-    }
-    if ((j > 270) && (j <= 360)){
-        x = 0.5 - r * Math.sin(2*Math.PI - (Math.PI/180)*j);
-        y = 0.5 - r * Math.sin(Math.PI/2 - 2 * Math.PI + (Math.PI/180)*j);
-
-    };
     percent = Math.round(100 * j/360);
-    path =stat + '<path d=\"' + center + start + 'A ' + r +' '+ r +' 0 0 1 ' + x + ' ' + y + ' z\" ' +
-        'fill=\"rgba(55'  +', ' + color +', 255, 0.75)\" />';
+    path = '<circle cx="0.5" cy="0.5" r="0.28" fill="white"></circle>' +
+        '<text x="0.5" y="0.56" font-family="Roboto" font-size="0.2px" fill="#888" text-anchor="middle">'+ percent +'%</text>'+
+        stat + '<path id=\"p' + i +'\" d=\"' + pies[i].start + ' A ' + r + ' ' + r + ' 0 0 1 ' + x + ' ' + y +
+        ' L ' + x1 + ' ' + y1 + ' A ' + 0.28 + ' ' + 0.28 + ' ' + pies[i].startIn + '\" ' +
+        'fill=\"rgba(55'  +', ' + color +', 255, 0.75)\" onmouseenter=\"select(event)\" onmouseleave=\"select(event)\"/>';
 
-    path = path + '<circle cx="0.5" cy="0.5" r="0.28" fill="white"></circle>' +
-        '<text x="0.5" y="0.47" font-family="Roboto" font-size="0.2" fill="#888" text-anchor="middle" dy="0.1">'+ percent +'%</text>';
     document.querySelector("#svg1").innerHTML = path;
     document.querySelector("#svg2").innerHTML = path;
     document.querySelector("#svg3").innerHTML = path;
@@ -164,4 +173,39 @@ function animation() {
 }
 
 
-//var timerId = setInterval( animation(), 1500);
+
+
+
+function calculateX(angel, r) {
+    var x;
+    if (angel <=90){
+        x = 0.5 + r * Math.sin(Math.PI * angel/180);
+    }
+    if ((angel > 90) && (angel <= 180)){
+        x = 0.5 + r * Math.sin(Math.PI - (angel*Math.PI/180));
+    }
+    if ((angel > 180) && (angel <= 270)){
+        x = 0.5 - r * Math.sin(Math.PI * (angel/180 - 1));
+    }
+    if ((angel > 270) && (angel <= 360)){
+        x = 0.5 - r * Math.sin(2*Math.PI - (Math.PI/180)*angel);
+    };
+    return x;
+}
+
+function calculateY(angel, r) {
+    var y;
+    if (angel <=90){
+        y = 0.5 - r * Math.sin(Math.PI/2 - (angel * Math.PI/180));
+    }
+    if ((angel > 90) && (angel <= 180)){
+        y = 0.5 + r * Math.sin(Math.PI * (1/2 - (1 - (angel/180))));
+    }
+    if ((angel > 180) && (angel <= 270)){
+        y = 0.5 + r * Math.sin((3 * Math.PI/2) - angel * Math.PI/180);
+    }
+    if ((angel > 270) && (angel <= 360)){
+        y = 0.5 - r * Math.sin(Math.PI/2 - 2 * Math.PI + (Math.PI/180)*angel);
+    };
+    return y;
+}
