@@ -458,3 +458,11 @@ button[type = "submit"] {
 #pie_1_3 > .marker {
     background: rgba(255, 222, 155, 0.75);
 }
+
+.legend > ul li {
+    cursor: pointer;
+    margin-bottom: 4px;
+}
+.legend > ul li:hover {
+    color: #802420;
+}
