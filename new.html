@@ -42,7 +42,6 @@
     <link rel="canonical" href="http://www.example.com/">
     -->
 
-
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/material.min.css">
     <link rel="stylesheet" href="css/styles.css">
@@ -60,6 +59,9 @@
 
 </head>
 <body>
+<script>
+    var event;
+</script>
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
 <header class="demo-header mdl-layout__header mdl-color--white mdl-color--grey-100 mdl-color-text--grey-600">
     <div class="mdl-layout__header-row">
@@ -213,63 +215,26 @@
     <div class="mdl-grid demo-content">
 
 
-        <div id="pie1"  class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop mdl-color--white mdl-shadow--2dp" onmouseenter="getPath(event)">
-            <svg id="svg1" fill="currentColor" width="50%" viewBox="0 0 1 1" >
+        <div id="pie1"  class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--4-col-desktop mdl-color--white mdl-shadow--2dp">
+            <div id="like">
+                <button id="likeButton" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" style="color: #00ff00">
+                    <i class="material-icons" onclick="this.style.marginTop='-4px'">&#xE8DC;</i>
+                </button>
 
-            </svg>
-            <div class="legend">
-                <ul>
-                    <li id="pie_1_1" onmouseenter="select(event)" onmouseleave="unSelect(event)">
-                        <div class="marker"></div>
+                <div id="p1" class="mdl-progress mdl-js-progress"></div>
+            </div>
+            <div id="dislike">
+                <button id="dislikeButton" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" style="color: red">
+                    <i class="material-icons" onclick="this.style.marginTop='4px'">&#xE8DB;</i>
+                </button>
 
-                    </li>
-                    <li id="pie_1_2" onmouseenter="select(event)" onmouseleave="unSelect(event)">
-                        <div class="marker"></div>
-
-                    </li>
-                    <li id="pie_1_3" onmouseenter="select(event)" onmouseleave="unSelect(event)">
-                        <div class="marker" ></div>
-
-                    </li>
-                    <li id="pie_1_4" onmouseenter="select(event)" onmouseleave="unSelect(event)">
-                        <div class="marker"></div>
-
-                    </li>
-                    <li id="pie_1_5" onmouseenter="select(event)" onmouseleave="unSelect(event)">
-                        <div class="marker"></div>
-
-                    </li>
-                </ul>
+                <div id="p2" class="mdl-progress mdl-js-progress"></div>
             </div>
         </div>
 
-        <div class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop mdl-color--white mdl-shadow--2dp">
-            <svg id="svg2" fill="currentColor" width="50%" viewBox="0 0 1 1" >
 
-            </svg>
-            <div class="legend">
-                <ul>
-                    <li id="pie_2_1" onmouseenter="select(event)" onmouseleave="unSelect(event)">
-                        <div class="marker"></div>
-                        First co
-                    </li>
-                    <li id="pie_2_2">
-                        <div class="marker"></div>
-                        Second col
-                    </li>
-                    <li id="pie_2_3">
-                        <div class="marker"></div>
-                        Thirty col
-                    </li>
-                    <li id="pie_2_4">
-                        <div class="marker"></div>
-                        Fourty col
-                    </li>
-                </ul>
-            </div>
-        </div>
 
-        <div  class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop mdl-color--white mdl-shadow--2dp">
+        <div  class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--4-col-desktop mdl-color--white mdl-shadow--2dp">
             <svg id="svg3" fill="currentColor" width="50%" viewBox="0 0 1 1" >
 
             </svg>
@@ -278,13 +243,13 @@
             </div>
         </div>
 
-        <div id="pie4"  class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop mdl-color--white mdl-shadow--2dp" onmouseenter="getPath(event)">
+        <div id="pie4"  class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--4-col-desktop mdl-color--white mdl-shadow--2dp" onmouseenter="getPath(event)">
             <svg id="svg4" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="150px" viewBox="0 0 1 1">
 
             </svg>
             <div class="legend">
                 <ul>
-                    <li id="0" onmouseenter="select(event)" onmouseleave="select(event)">
+                    <li id="0" class="mdl-js-button" onmouseenter="select(event)" onmouseleave="select(event)">
                         <div class="marker"></div>
 
                     </li>
@@ -310,6 +275,105 @@
 
     </div>
 
+    <div class="mdl-grid demo-content">
+
+
+
+        <div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-color--white mdl-shadow--2dp">
+            <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+                <thead>
+                <tr>
+                    <th class="mdl-data-table__cell--non-numeric">Task</th>
+                    <th class="mdl-data-table__cell--non-numeric">Progress</th>
+                    <th>Manager</th>
+                    <th>Due date</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="mdl-data-table__cell--non-numeric">Go to sleep :)</td>
+                    <td class="mdl-data-table__cell--non-numeric">
+                        <div id="p3" class="mdl-progress mdl-js-progress"></div>
+                        <script>
+                            document.querySelector('#p3').addEventListener('mdl-componentupgraded', function() {
+                                this.MaterialProgress.setProgress(33);
+                                this.MaterialProgress.setBuffer(77);
+                            });
+                        </script>
+                    </td>
+                    <td>Alex</td>
+                    <td>Now</td>
+                </tr>
+                <tr>
+                    <td class="mdl-data-table__cell--non-numeric">To save warm</td>
+                    <td class="mdl-data-table__cell--non-numeric">
+                        <div id="p4" class="mdl-progress mdl-js-progress"></div>
+                        <script>
+                            document.querySelector('#p4').addEventListener('mdl-componentupgraded', function() {
+                                document.querySelector('#p4 > .progressbar').style.backgroundColor = "red";
+                                this.MaterialProgress.setProgress(45);
+                                this.MaterialProgress.setBuffer(77);
+                            });
+                        </script>
+                    </td>
+                    <td>Andrei</td>
+                    <td>09.10.15</td>
+                </tr>
+                <tr>
+                    <td class="mdl-data-table__cell--non-numeric">Find name company</td>
+                    <td class="mdl-data-table__cell--non-numeric">
+                        <div id="p5" class="mdl-progress mdl-js-progress"></div>
+                        <script>
+                            document.querySelector('#p5').addEventListener('mdl-componentupgraded', function() {
+                                document.querySelector('#p5 > .progressbar').style.backgroundColor = "#F00098";
+                                this.MaterialProgress.setProgress(85);
+                                this.MaterialProgress.setBuffer(87);
+                            });
+                        </script>
+                    </td>
+                    <td>Roman</td>
+                    <td>11.10.15</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="demo-options mdl-card  mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--4-col-desktop">
+            <div class="mdl-card__supporting-text mdl-color-text--grey-900">
+                <h5>To-do list</h5>
+                <ul>
+                    <li>
+                        <label for="chkbox1" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+                            <input type="checkbox" id="chkbox1" checked class="mdl-checkbox__input" />
+                            <span class="mdl-checkbox__label">Click per object</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label for="chkbox2" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+                            <input type="checkbox" id="chkbox2" class="mdl-checkbox__input" />
+                            <span class="mdl-checkbox__label">Views per object</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label for="chkbox3" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+                            <input type="checkbox" id="chkbox3" class="mdl-checkbox__input" />
+                            <span class="mdl-checkbox__label">Objects selected</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label for="chkbox4" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+                            <input type="checkbox" id="chkbox4" class="mdl-checkbox__input" />
+                            <span class="mdl-checkbox__label">Objects viewed</span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+                <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--blue-grey-900">Add task</a>
+                <div class="mdl-layout-spacer"></div>
+                <i class="material-icons">assignment</i>
+            </div>
+        </div>
+    </div>
 
 </main>
 </div>

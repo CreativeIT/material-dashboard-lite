@@ -6,50 +6,6 @@
  * To change this template use File | Settings | File Templates.
  */
 'use strict'
-var str = "";
-var i = 0;
-var paths;
-var idd;
-var end;
-var t = 5;
-function getPath(event) {
-    idd = event.target.id;
-    paths = document.querySelectorAll("#" + idd + " path")
-};
-
-
-function select(event) {
-    var id = event.target.id;
-    if (isNaN(id)) {
-        id = id.slice(1);
-    };
-
-        if (pies[id].radius == 0.4)   {
-            str = paths[id].getAttribute('d');
-            while (r < 0.51) {
-                setTimeout(animationPath, t, pies[id], r, id);
-                r = (r*100 + 1)/100;
-                t += 5;
-            };
-            var text = Math.round(100*(pies[id].angelEnd - pies[id].angelStart)/360) + '%';
-            document.querySelector('#'+ idd +" text").innerHTML = text;
-            pies[id].radius = 0.5;
-            t = 5;
-            paths[id].setAttribute('stroke', '#802420');
-            paths[id].setAttribute('stroke-width', '0.004');
-        } else {
-            while (r > 0.39) {
-                setTimeout(animationPath, t, pies[id], r, id);
-                r = (r*100 - 1)/100;
-                t += 5;
-            }
-            document.querySelector('#'+ idd +" text").innerHTML = "100%";
-            pies[id].radius = 0.4;
-            t = 5;
-            paths[id].setAttribute('stroke', 'none');
-        };
-
-}
 
 function animationPath(pie, r, i) {
     var start, end;
@@ -64,7 +20,7 @@ function animationPath(pie, r, i) {
     x = calculateX(pie.angelEnd, r);
     y = calculateY(pie.angelEnd, r);
     end = '0 0 1 ' + x + ' ' + y;
-    paths[i].setAttribute('d', start + ' A '+ r +' '+ r +' '+ end + pie.endIn + ' A '+ 0.28 + ' ' + 0.28 + ' ' + pie.startIn );
+    paths[i].setAttribute('d', start + ' A '+ r +' '+ r +' '+ end + pie.endIn + ' A '+ rIn + ' ' + rIn + ' ' + pie.startIn );
 
 }
 
@@ -72,6 +28,7 @@ var data = {books: 80, magazines: 120, newspapers: 30, posters:60, brochures:70}
 var pies = [];
 var sum = 0;
 var r = 0.4;
+var rIn = 0.34;
 var path = '';
 var color = 0;
 var center = "M 0.5 0.5";
@@ -102,12 +59,12 @@ function calculatePie() {
         y = calculateY(pies[i].angelEnd, r);
         pies[i].end = '0 0 1 ' + x + ' ' + y;
 
-        x = calculateX(pies[i].angelEnd, 0.28);
-        y = calculateY(pies[i].angelEnd, 0.28);
+        x = calculateX(pies[i].angelEnd, rIn);
+        y = calculateY(pies[i].angelEnd, rIn);
         pies[i].endIn = ' L ' + x + ' ' + y;
 
-        x = calculateX(pies[i].angelStart, 0.28);
-        y = calculateY(pies[i].angelStart, 0.28);
+        x = calculateX(pies[i].angelStart, rIn);
+        y = calculateY(pies[i].angelStart, rIn);
         pies[i].startIn = '0 0 0 ' + x + ' ' + y + ' z';
 
         pies[i].color = color;
@@ -143,7 +100,7 @@ function animation() {
     if (j > sum) {
 
 
-        stat = stat + '<path id=\"p' + i +'\"  d=\"' + pies[i].start + ' A ' + r + ' ' + r + ' ' + pies[i].end + pies[i].endIn + ' A '+ 0.28 + ' ' + 0.28 + ' ' + pies[i].startIn + '\" ' +
+        stat = stat + '<path id=\"path' + i +'\"  d=\"' + pies[i].start + ' A ' + r + ' ' + r + ' ' + pies[i].end + pies[i].endIn + ' A '+ rIn + ' ' + rIn + ' ' + pies[i].startIn + '\" ' +
             'fill=\"rgba(55'  +', ' + color +', 255, 0.75)\" onmouseenter=\"select(event)\" onmouseleave=\"select(event)\"/>';
         i++;
         start = 'L ' + x + ' ' + y + ' ';
@@ -155,23 +112,66 @@ function animation() {
 
     x = calculateX(j, r);
     y = calculateY(j, r);
-    x1 = calculateX(j, 0.28);
-    y1 = calculateY(j, 0.28);
+    x1 = calculateX(j, rIn);
+    y1 = calculateY(j, rIn);
 
     percent = Math.round(100 * j/360);
     path = '<circle cx="0.5" cy="0.5" r="0.28" fill="white"></circle>' +
         '<text x="0.5" y="0.56" font-family="Roboto" font-size="0.2px" fill="#888" text-anchor="middle">'+ percent +'%</text>'+
-        stat + '<path id=\"p' + i +'\" d=\"' + pies[i].start + ' A ' + r + ' ' + r + ' 0 0 1 ' + x + ' ' + y +
-        ' L ' + x1 + ' ' + y1 + ' A ' + 0.28 + ' ' + 0.28 + ' ' + pies[i].startIn + '\" ' +
+        stat + '<path id=\"path' + i +'\" d=\"' + pies[i].start + ' A ' + r + ' ' + r + ' 0 0 1 ' + x + ' ' + y +
+        ' L ' + x1 + ' ' + y1 + ' A ' + rIn + ' ' + rIn + ' ' + pies[i].startIn + '\" ' +
         'fill=\"rgba(55'  +', ' + color +', 255, 0.75)\" onmouseenter=\"select(event)\" onmouseleave=\"select(event)\"/>';
 
-    document.querySelector("#svg1").innerHTML = path;
-    document.querySelector("#svg2").innerHTML = path;
-    document.querySelector("#svg3").innerHTML = path;
+
+
     document.querySelector("#svg4").innerHTML = path;
     j++; j++;j++; j++;
 }
 
+var str = "";
+var i = 0;
+var paths;
+var idd;
+var end;
+var t = 5;
+function getPath(event) {
+    idd = event.target.id;
+    paths = document.querySelectorAll("#" + idd + " path")
+};
+
+
+function select(event) {
+    var id = event.target.id;
+    if (isNaN(id)) {
+        id = id.slice(4);
+    };
+
+    if (pies[id].radius == 0.4)   {
+        str = paths[id].getAttribute('d');
+        while (r < 0.51) {
+            setTimeout(animationPath, t, pies[id], r, id);
+            r = (r*100 + 1)/100;
+            t += 5;
+        };
+        var text = Math.round(100*(pies[id].angelEnd - pies[id].angelStart)/360) + '%';
+        document.querySelector('#'+ idd +" text").innerHTML = text;
+        pies[id].radius = 0.5;
+        t = 5;
+        paths[id].setAttribute('stroke', '#802420');
+        paths[id].setAttribute('stroke-width', '0.004');
+    } else {
+        while (r > 0.39) {
+            setTimeout(animationPath, t, pies[id], r, id);
+            r = (r*100 - 1)/100;
+            t += 5;
+        }
+        document.querySelector('#'+ idd +" text").innerHTML = "100%";
+        pies[id].radius = 0.4;
+        t = 5;
+        paths[id].setAttribute('stroke', 'none');
+    };
+
+}
 
 
 
@@ -209,3 +209,45 @@ function calculateY(angel, r) {
     };
     return y;
 }
+
+// Like-DisLike widget
+
+var like = 35, dislike = 15;
+var likeButton = document.querySelector('#likeButton');
+var dislikeButton  = document.querySelector('#dislikeButton');
+
+likeButton.addEventListener('click', function(){
+    document.querySelector("#p1 > .progressbar").style.boxShadow = "0 0 10px #00ff00";
+    setTimeout(function(){
+        document.querySelector("#p1 > .progressbar").style.boxShadow = "0 0 0 #00ff00";
+    }, 250);
+    like += 5;
+    document.querySelector('#p1').MaterialProgress.setProgress(like);
+    setTimeout(function() {
+        document.querySelector('#likeButton > .material-icons').style.marginTop = '0px';
+    }, 200);
+})
+
+dislikeButton.addEventListener('click', function(){
+    document.querySelector("#p2 > .progressbar").style.boxShadow = "0 0 10px red";
+
+        setTimeout(function(){
+            document.querySelector("#p2 > .progressbar").style.boxShadow = "0 0 0 red";
+        }, 250);
+    dislike += 5;
+    document.querySelector('#p2').MaterialProgress.setProgress(dislike);
+    setTimeout(function() {
+        document.querySelector('#dislikeButton > .material-icons').style.marginTop = '0px';
+    }, 200);
+})
+
+document.querySelector('#p1').addEventListener('mdl-componentupgraded', function() {
+    this.MaterialProgress.setProgress(like);
+});
+
+document.querySelector('#p2').addEventListener('mdl-componentupgraded', function() {
+    this.MaterialProgress.setProgress(dislike);
+});
+
+
+
