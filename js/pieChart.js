@@ -87,9 +87,8 @@ var marker = document.querySelectorAll(".demo-chart:last-child .marker");
 var arrayLi = document.querySelectorAll(".demo-chart:last-child .legend li");
 marker[i].style.background = 'rgba(55'  + ', ' + color +', 255, 0.75)';
 arrayLi[i].innerHTML += pies[i].name;
-
-var timerId = setInterval(animation, 10);
-
+var timerId;
+window.onload = function () { timerId = setInterval(animation, 10);};
 function animation() {
 
 
@@ -249,5 +248,55 @@ document.querySelector('#p2').addEventListener('mdl-componentupgraded', function
     this.MaterialProgress.setProgress(dislike);
 });
 
+google.load("visualization", "1", {packages:["corechart"]});
+google.setOnLoadCallback(drawChart);
+function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+        ['Year', 'Sales', 'Expense'],
+        ['Jan.14',  1,     5],
+        ['Feb',  3,      4],
+        ['Mar',  6,       3],
+        ['Apr.14',  4,      2],
+        ['May',  4,      3],
+        ['Jun',  6,       1],
+        ['Jul.14',  3,      2],
+        ['Aug',  2,      5],
+        ['Sep',  4,       7],
+        ['Oct.14',  3,      8],
+        ['Nov',  4,      5],
+        ['Dec',  6,       4],
+        ['Jan.15',  5,      3],
+        ['Feb',  3,      4],
+        ['Mar',  6,       2],
+        ['Apr.15',  1,      1],
+        ['May',  2,      3],
+        ['Jun',  3,       1],
+        ['Jul.15',  5,      2],
+        ['Aug',  6,      4],
+        ['Sep',  7,       5],
+        ['Oct.15',  5,      7],
+        ['Nov',  4,      3],
+        ['Dec',  9,      6],
+        ['Jun.16',  8,      8]
+    ]);
 
+    var options = {
+        chartArea:{left: 50, width: '92%'},
+        forceIFrame: false,
+        legend: {position: 'in', maxLines: 3},
+        title: 'Company Performance',
+        hAxis: {title: 'Months',  titleTextStyle: {color: '#333'}, showTextEvery: 4},
+        vAxis: {minValue: 0},
+        animation: {"startup": true,
+                    "duration": 1500,
+                    "easing": 'out'
+                    },
+        isStacked: 'absolute',
+        lineWidth: 1
+        //width: 500
+    };
+
+    var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+}
 
