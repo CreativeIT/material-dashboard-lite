@@ -1,0 +1,27 @@
+{
+  "name": "dashboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "bower": "^1.4.1",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.2.1"
+  },
+  "devDependencies": {
+    "gulp-inject": "^3.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexbananabob/dashboard.git"
+  },
+  "author": "franckevva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexbananabob/dashboard/issues"
+  },
+  "homepage": "https://github.com/alexbananabob/dashboard#readme"
+}
