@@ -75,12 +75,12 @@ marker[i].style.background = 'rgba(55'  + ', ' + color +', 255, 0.75)';
 arrayLi[i].innerHTML += pies[i].name;
 var timerId;
 
-window.onload = function () { timerId = setInterval(animation, 30); };
+window.onload = function () { timerId = setInterval(animation, 10); };
 
 function animation() {
 
 
-    if (j >= 370) {
+    if (j == 364) {
 
         clearInterval(timerId);
         paths = document.querySelectorAll("#svg4 path");
@@ -90,11 +90,7 @@ function animation() {
             arrayLi[i].addEventListener('mouseenter', select);
             arrayLi[i].addEventListener('mouseleave', select);
         };
-        setTimeout(function () {
-                    document.querySelector("#p2 > .progressbar").style.boxShadow = "0 0 0 red";
-                    document.querySelector("#p1 > .progressbar").style.boxShadow = "0 0 0 #00ff00";
-    }, 150);
-        return;
+       return;
     };
 
     if (j > sum) {
@@ -120,31 +116,17 @@ function animation() {
         ' L ' + x1 + ' ' + y1 + ' A ' + rIn + ' ' + rIn + ' ' + pies[i].startIn + '\" ' +
         'fill=\"rgba(55'  +', ' + color +', 255, 0.75)\" />';
 
-// animation tranding widget numbers
     document.querySelector("#svg4").innerHTML = path;
     for (var k = 0; k < trandingDivs.length; k++) {
         trandingDivs[k].innerHTML = Math.round(Math.random()*20 + 1) + "%";
     }
-//---------
-
-// animation likeDislike widget bars
-
-    if (j%3 == 0) {
-        document.querySelector("#p1 > .progressbar").style.boxShadow = "0 0 10px #00ff00";
-        document.querySelector("#p2 > .progressbar").style.boxShadow = "0 0 10px red";
-        document.querySelector('#p1').MaterialProgress.setProgress(like);
-        document.querySelector('#p2').MaterialProgress.setProgress(dislike);
-        like += 2.5;
-        dislike += 1;
-    }
-//---------
-
-    j+=10;
+    j+=4;
 }
 
 var str = "";
 var i = 0;
 var paths;
+var idd;
 var end;
 var t = 5;
 
@@ -237,10 +219,9 @@ function calculateY(angel, r) {
 
 // Like-DisLike widget
 
-var like = 1, dislike = 1;
+var like = 35, dislike = 15;
 var likeButton = document.querySelector('#likeButton');
-var dislikeButton = document.querySelector('#dislikeButton');
-var likeTime = Math.round(90/35), dislikeTime = Math.round(90/15);
+var dislikeButton  = document.querySelector('#dislikeButton');
 
 likeButton.addEventListener('click', function(){
     document.querySelector('#likeButton > .material-icons').style.marginTop='-4px';
@@ -253,7 +234,7 @@ likeButton.addEventListener('click', function(){
     setTimeout(function() {
         document.querySelector('#likeButton > .material-icons').style.marginTop = '0px';
     }, 200);
-});
+})
 
 dislikeButton.addEventListener('click', function(){
     document.querySelector('#dislikeButton > .material-icons').style.marginTop='4px';
@@ -267,6 +248,14 @@ dislikeButton.addEventListener('click', function(){
     setTimeout(function() {
         document.querySelector('#dislikeButton > .material-icons').style.marginTop = '0px';
     }, 200);
+})
+
+document.querySelector('#p1').addEventListener('mdl-componentupgraded', function() {
+    this.MaterialProgress.setProgress(like);
+});
+
+document.querySelector('#p2').addEventListener('mdl-componentupgraded', function() {
+    this.MaterialProgress.setProgress(dislike);
 });
 
 // google grafic widget
