@@ -1,0 +1,13 @@
+# node modules
+node_modules
+
+# bower components
+bower_components
+
+src/.sass-cache/
+
+.idea
+
+.temp
+
+dist
