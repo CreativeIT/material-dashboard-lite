@@ -35,7 +35,7 @@ gulp.task('browser-sync', function () {
 });
 
 gulp.task( 'scss', function() {
-	return gulp.src( './src/scss/zapplication.scss' )
+	return gulp.src( './src/scss/application.scss' )
 		.pipe( plumber( { errorHandler: onError } ) )
 		.pipe( sass() )
 		.pipe( gulp.dest( './dist/css' ));
@@ -73,7 +73,7 @@ gulp.task('default', ['cleanDist','jshint', 'babel', 'copyJsLib'], function () {
 		//.pipe(reload({stream: true}));
 });
 
-gulp.task('copyJsLib', ['copyCssLib'], function () {
+gulp.task('copyJsLib', ['cleanDist'], function () {
   	return gulp.src('bower_components/material-design-lite/material.min.js')
 		.pipe(gulp.dest('dist/js'));
 });
@@ -96,12 +96,12 @@ gulp.task('copySrcForTheBuild', ['cleanDist'], function() {
 	  .pipe(gulp.dest('dist/'))
 	  .pipe(uglify())
 	  .pipe(gulp.dest('dist/'))
-	.pipe(gulp.src('src/scss/application.scss')
+	.pipe(gulp.src('src/scss/application.scss'))
 	  .pipe( plumber( { errorHandler: onError } ))
 	  .pipe(sass())
 	  .pipe(minifycss())
 	  .pipe(rename( { suffix: '.min' }))
-	  .pipe(gulp.dest('dist/css')));
+	  .pipe(gulp.dest('dist/css'));
 });
 
 gulp.task('build', ['copySrcForTheBuild', 'copyJsLib'], function() {
@@ -111,7 +111,7 @@ gulp.task('build', ['copySrcForTheBuild', 'copyJsLib'], function() {
 		.pipe(gulp.dest('dist/images'));
 	gulp.src('src/**/*.html')
 		.pipe(gulp.dest('dist/'))
-		.pipe(inject(gulp.src(['dist/**/*.min.js', 'dist/**/*.min.css'], {read: false}), {relative: true}))
+		.pipe(inject(gulp.src(['dist/**/*.min.js', 'node_modules/mdl-selectfield/mdl-selectfield.min.js', 'dist/**/*.min.css'], {read: false}), {relative: true}))
 		.pipe(gulp.dest('dist/'));
 		//.pipe(reload({stream: true}));
 });
