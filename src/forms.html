@@ -1,0 +1,352 @@
+<!doctype html>
+<!--
+  Material Design Lite
+  Copyright 2015 Google Inc. All rights reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Material Design Lite</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+
+    <script type="text/javascript" src="https://www.google.com/jsapi" ></script>
+
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- inject:css -->
+    <link rel="stylesheet" href="../bower_components/material-design-lite/material.min.css">
+    <link rel="stylesheet" href="css/application.min.css">
+    <!-- endinject -->
+   <!-- <link rel="stylesheet" href="css/styles.css">-->
+    <style>
+        #employer-form {
+            width: 880px;
+           /* height: 700px;*/
+            margin-top: 3%;
+            margin-left: 20%;
+            
+        }
+        #employer-form div {
+	    display: inline-block;
+        }
+        #employer-form label {
+	    font-size: 14px;
+	    font-family: "roboto";
+	    color: gray;
+        }
+        #employer-form input {
+	    font-size: 16px;
+	    font-family: "roboto";
+        }
+        
+    </style>
+
+</head>
+<body>
+<script>
+    var event;
+</script>
+<div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+<header class="demo-header mdl-layout__header mdl-color--white mdl-color--grey-100 mdl-color-text--grey-600">
+    <div class="mdl-layout__header-row">
+        <span class="mdl-layout-title">Home</span>
+        <div class="mdl-layout-spacer"></div>
+
+
+
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+                <i class="material-icons">search</i>
+            </label>
+
+            <div class="mdl-textfield__expandable-holder">
+                <input class="mdl-textfield__input" type="text" id="search" />
+                <label class="mdl-textfield__label" for="search">Enter your query...</label>
+            </div>
+        </div>
+        <div class=" mdl-js-ripple-effect " id="notification">
+            <i class="material-icons">notifications</i> <span class="mdl-badge" data-badge="10"></span>
+
+        </div>
+        <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="notification">
+            <li class="mdl-menu__item">messege 1</li>
+            <li class="mdl-menu__item">messege 2</li>
+            <li class="mdl-menu__item">messege 3</li>
+            <li class="mdl-menu__item">messege 3</li>
+        </ul>
+
+        <div class=" mdl-js-ripple-effect " id="inbox">
+
+            <i class="material-icons">mail</i><span class="mdl-badge" data-badge="4"></span>
+        </div>
+        <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="inbox">
+            <li class="mdl-menu__item">
+                <header class="demo-drawer">
+                    <div class="demo-avatar-dropdown">
+                        <img src="images/card.jpg" class="demo-avatar">
+                        <div style="float: right">
+                            <span>From:</span>
+                            <span><b>Alex Bobko</b></b></span><br>
+                            <span><small><b>AlexBobkoAlexBobko@gmail.com</b></small></span>
+                        </div>
+                    </div>
+                    <div class="">
+                            <span><small>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Mauris sagittis pellentesque lacus eleifend lacinia...
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Mauris sagittis pellentesque lacus eleifend lacinia...
+                            </small></span>
+                    </div>
+                    <div class="demo-avatar-dropdown">
+                        <button id="" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent">Read</button>
+                        <div class="mdl-layout-spacer"></div>
+                        <button id="" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent">Reply</button>
+                    </div>
+                </header>
+            </li>
+            <li class="mdl-menu__item">
+                <header class="demo-drawer">
+                    <div class="demo-avatar-dropdown">
+                        <img src="images/card.jpg" class="demo-avatar">
+                        <div style="float: right">
+                            <span>From:</span>
+                            <span><b>Alex Bobko</b></b></span><br>
+                            <span><small><b>AlexBobko@gmail.com</b></small></span>
+                        </div>
+                    </div>
+                    <div class="">
+                            <span><small>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Mauris sagittis pellentesque lacus eleifend lacinia...
+                            </small></span>
+                    </div>
+                    <div class="demo-avatar-dropdown">
+                        <button id="" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent">Read</button>
+                        <div class="mdl-layout-spacer"></div>
+                        <button id="" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent">Reply</button>
+                    </div>
+                </header>
+            </li>
+            <li class="mdl-menu__item">
+                <header class="demo-drawer">
+                    <div class="demo-avatar-dropdown">
+                        <img src="images/card.jpg" class="demo-avatar">
+                        <div style="float: right">
+                            <span>From:</span>
+                            <span><b>Alex Bobko</b></b></span><br>
+                            <span><small><b>AlexBobko@gmail.com</b></small></span>
+                        </div>
+                    </div>
+                    <div class="">
+                            <span><small>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Mauris sagittis pellentesque lacus eleifend lacinia...
+                            </small></span>
+                    </div>
+                    <div class="demo-avatar-dropdown">
+                        <button id="" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent">Read</button>
+                        <div class="mdl-layout-spacer"></div>
+                        <button id="" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent">Reply</button>
+                    </div>
+                </header>
+            </li>
+
+        </ul>
+
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="calendar">
+            <i class="material-icons">event_note</i>
+        </button>
+        <div class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-color--grey-100 mdl-shadow--16dp" for="calendar">
+
+            <div class="mdl-grid">
+                <div ng-app="app" >
+                    <calendar></calendar>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</header>
+<div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+    <header class="demo-drawer-header">
+        <img src="images/card.jpg" class="demo-avatar">
+        <div class="demo-avatar-dropdown">
+            <div><span>Alex Bobko</span>
+                <span><small>AlexBobko@gmail.com</small></span></div>
+            <div class="mdl-layout-spacer"></div>
+            <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                <i class="material-icons" role="presentation">arrow_drop_down</i>
+                <span class="visuallyhidden">Accounts</span>
+            </button>
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect mdl-color--grey-400" for="accbtn">
+                <a href="profile.html"><li class="mdl-menu__item"><i class="material-icons" role="presentation">person</i>My Profile</li></a>
+                <a href="#"><li class="mdl-menu__item"><i class="material-icons" role="presentation">settings</i>Settings</li></a>
+                <a href="#"><li class="mdl-menu__item"><i class="material-icons" role="presentation">exit_to_app</i>Logout</li></a>
+            </ul>
+        </div>
+    </header>
+    <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
+        <a class="mdl-navigation__link" href="index.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Homepage</a>
+        <a class="mdl-navigation__link" href="profile.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">person</i>Profile</a>
+        <a class="mdl-navigation__link" href="todolist.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">assignment</i>ToDoList</a>
+        <a class="mdl-navigation__link" href="maps.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>Maps</a>
+
+        <div class="mdl-layout-spacer"></div>
+        <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
+    </nav>
+</div>
+<main class="mdl-layout__content mdl-color--grey-100">
+        <div id="employer-form"  class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--4-col-desktop mdl-color--white mdl-shadow--2dp">
+		<div  style="padding-top:20px; padding-left:80px; width: 80%">
+			<p style="font-size:20px; font-family: 'roboto'; line-size: 1em; margin-bottom:0"><b>Employer</b></p>
+			<div style="width:100%">
+				<!--form action="#"-->
+					<div style="float:left; margin-left: 0px; width: 48%" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" type="text" id="sample3" />
+						<label class="mdl-textfield__label" for="sample3">First name</label>
+					</div>
+					<div style="float:left; margin-left:7%; width: 45%" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" type="text" id="sample3" />
+						<label class="mdl-textfield__label" for="sample3">Second name</label>
+					</div>
+				<!--/form-->
+			</div>
+			<div style="width:100%">
+				<!--form action="#"-->
+					<div style="float: left; margin-left: 0px; width:48%" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" type="text" id="sample3" />
+						<label class="mdl-textfield__label" for="sample3">Position</label>
+					</div>
+					<div style="float:left; margin-left:7%; width:45%" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" type="text" id="sample3" />
+						<label class="mdl-textfield__label" for="sample3">Qualification</label>
+					</div>
+				<!--/form-->
+			</div>
+		</div>
+		<div  style="float: left; padding-top:20px; padding-left:80px; width:40%">
+			<p style="font-size:20px; font-family: 'roboto'; line-size:1em; margin-bottom: 0"><b>Contact info</b></p>
+			<div>
+				<!--form action="#"-->
+					<div style="float:left; margin-left: 0px; width:45%" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" value="Belarus" type="text" id="samp3" readonly tabIndex="-1"/>
+						<label class="mdl-textfield__label" for="samp3">Country</label>
+
+						<ul style="width:170px" class="mdl-menu mdl-menu--bottom-left mdl-js-menu" for="icon-toggle-1">
+							<li class="mdl-menu__item">Brazil</li>
+							<li class="mdl-menu__item">Germany</li>
+							<li disabled class="mdl-menu__item">Russia</li>
+							<li class="mdl-menu__item">France</li>
+						</ul>
+						<!--button style="width:100%" id="demo-menu-lower-left" class="mdl-button">
+							<i style="margin-left:90% " class="material-icons">keyboard_arrow_down</i>
+						</button-->
+						<label style="float:left; margin-top:-30px; margin-left:80%" class="mdl-icon-toggle mdl-js-icon-toggle" for="icon-toggle-1">
+						    <input type="checkbox" id="icon-toggle-1" class="mdl-icon-toggle__input" checked />
+						    <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+						</label>
+					</div>
+
+					<div style="float:left; margin-left:5%; width: 45%" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" type="text" id="sample3" />
+						<label class="mdl-textfield__label" for="sample3">Text  with Floating Label...</label>
+					</div>
+				<!--/form-->
+			</div>
+			<div>
+				<!--form action="#"-->
+					<div style="float: left; margin-left: 0px; width:45%" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" type="text" id="sample3" />
+						<label class="mdl-textfield__label" for="sample3">Text  with Floating Label...</label>
+					</div>
+					<div style="float:left; margin-left:5%;width:45%" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" type="text" id="sample3" />
+						<label class="mdl-textfield__label" for="sample3">Text  with Floating Label...</label>
+					</div>
+				<!--/form-->
+			</div>
+		</div>
+		<div  style="float: left; padding-top:20px; padding-left:20px; width:40%; margin-bottom:0">
+			<p style="font-size:20px; font-family: 'roboto'; line-size:1em; padding-top:0px"><b>Company</b></p>
+			<div>
+				<label class="mdl-checkbox mdl-js-checkbox" for="checkbox-1">
+					<input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" checked />
+					<span class="mdl-checkbox__label">Checkbox</span>
+				</label>
+				<label class="mdl-checkbox mdl-js-checkbox" for="checkbox-2">
+					<input type="checkbox" id="checkbox-2" class="mdl-checkbox__input" />
+					<span class="mdl-checkbox__label">Checkbox</span>
+				</label>
+            </div>
+			
+		</div>
+		<div  style="float: left; padding-top:20px; padding-left:80px; width:80%; margin-bottom:0">
+			<p style="font-size:20px; font-family: 'roboto'; line-size:1em; padding-top:0px"><b>General skills</b></p>
+			<form style="margin-top: -20px;margin-left:0; width: 100%" action="#">
+				<div style="width: 100%;" class="mdl-textfield mdl-js-textfield">
+					<textarea class="mdl-textfield__input" type="text" rows= "3" id="sample5" ></textarea>
+					<label class="mdl-textfield__label" for="sample5">About me</label>
+				</div>
+			 </form>
+		</div>
+		<div  style="float: bottom; margin-bottom:0px; padding-left:5%; width:90%; height: 80px">
+			<div style=" margin-left: 5%; float:left; padding-top: 10px">
+				<label class="mdl-radio mdl-js-radio">
+				<input type="checkbox" class="mdl-radio__button" checked />
+				<span class="mdl-radio__label">I do accept company policy</span>
+				</label>
+			</div>
+			<div style="float:left;  margin-left:52%">
+				  <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+					Submit
+				</button>
+			</div>
+		</div>
+        </div>
+</main>
+</div>
+<!--<link rel="stylesheet" href="../bower_components/material-design-lite/material.min.css">-->
+  <!-- inject:js -->
+  <script src="../bower_components/material-design-lite/material.min.js"></script>
+  <script src="js/calendar.min.js"></script>
+  <script src="js/pieChart.min.js"></script>
+  <!-- endinject -->
+<!--<script type="text/javascript" src="https://www.google.com/jsapi" defer></script>-->
+</body>
+</html>
+
