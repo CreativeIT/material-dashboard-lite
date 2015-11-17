@@ -1,0 +1,355 @@
+<!doctype html>
+<!--
+  Material Design Lite
+  Copyright 2015 Google Inc. All rights reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Material Design Lite</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- inject:css -->
+    <!-- endinject -->
+    <style>
+        #view-source {
+            position: fixed;
+            display: block;
+            right: 0;
+            bottom: 0;
+            margin-right: 40px;
+            margin-bottom: 40px;
+            z-index: 900;
+        }
+        #map, #regions_div {
+            height: 90%;
+        }
+        #map-widget {
+	    margin-top: 3%;
+	    margin-left: 3%;
+            height: 80%;
+            width: calc(53% - 35px);
+            float: left;
+        }
+        #geochart-widget {
+	    margin-top: 3%;
+	    margin-left: 3%;
+            height: 80%;
+            width: 40%;
+	    float: left;
+        }
+        body #creative-chart {
+	    height: 80%; 
+	    width: 100%;
+	    margin-top:-1%;
+        }
+        #creative-chart-description {
+	    height: 20%;
+	    width:100%;
+        }
+        #geochart {
+	    width:100%;
+	    height:100%;
+	    float: left;
+        }
+        #geochart-controll-pane {
+	    width: 100%;
+	    height: 100%;
+	    float: top;
+        }
+        #asdf {
+	    width: 100%;
+	    height: 45%;
+        }
+        #dropdown {
+	    width: 90%;
+	    height: 20px;
+	    margin-left: 5%;
+        }
+        main {
+            height: calc(100% - 100px);
+        }
+    </style>
+    <script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['geochart']}]}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+      function initialize() {
+        var mapCanvas = document.getElementById('map');
+        var mapOptions = {
+          center: new google.maps.LatLng(44.5403, -78.5463),
+          zoom: 8,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+    <script>
+      window.onresize = drawRegionsMap;
+      drawRegionsMap();
+      /*function load_notification(){
+	document.getElementById("geochart-controll-pane").innerHTML='<object type="text/html" data="t.html" ></object>';
+      }*/
+      
+      function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+          ['Country', 'Popularity'],
+          ['Germany', 200],
+          ['United States', 300],
+          ['Brazil', 400],
+          ['Canada', 500],
+          ['France', 600],
+          ['RU', 300]
+        ]);
+
+        var options = {
+          //region: '002', // Africa
+          colorAxis: {colors: ['#F0F0F0', 'black']},
+          backgroundColor: '#181818',
+          datalessRegionColor: 'gray',
+          defaultColor: '#f5f5f5',
+          fontName: 'Roboto'
+        };
+        
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.draw(data, options);
+        google.visualization.events.addListener(chart, 'regionClick', drawZoomedGeo);
+        function drawZoomedGeo(a) {
+	    var data = google.visualization.arrayToDataTable([
+		['Country'],
+		[a.region],
+	    ]);
+
+	    var options = {
+		region: a.region, 
+		colorAxis: {colors: ['#848484']},
+		backgroundColor: '#F2F2F2',
+		datalessRegionColor: '#2E2E2E',
+		defaultColor: '#848484',
+	    };
+        
+	    var chart = new google.visualization.GeoChart(document.getElementById('asdf'));
+
+	    chart.draw(data, options);
+	    google.visualization.events.addListener(chart, 'regionClick', drawZoomedGeo);
+	};
+	drawZoomedGeo({region:'150'});
+      }
+    </script>
+</head>
+<body>
+<div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+    <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
+        <div class="mdl-layout__header-row">
+            <span class="mdl-layout-title">Maps</span>
+            <div class="mdl-layout-spacer"></div>
+
+             <!--!!!!!!!!!!!!!!!!!!!-->
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+                    <i class="material-icons">search</i>
+                </label>
+
+                <div class="mdl-textfield__expandable-holder">
+                    <input class="mdl-textfield__input" type="text" id="search" />
+                    <label class="mdl-textfield__label" for="search">Enter your query...</label>
+                </div>
+            </div>
+
+            <div class=" mdl-js-ripple-effect " id="notification">
+                <i class="material-icons">notifications</i> <span class="mdl-badge" data-badge="10"></span>
+
+            </div>
+            <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="notification">
+                <li class="mdl-menu__item">messege 1</li>
+                <li class="mdl-menu__item">messege 2</li>
+                <li class="mdl-menu__item">messege 3</li>
+                <li class="mdl-menu__item">messege 3</li>
+            </ul>
+
+            <div class=" mdl-js-ripple-effect " id="inbox">
+
+                <i class="material-icons">mail</i><span class="mdl-badge" data-badge="4"></span>
+            </div>
+            <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="inbox">
+                <li class="mdl-menu__item">
+                    <header class="demo-drawer">
+                        <div class="demo-avatar-dropdown">
+                            <img src="images/card.jpg" class="demo-avatar">
+                            <div style="float: right">
+                                <span>From:</span>
+                                <span><b>Alex Bobko</b></b></span><br>
+                                <span><small><b>AlexBobkoAlexBobko@gmail.com</b></small></span>
+                            </div>
+                        </div>
+                        <div class="">
+                            <span><small>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Mauris sagittis pellentesque lacus eleifend lacinia...
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Mauris sagittis pellentesque lacus eleifend lacinia...
+                            </small></span>
+                        </div>
+                        <div class="demo-avatar-dropdown">
+                            <button id="" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent">Read</button>
+                            <div class="mdl-layout-spacer"></div>
+                            <button id="" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent">Reply</button>
+                        </div>
+                    </header>
+                </li>
+                <li class="mdl-menu__item">
+                    <header class="demo-drawer">
+                        <div class="demo-avatar-dropdown">
+                            <img src="images/card.jpg" class="demo-avatar">
+                            <div style="float: right">
+                                <span>From:</span>
+                                <span><b>Alex Bobko</b></b></span><br>
+                                <span><small><b>AlexBobko@gmail.com</b></small></span>
+                            </div>
+                        </div>
+                        <div class="">
+                            <span><small>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Mauris sagittis pellentesque lacus eleifend lacinia...
+                            </small></span>
+                        </div>
+                        <div class="demo-avatar-dropdown">
+                            <button id="" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent">Read</button>
+                            <div class="mdl-layout-spacer"></div>
+                            <button id="" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent">Reply</button>
+                        </div>
+                    </header>
+                </li>
+                <li class="mdl-menu__item">
+                    <header class="demo-drawer">
+                        <div class="demo-avatar-dropdown">
+                            <img src="images/card.jpg" class="demo-avatar">
+                            <div style="float: right">
+                                <span>From:</span>
+                                <span><b>Alex Bobko</b></b></span><br>
+                                <span><small><b>AlexBobko@gmail.com</b></small></span>
+                            </div>
+                        </div>
+                        <div class="">
+                            <span><small>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Mauris sagittis pellentesque lacus eleifend lacinia...
+                            </small></span>
+                        </div>
+                        <div class="demo-avatar-dropdown">
+                            <button id="" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent">Read</button>
+                            <div class="mdl-layout-spacer"></div>
+                            <button id="" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent">Reply</button>
+                        </div>
+                    </header>
+                </li>
+
+            </ul>
+
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="calendar">
+                <i class="material-icons">event_note</i>
+            </button>
+            <div class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-color--grey-100 mdl-shadow--16dp" for="calendar">
+
+                <div class="mdl-grid">
+                    <div ng-app="app" >
+                        <calendar></calendar>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </header>
+    <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+        <header class="demo-drawer-header">
+            <img src="images/card.jpg" class="demo-avatar">
+            <div class="demo-avatar-dropdown">
+                <div><span>Alex Bobko</span>
+                    <span><small>AlexBobko@gmail.com</small></span></div>
+                <div class="mdl-layout-spacer"></div>
+                <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                    <i class="material-icons" role="presentation">arrow_drop_down</i>
+                    <span class="visuallyhidden">Accounts</span>
+                </button>
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect mdl-color--grey-400" for="accbtn">
+                    <a href="profile.html"><li class="mdl-menu__item"><i class="material-icons" role="presentation">person</i>My Profile</li></a>
+                    <a href="#"><li class="mdl-menu__item"><i class="material-icons" role="presentation">settings</i>Settings</li></a>
+                    <a href="#"><li class="mdl-menu__item"><i class="material-icons" role="presentation">exit_to_app</i>Logout</li></a>
+                </ul>
+            </div>
+        </header>
+        <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
+            <a class="mdl-navigation__link" href="index.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Homepage</a>
+            <a class="mdl-navigation__link" href="profile.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">person</i>Profile</a>
+            <a class="mdl-navigation__link" href="todolist.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">assignment</i>ToDoList</a>
+
+            <div class="mdl-layout-spacer"></div>
+            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
+        </nav>
+    </div>
+    <main class="mdl-layout__content mdl-color--grey-100">
+        <div id="map-widget"  class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--4-col-desktop mdl-color--white mdl-shadow--2dp">
+	    <p style="font-size: 20px; color: black;">Google Maps</p>
+            <div id="map"></div>
+        </div>
+        <div id="geochart-widget" class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--4-col-desktop mdl-color--white  mdl-shadow--16dp">
+	    <div id="creative-chart" >
+		<div style="width:calc(100% + 20px); margin-left: -10px; margin-top: -10px" id="regions_div"></div>
+	    </div>
+	    <div style="height: 30%; margin-top:-5%" id="creative-chart-description" >
+		  <div id="region_description" style="height: 105%; margin-top: -3%; overflow-y: auto;overflow-x:hidden;">
+		      <div STYLE="height:100%; width: 100%; font-size: 12px;">
+				  <div style="width:70%;text-align:left; margin-left:3%;float:left;">
+				      <p style="font-size: 18px; color: black;line-height:1em;"><b>Germany</b></p>
+				      <p style="margin-top: -10px;font-size: 14px; color: gray;line-height:1em;text-align:right">Friday 13 Nov, 16:52:14</p>
+				      <p style="margin-top:-10px;font-family:'roboto';font-size: 12px; color: black;line-height:1.2em;text-align:justify">Are you a qualified professional and want to live and work in Germany? Do you want to study in Germany? Use this world map to get an overview of contacts and offers of German institutions in your country. You can find more information about German institutions here.</p>
+				  </div>
+				  <div style="width:25%;float:left"><img src="../../../images/Europe_Intro_345x225.jpg" alt="Mountain View" style="float:left;	width:95%; margin-left:15%;margin-top:0%"></div>
+		      </div>
+		  </div>
+	    </div>
+	</div>
+    </main>
+</div>
+
+    <!-- inject:js -->
+    <!-- endinject -->
+</body>
+</html>
