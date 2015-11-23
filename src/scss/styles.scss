@@ -231,23 +231,19 @@ _:-ms-input-placeholder, :root .demo-graph {
   text-decoration: none;
 }
 
-.demo-options h5 {
-  margin: 0 0 10px 0;
-}
-
-.demo-options ul {
+#to-do-list ul {
   margin: 0;
   list-style-type: none;
 }
-.demo-options li {
-  margin: 4px 0;
-}
+/*#to-do-list li {*/
+  /*margin: 4px 0;*/
+/*}*/
 
 .is-checked .mdl-checkbox__label {
     text-decoration: line-through;
 }
 
-.demo-options .mdl-card__actions {
+#to-do-list .mdl-card__actions {
   height: 64px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -334,10 +330,6 @@ div.mdl-cell.mdl-card.mdl-shadow--4dp.mdl-cell--4-col.mdl-cell--12-col-tablet > 
 .mdl-cell--4-col table {
     border:  0px;
     margin-top: 10px;
-}
-
-.mdl-card__supporting-text span {
-    margin-bottom: 15px;
 }
 
 .mdl-cell.mdl-cell--8-col .status {
@@ -521,6 +513,87 @@ table .mdl-progress {
 }
 
 .mdl-data-table th {
-    background-color: rgba(0, 75, 13, 0.19);
-    font-size: 14px;
+    background: #C2C7C6;
+    height: 61px;
+    font-size: 20px;
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+}
+
+::-webkit-scrollbar{
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb{
+    border-width:1px 1px 1px 2px;
+    border-color: #777;
+    background-color: #aaa;
+    margin-right: 2px;
+    /*border-right: solid 5px #eee;*/
+}
+
+::-webkit-scrollbar-thumb:hover{
+    border-width: 1px 1px 1px 2px;
+    border-color: #555;
+    background-color: #777;
+}
+
+::-webkit-scrollbar-track{
+    border-width:0;
+}
+
+::-webkit-scrollbar-track:hover{
+    border-left: solid 1px #aaa;
+    background-color: #eee;
+}
+
+.tranding {
+    list-style-type: none;
+    width: 100%;
+    padding-left: 0px;
+}
+
+.tranding li {
+    padding: 5px 5px;
+}
+
+.tranding-icons{
+    margin-right: 5px;
+    font-size: 18px;
+}
+
+.tranding i{
+    vertical-align: text-bottom;
+}
+
+.mdl-grid > .mdl-cell > .mdl-card {
+     width: 100%;               //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ }
+
+.is-up {
+    color: #00c853;
+}
+
+.is-down {
+    color: #e51c23;
+}
+
+.tranding span > div {
+    display: inline-block;
+    text-align: right;
+    width: 24px !important;
+}
+.tranding li:hover {
+    background-color: rgba(236, 236, 236, 0.36);
+}
+
+#tranding .mdl-card__title, #to-do-list .mdl-card__title {
+    background: #C2C7C6;
+}
+
+.mdl-card__actions a {
+    text-transform: none;
+}
+
+.float-right {
+    float: right;
 }

@@ -7,22 +7,7 @@
  */
 'use strict'
 
-function animationPath(pie, r, i) {
-    var start, end;
-    if ((r > 0.5) || (r < 0.4)) {
-        start = end = 0;
-        return;
-    };
 
-    x = calculateX(pie.angelStart, r);
-    y = calculateY(pie.angelStart, r);
-    start = 'M ' + x + ' ' + y;
-    x = calculateX(pie.angelEnd, r);
-    y = calculateY(pie.angelEnd, r);
-    end = '0 0 1 ' + x + ' ' + y;
-    paths[i].setAttribute('d', start + ' A '+ r +' '+ r +' '+ end + pie.endIn + ' A '+ rIn + ' ' + rIn + ' ' + pie.startIn );
-
-}
 
 var data = {books: 80, magazines: 120, newspapers: 30, posters:60, brochures:70};
 var pies = [];
@@ -83,24 +68,38 @@ i = 0;
 sum = pies[i].angelEnd;
 color = pies[i].color;
 
+var trandingDivs = document.querySelectorAll(".tranding div");
 var marker = document.querySelectorAll(".demo-chart:last-child .marker");
 var arrayLi = document.querySelectorAll(".demo-chart:last-child .legend li");
 marker[i].style.background = 'rgba(55'  + ', ' + color +', 255, 0.75)';
 arrayLi[i].innerHTML += pies[i].name;
 var timerId;
-window.onload = function () { timerId = setInterval(animation, 10);};
+
+window.onload = function () { timerId = setInterval(animation, 30); };
+
 function animation() {
 
 
-    if (j == 360) {
+    if (j >= 370) {
+
         clearInterval(timerId);
+        paths = document.querySelectorAll("#svg4 path");
+        for (i = 0; i < paths.length; i++) {
+            paths[i].addEventListener('mouseenter', select);
+            paths[i].addEventListener('mouseleave', select);
+            arrayLi[i].addEventListener('mouseenter', select);
+            arrayLi[i].addEventListener('mouseleave', select);
+        };
+        setTimeout(function () {
+                    document.querySelector("#p2 > .progressbar").style.boxShadow = "0 0 0 red";
+                    document.querySelector("#p1 > .progressbar").style.boxShadow = "0 0 0 #00ff00";
+    }, 150);
+        return;
     };
 
     if (j > sum) {
-
-
         stat = stat + '<path id=\"path' + i +'\"  d=\"' + pies[i].start + ' A ' + r + ' ' + r + ' ' + pies[i].end + pies[i].endIn + ' A '+ rIn + ' ' + rIn + ' ' + pies[i].startIn + '\" ' +
-            'fill=\"rgba(55'  +', ' + color +', 255, 0.75)\" onmouseenter=\"select(event)\" onmouseleave=\"select(event)\"/>';
+            'fill=\"rgba(55'  +', ' + color +', 255, 0.75)\" />';
         i++;
         start = 'L ' + x + ' ' + y + ' ';
         color = pies[i].color;
@@ -119,27 +118,40 @@ function animation() {
         '<text x="0.5" y="0.56" font-family="Roboto" font-size="0.2px" fill="#888" text-anchor="middle">'+ percent +'%</text>'+
         stat + '<path id=\"path' + i +'\" d=\"' + pies[i].start + ' A ' + r + ' ' + r + ' 0 0 1 ' + x + ' ' + y +
         ' L ' + x1 + ' ' + y1 + ' A ' + rIn + ' ' + rIn + ' ' + pies[i].startIn + '\" ' +
-        'fill=\"rgba(55'  +', ' + color +', 255, 0.75)\" onmouseenter=\"select(event)\" onmouseleave=\"select(event)\"/>';
+        'fill=\"rgba(55'  +', ' + color +', 255, 0.75)\" />';
 
-
-
+// animation tranding widget numbers
     document.querySelector("#svg4").innerHTML = path;
-    j++; j++;j++; j++;
+    for (var k = 0; k < trandingDivs.length; k++) {
+        trandingDivs[k].innerHTML = Math.round(Math.random()*20 + 1) + "%";
+    }
+//---------
+
+// animation likeDislike widget bars
+
+    if (j%3 == 0) {
+        document.querySelector("#p1 > .progressbar").style.boxShadow = "0 0 10px #00ff00";
+        document.querySelector("#p2 > .progressbar").style.boxShadow = "0 0 10px red";
+        document.querySelector('#p1').MaterialProgress.setProgress(like);
+        document.querySelector('#p2').MaterialProgress.setProgress(dislike);
+        like += 2.5;
+        dislike += 1;
+    }
+//---------
+
+    j+=10;
 }
 
 var str = "";
 var i = 0;
 var paths;
-var idd;
 var end;
 var t = 5;
-function getPath(event) {
-    idd = event.target.id;
-    paths = document.querySelectorAll("#" + idd + " path")
-};
+
 
 
 function select(event) {
+    //alert(event.target.id);
     var id = event.target.id;
     if (isNaN(id)) {
         id = id.slice(4);
@@ -153,7 +165,7 @@ function select(event) {
             t += 5;
         };
         var text = Math.round(100*(pies[id].angelEnd - pies[id].angelStart)/360) + '%';
-        document.querySelector('#'+ idd +" text").innerHTML = text;
+        document.querySelector("#svg4 text").innerHTML = text;
         pies[id].radius = 0.5;
         t = 5;
         paths[id].setAttribute('stroke', '#802420');
@@ -164,15 +176,29 @@ function select(event) {
             r = (r*100 - 1)/100;
             t += 5;
         }
-        document.querySelector('#'+ idd +" text").innerHTML = "100%";
+        document.querySelector("#svg4 text").innerHTML = "100%";
         pies[id].radius = 0.4;
         t = 5;
         paths[id].setAttribute('stroke', 'none');
     };
 
-}
+};
 
+function animationPath(pie, r, i) {
+    var start, end;
+    if ((r > 0.5) || (r < 0.4)) {
+        start = end = 0;
+        return;
+    };
 
+    x = calculateX(pie.angelStart, r);
+    y = calculateY(pie.angelStart, r);
+    start = 'M ' + x + ' ' + y;
+    x = calculateX(pie.angelEnd, r);
+    y = calculateY(pie.angelEnd, r);
+    end = '0 0 1 ' + x + ' ' + y;
+    paths[i].setAttribute('d', start + ' A '+ r +' '+ r +' '+ end + pie.endIn + ' A '+ rIn + ' ' + rIn + ' ' + pie.startIn );
+};
 
 
 function calculateX(angel, r) {
@@ -211,11 +237,13 @@ function calculateY(angel, r) {
 
 // Like-DisLike widget
 
-var like = 35, dislike = 15;
+var like = 1, dislike = 1;
 var likeButton = document.querySelector('#likeButton');
-var dislikeButton  = document.querySelector('#dislikeButton');
+var dislikeButton = document.querySelector('#dislikeButton');
+var likeTime = Math.round(90/35), dislikeTime = Math.round(90/15);
 
 likeButton.addEventListener('click', function(){
+    document.querySelector('#likeButton > .material-icons').style.marginTop='-4px';
     document.querySelector("#p1 > .progressbar").style.boxShadow = "0 0 10px #00ff00";
     setTimeout(function(){
         document.querySelector("#p1 > .progressbar").style.boxShadow = "0 0 0 #00ff00";
@@ -225,9 +253,10 @@ likeButton.addEventListener('click', function(){
     setTimeout(function() {
         document.querySelector('#likeButton > .material-icons').style.marginTop = '0px';
     }, 200);
-})
+});
 
 dislikeButton.addEventListener('click', function(){
+    document.querySelector('#dislikeButton > .material-icons').style.marginTop='4px';
     document.querySelector("#p2 > .progressbar").style.boxShadow = "0 0 10px red";
 
         setTimeout(function(){
@@ -238,15 +267,9 @@ dislikeButton.addEventListener('click', function(){
     setTimeout(function() {
         document.querySelector('#dislikeButton > .material-icons').style.marginTop = '0px';
     }, 200);
-})
-
-document.querySelector('#p1').addEventListener('mdl-componentupgraded', function() {
-    this.MaterialProgress.setProgress(like);
 });
 
-document.querySelector('#p2').addEventListener('mdl-componentupgraded', function() {
-    this.MaterialProgress.setProgress(dislike);
-});
+// google grafic widget
 
 google.load("visualization", "1", {packages:["corechart"]});
 google.setOnLoadCallback(drawChart);
@@ -281,7 +304,7 @@ function drawChart() {
     ]);
 
     var options = {
-        chartArea:{left: 50, width: '92%'},
+        chartArea:{left: '4%', right:50, width: '93%'},
         forceIFrame: false,
         legend: {position: 'in', maxLines: 3},
         title: 'Company Performance',
@@ -292,11 +315,58 @@ function drawChart() {
                     "easing": 'out'
                     },
         isStacked: 'absolute',
+
         lineWidth: 1
         //width: 500
     };
 
     var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
     chart.draw(data, options);
-}
+};
 
+// google pie-chars widget
+
+google.load("visualization", "1", {packages:["corechart"]});
+google.setOnLoadCallback(drawChartPie);
+function drawChartPie() {
+    var data = google.visualization.arrayToDataTable([
+        ['Task', 'Hours per Day'],
+        ['Work',     11],
+        ['Eat',      2],
+        ['Commute',  2],
+        ['Watch TV', 2],
+        ['Sleep',    7]
+    ]);
+
+    var options = {
+        title: 'My Daily Activities',
+        chartArea: {left:20, top:20, width:'100%', height:'80%'},
+        pieHole: 0.83,
+        height: 150,
+        pieSliceText: 'none',
+        tooltip: {isHtml: true},
+        legend: {position: 'right'}
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+    chart.draw(data, options);
+};
+
+// table widget
+
+document.querySelector('#p3').addEventListener('mdl-componentupgraded', function() {
+    this.MaterialProgress.setProgress(33);
+    this.MaterialProgress.setBuffer(77);
+});
+
+document.querySelector('#p4').addEventListener('mdl-componentupgraded', function() {
+    document.querySelector('#p4 > .progressbar').style.backgroundColor = "red";
+    this.MaterialProgress.setProgress(45);
+    this.MaterialProgress.setBuffer(77);
+});
+
+document.querySelector('#p5').addEventListener('mdl-componentupgraded', function() {
+    document.querySelector('#p5 > .progressbar').style.backgroundColor = "#F00098";
+    this.MaterialProgress.setProgress(85);
+    this.MaterialProgress.setBuffer(87);
+});

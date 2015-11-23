@@ -11,18 +11,35 @@ var plumber = require( 'gulp-plumber' ),
 	rename = require( 'gulp-rename' ),
 	sass = require( 'gulp-sass' ),
 	clean = require( 'gulp-clean' ),
-	del = require('del');
+	del = require('del'),
+	browserSync = require('browser-sync');
+	//reload = browserSync.reload;
 
 var onError = function( err ) {
 	console.log( 'An error occurred:', err.message );
 	this.emit( 'end' );
 }
 
+gulp.task('browser-sync', function () {
+  var files = [
+    './dist/*.html',
+    './dist/css/**/*.css',
+    './dist/js/**/*.js'
+  ];
+  
+  browserSync.init(files, {
+    server: {
+      baseDir: './dist'
+    }
+  });
+});
+
 gulp.task( 'scss', function() {
-	return gulp.src( './src/scss/application.scss' )
+	return gulp.src( './src/scss/zapplication.scss' )
 		.pipe( plumber( { errorHandler: onError } ) )
 		.pipe( sass() )
-		.pipe( gulp.dest( './dist/css' ) );
+		.pipe( gulp.dest( './dist/css' ));
+		//.pipe(reload({stream: true}));
 } );
 
 gulp.task('babel', ['scss'], function() {
@@ -44,23 +61,33 @@ gulp.task( 'jshint', ['babel', 'scss'], function() {
 		.pipe(jshint.reporter(stylish));
 } );
   
-gulp.task('default', ['cleanDist','jshint', 'babel'], function () {
+gulp.task('default', ['cleanDist','jshint', 'babel', 'copyJsLib'], function () {
 	gulp.src('src/fonts/**/*')
 		.pipe(gulp.dest('dist/fonts'));
 	gulp.src('src/images/**/*')
 		.pipe(gulp.dest('dist/images'));
-		
 	gulp.src('src/**/*.html')
 		.pipe(gulp.dest('dist/'))
-		.pipe(inject(gulp.src(['bower_components/material-design-lite/material.min.js', 'bower_components/material-design-lite/material.min.css', 'dist/**/*.js', 'dist/**/*.css'], {read: false}), {relative: true}))
+		.pipe(inject(gulp.src(['dist/js/*.js', 'dist/css/*.css'], {read: false}), {relative: true}))
 		.pipe(gulp.dest('dist/'));
+		//.pipe(reload({stream: true}));
+});
+
+gulp.task('copyJsLib', ['copyCssLib'], function () {
+  	return gulp.src('bower_components/material-design-lite/material.min.js')
+		.pipe(gulp.dest('dist/js'));
+});
+
+gulp.task('copyCssLib', ['cleanDist'], function () {
+	return gulp.src('bower_components/material-design-lite/material.min.css')
+		.pipe(gulp.dest('dist/css'));
 });
 
 gulp.task('cleanDist', function() {
   return del('dist/**/*');
 });
 
-gulp.task('copySrcJsForTheBuild', ['cleanDist'], function() {
+gulp.task('copySrcForTheBuild', ['cleanDist'], function() {
 	return gulp.src('src/**/*.js')
 	  .pipe(rename( { suffix: '.min' }))
 	  .pipe(gulp.dest( 'dist/' ))
@@ -68,42 +95,23 @@ gulp.task('copySrcJsForTheBuild', ['cleanDist'], function() {
 	  .pipe(babel())
 	  .pipe(gulp.dest('dist/'))
 	  .pipe(uglify())
-	  .pipe(gulp.dest('dist/'));
-});
-
-gulp.task('copySrcScssForTheBuild', ['copySrcJsForTheBuild'], function() {
-	return gulp.src('src/scss/application.scss')
+	  .pipe(gulp.dest('dist/'))
+	.pipe(gulp.src('src/scss/application.scss')
 	  .pipe( plumber( { errorHandler: onError } ))
 	  .pipe(sass())
 	  .pipe(minifycss())
 	  .pipe(rename( { suffix: '.min' }))
-	  .pipe(gulp.dest('dist/css'));
+	  .pipe(gulp.dest('dist/css')));
 });
 
-gulp.task('copySrcForTheBuild', ['copySrcJsForTheBuild', 'copySrcScssForTheBuild'], function() {
+gulp.task('build', ['copySrcForTheBuild', 'copyJsLib'], function() {
 	gulp.src('src/fonts/**/*')
 		.pipe(gulp.dest('dist/fonts'));
 	gulp.src('src/images/**/*')
 		.pipe(gulp.dest('dist/images'));
-	
-})
-
-gulp.task('copyMDLCss', ['copySrcForTheBuild'], function() {
-	return gulp.src('bower_components/material-design-lite/material.min.css')
-		.pipe(gulp.dest('dist/css'));
-})
-
-gulp.task('copyMDLJs', ['copyMDLCss'], function() {
-	return gulp.src('bower_components/material-design-lite/material.min.js')
-		.pipe(gulp.dest('dist/js'));
-})
-
-gulp.task('copyBowerComponents', ['copyMDLCss', 'copyMDLJs'], function() {
-})
-
-gulp.task('build', ['cleanDist', 'copySrcForTheBuild', 'copyMDLCss', 'copyMDLJs'], function() {
 	gulp.src('src/**/*.html')
 		.pipe(gulp.dest('dist/'))
 		.pipe(inject(gulp.src(['dist/**/*.min.js', 'dist/**/*.min.css'], {read: false}), {relative: true}))
 		.pipe(gulp.dest('dist/'));
+		//.pipe(reload({stream: true}));
 });
