@@ -44,35 +44,100 @@
 
     <script type="text/javascript" src="https://www.google.com/jsapi" ></script>
 
-
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- inject:css -->
-    <link rel="stylesheet" href="../bower_components/material-design-lite/material.min.css">
-    <link rel="stylesheet" href="css/application.min.css">
     <!-- endinject -->
    <!-- <link rel="stylesheet" href="css/styles.css">-->
     <style>
         #employer-form {
             width: 880px;
-           /* height: 700px;*/
             margin-top: 3%;
             margin-left: 20%;
             
         }
+        
         #employer-form div {
 	    display: inline-block;
+	}
+	
+	#employer-form .mdl-radio {
+	    width: 100%;
+	}
+	
+	#employer-form>div {
+	    padding-top:20px; 
+	    padding-left:80px; 
+	    width: 82%;
         }
+        
+        #employer-form p {
+	    font-size:20px; 
+	    font-family: 'roboto';
+	    line-size: 1em;
+	    margin-bottom:0;
+	    padding-top:0px;
+	    padding-bottom:0;
+        }
+        
+        #employer-form>div>div>p{
+	    padding-top: 20px;
+	    font-size: 16px;
+        }
+        
+        #employer-form>div>div {
+	    width: 100%;
+        }
+        
         #employer-form label {
 	    font-size: 14px;
 	    font-family: "roboto";
 	    color: gray;
         }
+        
         #employer-form input {
 	    font-size: 16px;
 	    font-family: "roboto";
         }
         
+        #employer-form .align-left {
+	    float:left;
+	    margin-left: 0px;
+	    width:47%;
+        }
+        
+        #employer-form .align-right {
+	    float: left;
+	    margin-left: 4%;
+	    width: 49%;
+        }
+        
+         #employer-form .align-left > div,  #employer-form .align-right > div {
+	    width: 100%;
+         }
+        
+        .creative-dropdown>.mdl-icon-toggle {
+	    float:right;
+	    margin-top:-30px;
+        }
+        
+        .creative-dropdown>.mdl-icon-toggle>i {
+	    color: gray;
+        }
+        
+        #general_skills {
+	    margin-top: -20px;
+	    margin-left: 0;
+	    width: 100%;
+        }
+        
+        #general_skills div {
+	    width: 100%;
+        }
+        
+        #submit_button {
+	    margin-left: 82%;
+        }
     </style>
 
 </head>
@@ -80,6 +145,7 @@
 <script>
     var event;
 </script>
+
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
 <header class="demo-header mdl-layout__header mdl-color--white mdl-color--grey-100 mdl-color-text--grey-600">
     <div class="mdl-layout__header-row">
@@ -232,107 +298,134 @@
 </div>
 <main class="mdl-layout__content mdl-color--grey-100">
         <div id="employer-form"  class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--4-col-desktop mdl-color--white mdl-shadow--2dp">
-		<div  style="padding-top:20px; padding-left:80px; width: 80%">
-			<p style="font-size:20px; font-family: 'roboto'; line-size: 1em; margin-bottom:0"><b>Employer</b></p>
-			<div style="width:100%">
+		<div>
+			<p><b>Employer</b></p>
+			<div>
 				<!--form action="#"-->
-					<div style="float:left; margin-left: 0px; width: 48%" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-						<input class="mdl-textfield__input" type="text" id="sample3" />
-						<label class="mdl-textfield__label" for="sample3">First name</label>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label align-left">
+						<input class="mdl-textfield__input" type="text" id="firstName" />
+						<label class="mdl-textfield__label" for="firstName">First name</label>
 					</div>
-					<div style="float:left; margin-left:7%; width: 45%" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-						<input class="mdl-textfield__input" type="text" id="sample3" />
-						<label class="mdl-textfield__label" for="sample3">Second name</label>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label align-right">
+						<input class="mdl-textfield__input" type="text" id="secondName" />
+						<label class="mdl-textfield__label" for="secondName">Second name</label>
 					</div>
 				<!--/form-->
 			</div>
-			<div style="width:100%">
-				<!--form action="#"-->
-					<div style="float: left; margin-left: 0px; width:48%" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-						<input class="mdl-textfield__input" type="text" id="sample3" />
-						<label class="mdl-textfield__label" for="sample3">Position</label>
-					</div>
-					<div style="float:left; margin-left:7%; width:45%" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-						<input class="mdl-textfield__input" type="text" id="sample3" />
-						<label class="mdl-textfield__label" for="sample3">Qualification</label>
-					</div>
-				<!--/form-->
+			<div>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label align-left">
+					<input class="mdl-textfield__input" type="text" id="position" />
+					<label class="mdl-textfield__label" for="position">Position</label>
+				</div>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label creative-dropdown align-right">
+					<input class="mdl-textfield__input" value="Junior" type="text" id="qualification" readonly tabIndex="-1"/>
+					<label class="mdl-textfield__label" for="qualification">Qualification</label>
+					<ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu" for="qualification">
+						<li class="mdl-menu__item">Junior</li>
+						<li class="mdl-menu__item">Middle</li>
+						<li class="mdl-menu__item">Senior</li>
+					</ul>
+					<label class="mdl-icon-toggle mdl-js-icon-toggle" for="qualification">
+					    <input type="checkbox" id="qualification" class="mdl-icon-toggle__input"/>
+					    <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+					</label>
+				</div>
 			</div>
 		</div>
-		<div  style="float: left; padding-top:20px; padding-left:80px; width:40%">
-			<p style="font-size:20px; font-family: 'roboto'; line-size:1em; margin-bottom: 0"><b>Contact info</b></p>
+		<div >
+			<p><b>Contact info</b></p>
 			<div>
-				<!--form action="#"-->
-					<div style="float:left; margin-left: 0px; width:45%" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-						<input class="mdl-textfield__input" value="Belarus" type="text" id="samp3" readonly tabIndex="-1"/>
-						<label class="mdl-textfield__label" for="samp3">Country</label>
-
-						<ul style="width:170px" class="mdl-menu mdl-menu--bottom-left mdl-js-menu" for="icon-toggle-1">
-							<li class="mdl-menu__item">Brazil</li>
-							<li class="mdl-menu__item">Germany</li>
-							<li disabled class="mdl-menu__item">Russia</li>
-							<li class="mdl-menu__item">France</li>
-						</ul>
-						<!--button style="width:100%" id="demo-menu-lower-left" class="mdl-button">
-							<i style="margin-left:90% " class="material-icons">keyboard_arrow_down</i>
-						</button-->
-						<label style="float:left; margin-top:-30px; margin-left:80%" class="mdl-icon-toggle mdl-js-icon-toggle" for="icon-toggle-1">
-						    <input type="checkbox" id="icon-toggle-1" class="mdl-icon-toggle__input" checked />
-						    <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
-						</label>
-					</div>
-
-					<div style="float:left; margin-left:5%; width: 45%" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-						<input class="mdl-textfield__input" type="text" id="sample3" />
-						<label class="mdl-textfield__label" for="sample3">Text  with Floating Label...</label>
-					</div>
-				<!--/form-->
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label creative-dropdown align-left">
+					<input class="mdl-textfield__input" value="Belarus" type="text" id="country" readonly tabIndex="-1"/>
+					<label class="mdl-textfield__label" for="country">Country</label>
+					<ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu" for="country">
+						<li class="mdl-menu__item">Brazil</li>
+						<li class="mdl-menu__item">Germany</li>
+						<li class="mdl-menu__item">Russia</li>
+						<li class="mdl-menu__item">France</li>
+						<li class="mdl-menu__item">Belarus</li>
+					</ul>
+					<label class="mdl-icon-toggle mdl-js-icon-toggle" for="country">
+					    <input type="checkbox" id="country" class="mdl-icon-toggle__input"/>
+					    <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+					</label>
+				</div>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label align-right">
+					<input class="mdl-textfield__input" type="text" id="Address" />
+					<label class="mdl-textfield__label" for="Address">Address</label>
+				</div>
 			</div>
 			<div>
-				<!--form action="#"-->
-					<div style="float: left; margin-left: 0px; width:45%" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-						<input class="mdl-textfield__input" type="text" id="sample3" />
-						<label class="mdl-textfield__label" for="sample3">Text  with Floating Label...</label>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label align-left">
+					<input class="mdl-textfield__input" type="text" id="Phone" />
+					<label class="mdl-textfield__label" for="Phone">Phone</label>
+				</div>
+				<form action="#" class="align-right">
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" type="text" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" id="E-mail" />
+						<label class="mdl-textfield__label" for="E-mail">E-mail</label>
+						<span class="mdl-textfield__error">Input is not a valid e-mail address!</span>
 					</div>
-					<div style="float:left; margin-left:5%;width:45%" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-						<input class="mdl-textfield__input" type="text" id="sample3" />
-						<label class="mdl-textfield__label" for="sample3">Text  with Floating Label...</label>
-					</div>
-				<!--/form-->
+				</form>
+			</div>
+			<div>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label align-left">
+					<input class="mdl-textfield__input" type="text" id="skype" />
+					<label class="mdl-textfield__label" for="skype">Skype</label>
+				</div>
 			</div>
 		</div>
-		<div  style="float: left; padding-top:20px; padding-left:20px; width:40%; margin-bottom:0">
-			<p style="font-size:20px; font-family: 'roboto'; line-size:1em; padding-top:0px"><b>Company</b></p>
+		<div>
+			<p><b>Company</b></p>
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<input class="mdl-textfield__input" type="text" id="CompanyName" disabled tabIndex="-1" value="CreativeIT"/>
+				<label class="mdl-textfield__label" for="CompanyName">Company name</label>
+			</div>
 			<div>
-				<label class="mdl-checkbox mdl-js-checkbox" for="checkbox-1">
-					<input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" checked />
-					<span class="mdl-checkbox__label">Checkbox</span>
+				<label class="mdl-checkbox mdl-js-checkbox" for="checkCoffeeBug">
+					<input type="checkbox" id="checkCoffeeBug" class="mdl-checkbox__input" checked />
+					<span class="mdl-checkbox__label">Make bugs without coffee</span>
 				</label>
-				<label class="mdl-checkbox mdl-js-checkbox" for="checkbox-2">
-					<input type="checkbox" id="checkbox-2" class="mdl-checkbox__input" />
-					<span class="mdl-checkbox__label">Checkbox</span>
+				<label class="mdl-checkbox mdl-js-checkbox" for="checkCodeForFood">
+					<input type="checkbox" id="checkCodeForFood" class="mdl-checkbox__input" />
+					<span class="mdl-checkbox__label">Will code for food</span>
 				</label>
-            </div>
+			</div>
+			<div>
+				<p>Type of employment</p>
+				<label class="mdl-radio mdl-js-radio" for="partition-fulltime">
+					<input type="radio" id="partition-fulltime" class="mdl-radio__button" name="options" value="1" checked />
+					<span class="mdl-radio__label">Fulltime</span>
+				</label>
+				<label class="mdl-radio mdl-js-radio" for="partition-partTime">
+					<input type="radio" id="partition-partTime" class="mdl-radio__button" name="options" value="2" />
+					<span class="mdl-radio__label">Part time</span>
+				</label>
+				<label class="mdl-radio mdl-js-radio" for="partition-remote">
+					<input type="radio" id="partition-remote" class="mdl-radio__button" name="options" value="3" />
+					<span class="mdl-radio__label">Remote</span>
+				</label>
+			</div>
 			
 		</div>
-		<div  style="float: left; padding-top:20px; padding-left:80px; width:80%; margin-bottom:0">
-			<p style="font-size:20px; font-family: 'roboto'; line-size:1em; padding-top:0px"><b>General skills</b></p>
-			<form style="margin-top: -20px;margin-left:0; width: 100%" action="#">
-				<div style="width: 100%;" class="mdl-textfield mdl-js-textfield">
-					<textarea class="mdl-textfield__input" type="text" rows= "3" id="sample5" ></textarea>
-					<label class="mdl-textfield__label" for="sample5">About me</label>
+		<div>
+			<p><b>General skills</b></p>
+			<form id="general_skills" action="#">
+				<div class="mdl-textfield mdl-js-textfield">
+					<textarea class="mdl-textfield__input" type="text" rows= "3" id="AboutMe" ></textarea>
+					<label class="mdl-textfield__label" for="AboutMe">About me</label>
 				</div>
 			 </form>
 		</div>
-		<div  style="float: bottom; margin-bottom:0px; padding-left:5%; width:90%; height: 80px">
-			<div style=" margin-left: 5%; float:left; padding-top: 10px">
+		<div>
+			<div class="align-left">
 				<label class="mdl-radio mdl-js-radio">
 				<input type="checkbox" class="mdl-radio__button" checked />
 				<span class="mdl-radio__label">I do accept company policy</span>
 				</label>
 			</div>
-			<div style="float:left;  margin-left:52%">
-				  <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+			<div class="align-right">
+				  <button id="submit_button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
 					Submit
 				</button>
 			</div>
@@ -342,9 +435,6 @@
 </div>
 <!--<link rel="stylesheet" href="../bower_components/material-design-lite/material.min.css">-->
   <!-- inject:js -->
-  <script src="../bower_components/material-design-lite/material.min.js"></script>
-  <script src="js/calendar.min.js"></script>
-  <script src="js/pieChart.min.js"></script>
   <!-- endinject -->
 <!--<script type="text/javascript" src="https://www.google.com/jsapi" defer></script>-->
 </body>
