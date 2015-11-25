@@ -10,4 +10,6 @@ src/.sass-cache/
 
 .temp
 
-dist
+lib
+
+public

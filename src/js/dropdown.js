@@ -1,33 +1,45 @@
 'use strict'
 
-window.onload = function () {
-    var dropdowns = document.getElementsByClassName("creative-dropdown");
+window.onload =  () => {
+    let dropdowns = document.getElementsByClassName("creative-dropdown");
     
-    for (var i = 0; i < dropdowns.length; ++i) {
-	addEventListeners(dropdowns[i]);
+    dropdowns = {
+  [Symbol.iterator]() {
+    let pre = 0, cur = 1;
+    return {
+      next() {
+        [pre, cur] = [cur, pre + cur];
+        return { done: false, value: cur }
+      }
+    }
+  }
+}
+    
+    for (let i of dropdowns) {
+	addEventListeners(i);
     }
 }
     
 function addEventListeners(el) {
-    var children = el.childNodes;
-    var dropdown;
+    let children = el.childNodes;
+    let dropdown;
     
     dropdown = fetchDropdown(children);
     
     if (dropdown == undefined)
 	return;
     
-    dropdown.onfocus = function() {
+    dropdown.onfocus = () => {
 	this.toggle.checked = true;
 	this.icon.style.color = "rgb(63, 81, 181)";
     }
     
-    dropdown.onblur = function() {
+    dropdown.onblur = () => {
 	this.toggle.checked = false;
 	this.icon.style.color = "gray";
     }
     
-    var ul = findUlElement(children);
+    let ul = findUlElement(children);
     
     if (ul != undefined) {
 	addSelectEventsForDropLi(ul, dropdown);
@@ -35,13 +47,13 @@ function addEventListeners(el) {
 }
 
 function addSelectEventsForDropLi(ul, dropdown) {
-    var j;
-    for (j = 0; j < ul.childNodes.length; ++j) {
+  
+    for (let j of ul.childNodes) {
 	  
-	if (ul.childNodes[j].tagName === "LI") {
-	    ul.childNodes[j].inputEl = dropdown;
+	if (j.tagName === "LI") {
+	    j.inputEl = dropdown;
 
-	    ul.childNodes[j].onclick = function () {
+	    j.onclick = () => {
 		this.inputEl.value = this.textContent;
 	    }
 	}
@@ -49,48 +61,57 @@ function addSelectEventsForDropLi(ul, dropdown) {
 }
 
 function findUlElement(children) {
-    var ul;
-    var i;
-    for (i = 0; i < children.length; ++i) {
+    let ul;
+    for (let i of children) {
 	    
-	    if (children[i].tagName === "DIV") {
+	    if (i.tagName === "DIV") {
 	      
-		for (j = 0; j < children[i].childNodes.length; ++j) {
+		for (let j of i) {
 		  
-		    if (children[i].childNodes[j].tagName === "UL") {
-			ul = children[i].childNodes[j];
+		    if (j.tagName === "UL") {
+			ul = j;
 			break;
 		    }
 		}
 	    }
 	    
-	    if (children[i].tagName === "UL")
-		ul = children[i];
+	    if (i.tagName === "UL")
+		ul = i;
 	}
 
     return ul;
 }
 
 function fetchDropdown(children) {
-    var dropdown;
-    var i, j;
-    var toggle, 
+    let dropdown;
+    let toggle, 
 	icon;
-    for (i = 0; i < children.length; ++i) {
+    children = {
+	[Symbol.iterator]() {
+	let pre = 0, cur = 1;
+	    return {
+		next() {
+		    [pre, cur] = [cur, pre + cur];
+		    return { done: false, value: cur }
+		}
+	    }
+	}
+    }
+    for (let i of children) {
       
-	if (children[i].tagName === "INPUT") {
-	    dropdown = children[i];
+	if (i.tagName === "INPUT") {
+	    dropdown = i;
 	}
 
-	if (children[i].tagName === "LABEL" && (' ' + children[i].className + ' ').indexOf(' ' + 'mdl-icon-toggle' + ' ') > -1) {
+	if (i.tagName === "LABEL" && (` ${i.className} `).indexOf(` mdl-icon-toggle `) > -1) {
 	  
-	    for (j = 0; j < children[i].childNodes.length; ++j) {
+	    for (let j of i.childNodes) {
 	      
-		if (children[i].childNodes[j].tagName === "INPUT")
-		    toggle = children[i].childNodes[j];
+		if (j.tagName === "INPUT")
+		    toggle = j;
 		
-		if (children[i].childNodes[j].tagName === "I")
-		    icon = children[i].childNodes[j];
+		if (j.tagName === "I")
+		    icon = j;
 	    }
 	}
     }
