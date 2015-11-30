@@ -73,7 +73,7 @@ gulp.task('default', ['cleanDist','jshint', 'babel', 'copyJsLib'], function () {
 		//.pipe(reload({stream: true}));
 });
 
-gulp.task('copyJsLib', ['copyCssLib'], function () {
+gulp.task('copyJsLib', ['cleanDist'], function () {
   	return gulp.src('bower_components/material-design-lite/material.min.js')
 		.pipe(gulp.dest('dist/js'));
 });
