@@ -58,6 +58,9 @@
             margin-bottom: 40px;
             z-index: 900;
         }
+        .mdl-layout__header-row {
+	    background-color: #424242;
+        }
     </style>
 
 </head>
@@ -84,9 +87,10 @@
             </div>
         </div>
         <div class=" mdl-js-ripple-effect " id="notification">
-            <i class="material-icons">notifications</i> <span class="mdl-badge" data-badge="10"></span>
-
+            <i class="material-icons">notifications</i> 
+            <span class="mdl-badge" data-badge="10"></span>
         </div>
+
         <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="notification">
             <li class="mdl-menu__item">messege 1</li>
             <li class="mdl-menu__item">messege 2</li>
@@ -95,8 +99,8 @@
         </ul>
 
         <div class=" mdl-js-ripple-effect " id="inbox">
-
-            <i class="material-icons">mail</i><span class="mdl-badge" data-badge="4"></span>
+            <i class="material-icons">mail</i>
+            <span class="mdl-badge" data-badge="4"></span>
         </div>
         <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="inbox">
             <li class="mdl-menu__item">
@@ -172,10 +176,15 @@
             </li>
 
         </ul>
-
-        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="calendar">
-            <i class="material-icons">event_note</i>
-        </button>
+        <div id="userNameHeader">
+            Luke
+	</div>
+	<div class="demo-avatar-dropdown">
+            <img src="images/card.jpg" class="demo-avatar">
+        </div>
+        <div class=" mdl-js-ripple-effect " id="more">
+            <i class="material-icons">more</i>
+        </div>
         <div class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-color--grey-100 mdl-shadow--16dp" for="calendar">
 
             <div class="mdl-grid">
