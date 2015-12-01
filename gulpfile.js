@@ -35,7 +35,7 @@ gulp.task('browser-sync', function () {
 });
 
 gulp.task( 'scss', function() {
-	return gulp.src( './src/scss/zapplication.scss' )
+	return gulp.src( './src/scss/application.scss' )
 		.pipe( plumber( { errorHandler: onError } ) )
 		.pipe( sass() )
 		.pipe( gulp.dest( './dist/css' ));
