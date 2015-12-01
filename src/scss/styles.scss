@@ -297,20 +297,21 @@ header > div.mdl-layout__header-row > div.mdl-menu__container.is-upgraded.is-vis
 
 header > div.mdl-layout__header-row > div.demo-avatar-dropdown {
     margin-right:0;
-    width:48px;
+    width:34px;
     height:48px;
+    padding-right: 16px;
 }
 
 header > div.mdl-layout__header-row > div.demo-avatar-dropdown > img {
-    padding:4px 4px 4px 4px;
-    margin: 0 0 0 0;
-    width:40px;
-    height:40px;
+    margin-left: 0;
+    padding-left: 0;
+    width:34px;
+    height:34px;
 }
 
 header > div.mdl-layout__header-row > div.mdl-textfield.mdl-js-textfield.mdl-textfield--expandable {
     margin-top:0;
-    padding: 20px 8px 12px 8px;
+    padding: 25px 8px 12px 8px;
 }
 
 header > div.mdl-layout__header-row > div.mdl-textfield.mdl-js-textfield.mdl-textfield--expandable > label > i {
@@ -355,7 +356,7 @@ header #more > i{
     opacity: 0.5;
     color: white;
     text-align:center;
-    padding-left:16px;
+    padding-left:32px;
     padding-right:16px;
     font-famile:'roboto';
 }
