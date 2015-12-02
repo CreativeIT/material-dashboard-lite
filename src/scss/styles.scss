@@ -664,3 +664,22 @@ table .mdl-progress {
 .float-right {
     float: right;
 }
+
+.mdl-checkbox {
+    width: 90%;
+}
+
+.destroy {
+    height: 24px;
+    width: 24px;
+    min-width: 24px;
+    float: right;
+}
+li:hover .destroy i {
+    display: inline-block;
+}
+
+.destroy i{
+    font-size: 18px;
+    display: none;
+}

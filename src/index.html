@@ -367,37 +367,16 @@
                     <h5 class="mdl-card__title-text">To-do list</h5>
                 </div>
                 <div class="mdl-card__supporting-text mdl-color-text--grey-900">
-                    <ul>
-                        <li>
-                            <label for="chkbox1" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                <input type="checkbox" id="chkbox1" checked class="mdl-checkbox__input" />
-                                <span class="mdl-checkbox__label">Click per object</span>
-                            </label>
-                        </li>
-                        <li>
-                            <label for="chkbox2" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                <input type="checkbox" id="chkbox2" class="mdl-checkbox__input" />
-                                <span class="mdl-checkbox__label">Views per object</span>
-                            </label>
-                        </li>
-                        <li>
-                            <label for="chkbox3" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                <input type="checkbox" id="chkbox3" class="mdl-checkbox__input" />
-                                <span class="mdl-checkbox__label">Objects selected</span>
-                            </label>
-                        </li>
-                        <li>
-                            <label for="chkbox4" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                <input type="checkbox" id="chkbox4" class="mdl-checkbox__input" />
-                                <span class="mdl-checkbox__label">Objects viewed</span>
-                            </label>
-                        </li>
+                    <ul id="todo-list">
+                        
                     </ul>
                 </div>
                 <div class="mdl-card__actions mdl-card--border">
-                    <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--blue-grey-900">Add task</a>
-                    <div class="mdl-layout-spacer"></div>
-                    <i class="material-icons">assignment</i>
+                    <a href="#" id="addButton" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--blue-grey-900">Add task</a>
+	            <div class="mdl-layout-spacer"></div>
+	            <input type="text" id="newItem" value="NewItem"/>
+	            <i class="material-icons">assignment</i>
+	            <a href="#" id="deleteButton" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--blue-grey-900">Delete</a>
                 </div>
             </div>
         </div>
