@@ -362,7 +362,7 @@
         </div>
 
         <div class="mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--4-col-desktop mdl-shadow--2dp">
-            <div id="to-do-list" class="mdl-card">
+            <div id="todo-card" class="mdl-card">
                 <div class="mdl-card__title">
                     <h5 class="mdl-card__title-text">To-do list</h5>
                 </div>
@@ -372,11 +372,15 @@
                     </ul>
                 </div>
                 <div class="mdl-card__actions mdl-card--border">
-                    <a href="#" id="addButton" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--blue-grey-900">Add task</a>
-	            <div class="mdl-layout-spacer"></div>
+		    <a href="#" id="deleteButton" class="mdl-button mdl-js-button mdl-js-ripple-effect">remove selected</a>
+                    
+
 	            <input type="text" id="newItem" value="NewItem"/>
-	            <i class="material-icons">assignment</i>
-	            <a href="#" id="deleteButton" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--blue-grey-900">Delete</a>
+ 		    
+		    <button id="addButton" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+ 			 <i class="material-icons">add</i>
+		    </button>
+	            
                 </div>
             </div>
         </div>
