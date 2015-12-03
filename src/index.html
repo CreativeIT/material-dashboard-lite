@@ -282,9 +282,35 @@
 
     <div class="mdl-grid demo-content">
 
+        <div class="mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--4-col-desktop mdl-shadow--2dp">
+            <div id="todo-card" class="mdl-card">
+                <div class="mdl-card__title">
+                    <h5 class="mdl-card__title-text">To-do list</h5>
+                </div>
+                <div class="mdl-card__supporting-text mdl-color-text--grey-900">
+                    <ul id="todo-list">
+
+                    </ul>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <a href="#" id="deleteButton" class="mdl-button mdl-js-button mdl-js-ripple-effect">remove selected</a>
+
+
+                    <input type="text" id="newItem" value="NewItem"/>
+
+                    <button id="addButton" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-shadow--8dp mdl-button--colored">
+                        <i class="material-icons">add</i>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+
         <div class="mdl-cell mdl-cell--9-col-desktop mdl-cell--9-col-tablet mdl-cell--12-col-phone mdl-color--white mdl-shadow--2dp">
             <div id="chart_div" style="width: 100%; height: 300px;"></div>
         </div>
+
+
 
         <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--3-col-tablet mdl-cell--4-col-phone mdl-color--white mdl-shadow--2dp">
             <div id="tranding" class="mdl-card">
@@ -361,29 +387,7 @@
             </table>
         </div>
 
-        <div class="mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--4-col-desktop mdl-shadow--2dp">
-            <div id="todo-card" class="mdl-card">
-                <div class="mdl-card__title">
-                    <h5 class="mdl-card__title-text">To-do list</h5>
-                </div>
-                <div class="mdl-card__supporting-text mdl-color-text--grey-900">
-                    <ul id="todo-list">
-                        
-                    </ul>
-                </div>
-                <div class="mdl-card__actions mdl-card--border">
-		    <a href="#" id="deleteButton" class="mdl-button mdl-js-button mdl-js-ripple-effect">remove selected</a>
-                    
 
-	            <input type="text" id="newItem" value="NewItem"/>
- 		    
-		    <button id="addButton" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
- 			 <i class="material-icons">add</i>
-		    </button>
-	            
-                </div>
-            </div>
-        </div>
 </div>
 
 </main>
