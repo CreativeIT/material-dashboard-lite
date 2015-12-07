@@ -1,6 +1,12 @@
 $badge-background:#00bcd4;
+$badge-font-size: 11px;
+$badge-size : 20px;
+$badge-padding: 4px;
+
+
 
 @import '../../bower_components/material-design-lite/src/material-design-lite';
 
-
 @import 'styles';
+
+@import 'sidebar'
