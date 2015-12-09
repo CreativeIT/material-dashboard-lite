@@ -1,5 +1,12 @@
-$badge-background:#00bcd4;
 
 @import '../../bower_components/material-design-lite/src/material-design-lite';
 
+@import 'var';
+
 @import 'styles';
+
+@import 'card';
+
+@import 'todo';
+
+@import 'tranding';

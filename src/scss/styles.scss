@@ -231,35 +231,9 @@ _:-ms-input-placeholder, :root .demo-graph {
   text-decoration: none;
 }
 
-#to-do-list ul {
-  margin: 0;
-  list-style-type: none;
-}
-/*#to-do-list li {*/
-  /*margin: 4px 0;*/
-/*}*/
 
-.is-checked .mdl-checkbox__label {
-    text-decoration: line-through;
-}
 
-#to-do-list .mdl-card__actions {
-  height: 64px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-#fb .mdl-card__title{
-  background-image: url("../images/fb.jpg");
-  background-size: cover;
-  height: 160px;
-}
+
 .mdl-card__actions .mdl-menu__container {
   top: 206px;
 }
@@ -475,17 +449,7 @@ button[type = "submit"] {
     background: url('../images/kira_naytli.jpg') center / cover;
 }
 
-.mdl-grid .mdl-cell .mdl-card.todoitem {
-    margin: auto;
-    margin-bottom: 2px;
-    height: auto;
-    min-height: 0;
-}
 
-.todoitem .mdl-card__title {
-    cursor: pointer;
-    border-bottom: 1px solid #858585;
-}
 
 .legend {
     vertical-align: middle ;
@@ -653,14 +617,49 @@ table .mdl-progress {
     background-color: rgba(236, 236, 236, 0.36);
 }
 
-#tranding .mdl-card__title, #to-do-list .mdl-card__title {
-    background: #C2C7C6;
-}
-
-.mdl-card__actions a {
-    text-transform: none;
-}
-
 .float-right {
     float: right;
 }
+
+.demo-layout {
+  overflow: hidden; }
+
+/*styles for widget*/
+
+.dashboard__left-column{
+  padding: 0;
+}
+
+.dashboard__right-column{
+  padding: 0;
+}
+
+.dashboard__left-column > .mdl-cell{
+  margin: 0 0 16px 0;
+}
+
+.dashboard__right-column > .mdl-cell{
+  margin: 0 0 16px 0;
+}
+
+.mdl-cell--12-col, .mdl-cell--12-col-desktop.mdl-cell--12-col-desktop {
+  width: calc(100% - 0px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
