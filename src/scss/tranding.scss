@@ -20,7 +20,7 @@
 }
 
 .tranding-list__item-text{
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-family: "Roboto-Light", "Helvetica", "Arial", sans-serif;
     font-size: 16px !important;
     color: #ffffff;
 }
@@ -28,11 +28,12 @@
 .tranding-list__item-icon{
     width: 34px;
     float: right;
-    font-size: 38px;
-    margin-top: -10px;
+    font-size: 46px;
+    margin-top: -14px;
 }
 
 .tranding-list__item-percent{
+    font-family: "Roboto-Light", "Helvetica", "Arial", sans-serif;
     float: right;
     width: 38px;
     text-align: right;
@@ -40,7 +41,7 @@
 }
 
 .icon_up{
-    color: cyan;
+    color: $second-user-color;
 }
 
 .icon_down{

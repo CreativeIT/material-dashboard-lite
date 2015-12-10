@@ -1,5 +1,5 @@
 .todo-list{
-  width: 89%;
+  width: calc(100% - 32px);
   /*height: 170px;*/
   list-style-type: none;
   padding: 16px 16px 12px;
@@ -7,19 +7,27 @@
   /*overflow-y: hidden;*/
 }
 .todo-list__item{
-  height: 18px;
+  /*height: 18px;*/
   line-height: 18px;
   cursor: pointer;
-  margin: 0px 0px 24px 0px;
+  margin: 0px 0px 21px 0px;
 }
 .todo-list__checkbox{
-  width: 88%;
+  height: auto;
+  width: calc(100% - 28px);
   padding-left: 36px !important;
 }
 
+.todo-list__checkbox > .mdl-checkbox__focus-helper{
+  height: 18px;
+  width: 18px;
+}
+
 .todo-list__checkbox-label{
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-family: "Roboto-Light", "Helvetica", "Arial", sans-serif;
   font-size: 16px !important;
+  line-height: 18px;
+  top: 3px;
   color: #ffffff;
 }
 
@@ -81,9 +89,9 @@
 }
 
 .todo-card__add-button{
+  margin: 0 16px 0 auto ;
   position: relative;
-  left: 4px;
-  top: -37px;
+  top: -26px;
   color: #f9f9f9;
   background-color: $fist-user-color !important;
   z-index: 100;
