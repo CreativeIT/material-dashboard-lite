@@ -24,7 +24,7 @@
                     },
 
                     {
-                        title: 'Very long-long super item',
+                        title: 'Very long-long-long-long-long-long-long-long-long-long super item',
                         id: 5428646545,
                         completed: true
                     },
@@ -36,7 +36,7 @@
                     },
 
                     {
-                        title: '6',
+                        title: 'Second long-long-long-long-long super item',
                         id: 6751646545,
                         completed: false
                     },
