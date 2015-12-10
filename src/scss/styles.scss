@@ -26,10 +26,10 @@ html, body {
   width: 54px;
   height: 54px;
   border-radius: 27px;
-}
+}/*
 .demo-layout .demo-header .mdl-textfield {
   padding-top: 27px;
-}
+}*/
 .demo-layout .mdl-layout__header .mdl-layout__drawer-button {
   color: rgba(0, 0, 0, 0.54);
 }
@@ -75,7 +75,7 @@ html, body {
           justify-content: flex-end;
   padding: 16px;
   height: 151px;
-}/*
+}
 .demo-avatar-dropdown {
   display: -webkit-box;
   display: -webkit-flex;
@@ -92,7 +92,7 @@ html, body {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-}*/
+}
 
 .demo-navigation {
   -webkit-box-flex: 1;
@@ -117,15 +117,11 @@ html, body {
   color: rgba(255, 255, 255, 0.56);
   font-weight: 500;
 }
-.demo-layout .demo-navigation .mdl-navigation__link:hover {
-  background-color: #00BCD4;
-  color: #37474F;
+
+body main nav .mdl-navigation__link {
+  margin-top: 300px;
 }
-.demo-navigation .mdl-navigation__link .material-icons {
-  font-size: 24px;
-  color: rgba(255, 255, 255, 0.56);
-  margin-right: 10px;
-}
+
 #hdrbtnnotification > i.material-icons {
     cursor: pointer;
 }
@@ -269,85 +265,6 @@ header > div.mdl-layout__header-row > div.mdl-menu__container.is-upgraded.is-vis
     overflow-style: scrollbar;
 }
 
-header > div.mdl-layout__header-row > div.demo-avatar-dropdown {
-    margin-right:0;
-    width:34px;
-    height:48px;
-    padding-right: 16px;
-}
-
-header > div.mdl-layout__header-row > div.demo-avatar-dropdown > img {
-    margin-left: 0;
-    padding-left: 0;
-    width:34px;
-    height:34px;
-}
-
-header > div.mdl-layout__header-row > div.mdl-textfield.mdl-js-textfield.mdl-textfield--expandable {
-    margin-top:0;
-    padding: 25px 8px 12px 8px;
-}
-
-header > div.mdl-layout__header-row > div.mdl-textfield.mdl-js-textfield.mdl-textfield--expandable > label > i {
-    opacity: 0.8;
-    color: white;
-}
-
-header #more {
-    padding: 0 0 0 0;
-    margin:0 16px 0 0;
-    width:48px;
-    height:48px;
-}
-
-header #more > i{
-     opacity: 0.8;
-     color: white;
-     padding:12px 12px 12px 12px;
-     margin: 0 0 0 0;
-     width:24px;
-     height:24px;
-}
-
-#notification, #inbox {
-    height: 24px;
-    width: 24px;
-    margin:12px 12px 12px 12px;
-    cursor: pointer;
-}
-
-#notification > i, #inbox > i {
-    opacity: 0.80;
-    color: white;
-}
-
-#notification > span, #inbox > span {
-    left: 10px;
-    bottom: 26px;
-}
-
-#userNameHeader {
-    opacity: 0.5;
-    color: white;
-    text-align:center;
-    padding-left:32px;
-    padding-right:16px;
-    font-famile:'roboto';
-}
-
-header.demo-header.mdl-layout__header {
-    box-shadow: 0 4px 4px rgba(0,0,0,0.3);
-}
-
-header.demo-header.mdl-layout__header > div.mdl-layout__header-row {
-    margin-right:0;
-    padding-right:0;
-}
-
-main {
-    background: url("../images/Dark_background_1920x1080.png");
-}
-
 .demo-card-wide.mdl-card {
     width: 512px;
 }
@@ -392,7 +309,7 @@ div.mdl-cell.mdl-card.mdl-shadow--4dp.mdl-cell--4-col.mdl-cell--12-col-tablet > 
     color: #fff;
 }
 
-form > .mdl-textfield {
+form > .mdl-textfield main{
     margin: 0 10px;
     width: 97%;
     padding: 20px 0 20px 0;
