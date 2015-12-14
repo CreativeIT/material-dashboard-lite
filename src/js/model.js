@@ -6,25 +6,25 @@
             this.database = database ||
                 [
                     {
-                        title: 'First Item',
+                        title: 'Implement 30% of my feature',
                         id: 1651646545,
                         completed: false
                     },
 
                     {
-                        title: 'Second Item',
+                        title: 'Fencing',
                         id: 5451646545,
                         completed: true
                     },
 
                     {
-                        title: 'Trird Item',
+                        title: 'Fix bugs',
                         id: 8751646545,
                         completed: false
                     },
 
                     {
-                        title: 'Very long-long-long-long-long-long-long-long-long-long super item',
+                        title: 'Read an article about Test-Driven Development',
                         id: 5428646545,
                         completed: true
                     },
@@ -32,18 +32,6 @@
                     {
                         title: '5',
                         id: 9851786545,
-                        completed: true
-                    },
-
-                    {
-                        title: 'Second long-long-long-long-long super item',
-                        id: 6751646545,
-                        completed: false
-                    },
-
-                    {
-                        title: '7',
-                        id: 4551786545,
                         completed: true
                     }
                 ];

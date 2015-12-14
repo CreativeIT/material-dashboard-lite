@@ -224,7 +224,7 @@
     </nav>
 </div>
 
-<main class="mdl-layout__content mdl-color--grey-100">
+<main class="mdl-layout__content">
     <div class="mdl-grid demo-content">
 
 
@@ -347,12 +347,19 @@
                         </ul>
                     </div>
                     <div class="mdl-card__actions mdl-card--border todo-card__actions">
-                        <a href="#" id="deleteButton" class="mdl-button mdl-js-button mdl-js-ripple-effect todo-card__remove-button">remove selected</a>
+                        <a href="#" id="deleteButton" class="mdl-button mdl-js-button mdl-js-ripple-effect todo-card__remove-button ">remove selected</a>
 
 
                         <input type="text" id="newItem" value="NewItem"/>
 
-                        <button id="addButton" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-shadow--8dp mdl-button--colored todo-card__add-button">
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label todo-list__add-item-area hidden">
+                                <textarea class="mdl-textfield__input todo-list__add-item-area-text" type="text" rows= "1" id="sample5" ></textarea>
+                                <label class="mdl-textfield__label todo-list__add-item-area-label" for="sample5">What to do?.. <small>('enter' to save)</small></label>
+                            </div>
+
+
+                        <button id="addButton" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-shadow--8dp mdl-button--colored todo-card__add-button ">
                             <i class="material-icons">add</i>
                         </button>
 

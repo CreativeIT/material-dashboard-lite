@@ -13,3 +13,5 @@ src/.sass-cache/
 lib
 
 public
+
+dist

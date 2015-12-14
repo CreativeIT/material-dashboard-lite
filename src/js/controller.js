@@ -8,12 +8,22 @@
             this.$deleteButton = document.querySelector('.todo-card__remove-button');
             this.$destroyButton = document.getElementsByClassName('todo-list__destroy-button');
             this.$checkboxs = document.getElementsByClassName('mdl-checkbox');
+            this.$inputArea = document.querySelector('.todo-list__add-item-area');
             this.model = model;
             this.view = view;
+
+            this.$inputArea.addEventListener('keyup', (event) => {
+                //if (event.keyCode == '13') {
+                //    this.view.unHide(this.$addButton, this.$deleteButton, this.$inputArea);
+                    let title = document.getElementById('newItem').value;
+                    this.addItem(title);
+               // }
+            });
 
             this.$addButton.addEventListener('click', () => {
                 let title = document.getElementById('newItem').value;
                 this.addItem(title);
+                //this.view.hide(this.$addButton, this.$deleteButton, this.$inputArea);
             });
 
             this.$deleteButton.addEventListener('click', () => {
