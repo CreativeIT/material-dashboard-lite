@@ -48,6 +48,19 @@
             this.$todoList.appendChild(newLi);
             componentHandler.upgradeAllRegistered();
         }
+
+        //hide ($addButton, $deleteButton, $inputArea) {
+        //    $addButton.classList.add('hidden');
+        //    $deleteButton.classList.add('hidden');
+        //    $inputArea.classList.remove('hidden');
+        //    setTimeout(document.querySelector('.todo-list__add-item-area-text').setAttribute('autofocus', true),3500);
+        //}
+        //
+        //unHide ($addButton, $deleteButton, $inputArea) {
+        //    $inputArea.classList.add('hidden');
+        //    $addButton.classList.remove('hidden');
+        //    $deleteButton.classList.remove('hidden');
+        //}
     }
 //export to window
     window.todoApp = window.todoApp || {};
