@@ -87,11 +87,58 @@
             <span style="background-color:green" class="mdl-badge" data-badge="30"></span>
         </div>
 
-        <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="notification">
-            <li class="mdl-menu__item">messege 1</li>
-            <li class="mdl-menu__item">messege 2</li>
-            <li class="mdl-menu__item">messege 3</li>
-            <li class="mdl-menu__item">messege 3</li>
+        <ul id="the_ul" class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right notifications" for="notification">
+	    <div>
+		<span>You have 23 new notifications!</span>
+	    </div>
+            <li class="mdl-menu__item notifications__particular--casual">
+		<div class="material-icons mdl-js-ripple-effect" style="background-color: #00bcd4;">
+		    <i class="material-icons mdl-js-ripple-effect">plus_one</i>
+		</div>
+		<t>You have 3 new orders.</t>
+		<div>
+		    <t>
+			just now
+		    </t>
+		</div>
+	    </li>
+            <li class="mdl-menu__item notifications__particular--error">
+		<div id="the_div" class="material-icons mdl-js-ripple-effect" style="background-color: #ff5252;">
+		    <i class="material-icons mdl-js-ripple-effect">error_outline</i>
+		</div>
+		
+		<t>Database error</t>
+		<div>
+		    <t>
+			1 min
+		    </t>
+		</div>
+	    </li>
+            <li class="mdl-menu__item notifications__particular--casual">
+		<div class="material-icons mdl-js-ripple-effect" style="background-color: #00bcd4;">
+		    <i class="material-icons mdl-js-ripple-effect">new_releases</i>
+		</div>
+		<t>The Death Star is built!</t>
+		<div>
+		    <t>
+			2 hours
+		    </t>
+		</div>
+	    </li>
+            <li class="mdl-menu__item notifications__particular--casual">
+		<div class="material-icons mdl-js-ripple-effect" style="background-color: #00bcd4;">
+		    <i class="material-icons mdl-js-ripple-effect">mail_outline</i>
+		</div>
+		<t>You have 4 new mails.</t>
+		<div>
+		    <t>
+			5 days
+		    </t>
+		</div>
+            </li>
+            <div>
+		<t>ALL NOTIFICATIONS</t>
+	    </div>
         </ul>
 
         <div class=" mdl-js-ripple-effect " id="inbox">
