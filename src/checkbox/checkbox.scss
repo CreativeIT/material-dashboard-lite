@@ -1,0 +1,12 @@
+$checkbox-button-size: 18px;// is not good, need fix it!!!!!!!!!!
+
+.mdl-checkbox {
+  //height: auto;
+}
+.mdl-checkbox__box-outline {
+   width: $checkbox-button-size;
+   height: $checkbox-button-size;
+}
+.mdl-checkbox__tick-outline {
+  -webkit-mask: url("#{$checkbox-image-path}/tick-mask.svg");
+}

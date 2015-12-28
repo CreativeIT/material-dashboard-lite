@@ -1,0 +1,29 @@
+.tranding {
+  .list__item {
+    margin: 0px -16px;
+    padding: 12px 16px;
+    position: relative;
+  }
+  .material-icons {
+    font-size: 48px;
+    position: absolute;
+    right: 56px;
+    top: 0px;
+  }
+  &__arrow-up {
+     color: $tranding-arrow-up-color;
+  }
+  &__arrow-down {
+    color: $tranding-arrow-down-color;
+  }
+  &__percent {
+    position: absolute;
+    right: 16px;
+  }
+  .list__item:first-child {
+    margin-top: -8px;
+  }
+  .list__item:last-child {
+    margin-bottom: -8px;
+  }
+}

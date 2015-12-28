@@ -1,0 +1,28 @@
+@mixin typo-list ($usePreferred: true) {
+  @include typo-preferred-font($usePreferred);
+  font-size: 16px ;
+  font-weight: 300;
+  line-height: 24px;
+}
+
+@mixin typo-textfield-input ($usePreferred: true) {
+  @include typo-preferred-font($usePreferred);
+  font-size: 16px ;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+@mixin typo-data-table ($usePreferred: true) {
+  @include typo-preferred-font($usePreferred);
+  font-size: 16px ;
+  font-weight: 300;
+  line-height: 18px;
+}
+
+@mixin typo-data-table-header ($usePreferred: true) {
+  @include typo-preferred-font($usePreferred);
+  font-size: 14px ;
+  font-weight: 400;
+  line-height: 18px;
+}
+

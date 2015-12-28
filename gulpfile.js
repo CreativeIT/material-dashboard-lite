@@ -13,7 +13,6 @@ var plumber = require( 'gulp-plumber' ),
 	clean = require( 'gulp-clean' ),
 	del = require('del'),
 	browserSync = require('browser-sync');
-//reload = browserSync.reload;
 
 var onError = function( err ) {
 	console.log( 'An error occurred:', err.message );
@@ -35,42 +34,38 @@ gulp.task('browser-sync', function () {
 });
 
 gulp.task( 'scss', function() {
-	return gulp.src( './src/scss/application.scss' )
+	return gulp.src( './src/application.scss' )
 		.pipe( plumber( { errorHandler: onError } ) )
 		.pipe( sass() )
 		.pipe( gulp.dest( './dist/css' ));
-	//.pipe(reload({stream: true}));
 } );
 
 gulp.task('babel', ['scss'], function() {
 	return gulp.src('src/**/*.js')
 		.pipe( plumber( { errorHandler: onError } ))
 		.pipe(babel())
-		.pipe(gulp.dest('./dist/'));
-})
+		.pipe(gulp.dest('./dist/js'));
+});
 
 gulp.task( 'watch', function() {
-	gulp.watch( './src/scss/**/*.scss', [ 'default' ] );
+	gulp.watch( './src/**/*.scss', [ 'default' ] );
 	gulp.watch( './src/**/*.js', [ 'default' ] );
 	gulp.watch( './src/**/*.html', [ 'default' ]);
 } );
 
 gulp.task( 'jshint', ['babel', 'scss'], function() {
-	return gulp.src('src/js/**/*.js')
+	return gulp.src('src/**/*.js')
 		.pipe(jshint())
 		.pipe(jshint.reporter(stylish));
 } );
 
 gulp.task('default', ['cleanDist','jshint', 'babel', 'copyJsLib'], function () {
-	gulp.src('src/fonts/**/*')
-		.pipe(gulp.dest('dist/fonts'));
 	gulp.src('src/images/**/*')
 		.pipe(gulp.dest('dist/images'));
 	gulp.src('src/**/*.html')
 		.pipe(gulp.dest('dist/'))
-		.pipe(inject(gulp.src(['dist/js/*.js', 'dist/css/*.css'], {read: false}), {relative: true}))
+		.pipe(inject(gulp.src(['dist/js/**/*.js', 'dist/css/*.css'], {read: false}), {relative: true}))
 		.pipe(gulp.dest('dist/'));
-	//.pipe(reload({stream: true}));
 });
 
 gulp.task('copyJsLib', ['cleanDist'], function () {
@@ -90,13 +85,13 @@ gulp.task('cleanDist', function() {
 gulp.task('copySrcForTheBuild', ['cleanDist'], function() {
 	return gulp.src('src/**/*.js')
 		.pipe(rename( { suffix: '.min' }))
-		.pipe(gulp.dest( 'dist/' ))
+		.pipe(gulp.dest( 'dist/js' ))
 		.pipe( plumber( { errorHandler: onError } ))
 		.pipe(babel())
-		.pipe(gulp.dest('dist/'))
+		.pipe(gulp.dest('dist/js'))
 		.pipe(uglify())
-		.pipe(gulp.dest('dist/'))
-		.pipe(gulp.src('src/scss/application.scss'))
+		.pipe(gulp.dest('dist/js'))
+		.pipe(gulp.src('src/application.scss'))
 		.pipe( plumber( { errorHandler: onError } ))
 		.pipe(sass())
 		.pipe(minifycss())
@@ -117,5 +112,4 @@ gulp.task('build', ['copySrcForTheBuild', 'copyJsLib', 'copyHtml'], function() {
 	gulp.src('dist/*.html')
 		.pipe(inject(gulp.src(['dist/**/*.min.js', 'node_modules/mdl-selectfield/mdl-selectfield.min.js', 'dist/**/*.min.css'], {read: false}), {relative: true}))
 		.pipe(gulp.dest('dist/'));
-	//.pipe(reload({stream: true}));
 });
