@@ -1,0 +1,48 @@
+.dropdown-menu {
+    padding-top: 0;
+    background-color: $background-color;
+    width: $dropdown-menu-width;
+    height: $dropdown-menu-height;
+    padding-bottom:0;
+}
+
+.dropdown-menu li:hover header, .dropdown-menu li:hover footer {
+    background-color: $background-color;
+}
+
+.dropdown-menu header {
+    height: $dropdown-menu-header-height;
+    padding-top: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    @include typo-dropdown-menu-header();
+}
+
+.dropdown-menu li:hover {
+    background-color: $dropdown-menu-hover-color;
+}
+
+.dropdown-menu footer {
+    padding-left: 16px;
+    padding-right: 16px;
+    height: $dropdown-menu-footer-height;
+    padding-bottom: 8px;
+}
+
+.dropdown-menu footer:last-of-type a {
+    padding: 0 0 0 0;
+    height:  $dropdown-menu-footer-height;
+    @include typo-dropdown-menu-footer();
+}
+
+.dropdown-menu footer:last-of-type a:hover {
+    background-color: $background-color;
+}
+
+.dropdown-menu .round_icon {
+    margin-right: 16px;
+}
+
+.dropdown-menu .time-label {
+    float: right;
+}

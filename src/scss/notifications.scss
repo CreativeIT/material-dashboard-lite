@@ -1,106 +1,23 @@
-div.mdl-menu__container.is-upgraded.is-visible > ul.notifications > li {
+.notifications {
+    @extend .dropdown-menu;
+}
+
+.notifications li {
     border-bottom: 1px solid $border-color;
 }
 
-div.mdl-menu__container.is-upgraded.is-visible > ul.notifications > li > t {
-    font-family: 'roboto';
-    font: 'roboto th';
-    font-size: 10px;
-    color: white;
+.notifications li:last-child {
+    border-color: $background-color;
 }
 
-ul.notifications {
-    padding-top: 0;
-    background-color:$notifications-background-color;
-    color: $notifications-background-color;
-    width:310px;
-    height: 315px;
-    padding-bottom:0;
+.notifications span {
+    @include typo-dropdown-menu-li();
 }
 
-div.mdl-menu__container > ul.notifications > li:first-of-type {
-    border-top: 1px solid $border-color;
-    border-bottom: none;
-}
-
-div.mdl-menu__container.is-upgraded.is-visible > ul.notifications > li:hover {
-    background-color: rgba(0, 0, 0, .2);
-}
-
-div.mdl-menu__container.is-upgraded.is-visible > ul.notifications > div:first-of-type {
-    height: 48px;
-    padding-top: 8px;
-    padding-left: 16px;
-    display: flex;
-    align-items: center;
-}
-
-div.mdl-menu__container.is-upgraded.is-visible > ul.notifications > div:first-of-type {
-    vertical-align: middle;
-    font-size: 10px;
-    color: white;
-    opacity: 0.8;
-}
-
-div.mdl-menu__container.is-upgraded.is-visible > ul.notifications > div:last-of-type {
-    padding-left: 16px;
-    height: 48px;
-    padding-bottom: 8px;
-    display: flex;
-    align-items: center;
-    
-    vertical-align: middle;
-    font-family: 'roboto';
-    font-style: medium;
-    font-size: 10px;
-    color: white;
-}
-
-div.mdl-menu__container.is-upgraded.is-visible > ul.notifications > li > div:last-of-type {
-    float: right;
-    margin-left: -100%;
-}
-
-div.mdl-menu__container.is-upgraded.is-visible > ul.notifications > li > div:last-of-type > t {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: white;
-    height: 20px;
-    font-size: 9px;
-    padding: 5px 8px 5px 8px;
-    margin-left: auto;
-}
-
-div.mdl-menu__container.is-upgraded.is-visible > ul.notifications > li > div:first-of-type {
-    border-radius: 50%;
-    margin: auto;
-    height: 32px;
-    width: 32px;
-    min-width: 32px; 
-    min-height: 32px;
-    padding: 0;
-    overflow: hidden;
+.notifications .round_icon {
     margin-right: 16px;
-    position: relative;
-    line-height: normal;
-    display: inline-block;
-    vertical-align: middle;
-    opacity: .8;
-    
-    & .material-icons {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(- 24px / 2, - 24px / 2);
-      color: white;
-      line-height: 24px;
-      width: 24px;
-    }
 }
 
-div.mdl-menu__container.is-upgraded.is-visible > ul.notifications > li.notifications__particular--casual > div:first-of-type {
-    background-color: $second-user-color;
-}
-
-div.mdl-menu__container.is-upgraded.is-visible > ul.notifications > li.notifications__particular--error > div:first-of-type {
-    background-color: $first-user-color;
+.notifications .label {
+    float: right;
 }

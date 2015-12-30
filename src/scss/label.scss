@@ -1,0 +1,18 @@
+.label time {
+    @include typo-label();
+    height: $label-height;
+    padding: $label-padding;
+    margin-left: auto;
+}
+
+.label--primary {
+    background-color: $color-primary;
+}
+
+.label--secondary {
+    background-color: $color-secondary;
+}
+
+.label--frameless {
+    background-color: $background-color;
+}
