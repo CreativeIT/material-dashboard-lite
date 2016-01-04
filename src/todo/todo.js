@@ -8,6 +8,12 @@
             this.database = database ||
                 [
                     {
+                        title: 'Happy New Year!!!',
+                        id: '01.01.16',
+                        completed: ''
+                    },
+
+                    {
                         title: 'Implement 30% of my feature',
                         id: 1651646545,
                         completed: ''
@@ -104,11 +110,21 @@
                             </label>
                         </div>
                         <div class="mdl-cell mdl-cell--1-col">
-                            <button for = "${data.id}" deleteItem class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored mdl-button--mini-icon">
+                            <button for = "${data.id}" deleteItem class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored mdl-button--mini-icon pull-right">
                                 <i class="material-icons">clear</i>
                             </button>
                         </div>
                     </div>`
+        }
+        /*This template for short single-line todo note*/
+        _prepareTemplateSingleLine (data) {
+            return `<label for="${data.id}" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" checkboxItem>
+                        <input type="checkbox" id="${data.id}" ${data.completed} class="mdl-checkbox__input" />
+                        <span class="mdl-checkbox__label">${data.title}</span>
+                    </label>
+                    <button for = "${data.id}" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored mdl-button--mini-icon pull-right" deleteItem>
+                        <i class="material-icons">clear</i>
+                    </button>`
         }
 
         showAll (database) {
@@ -116,7 +132,11 @@
             database.forEach( (data) => {
                 let newLi = document.createElement('li');
                 newLi.classList.add('list__item');
-                newLi.innerHTML = this._prepareTemplate(data);
+                if (data.id == '01.01.16') {                                 /*For example*/
+                    newLi.innerHTML = this._prepareTemplateSingleLine(data); /*used template only for one item(with id = '01.01.16')*/
+                } else {
+                    newLi.innerHTML = this._prepareTemplate(data);
+                  }
                 this.$todoList.appendChild(newLi);
             });
             View.upgradeNewMdlComponents();
@@ -147,7 +167,9 @@
             this.view.$todoList.addEventListener('mouseup', (event) => {
                 let clickTarget = event.path[1];
                 if (clickTarget.hasAttribute('deleteItem')) {
-                    this.removeItem(clickTarget);
+                    let id = clickTarget.getAttribute('for');
+                    this.model.deleteItem(id);
+                    this.removeItem(event);
                 }
                 else
                     if (clickTarget.hasAttribute('checkboxItem')) {
@@ -169,12 +191,12 @@
                 let inputTextArea = document.querySelector('.todo .list__item:last-child .mdl-textfield__input');
                 inputTextArea.addEventListener('keydown', (event) => {
                     if (event.keyCode === 27 ) {
-                        this.removeItem(event.currentTarget);
+                        this.removeItem(event);
                     }
                     else {
                         if (event.keyCode === 13) {
                             this.addItem(inputTextArea.value);
-                            this.removeItem(event.currentTarget);
+                            this.removeItem(event);
                         }
                     }
                 });
@@ -196,9 +218,13 @@
             this.view.show(this.model.createItem(title));
         };
 
-        removeItem (deleteItemButton) {
-            let id = deleteItemButton.getAttribute('for');
-            this.view.showAll(this.model.database, this.model.deleteItem(id));
+        removeItem (clickTarget) {
+            for (let i = 0; i < clickTarget.path.length; i++) {
+                if (clickTarget.path[i].className == 'list__item') {
+                    clickTarget.path[i].remove();
+                    break;
+                }
+            }
             this.$addItemButton.removeAttribute('disabled');
             this.$removeCompletedButton.removeAttribute('disabled');
         };

@@ -1,3 +1,6 @@
-.mdl-textfield__input {
-  @include typo-textfield-input;
+.mdl-textfield {
+  width: auto;
+  .mdl-textfield__input {
+    @include typo-textfield-input;
+  }
 }

@@ -1,5 +1,5 @@
-.mdl-button { // move to button
-  font-weight: 400; //vars $button-font-weigth;
+.mdl-button {
+  font-weight: $button-font-weigth;
   padding-top: 2px;
 
   &.mdl-button--mini-icon {

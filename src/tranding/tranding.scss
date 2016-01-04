@@ -1,14 +1,15 @@
 .tranding {
+  .mdl-card__supporting-text {
+    width: 100%;
+    padding: 8px 0;
+  }
   .list__item {
-    margin: 0px -16px;
+    margin-bottom: 0;
     padding: 12px 16px;
-    position: relative;
   }
   .material-icons {
-    font-size: 48px;
-    position: absolute;
-    right: 56px;
-    top: 0px;
+    margin-top: -12px;
+    font-size: $tranding-arrow-size;
   }
   &__arrow-up {
      color: $tranding-arrow-up-color;
@@ -17,13 +18,7 @@
     color: $tranding-arrow-down-color;
   }
   &__percent {
-    position: absolute;
-    right: 16px;
-  }
-  .list__item:first-child {
-    margin-top: -8px;
-  }
-  .list__item:last-child {
-    margin-bottom: -8px;
+    text-align: right;
+    width: 40px;
   }
 }

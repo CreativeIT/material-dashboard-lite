@@ -1,10 +1,6 @@
-// mdl overrides.mdl-card__title
 .mdl-card__title {
   background-color: $card-title-background-color;
   padding: $card-title-vertical-padding $card-horizontal-padding;
-}
-.mdl-card__title-text{
-  line-height: 1;
 }
 .mdl-card__supporting-text {
   width: calc(100% - #{$card-horizontal-padding*2});

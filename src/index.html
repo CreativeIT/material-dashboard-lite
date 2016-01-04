@@ -228,129 +228,118 @@
 
     <div class="mdl-grid">
 
-            <div class="mdl-cell mdl-cell--3-col-desktop mdl-shadow--2dp">
+        <table class="mdl-cell mdl-cell--12-col-desktop mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+            <thead>
+            <tr>
+                <th class="mdl-data-table__cell--non-numeric">Project</th>
+                <th class="mdl-data-table__cell--non-numeric">Responsible</th>
+                <th class="mdl-data-table__cell--non-numeric">Client contact</th>
+                <th class="mdl-data-table__cell--non-numeric">Dead line</th>
+                <th class="mdl-data-table__cell--non-numeric">Progress</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="mdl-data-table__cell--non-numeric">Darkboard</td>
+                <td class="mdl-data-table__cell--non-numeric">Alex Dina Misha</td>
+                <td class="mdl-data-table__cell--non-numeric">Lyke@skywalker.com</td>
+                <td class="mdl-data-table__cell--non-numeric">Jun 15</td>
+                <td class="mdl-data-table__cell--non-numeric">
+                    <div id="task1" class="mdl-progress mdl-js-progress"></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="mdl-data-table__cell--non-numeric">Big financial app</td>
+                <td class="mdl-data-table__cell--non-numeric">Vlada</td>
+                <td class="mdl-data-table__cell--non-numeric">Boss@financial.com</td>
+                <td class="mdl-data-table__cell--non-numeric">Mar 1</td>
+                <td class="mdl-data-table__cell--non-numeric">
+                    <div id="task2" class="mdl-progress mdl-js-progress"></div>
+                </td>
+            </tr>
+            <tr class="is-selected">
+                <td class="mdl-data-table__cell--non-numeric">New Year office decoration</td>
+                <td class="mdl-data-table__cell--non-numeric">Dina Vlada</td>
+                <td class="mdl-data-table__cell--non-numeric">info@creativeit.io</td>
+                <td class="mdl-data-table__cell--non-numeric">Dec 25</td>
+                <td class="mdl-data-table__cell--non-numeric">
+                    <i class="material-icons">done</i>
+                </td>
+            </tr>
+            <tr>
+                <td class="mdl-data-table__cell--non-numeric">Don't worry, be happy!!!</td>
+                <td class="mdl-data-table__cell--non-numeric">Everybody</td>
+                <td class="mdl-data-table__cell--non-numeric">Contact@happyness.com</td>
+                <td class="mdl-data-table__cell--non-numeric">Yesterday</td>
+                <td class="mdl-data-table__cell--non-numeric">
+                    <div id="task4" class="mdl-progress mdl-js-progress"></div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
 
-                <div class="mdl-card todo">
-                    <div class="mdl-card__title">
-                        <h5 class="mdl-card__title-text">To-do list</h5>
-                    </div>
-                    <div class="mdl-card__supporting-text">
-                        <ul class="list">
-
-                        </ul>
-                    </div>
-                    <div class="mdl-card__actions">
-                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect">remove selected</button>
-
-                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--fab mdl-shadow--8dp mdl-button--colored ">
-                            <i class="material-icons mdl-js-ripple-effect">add</i>
-                        </button>
-
-                    </div>
+        <div class="mdl-cell mdl-cell--3-col-desktop mdl-shadow--2dp">
+            <div class="mdl-card todo">
+                <div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text">To-do list</h2>
                 </div>
+                <div class="mdl-card__supporting-text">
+                    <ul class="list">
 
-            </div>
-
-        <div class="mdl-cell mdl-cell--3-col-desktop mdl-shadow--2dp"></div>
-
-            <div class="mdl-cell mdl-cell--3-col-desktop mdl-shadow--2dp">
-                <div class="mdl-card tranding">
-
-                    <div class="mdl-card__title">
-                        <h5 class="mdl-card__title-text">Tranding</h5>
-                    </div>
-
-                    <div class="mdl-card__supporting-text">
-
-                        <ul class="list">
-                            <li class="list__item list__item--border-botom">
-                                <span class="list__item-text">UX</span>
-                                <i class="material-icons tranding__arrow-up" role="presentation">&#xE5C7</i>
-                                <span class="tranding__percent">1 %</span>
-                            </li>
-                            <li class="list__item list__item--border-botom">
-                                <span class="list__item-text">PHP</span>
-                                <i class="material-icons tranding__arrow-down" role="presentation">&#xE5C5</i>
-                                <span class="tranding__percent">2 %</span>
-                            </li>
-                            <li class="list__item list__item--border-botom">
-                                <span class="list__item-text ">Big Data</span>
-                                <i class="material-icons tranding__arrow-up" role="presentation">&#xE5C7</i>
-                                <span class="tranding__percent">5 %</span>
-                            </li>
-                            <li class="list__item list__item--border-botom">
-                                <span class="list__item-text">Material Design</span>
-                                <i class="material-icons tranding__arrow-up" role="presentation">&#xE5C7</i>
-                                <span class="tranding__percent">18 %</span>
-                            </li>
-                            <li class="list__item">
-                                <span class="list__item-text">JavaScript</span>
-                                <i class="material-icons tranding__arrow-up" role="presentation">&#xE5C7</i>
-                                <span class="tranding__percent">17 %</span>
-                            </li>
-                        </ul>
-
-                    </div>
-
+                    </ul>
                 </div>
-
+                <div class="mdl-card__actions">
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect">remove selected</button>
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--fab mdl-shadow--8dp mdl-button--colored ">
+                        <i class="material-icons mdl-js-ripple-effect">add</i>
+                    </button>
+                </div>
             </div>
-
-
-
-        <!--<div class="mdl-cell mdl-cell&#45;&#45;12-col-desktop mdl-shadow&#45;&#45;2dp">-->
-
-    <table class="mdl-cell mdl-cell--12-col-desktop mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
-        <thead>
-        <tr>
-            <th class="mdl-data-table__cell--non-numeric">Project</th>
-            <th class="mdl-data-table__cell--non-numeric">Responsible</th>
-            <th class="mdl-data-table__cell--non-numeric">Client contact</th>
-            <th class="mdl-data-table__cell--non-numeric">Dead line</th>
-            <th class="mdl-data-table__cell--non-numeric">Progress</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td class="mdl-data-table__cell--non-numeric">Darkboard</td>
-            <td class="mdl-data-table__cell--non-numeric">Alex Dina Misha</td>
-            <td class="mdl-data-table__cell--non-numeric">Lyke@skywalker.com</td>
-            <td class="mdl-data-table__cell--non-numeric">Jun 15</td>
-            <td class="mdl-data-table__cell--non-numeric">
-                <div id="task1" class="mdl-progress mdl-js-progress"></div>
-            </td>
-        </tr>
-        <tr class="mdl-data-table__cell--non-numeric">
-            <td class="mdl-data-table__cell--non-numeric">Big financial app</td>
-            <td class="mdl-data-table__cell--non-numeric">Vlada</td>
-            <td class="">Boss@financial.com</td>
-            <td class="">Mar 1</td>
-            <td class="mdl-data-table__cell--non-numeric">
-                <div id="task2" class="mdl-progress mdl-js-progress"></div>
-            </td>
-        </tr>
-        <tr>
-            <td class="mdl-data-table__cell--non-numeric">New Year office decoration</td>
-            <td class="mdl-data-table__cell--non-numeric">Dina Vlada</td>
-            <td class="mdl-data-table__cell--non-numeric">info@creativeit.io</td>
-            <td class="mdl-data-table__cell--non-numeric">Dec 25</td>
-            <td class="mdl-data-table__cell--non-numeric">
-                <div id="task3" class="mdl-progress mdl-js-progress"></div>
-            </td>
-        </tr>
-        <tr>
-            <td class="mdl-data-table__cell--non-numeric">Don't worry, be happy!!!</td>
-            <td class="mdl-data-table__cell--non-numeric">Everybody</td>
-            <td class="mdl-data-table__cell--non-numeric">Contact@happyness.com</td>
-            <td class="mdl-data-table__cell--non-numeric">Yesterday</td>
-            <td class="mdl-data-table__cell--non-numeric">
-                <div id="task4" class="mdl-progress mdl-js-progress"></div>
-            </td>
-        </tr>
-        </tbody>
-    </table>
         </div>
-    <!--</div>-->
+
+        <div class="mdl-cell mdl-cell--3-col-desktop mdl-shadow--2dp">
+            <div class="mdl-card tranding">
+                <div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text">Tranding</h2>
+                </div>
+                <div class="mdl-card__supporting-text">
+                    <ul class="list">
+                        <li class="list__item list__item--border-botom">
+                            <span class="list__item-text">UX</span>
+                            <span class="tranding__percent pull-right">1 %</span>
+                            <i class="material-icons tranding__arrow-up pull-right" role="presentation">&#xE5C7</i>
+
+                        </li>
+                        <li class="list__item list__item--border-botom">
+                            <span class="list__item-text">PHP</span>
+                            <span class="tranding__percent pull-right">2 %</span>
+                            <i class="material-icons tranding__arrow-down pull-right" role="presentation">&#xE5C5</i>
+
+                        </li>
+                        <li class="list__item list__item--border-botom">
+                            <span class="list__item-text ">Big Data</span>
+                            <span class="tranding__percent pull-right">5 %</span>
+                            <i class="material-icons tranding__arrow-up pull-right" role="presentation">&#xE5C7</i>
+
+                        </li>
+                        <li class="list__item list__item--border-botom">
+                            <span class="list__item-text">Material Design</span>
+                            <span class="tranding__percent pull-right">18 %</span>
+                            <i class="material-icons tranding__arrow-up pull-right" role="presentation">&#xE5C7</i>
+
+                        </li>
+                        <li class="list__item">
+                            <span class="list__item-text">JavaScript</span>
+                            <span class="tranding__percent pull-right">17 %</span>
+                            <i class="material-icons tranding__arrow-up pull-right" role="presentation">&#xE5C7</i>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+</div>
+
 </main>
 </div>
 

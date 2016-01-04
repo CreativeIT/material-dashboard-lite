@@ -1,7 +1,8 @@
-$checkbox-button-size: 18px;// is not good, need fix it!!!!!!!!!!
+// Used in this place, because this variable do not have '!default' flag in MDL
+$checkbox-button-size: 18px;
 
 .mdl-checkbox {
-  //height: auto;
+  width: auto;
 }
 .mdl-checkbox__box-outline {
    width: $checkbox-button-size;

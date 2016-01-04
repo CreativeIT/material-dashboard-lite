@@ -1,5 +1,6 @@
 .mdl-progress {
-  width: 150px;
+  min-width: 100px;
+  width: auto;
   > .bufferbar {
     background: {
       image: none;

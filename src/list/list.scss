@@ -5,13 +5,13 @@
   padding: 0;
 }
 
-.list__item{
-  margin: 0 0 18px 0;
+.list__item {
+  margin-bottom: $list-item-vertical-margin;
   color: $list-item-text-color;
   word-wrap: break-word;
 }
 
-.list__item--border-botom{
+.list__item--border-botom {
   border-bottom: 1px solid $list-item-border-color;
 }
 

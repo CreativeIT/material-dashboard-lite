@@ -103,6 +103,9 @@ $progress-secondary-color: unquote("rgba(#{$color-white}, 0.4)");
 
 /* LAYOUT */
 
+/* ICON */
+$tranding-arrow-size: 48px;
+
 /* ICON TOGGLE */
 
 /* FOOTER */
@@ -118,11 +121,12 @@ $card-height: auto;
 $card-width: auto;
 $card-title-font-size: 24px;
 $card-title-text-font-weight: 400;
-$card-title-vertical-padding: 22px;
+$card-title-vertical-padding: 20px;
 
 /* Cover image */
 
 /* BUTTON */
+$button-font-weigth: 400;
 /**
  *
  * Dimensions
@@ -154,6 +158,7 @@ $data-table-divider-color: unquote("rgba(#{$color-white},0.1)");
 
 $list-item-text-color: unquote("rgb(#{$color-white})");
 $list-item-border-color: $separate-border-color;
+$list-item-vertical-margin: 18px;
 $tranding-arrow-up-color: unquote("rgb(#{$color-primary})");
 $tranding-arrow-down-color: unquote("rgb(#{$color-secondary})");
 
