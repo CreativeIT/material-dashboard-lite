@@ -1,0 +1,22 @@
+.mdl-button {
+  font-weight: $button-font-weigth;
+  padding-top: 2px;
+
+  &.mdl-button--mini-icon {
+    .mdl-button--colored {
+      color: $button-primary-color-alt;
+    }
+    .material-icons {
+      top: 50% !important;
+      left: 50% !important;
+      font-size: 20px;
+    }
+  }
+}
+
+.mdl-card__actions .mdl-button--fab{
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  z-index: 99;
+}

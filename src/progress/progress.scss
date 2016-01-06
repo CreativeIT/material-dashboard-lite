@@ -1,0 +1,10 @@
+.mdl-progress {
+  min-width: 100px;
+  width: auto;
+  > .bufferbar {
+    background: {
+      image: none;
+      color: $progress-secondary-color;
+    }
+  }
+}

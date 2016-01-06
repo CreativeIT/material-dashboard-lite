@@ -1,0 +1,167 @@
+/* ==========  IMAGES  ========== */
+$image_path: '../images';
+
+/* ==========  Color & Themes  ========== */
+$color-primary: 0, 188, 212;
+$color-secondary: 255, 82, 82;
+$color-white: 255, 255, 255;
+$color-black: 0, 0, 0;
+
+$unit-background-color: #4f4f4f;
+$separate-border-color: unquote("rgba(#{$color-white},0.1)");
+//$color-primary-dark: '$color-primary-dark';
+//$color-accent: '$color-accent';
+//$color-primary-contrast: '$color-primary-contrast';
+//$color-accent-contrast: '$color-accent-contrast';
+/* ==========  Typography  ========== */
+
+/* ==========  Components  ========== */
+
+/* ==========  Standard Buttons  ========== */
+
+// Default button colors.
+$button-secondary-color: unquote("rgb(#{$color-white})");
+// Colored button colors.
+$button-primary-color-alt: unquote("rgb(#{$color-secondary})");
+// Ripple color for colored raised buttons.
+// Disabled button colors.
+$button-primary-color-disabled: #6b6b6b;                                    //background-color:
+$button-secondary-color-disabled: unquote("rgba(#{$color-white}, 0.3)");    //color:
+// FAB colors and sizes.
+$button-fab-color-alt: unquote("rgb(#{$color-secondary})");;
+//$button-fab-text-color-alt: #ffffff;
+$button-fab-hover-color-alt: #ff4c4c;
+$button-fab-active-color-alt: #f23d3d;
+// Icon button colors and sizes.
+
+/* ==========  Icon Toggles  ========== */
+
+/* ==========  Radio Buttons  ========== */
+
+/* ==========  Ripple effect  ========== */
+
+/* ==========  Layout  ========== */
+
+// Drawer
+// Header
+// Tabs
+
+/* ==========  Content Tabs  ========== */
+
+/* ==========  Checkboxes  ========== */
+$checkbox-off-color: unquote("rgb(#{$color-white})");
+$checkbox-color: unquote("rgb(#{$color-secondary})");
+
+/* ==========  Switches  ========== */
+
+/* ==========  Spinner  ========== */
+
+/* ==========  Text fields  ========== */
+
+$todo-input-text-label-color: unquote("rgba(#{$color-white}, 0.2)"); //placeholder color
+$todo-input-text-highlight-color: unquote("rgba(#{$color-white}, 0.7)"); //bottom line color
+/* ==========  Card  ========== */
+$card-background-color: $unit-background-color;
+$card-title-background-color: unquote("rgba(#{$color-black}, 0.3)");
+$card-actions-background-color: unquote("rgba(#{$color-white},0.05)");
+$card-text-color: unquote("rgba(#{$color-white}, 0.8)");
+
+/* ==========  Sliders ========== */
+
+/* ========== Progress ========== */
+$progress-main-color: unquote("rgb(#{$color-secondary})");
+$progress-secondary-color: unquote("rgba(#{$color-white}, 0.4)");
+
+/* ==========  List ========== */
+
+/* ==========  Item ========== */
+
+// Default Item Colors
+// Disabled Button Colors
+
+/* ==========  Dropdown menu ========== */
+
+/* ==========  Tooltips  ========== */
+
+/* ==========  Footer  ========== */
+
+/* TEXTFIELD */
+
+/* SWITCH */
+
+/* SPINNER */
+
+// Amount of circle the arc takes up.
+// Time it takes to expand and contract arc.
+// How much the start location of the arc should rotate each time.
+
+/* RADIO */
+
+/* MENU */
+
+/* LIST */
+
+/* LAYOUT */
+
+/* ICON */
+$tranding-arrow-size: 48px;
+
+/* ICON TOGGLE */
+
+/* FOOTER */
+/*mega-footer*/
+/*mini-footer*/
+
+/* CHECKBOX */
+$checkbox-button-size: 18px;
+
+/* CARD */
+/* Card dimensions */
+$card-height: auto;
+$card-width: auto;
+$card-title-font-size: 24px;
+$card-title-text-font-weight: 400;
+$card-title-vertical-padding: 20px;
+
+/* Cover image */
+
+/* BUTTON */
+$button-font-weigth: 400;
+/**
+ *
+ * Dimensions
+ *
+ */
+
+/* ANIMATION */
+
+/* PROGRESS */
+
+/* BADGE */
+$badge-background: unquote("rgb(#{$color-primary})");
+
+/* SHADOWS */
+
+/* GRID */
+
+/* DATA TABLE */
+
+$data-table-background-color: $unit-background-color;
+$data-table-hover-color: unquote("rgba(#{$color-black}, 0.3)");
+$data-table-selection-color: #e0e0e0;
+
+$data-table-divider-color: unquote("rgba(#{$color-white},0.1)");
+
+/* TOOLTIP */
+
+//-------------------------------------------------------
+
+$list-item-text-color: unquote("rgb(#{$color-white})");
+$list-item-border-color: $separate-border-color;
+$list-item-vertical-margin: 18px;
+$tranding-arrow-up-color: unquote("rgb(#{$color-primary})");
+$tranding-arrow-down-color: unquote("rgb(#{$color-secondary})");
+
+
+
+

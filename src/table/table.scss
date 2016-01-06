@@ -1,0 +1,101 @@
+.mdl-data-table {
+  .label {
+    border-radius: 3px;
+    padding: 3px 5px 2px;
+    font-size: 12px;
+    font-weight: 400;
+    cursor: pointer;
+    //&:nth-child(1) {
+    //  background-color: #85c397;
+    //}
+    //&:nth-child(2) {
+    //  background-color: #69bbd2;
+    //}
+    //&:nth-child(3) {
+    //  background-color: #72a6f6;
+    //}
+  }
+  th:nth-child(1) {
+    width: 1px;
+  }
+  th:nth-child(2) {
+    width: 226px;
+  }
+  th:nth-child(3) {
+    width: 154px;
+  }
+  th:nth-child(4) {
+    width: 218px;
+  }
+  th:nth-child(5) {
+    width: 106px;
+  }
+  th:nth-child(6) {
+    //width: 142px;
+  }
+
+  tbody {
+    td:nth-child(1) {
+      width: 1px;
+    }
+    td:nth-child(2) {
+      width: 322px;
+    }
+    td:nth-child(3) {
+      width: 250px;
+    }
+    td:nth-child(4) {
+      width: 314px;
+    }
+    td:nth-child(5) {
+      width: 202px;
+    }
+    td:nth-child(6) {
+      //width: 238px;
+      padding-top: 23px;
+      .mdl-progress {
+        cursor: pointer;
+        width: auto;
+        min-width: 100px;
+        max-width: 200px;
+      }
+    }
+    tr {
+      &:nth-child(1) .label {
+        &:nth-child(1) {
+          background-color: #85c397;
+        }
+        &:nth-child(2) {
+          background-color: #69bbd2;
+        }
+        &:nth-child(3) {
+          background-color: #72a6f6;
+        }
+      }
+      &:nth-child(2) .label {
+        background-color: #91c6cf;
+      }
+      &:nth-child(3){
+        .label {
+          &:nth-child(1){
+            background-color: #69bbd2;
+          }
+          &:nth-child(2){
+            background-color: #91c6cf;
+          }
+        }
+        td:nth-child(6) {
+          padding-top: 12px;
+          color: $progress-main-color;
+          .material-icons {
+            cursor: pointer;
+          }
+        }
+      }
+      &:nth-child(4) .label {
+        background-color: #de5353;
+      }
+    }
+  }
+}
+
