@@ -1,8 +1,11 @@
-.label time {
-    @include typo-label();
+.label  {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
     height: $label-height;
     padding: $label-padding;
+    margin: 0;
     margin-left: auto;
+    @include typo-label();
 }
 
 .label--primary {
@@ -14,5 +17,5 @@
 }
 
 .label--frameless {
-    background-color: $background-color;
+    background-color: rgba(0, 0, 0, 0);
 }

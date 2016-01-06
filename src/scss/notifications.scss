@@ -1,23 +1,11 @@
 .notifications {
-    @extend .dropdown-menu;
-}
+    .round_icon {
+	margin-right: 16px; 
+	float: left;
+    }
 
-.notifications li {
-    border-bottom: 1px solid $border-color;
-}
-
-.notifications li:last-child {
-    border-color: $background-color;
-}
-
-.notifications span {
-    @include typo-dropdown-menu-li();
-}
-
-.notifications .round_icon {
-    margin-right: 16px;
-}
-
-.notifications .label {
-    float: right;
+    .label {
+	height: auto;
+	margin-top: 5px;
+    }
 }

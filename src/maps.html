@@ -41,7 +41,7 @@
     <!--
     <link rel="canonical" href="http://www.example.com/">
     -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,300,100,700,900' rel='stylesheet' type='text/css'>
     <!-- inject:css -->
     <!-- endinject -->
     <style>
@@ -181,8 +181,6 @@
     <div class="mdl-layout__header-row">
         <div class="mdl-layout-spacer"></div>
 
-
-
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
             <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
                 <i class="material-icons">search</i>
@@ -198,14 +196,14 @@
             <span style="background-color:green" class="mdl-badge" data-badge="30"></span>
         </div>
 
-        <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right notifications" for="notification">
+        <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right dropdown-menu notifications" for="notification">
 	    <li>
 		<header>
-		    You have 23 new notifications!
+		    <h4>You have 23 new notifications!</h4>
 		</header>
 	    </li>
-            <li class="mdl-menu__item notifications__particular--casual">
-		<div class="label">
+            <li class="mdl-menu__item">
+		<div class="label float-right">
 		    <time>
 			just now
 		    </time>
@@ -215,8 +213,8 @@
 		</div>
 		<span>You have 3 new orders.</span>
 	    </li>
-            <li class="mdl-menu__item notifications__particular--error">
-		<div class="label">
+            <li class="mdl-menu__item">
+		<div class="label float-right">
 		    <time>
 			1 min
 		    </time>
@@ -226,8 +224,8 @@
 		</div>
 		<span>Database error</span>
 	    </li>
-            <li class="mdl-menu__item notifications__particular--casual">
-		<div class="label">
+            <li class="mdl-menu__item">
+		<div class="label float-right">
 		    <time>
 			2 hours
 		    </time>
@@ -237,8 +235,8 @@
 		</div>
 		<span>The Death Star is built!</span>
 	    </li>
-            <li class="mdl-menu__item notifications__particular--casual">
-		<div class="label">
+            <li class="mdl-menu__item">
+		<div class="label float-right">
 		    <time>
 			5 days
 		    </time>
@@ -250,7 +248,7 @@
             </li>
             <li>
 		<footer>
-		    <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">ALL NOTIFICATIONS</a>
+		    <button href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">ALL NOTIFICATIONS</button>
 		</footer>
 	    </li>
         </ul>
@@ -259,10 +257,10 @@
             <i class="material-icons">mail_outline</i>
             <span class="mdl-badge" data-badge="4"></span>
         </div>
-        <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right message-notifications" for="inbox">
+        <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right dropdown-menu message-notifications" for="inbox">
 	    <li>
 		<header>
-		    <span>You have 4 new messages!</span>
+		    <h4>You have 4 new messages!</h4>
 		</header>
 	    </li>
             <li class="mdl-menu__item">
@@ -275,7 +273,7 @@
 		    <br>
 		    <span>Birthday Party</span>
 		</div>
-		<div class="label">
+		<div class="label float-right label--frameless">
 		    <time>
 			just now
 		    </time>
@@ -290,7 +288,7 @@
 		    <br>
 		    <span>No theme</span>
 		</div>
-		<div class="label">
+		<div class="label float-right label--frameless">
 		    <time>
 			5 min
 		    </time>
@@ -305,7 +303,7 @@
 		    <br>
 		    <span>Suggestion</span>
 		</div>
-		<div class="label">
+		<div class="label float-right label--frameless">
 		    <time>
 			23 hours
 		    </time>
@@ -320,7 +318,7 @@
 		    <br>
 		    <span>NEWS</span>
 		</div>
-		<div class="label">
+		<div class="label float-right label--frameless">
 		    <time>
 			30 Nov
 		    </time>
@@ -328,7 +326,7 @@
             </li>
             <li>
 		<footer>
-		    <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">SHOW ALL MESSAGES</a>
+		    <button href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">SHOW ALL MESSAGES</button>
 		</footer>
 	    </li>
         </ul>
@@ -402,7 +400,7 @@
 				      <p style="margin-top: -10px;font-size: 14px; color: gray;line-height:1em;text-align:right">Friday 13 Nov, 16:52:14</p>
 				      <p style="margin-top:-10px;font-family:'roboto';font-size: 12px; color: black;line-height:1.2em;text-align:justify">Are you a qualified professional and want to live and work in Germany? Do you want to study in Germany? Use this world map to get an overview of contacts and offers of German institutions in your country. You can find more information about German institutions here.</p>
 				  </div>
-				  <div style="width:25%;float:left"><img src="../../../images/Europe_Intro_345x225.jpg" alt="Mountain View" style="float:left;	width:95%; margin-left:15%;margin-top:0%"></div>
+				  <div style="width:25%;float:left"><img src="/images/Europe_Intro_345x225.jpg" alt="Mountain View" style="float:left;	width:95%; margin-left:15%;margin-top:0%"></div>
 		      </div>
 		  </div>
 	    </div>

@@ -36,10 +36,13 @@ $round-icon-default-opacity: 0.8;
 
 /*dropdown-menu*/
 $dropdown-menu-width: 310px;
-$dropdown-menu-height: 315px;
+$dropdown-menu-height: 307px;
 $dropdown-menu-hover-color: rgba(0, 0, 0, .2);
-$dropdown-menu-header-height: 48px;
-$dropdown-menu-footer-height: 48px;
-$dropdown-menu-li-height: 48px;
+$dropdown-menu-header-height: 32px;
+$dropdown-menu-footer-height: 32px;
+$dropdown-menu-li-height: 32px;
 $dropdown-menu-header-font-color: rgba(255,255,255,0.8);
 $dropdown-menu-footer-font-color: white;
+$dropdown-menu-vertical-padding: 16px;
+$dropdown-menu-horizontal-padding: 16px;
+$dropdown-menu-content-vertical-padding: 8px;

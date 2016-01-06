@@ -2,8 +2,6 @@
   @include typo-preferred-font($usePreferred);
   font-size: 14px;
   font-weight: 500;
-  line-height: $dropdown-menu-footer-height;
-  letter-spacing: 0;
   color: $dropdown-menu-footer-font-color;
 }
 
@@ -11,32 +9,28 @@
   @include typo-preferred-font($usePreferred);
   font-size: 14px;
   font-weight: 100;
-  line-height: $dropdown-menu-header-height;
-  letter-spacing: 0;
   color: $dropdown-menu-header-font-color;
 }
 
-@mixin typo-dropdown-menu-li($line-height: $dropdown-menu-li-height, $usePreferred: true) {
+@mixin typo-dropdown-menu-li($usePreferred: true) {
   @include typo-preferred-font($usePreferred);
   font-size: 14px;
   font-weight: 100;
-  line-height: $line-height;
-  letter-spacing: 0;
   color: white;
 }
 
 
 @mixin typo-label($usePreferred: true) {
   @include typo-preferred-font($usePreferred);
-  background-color: rgba(255, 255, 255, 0.1);
-  color: white;
+  color: rgba(255, 255, 255, 0.5);
   font-size: 12px;  
-  font-weight: 300;
-  letter-spacing: 0;
+  font-weight: 400;
+  line-height: 1.1em;
 }
 
 @mixin typo-message-topic($usePreferred: true) {
   @include typo-preferred-font($usePreferred);
+  line-height: 1.1em;
   span:first-of-type {
     font-size: 15px;
     font-weight: 500;
