@@ -44,8 +44,13 @@
 
     <script type="text/javascript" src="https://www.google.com/jsapi" ></script>
 
+<<<<<<< HEAD
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,300,100,700,900' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+=======
+
+     <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,300,100,700,900' rel='stylesheet' type='text/css'>
+>>>>>>> notifications
     <!-- inject:css -->
     <!-- endinject -->
     <style>
@@ -70,8 +75,6 @@
     <div class="mdl-layout__header-row">
         <div class="mdl-layout-spacer"></div>
 
-
-
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
             <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
                 <i class="material-icons">search</i>
@@ -84,7 +87,7 @@
         </div>
         <div class=" mdl-js-ripple-effect " id="notification">
             <i class="material-icons">notifications_none</i> 
-            <span style="background-color:green" class="mdl-badge" data-badge="30"></span>
+            <span class="mdl-badge" data-badge="30"></span>
         </div>
 
         <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right dropdown-menu notifications" for="notification">
@@ -94,7 +97,7 @@
 		</header>
 	    </li>
             <li class="mdl-menu__item">
-		<div class="label pull-right">
+		<div class="label float-right">
 		    <time>
 			just now
 		    </time>
@@ -105,7 +108,7 @@
 		<span>You have 3 new orders.</span>
 	    </li>
             <li class="mdl-menu__item">
-		<div class="label pull-right">
+		<div class="label float-right">
 		    <time>
 			1 min
 		    </time>
@@ -116,7 +119,7 @@
 		<span>Database error</span>
 	    </li>
             <li class="mdl-menu__item">
-		<div class="label pull-right">
+		<div class="label float-right">
 		    <time>
 			2 hours
 		    </time>
@@ -127,7 +130,7 @@
 		<span>The Death Star is built!</span>
 	    </li>
             <li class="mdl-menu__item">
-		<div class="label pull-right">
+		<div class="label float-right">
 		    <time>
 			5 days
 		    </time>
@@ -164,7 +167,7 @@
 		    <br>
 		    <span>Birthday Party</span>
 		</div>
-		<div class="label pull-right label--frameless">
+		<div class="label float-right label--frameless">
 		    <time>
 			just now
 		    </time>
@@ -179,7 +182,7 @@
 		    <br>
 		    <span>No theme</span>
 		</div>
-		<div class="label pull-right label--frameless">
+		<div class="label float-right label--frameless">
 		    <time>
 			5 min
 		    </time>
@@ -194,7 +197,7 @@
 		    <br>
 		    <span>Suggestion</span>
 		</div>
-		<div class="label pull-right label--frameless">
+		<div class="label float-right label--frameless">
 		    <time>
 			23 hours
 		    </time>
@@ -209,7 +212,7 @@
 		    <br>
 		    <span>NEWS</span>
 		</div>
-		<div class="label pull-right label--frameless">
+		<div class="label float-right label--frameless">
 		    <time>
 			30 Nov
 		    </time>

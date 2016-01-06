@@ -45,19 +45,11 @@
     <script type="text/javascript" src="https://www.google.com/jsapi" ></script>
 
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,300,100,700,900' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <!-- inject:css -->
     <!-- endinject -->
+   <!-- <link rel="stylesheet" href="css/styles.css">-->
     <style>
-        #view-source {
-            position: fixed;
-            display: block;
-            right: 0;
-            bottom: 0;
-            margin-right: 40px;
-            margin-bottom: 40px;
-            z-index: 900;
-        }
         .mdl-layout__header-row {
 	    background-color: #242424;
         }
@@ -65,12 +57,14 @@
 
 </head>
 <body>
+<script>
+    var event;
+</script>
+
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
 <header class="demo-header mdl-layout__header mdl-color--white mdl-color--grey-100 mdl-color-text--grey-600">
     <div class="mdl-layout__header-row">
         <div class="mdl-layout-spacer"></div>
-
-
 
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
             <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
@@ -94,7 +88,7 @@
 		</header>
 	    </li>
             <li class="mdl-menu__item">
-		<div class="label pull-right">
+		<div class="label float-right">
 		    <time>
 			just now
 		    </time>
@@ -105,7 +99,7 @@
 		<span>You have 3 new orders.</span>
 	    </li>
             <li class="mdl-menu__item">
-		<div class="label pull-right">
+		<div class="label float-right">
 		    <time>
 			1 min
 		    </time>
@@ -116,7 +110,7 @@
 		<span>Database error</span>
 	    </li>
             <li class="mdl-menu__item">
-		<div class="label pull-right">
+		<div class="label float-right">
 		    <time>
 			2 hours
 		    </time>
@@ -127,7 +121,7 @@
 		<span>The Death Star is built!</span>
 	    </li>
             <li class="mdl-menu__item">
-		<div class="label pull-right">
+		<div class="label float-right">
 		    <time>
 			5 days
 		    </time>
@@ -164,7 +158,7 @@
 		    <br>
 		    <span>Birthday Party</span>
 		</div>
-		<div class="label pull-right label--frameless">
+		<div class="label float-right label--frameless">
 		    <time>
 			just now
 		    </time>
@@ -179,7 +173,7 @@
 		    <br>
 		    <span>No theme</span>
 		</div>
-		<div class="label pull-right label--frameless">
+		<div class="label float-right label--frameless">
 		    <time>
 			5 min
 		    </time>
@@ -194,7 +188,7 @@
 		    <br>
 		    <span>Suggestion</span>
 		</div>
-		<div class="label pull-right label--frameless">
+		<div class="label float-right label--frameless">
 		    <time>
 			23 hours
 		    </time>
@@ -209,7 +203,7 @@
 		    <br>
 		    <span>NEWS</span>
 		</div>
-		<div class="label pull-right label--frameless">
+		<div class="label float-right label--frameless">
 		    <time>
 			30 Nov
 		    </time>
@@ -253,15 +247,15 @@
     </header>
     <nav class="demo-navigation mdl-navigation" style="background-color: #202020" style="padding-top:0; margin-top:0">
         <a class="mdl-navigation__link" href="index.html">
+	    <div style=" height:48px; width:236px; z-index:1;"></div>
+	    <i style="z-index: 2; margin-left: -90%;" class="material-icons" role="presentation">dashboard</i>
+	    <t>Dashboard</t>
+	</a>
+        <a class="mdl-navigation__link" href="profile.html">
 	    <div style="background-color: #00bcd4; opacity: 0.9; height:48px; width:2px; z-index:10;"></div>
 	    <div style="background-color: black; opacity: 0.25; height:48px; width:234px; z-index:1;"></div>
-	    <i style="z-index: 2; margin-left: -90%;color: #00bcd4; opacity:0.9" class="material-icons" role="presentation">dashboard</i>
-	    <t style="z-index: 2; color: #00bcd4; opacity:1;">Dashboard</t>
-	</a>
-        <a class="mdl-navigation__link" href="forms.html">
-	    <div style=" height:48px; width:236px; z-index:1;"></div>
-	    <i style="z-index: 2; margin-left: -90%;" class="material-icons" role="presentation">person</i>
-	    <t>Account</t>
+	    <i style="z-index: 2; margin-left: -90%;color: #00bcd4; opacity:0.9" class="material-icons" role="presentation">person</i>
+	    <t style="z-index: 2; color: #00bcd4; opacity:1;">Account</t>
 	</a>
         <a id="maps-link" class="mdl-navigation__link" href="maps.html">
 	    <div style=" height:48px; width:236px; z-index:1;"></div>
@@ -272,129 +266,150 @@
         <div class="mdl-layout-spacer"></div>
     </nav>
 </div>
-
-<main class="mdl-layout__content">
-
-    <div class="mdl-grid">
-
-        <table class="mdl-cell mdl-cell--12-col-desktop mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
-            <thead>
-            <tr>
-                <th class="mdl-data-table__cell--non-numeric">Project</th>
-                <th class="mdl-data-table__cell--non-numeric">Responsible</th>
-                <th class="mdl-data-table__cell--non-numeric">Client contact</th>
-                <th class="mdl-data-table__cell--non-numeric">Dead line</th>
-                <th class="mdl-data-table__cell--non-numeric">Progress</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td class="mdl-data-table__cell--non-numeric">Darkboard</td>
-                <td class="mdl-data-table__cell--non-numeric">Alex Dina Misha</td>
-                <td class="mdl-data-table__cell--non-numeric">Lyke@skywalker.com</td>
-                <td class="mdl-data-table__cell--non-numeric">Jun 15</td>
-                <td class="mdl-data-table__cell--non-numeric">
-                    <div id="task1" class="mdl-progress mdl-js-progress"></div>
-                </td>
-            </tr>
-            <tr>
-                <td class="mdl-data-table__cell--non-numeric">Big financial app</td>
-                <td class="mdl-data-table__cell--non-numeric">Vlada</td>
-                <td class="mdl-data-table__cell--non-numeric">Boss@financial.com</td>
-                <td class="mdl-data-table__cell--non-numeric">Mar 1</td>
-                <td class="mdl-data-table__cell--non-numeric">
-                    <div id="task2" class="mdl-progress mdl-js-progress"></div>
-                </td>
-            </tr>
-            <tr class="is-selected">
-                <td class="mdl-data-table__cell--non-numeric">New Year office decoration</td>
-                <td class="mdl-data-table__cell--non-numeric">Dina Vlada</td>
-                <td class="mdl-data-table__cell--non-numeric">info@creativeit.io</td>
-                <td class="mdl-data-table__cell--non-numeric">Dec 25</td>
-                <td class="mdl-data-table__cell--non-numeric">
-                    <i class="material-icons">done</i>
-                </td>
-            </tr>
-            <tr>
-                <td class="mdl-data-table__cell--non-numeric">Don't worry, be happy!!!</td>
-                <td class="mdl-data-table__cell--non-numeric">Everybody</td>
-                <td class="mdl-data-table__cell--non-numeric">Contact@happyness.com</td>
-                <td class="mdl-data-table__cell--non-numeric">Yesterday</td>
-                <td class="mdl-data-table__cell--non-numeric">
-                    <div id="task4" class="mdl-progress mdl-js-progress"></div>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-
-        <div class="mdl-cell mdl-cell--3-col-desktop mdl-shadow--2dp">
-            <div class="mdl-card todo">
-                <div class="mdl-card__title">
-                    <h2 class="mdl-card__title-text">To-do list</h2>
-                </div>
-                <div class="mdl-card__supporting-text">
-                    <ul class="list">
-
-                    </ul>
-                </div>
-                <div class="mdl-card__actions">
-                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect">remove selected</button>
-                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--fab mdl-shadow--8dp mdl-button--colored ">
-                        <i class="material-icons mdl-js-ripple-effect">add</i>
-                    </button>
-                </div>
-            </div>
+<main class="mdl-layout__content mdl-color--grey-100">
+        <div id="employer-form"  class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--4-col-desktop mdl-shadow--2dp">
+		<header>
+		    <span>Form</span>
+		</header>
+		<div>
+			<p><b>Employer</b></p>
+			<div>
+				<!--form action="#"-->
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label align-left">
+						<input class="mdl-textfield__input" type="text" id="firstName" />
+						<label class="mdl-textfield__label" for="firstName">First name</label>
+					</div>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label align-right">
+						<input class="mdl-textfield__input" type="text" id="secondName" />
+						<label class="mdl-textfield__label" for="secondName">Second name</label>
+					</div>
+				<!--/form-->
+			</div>
+			<div>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label align-left">
+					<input class="mdl-textfield__input" type="text" id="position" />
+					<label class="mdl-textfield__label" for="position">Position</label>
+				</div>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label creative-dropdown align-right">
+					<input class="mdl-textfield__input" value="Junior" type="text" id="qualification" readonly tabIndex="-1"/>
+					<label class="mdl-textfield__label" for="qualification">Qualification</label>
+					<ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu" for="qualification">
+						<li class="mdl-menu__item">Junior</li>
+						<li class="mdl-menu__item">Middle</li>
+						<li class="mdl-menu__item">Senior</li>
+					</ul>
+					<label class="mdl-icon-toggle mdl-js-icon-toggle" for="qualification">
+					    <input type="checkbox" id="qualification" class="mdl-icon-toggle__input"/>
+					    <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+					</label>
+				</div>
+			</div>
+		</div>
+		<div >
+			<p><b>Contact info</b></p>
+			<div>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label creative-dropdown align-left">
+					<input class="mdl-textfield__input" value="Belarus" type="text" id="country" readonly tabIndex="-1"/>
+					<label class="mdl-textfield__label" for="country">Country</label>
+					<ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu" for="country">
+						<li class="mdl-menu__item">Brazil</li>
+						<li class="mdl-menu__item">Germany</li>
+						<li class="mdl-menu__item">Russia</li>
+						<li class="mdl-menu__item">France</li>
+						<li class="mdl-menu__item">Belarus</li>
+					</ul>
+					<label class="mdl-icon-toggle mdl-js-icon-toggle" for="country">
+					    <input type="checkbox" id="country" class="mdl-icon-toggle__input"/>
+					    <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+					</label>
+				</div>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label align-right">
+					<input class="mdl-textfield__input" type="text" id="Address" />
+					<label class="mdl-textfield__label" for="Address">Address</label>
+				</div>
+			</div>
+			<div>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label align-left">
+					<input class="mdl-textfield__input" type="text" id="Phone" />
+					<label class="mdl-textfield__label" for="Phone">Phone</label>
+				</div>
+				<form action="#" class="align-right">
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" type="text" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" id="E-mail" />
+						<label class="mdl-textfield__label" for="E-mail">E-mail</label>
+						<span class="mdl-textfield__error">Input is not a valid e-mail address!</span>
+					</div>
+				</form>
+			</div>
+			<div>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label align-left">
+					<input class="mdl-textfield__input" type="text" id="skype" />
+					<label class="mdl-textfield__label" for="skype">Skype</label>
+				</div>
+			</div>
+		</div>
+		<div>
+			<p><b>Company</b></p>
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<input class="mdl-textfield__input" type="text" id="CompanyName" disabled tabIndex="-1" value="CreativeIT"/>
+				<label class="mdl-textfield__label" for="CompanyName">Company name</label>
+			</div>
+			<div>
+				<label class="mdl-checkbox mdl-js-checkbox" for="checkCoffeeBug">
+					<input type="checkbox" id="checkCoffeeBug" class="mdl-checkbox__input" checked />
+					<span class="mdl-checkbox__label">Make bugs without coffee</span>
+				</label>
+				<label class="mdl-checkbox mdl-js-checkbox" for="checkCodeForFood">
+					<input type="checkbox" id="checkCodeForFood" class="mdl-checkbox__input" />
+					<span class="mdl-checkbox__label">Will code for food</span>
+				</label>
+			</div>
+			<div>
+				<p>Type of employment</p>
+				<label class="mdl-radio mdl-js-radio" for="partition-fulltime">
+					<input type="radio" id="partition-fulltime" class="mdl-radio__button" name="options" value="1" checked />
+					<span class="mdl-radio__label">Fulltime</span>
+				</label>
+				<label class="mdl-radio mdl-js-radio" for="partition-partTime">
+					<input type="radio" id="partition-partTime" class="mdl-radio__button" name="options" value="2" />
+					<span class="mdl-radio__label">Part time</span>
+				</label>
+				<label class="mdl-radio mdl-js-radio" for="partition-remote">
+					<input type="radio" id="partition-remote" class="mdl-radio__button" name="options" value="3" />
+					<span class="mdl-radio__label">Remote</span>
+				</label>
+			</div>
+			
+		</div>
+		<div>
+			<p><b>General skills</b></p>
+			<form id="general_skills" action="#">
+				<div class="mdl-textfield mdl-js-textfield">
+					<textarea class="mdl-textfield__input" type="text" rows= "3" id="AboutMe" ></textarea>
+					<label class="mdl-textfield__label" for="AboutMe">About me</label>
+				</div>
+			 </form>
+		</div>
+		<div>
+			<div class="align-left">
+				<label class="mdl-radio mdl-js-radio">
+				<input type="checkbox" class="mdl-radio__button" checked />
+				<span class="mdl-radio__label">I do accept company policy</span>
+				</label>
+			</div>
+			<div class="align-right">
+				  <button id="submit_button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+					Submit
+				</button>
+			</div>
+		</div>
         </div>
-
-        <div class="mdl-cell mdl-cell--3-col-desktop mdl-shadow--2dp">
-            <div class="mdl-card tranding">
-                <div class="mdl-card__title">
-                    <h2 class="mdl-card__title-text">Tranding</h2>
-                </div>
-                <div class="mdl-card__supporting-text">
-                    <ul class="list">
-                        <li class="list__item list__item--border-botom">
-                            <span class="list__item-text">UX</span>
-                            <span class="tranding__percent pull-right">1 %</span>
-                            <i class="material-icons tranding__arrow-up pull-right" role="presentation">&#xE5C7</i>
-
-                        </li>
-                        <li class="list__item list__item--border-botom">
-                            <span class="list__item-text">PHP</span>
-                            <span class="tranding__percent pull-right">2 %</span>
-                            <i class="material-icons tranding__arrow-down pull-right" role="presentation">&#xE5C5</i>
-
-                        </li>
-                        <li class="list__item list__item--border-botom">
-                            <span class="list__item-text ">Big Data</span>
-                            <span class="tranding__percent pull-right">5 %</span>
-                            <i class="material-icons tranding__arrow-up pull-right" role="presentation">&#xE5C7</i>
-
-                        </li>
-                        <li class="list__item list__item--border-botom">
-                            <span class="list__item-text">Material Design</span>
-                            <span class="tranding__percent pull-right">18 %</span>
-                            <i class="material-icons tranding__arrow-up pull-right" role="presentation">&#xE5C7</i>
-
-                        </li>
-                        <li class="list__item">
-                            <span class="list__item-text">JavaScript</span>
-                            <span class="tranding__percent pull-right">17 %</span>
-                            <i class="material-icons tranding__arrow-up pull-right" role="presentation">&#xE5C7</i>
-
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-</div>
-
 </main>
 </div>
-
-
-<!-- inject:js -->
+<!--<link rel="stylesheet" href="../bower_components/material-design-lite/material.min.css">-->
+  <!-- inject:js -->
   <!-- endinject -->
-
+<!--<script type="text/javascript" src="https://www.google.com/jsapi" defer></script>-->
 </body>
 </html>
+

@@ -11,6 +11,10 @@
 	padding-bottom: $dropdown-menu-content-vertical-padding;
 	height: $dropdown-menu-li-height;
 	line-height: $dropdown-menu-li-height;
+
+	&:last-child {
+	    border-bottom: none;
+	}
     }
 
     li:first-child {
