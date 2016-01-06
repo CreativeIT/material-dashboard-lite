@@ -13,6 +13,7 @@ var plumber = require( 'gulp-plumber' ),
 	clean = require( 'gulp-clean' ),
 	del = require('del'),
 	browserSync = require('browser-sync');
+//reload = browserSync.reload;
 
 var onError = function( err ) {
 	console.log( 'An error occurred:', err.message );
