@@ -1,0 +1,50 @@
+.dropdown-menu {
+    padding-top: 0;
+    background-color: $background-color;
+    width: $dropdown-menu-width;
+    height: $dropdown-menu-height;
+    padding-bottom:0;
+
+    li {
+	border-bottom: 1px solid $border-color;
+	padding-top: $dropdown-menu-content-vertical-padding;
+	padding-bottom: $dropdown-menu-content-vertical-padding;
+	height: $dropdown-menu-li-height;
+	line-height: $dropdown-menu-li-height;
+    }
+
+    li:first-child {
+	height: $dropdown-menu-header-height;
+	padding-top: $dropdown-menu-vertical-padding;
+	padding-left: $dropdown-menu-horizontal-padding;
+	padding-right: $dropdown-menu-horizontal-padding;
+    }
+
+    li:hover {
+	background-color: $dropdown-menu-hover-color;
+	
+	&:first-child, &:last-child {
+	background-color: $background-color;
+	}
+    }
+
+    footer {
+	padding-left: $dropdown-menu-horizontal-padding;
+	padding-right: $dropdown-menu-horizontal-padding;
+	height: $dropdown-menu-footer-height;
+	padding-bottom: $dropdown-menu-vertical-padding;
+	button {
+	    @include typo-dropdown-menu-footer();
+	}
+    }
+
+    span {
+	@include typo-dropdown-menu-li();
+    }
+
+    h4 {
+	margin-top: 0;
+	margin-bottom: 0;
+	@include typo-dropdown-menu-header();
+    }
+}

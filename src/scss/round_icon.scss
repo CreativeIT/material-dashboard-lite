@@ -1,0 +1,50 @@
+.round_icon {
+    border-radius: 50%;
+    margin: auto;
+    height: $round-icon-default-width;
+    width: $round-icon-default-height;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    line-height: normal;
+
+    .material-icons {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(- $round-icon-default-icon-size / 2, - $round-icon-default-icon-size / 2);
+	color: white;
+	line-height: $round-icon-default-icon-size;
+	width: $round-icon-default-icon-size;
+    }
+    
+    span {
+	font-family: 'roboto';
+	font-size: 16px;
+	vertical-align: middle;
+	font-weight: 500 !important;
+	color: white;
+	text-align: center;
+	line-height: 32px;
+    }
+}
+
+.round_icon--primary {
+    background-color: rgba(0, 188, 212, 0.8);
+}
+
+.round_icon--secondary {
+    background-color: rgba(255, 82, 82, 0.8);
+}
+
+.round_icon--baby-blue {
+    background-color: rgba(116, 199, 209, 0.8);
+}
+
+.round_icon--cerulean {
+     background-color: rgba(80, 150, 215, 0.8);
+}
+
+.round_icon--mint {
+     background-color: rgba(96, 196, 150, 0.8);
+}

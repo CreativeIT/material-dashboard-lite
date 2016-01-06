@@ -1,0 +1,21 @@
+.label  {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    height: $label-height;
+    padding: $label-padding;
+    margin: 0;
+    margin-left: auto;
+    @include typo-label();
+}
+
+.label--primary {
+    background-color: $color-primary;
+}
+
+.label--secondary {
+    background-color: $color-secondary;
+}
+
+.label--frameless {
+    background-color: rgba(0, 0, 0, 0);
+}

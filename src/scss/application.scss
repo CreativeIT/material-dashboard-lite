@@ -6,7 +6,9 @@ $badge-background:#00bcd4;
 
 @import 'material-icons-font';
 
-@import 'var';
+@import '_variables';
+
+@import '_mixins';
 
 @import 'styles';
 
@@ -18,4 +20,14 @@ $badge-background:#00bcd4;
 
 @import 'sidebar';
 
+@import 'round_icon';
+
+@import 'label';
+
+@import 'dropdown-menu';
+
 @import 'notifications';
+
+@import 'message-notifications';
+
+@import 'employer-form';
