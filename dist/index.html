@@ -44,7 +44,7 @@
 
     <script type="text/javascript" src="https://www.google.com/jsapi" ></script>
 
-
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,300,100,700,900' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- inject:css -->
     <link rel="stylesheet" href="css/application.css">
@@ -67,7 +67,7 @@
 </head>
 <body>
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
-<header class="demo-header mdl-layout__header mdl-color--white mdl-color--grey-100 mdl-color-text--grey-600">
+<header class="demo-header mdl-layout__header mdl-color--white mdl-color--grey-100">
     <div class="mdl-layout__header-row">
         <div class="mdl-layout-spacer"></div>
 
@@ -85,93 +85,142 @@
         </div>
         <div class=" mdl-js-ripple-effect " id="notification">
             <i class="material-icons">notifications_none</i> 
-            <span style="background-color:green" class="mdl-badge" data-badge="30"></span>
+            <span class="mdl-badge" data-badge="30"></span>
         </div>
 
-        <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="notification">
-            <li class="mdl-menu__item">messege 1</li>
-            <li class="mdl-menu__item">messege 2</li>
-            <li class="mdl-menu__item">messege 3</li>
-            <li class="mdl-menu__item">messege 3</li>
+        <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right dropdown-menu notifications" for="notification">
+	    <li>
+		<header>
+		    <h4>You have 23 new notifications!</h4>
+		</header>
+	    </li>
+            <li class="mdl-menu__item">
+		<div class="label pull-right">
+		    <time>
+			just now
+		    </time>
+		</div>
+		<div class="material-icons mdl-js-ripple-effect round_icon round_icon--primary">
+		    <i class="material-icons mdl-js-ripple-effect">plus_one</i>
+		</div>
+		<span>You have 3 new orders.</span>
+	    </li>
+            <li class="mdl-menu__item">
+		<div class="label pull-right">
+		    <time>
+			1 min
+		    </time>
+		</div>
+		<div class="material-icons mdl-js-ripple-effect round_icon round_icon--secondary">
+		    <i class="material-icons mdl-js-ripple-effect">error_outline</i>
+		</div>
+		<span>Database error</span>
+	    </li>
+            <li class="mdl-menu__item">
+		<div class="label pull-right">
+		    <time>
+			2 hours
+		    </time>
+		</div>
+		<div class="material-icons mdl-js-ripple-effect round_icon round_icon--primary">
+		    <i class="material-icons mdl-js-ripple-effect">new_releases</i>
+		</div>
+		<span>The Death Star is built!</span>
+	    </li>
+            <li class="mdl-menu__item">
+		<div class="label pull-right">
+		    <time>
+			5 days
+		    </time>
+		</div>
+		<div class="material-icons mdl-js-ripple-effect round_icon round_icon--primary">
+		    <i class="material-icons mdl-js-ripple-effect">mail_outline</i>
+		</div>
+		<span>You have 4 new mails.</span>
+            </li>
+            <li>
+		<footer>
+		    <button href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">ALL NOTIFICATIONS</button>
+		</footer>
+	    </li>
         </ul>
 
         <div class=" mdl-js-ripple-effect " id="inbox">
             <i class="material-icons">mail_outline</i>
             <span class="mdl-badge" data-badge="4"></span>
         </div>
-        <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="inbox">
+        <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right dropdown-menu message-notifications" for="inbox">
+	    <li>
+		<header>
+		    <h4>You have 4 new messages!</h4>
+		</header>
+	    </li>
             <li class="mdl-menu__item">
-                <header class="demo-drawer">
-                    <div class="demo-avatar-dropdown">
-                        <img src="images/card.jpg" class="demo-avatar">
-                        <div style="float: right">
-                            <span>From:</span>
-                            <span><b>Alex Bobko</b></b></span><br>
-                            <span><small><b>AlexBobkoAlexBobko@gmail.com</b></small></span>
-                        </div>
-                    </div>
-                    <div class="">
-                            <span><small>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Mauris sagittis pellentesque lacus eleifend lacinia...
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Mauris sagittis pellentesque lacus eleifend lacinia...
-                            </small></span>
-                    </div>
-                    <div class="demo-avatar-dropdown">
-                        <button id="" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent">Read</button>
-                        <div class="mdl-layout-spacer"></div>
-                        <button id="" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent">Reply</button>
-                    </div>
-                </header>
-            </li>
+		
+		<div class="material-icons mdl-js-ripple-effect round_icon round_icon--primary">
+		    <span class="material-icons">A</span>
+		</div>
+		<div class="message-notifications__topic">
+		    <span>Alice</span>
+		    <br>
+		    <span>Birthday Party</span>
+		</div>
+		<div class="label pull-right label--frameless">
+		    <time>
+			just now
+		    </time>
+		</div>
+	    </li>
             <li class="mdl-menu__item">
-                <header class="demo-drawer">
-                    <div class="demo-avatar-dropdown">
-                        <img src="images/card.jpg" class="demo-avatar">
-                        <div style="float: right">
-                            <span>From:</span>
-                            <span><b>Alex Bobko</b></b></span><br>
-                            <span><small><b>AlexBobko@gmail.com</b></small></span>
-                        </div>
-                    </div>
-                    <div class="">
-                            <span><small>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Mauris sagittis pellentesque lacus eleifend lacinia...
-                            </small></span>
-                    </div>
-                    <div class="demo-avatar-dropdown">
-                        <button id="" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent">Read</button>
-                        <div class="mdl-layout-spacer"></div>
-                        <button id="" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent">Reply</button>
-                    </div>
-                </header>
-            </li>
+		<div class="material-icons mdl-js-ripple-effect round_icon round_icon--baby-blue">
+		    <span class="material-icons">M</span>
+		</div>
+		<div class="message-notifications__topic">
+		    <span>Mike</span>
+		    <br>
+		    <span>No theme</span>
+		</div>
+		<div class="label pull-right label--frameless">
+		    <time>
+			5 min
+		    </time>
+		</div>
+	    </li>
             <li class="mdl-menu__item">
-                <header class="demo-drawer">
-                    <div class="demo-avatar-dropdown">
-                        <img src="images/card.jpg" class="demo-avatar">
-                        <div style="float: right">
-                            <span>From:</span>
-                            <span><b>Alex Bobko</b></b></span><br>
-                            <span><small><b>AlexBobko@gmail.com</b></small></span>
-                        </div>
-                    </div>
-                    <div class="">
-                            <span><small>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Mauris sagittis pellentesque lacus eleifend lacinia...
-                            </small></span>
-                    </div>
-                    <div class="demo-avatar-dropdown">
-                        <button id="" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent">Read</button>
-                        <div class="mdl-layout-spacer"></div>
-                        <button id="" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent">Reply</button>
-                    </div>
-                </header>
+		<div class="material-icons mdl-js-ripple-effect round_icon round_icon--cerulean">
+		    <span class="material-icons">D</span>
+		</div>
+		<div class="message-notifications__topic">
+		    <span>Darth</span>
+		    <br>
+		    <span>Suggestion</span>
+		</div>
+		<div class="label pull-right label--frameless">
+		    <time>
+			23 hours
+		    </time>
+		</div>
+	    </li>
+            <li class="mdl-menu__item">
+		<div class="material-icons mdl-js-ripple-effect round_icon round_icon--mint">
+		    <span class="material-icons">D</span>
+		</div>
+		<div class="message-notifications__topic">
+		    <span>Don McDuket</span>
+		    <br>
+		    <span>NEWS</span>
+		</div>
+		<div class="label pull-right label--frameless">
+		    <time>
+			30 Nov
+		    </time>
+		</div>
             </li>
-
+            <li>
+		<footer>
+		    <button href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">SHOW ALL MESSAGES</button>
+		</footer>
+	    </li>
         </ul>
         <div id="userNameHeader">
             Luke
@@ -210,12 +259,12 @@
 	    <i style="z-index: 2; margin-left: -90%;color: #00bcd4; opacity:0.9" class="material-icons" role="presentation">dashboard</i>
 	    <t style="z-index: 2; color: #00bcd4; opacity:1;">Dashboard</t>
 	</a>
-        <a class="mdl-navigation__link" href="profile.html">
+        <a class="mdl-navigation__link" href="#">
 	    <div style=" height:48px; width:236px; z-index:1;"></div>
 	    <i style="z-index: 2; margin-left: -90%;" class="material-icons" role="presentation">person</i>
 	    <t>Account</t>
 	</a>
-        <a id="maps-link" class="mdl-navigation__link" href="maps.html">
+        <a id="maps-link" class="mdl-navigation__link" href="#">
 	    <div style=" height:48px; width:236px; z-index:1;"></div>
 	    <i style="z-index: 2; margin-left: -90%;" class="material-icons" role="presentation">maps</i>
 	    <t>Maps</t>
@@ -225,358 +274,120 @@
     </nav>
 </div>
 
-<main class="mdl-layout__content mdl-color--grey-100">
-    <div class="mdl-grid demo-content">
+<main class="mdl-layout__content">
 
+    <div class="mdl-grid">
 
-        <div id="pie1"  class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--4-col-desktop mdl-color--white mdl-shadow--2dp">
-            <div id="like">
-                <button id="likeButton" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" style="color: #00ff00">
-                    <i class="material-icons" >&#xE8DC;</i>
-                </button>
+        <table class="mdl-cell mdl-cell--12-col-desktop mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+            <thead>
+            <tr>
+                <th class="mdl-data-table__cell--non-numeric">Project</th>
+                <th class="mdl-data-table__cell--non-numeric">Responsible</th>
+                <th class="mdl-data-table__cell--non-numeric">Client contact</th>
+                <th class="mdl-data-table__cell--non-numeric">Dead line</th>
+                <th class="mdl-data-table__cell--non-numeric">Progress</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="mdl-data-table__cell--non-numeric">Darkboard</td>
+                <td class="mdl-data-table__cell--non-numeric">Alex Dina Misha</td>
+                <td class="mdl-data-table__cell--non-numeric">Lyke@skywalker.com</td>
+                <td class="mdl-data-table__cell--non-numeric">Jun 15</td>
+                <td class="mdl-data-table__cell--non-numeric">
+                    <div id="task1" class="mdl-progress mdl-js-progress"></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="mdl-data-table__cell--non-numeric">Big financial app</td>
+                <td class="mdl-data-table__cell--non-numeric">Vlada</td>
+                <td class="mdl-data-table__cell--non-numeric">Boss@financial.com</td>
+                <td class="mdl-data-table__cell--non-numeric">Mar 1</td>
+                <td class="mdl-data-table__cell--non-numeric">
+                    <div id="task2" class="mdl-progress mdl-js-progress"></div>
+                </td>
+            </tr>
+            <tr class="is-selected">
+                <td class="mdl-data-table__cell--non-numeric">New Year office decoration</td>
+                <td class="mdl-data-table__cell--non-numeric">Dina Vlada</td>
+                <td class="mdl-data-table__cell--non-numeric">info@creativeit.io</td>
+                <td class="mdl-data-table__cell--non-numeric">Dec 25</td>
+                <td class="mdl-data-table__cell--non-numeric">
+                    <i class="material-icons">done</i>
+                </td>
+            </tr>
+            <tr>
+                <td class="mdl-data-table__cell--non-numeric">Don't worry, be happy!!!</td>
+                <td class="mdl-data-table__cell--non-numeric">Everybody</td>
+                <td class="mdl-data-table__cell--non-numeric">Contact@happyness.com</td>
+                <td class="mdl-data-table__cell--non-numeric">Yesterday</td>
+                <td class="mdl-data-table__cell--non-numeric">
+                    <div id="task4" class="mdl-progress mdl-js-progress"></div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
 
-                <div id="p1" class="mdl-progress mdl-js-progress"></div>
-            </div>
-            <div id="dislike">
-                <button id="dislikeButton" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" style="color: red">
-                    <i class="material-icons">&#xE8DB;</i>
-                </button>
-
-                <div id="p2" class="mdl-progress mdl-js-progress"></div>
-            </div>
-        </div>
-
-
-
-        <div  class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--4-col-desktop mdl-color--white mdl-shadow--2dp">
-            <div id="donutchart" style="width: 100%; height: 100%;"></div>
-            <div class="mdl-tooltip" for="tooltip1">follow</div>
-
-        </div>
-
-        <div id="pie4"  class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--4-col-desktop mdl-color--white mdl-shadow--2dp">
-            <svg id="svg4" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="150px" viewBox="0 0 1 1">
-
-            </svg>
-            <div class="legend">
-                <ul>
-                    <li id="0" class="mdl-js-button">
-                        <div class="marker"></div>
-                    </li>
-                    <li id="1">
-                        <div class="marker"></div>
-                    </li>
-                    <li id="2">
-                        <div class="marker" ></div>
-                    </li>
-                    <li id="3">
-                        <div class="marker"></div>
-                    </li>
-                    <li id="4">
-                        <div class="marker"></div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="mdl-grid demo-content">
-
-        <div class="mdl-cell mdl-cell--9-col-desktop dashboard__left-column">
-
-            <div class="mdl-cell mdl-cell--12-col-desktop mdl-color--white mdl-shadow--2dp">
-                <div id="chart_div" style="width: 100%; height: 300px;"></div>
-            </div>
-
-            <div class="mdl-cell mdl-cell--12-col-desktop mdl-color--white mdl-shadow--2dp">
-                <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
-                    <thead>
-                    <tr>
-                        <th class="mdl-data-table__cell--non-numeric">Task</th>
-                        <th class="mdl-data-table__cell--non-numeric">Progress</th>
-                        <th>Manager</th>
-                        <th>Due date</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td class="mdl-data-table__cell--non-numeric">Go to sleep :)</td>
-                        <td class="mdl-data-table__cell--non-numeric">
-                            <div id="p3" class="mdl-progress mdl-js-progress"></div>
-                        </td>
-                        <td>Alex</td>
-                        <td>Now</td>
-                    </tr>
-                    <tr>
-                        <td class="mdl-data-table__cell--non-numeric">To save warm</td>
-                        <td class="mdl-data-table__cell--non-numeric">
-                            <div id="p4" class="mdl-progress mdl-js-progress"></div>
-                        </td>
-                        <td>Andrei</td>
-                        <td>09.10.15</td>
-                    </tr>
-                    <tr>
-                        <td class="mdl-data-table__cell--non-numeric">Find name company</td>
-                        <td class="mdl-data-table__cell--non-numeric">
-                            <div id="p5" class="mdl-progress mdl-js-progress"></div>
-                        </td>
-                        <td>Roman</td>
-                        <td>11.10.15</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-
-        </div>
-
-
-
-
-
-        <div class="mdl-cell mdl-cell--3-col-desktop dashboard__right-column">
-
-            <div class="mdl-cell mdl-cell--12-col-desktop mdl-shadow--2dp">
-
-                <div id="todo-card" class="mdl-card dashboard-card">
-                    <div class="mdl-card__title dashboard-card__title">
-                        <h5 class="mdl-card__title-text dashboard-card__title-text">To-do list</h5>
-                    </div>
-                    <div class="mdl-card__supporting-text dashboard-card__content">
-                        <ul id="todo-list" class="todo-list">
-
-                        </ul>
-                    </div>
-                    <div class="mdl-card__actions mdl-card--border todo-card__actions">
-                        <a href="#" id="deleteButton" class="mdl-button mdl-js-button mdl-js-ripple-effect todo-card__remove-button">remove selected</a>
-
-
-                        <input type="text" id="newItem" value="NewItem"/>
-
-                        <button id="addButton" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-shadow--8dp mdl-button--colored todo-card__add-button">
-                            <i class="material-icons">add</i>
-                        </button>
-
-                    </div>
+        <div class="mdl-cell mdl-cell--3-col-desktop mdl-shadow--2dp">
+            <div class="mdl-card todo">
+                <div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text">To-do list</h2>
                 </div>
+                <div class="mdl-card__supporting-text">
+                    <ul class="list">
 
-            </div>
-
-            <div class="mdl-cell mdl-cell--12-col-desktop mdl-shadow--2dp">
-
-                <div class="mdl-card dashboard-card">
-
-                    <div class="mdl-card__title dashboard-card__title">
-                        <h5 class="mdl-card__title-text dashboard-card__title-text">Tranding</h5>
-                    </div>
-
-                    <div class="mdl-card__supporting-text dashboard-card__content">
-
-                        <ul class="tranding-list">
-
-                            <li class="tranding-list__item">
-                            <span class="tranding-list__item-text">
-                                UX
-                                <span class="tranding-list__item-percent">1 %</span>
-
-                                    <i class="material-icons tranding-list__item-icon icon_up" role="presentation">&#xE5C7</i>
-
-                            </span>
-
-                            </li>
-
-                            <li class="tranding-list__item">
-                            <span class="tranding-list__item-text">
-                                PHP
-                                <span class="tranding-list__item-percent">2 %</span>
-
-                                    <i class="material-icons tranding-list__item-icon icon_down" role="presentation">&#xE5C5</i>
-
-                            </span>
-                            </li>
-
-                            <li class="tranding-list__item">
-                            <span class="tranding-list__item-text">
-                                 Big Data
-                                <span class="tranding-list__item-percent">5 %</span>
-
-                                    <i class="material-icons tranding-list__item-icon icon_up" role="presentation">&#xE5C7</i>
-                                </span>
-                                </span>
-
-                            </li>
-
-                            <li class="tranding-list__item">
-                            <span class="tranding-list__item-text">
-                                 Material Design
-                                <span class="tranding-list__item-percent">18 %</span>
-
-                                    <i class="material-icons tranding-list__item-icon icon_up" role="presentation">&#xE5C7</i>
-                                </span>
-                                </span>
-
-                            </li>
-                            <li class="tranding-list__item">
-                            <span class="tranding-list__item-text">
-                                 JavaScript
-                                <span class="tranding-list__item-percent">17 %</span>
-
-                                    <i class="material-icons tranding-list__item-icon icon_up" role="presentation">&#xE5C7</i>
-                                </span>
-                                </span>
-                            </li>
-
-                        </ul>
-
-                    </div>
-
+                    </ul>
                 </div>
-
+                <div class="mdl-card__actions">
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect">remove selected</button>
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--fab mdl-shadow--8dp mdl-button--colored ">
+                        <i class="material-icons mdl-js-ripple-effect">add</i>
+                    </button>
+                </div>
             </div>
-
         </div>
 
+        <div class="mdl-cell mdl-cell--3-col-desktop mdl-shadow--2dp">
+            <div class="mdl-card tranding">
+                <div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text">Tranding</h2>
+                </div>
+                <div class="mdl-card__supporting-text">
+                    <ul class="list">
+                        <li class="list__item list__item--border-botom">
+                            <span class="list__item-text">UX</span>
+                            <span class="tranding__percent pull-right">1 %</span>
+                            <i class="material-icons tranding__arrow-up pull-right" role="presentation">&#xE5C7</i>
 
-        <!--<div class="mdl-cell mdl-cell&#45;&#45;4-col mdl-cell&#45;&#45;3-col-tablet mdl-cell&#45;&#45;4-col-desktop mdl-shadow&#45;&#45;2dp">-->
-            <!--<div id="todo-card" class="mdl-card todo-card">-->
-                <!--<div class="mdl-card__title dashboard-card__title">-->
-                    <!--<h5 class="mdl-card__title-text dashboard-card__title-text">To-do list</h5>-->
-                <!--</div>-->
-                <!--<div class="mdl-card__supporting-text dashboard-card__content todo-card__content">-->
-                    <!--<ul id="todo-list" class="todo-list">-->
+                        </li>
+                        <li class="list__item list__item--border-botom">
+                            <span class="list__item-text">PHP</span>
+                            <span class="tranding__percent pull-right">2 %</span>
+                            <i class="material-icons tranding__arrow-down pull-right" role="presentation">&#xE5C5</i>
 
-                    <!--</ul>-->
-                <!--</div>-->
-                <!--<div class="mdl-card__actions mdl-card&#45;&#45;border todo-card__actions">-->
-                    <!--<a href="#" id="deleteButton" class="mdl-button mdl-js-button mdl-js-ripple-effect todo-card__remove-button">remove selected</a>-->
+                        </li>
+                        <li class="list__item list__item--border-botom">
+                            <span class="list__item-text ">Big Data</span>
+                            <span class="tranding__percent pull-right">5 %</span>
+                            <i class="material-icons tranding__arrow-up pull-right" role="presentation">&#xE5C7</i>
 
+                        </li>
+                        <li class="list__item list__item--border-botom">
+                            <span class="list__item-text">Material Design</span>
+                            <span class="tranding__percent pull-right">18 %</span>
+                            <i class="material-icons tranding__arrow-up pull-right" role="presentation">&#xE5C7</i>
 
-                    <!--<input type="text" id="newItem" value="NewItem"/>-->
+                        </li>
+                        <li class="list__item">
+                            <span class="list__item-text">JavaScript</span>
+                            <span class="tranding__percent pull-right">17 %</span>
+                            <i class="material-icons tranding__arrow-up pull-right" role="presentation">&#xE5C7</i>
 
-                    <!--<button id="addButton" class="mdl-button mdl-js-button mdl-button&#45;&#45;fab mdl-js-ripple-effect mdl-shadow&#45;&#45;8dp mdl-button&#45;&#45;colored todo-card__add-button">-->
-                        <!--<i class="material-icons">add</i>-->
-                    <!--</button>-->
-
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-
-        <!--<div class="mdl-cell mdl-cell&#45;&#45;3-col-desktop mdl-cell&#45;&#45;3-col-tablet mdl-cell&#45;&#45;4-col-phone mdl-shadow&#45;&#45;2dp">-->
-
-            <!--<div class="mdl-card dashboard-card">-->
-
-                <!--<div class="mdl-card__title dashboard-card__title">-->
-                    <!--<h5 class="mdl-card__title-text dashboard-card__title-text">Tranding</h5>-->
-                <!--</div>-->
-
-                <!--<div class="mdl-card__supporting-text dashboard-card__content">-->
-
-                    <!--<ul class="tranding-list">-->
-
-                        <!--<li class="tranding-list__item">-->
-                            <!--<span class="tranding-list__item-text">-->
-                                <!--UX-->
-                                <!--<span class="tranding-list__item-percent">1 %</span>-->
-
-                                    <!--<i class="material-icons tranding-list__item-icon icon_up" role="presentation">&#xE5C7</i>-->
-
-                            <!--</span>-->
-
-                        <!--</li>-->
-
-                        <!--<li class="tranding-list__item">-->
-                            <!--<span class="tranding-list__item-text">-->
-                                <!--PHP-->
-                                <!--<span class="tranding-list__item-percent">2 %</span>-->
-
-                                    <!--<i class="material-icons tranding-list__item-icon icon_down" role="presentation">&#xE5C5</i>-->
-
-                            <!--</span>-->
-                        <!--</li>-->
-
-                        <!--<li class="tranding-list__item">-->
-                            <!--<span class="tranding-list__item-text">-->
-                                 <!--Big Data-->
-                                <!--<span class="tranding-list__item-percent">5 %</span>-->
-
-                                    <!--<i class="material-icons tranding-list__item-icon icon_up" role="presentation">&#xE5C7</i>-->
-                                <!--</span>-->
-                            <!--</span>-->
-
-                        <!--</li>-->
-
-                        <!--<li class="tranding-list__item">-->
-                            <!--<span class="tranding-list__item-text">-->
-                                 <!--Material Design-->
-                                <!--<span class="tranding-list__item-percent">18 %</span>-->
-
-                                    <!--<i class="material-icons tranding-list__item-icon icon_up" role="presentation">&#xE5C7</i>-->
-                                <!--</span>-->
-                            <!--</span>-->
-
-                        <!--</li>-->
-                        <!--<li class="tranding-list__item">-->
-                            <!--<span class="tranding-list__item-text">-->
-                                 <!--JavaScript-->
-                                <!--<span class="tranding-list__item-percent">17 %</span>-->
-
-                                    <!--<i class="material-icons tranding-list__item-icon icon_up" role="presentation">&#xE5C7</i>-->
-                                <!--</span>-->
-                            <!--</span>-->
-                        <!--</li>-->
-
-                    <!--</ul>-->
-
-                <!--</div>-->
-
-            <!--</div>-->
-
-        <!--</div>-->
-
-        <!--<div class="mdl-cell mdl-cell&#45;&#45;9-col-desktop mdl-cell&#45;&#45;9-col-tablet mdl-cell&#45;&#45;12-col-phone mdl-color&#45;&#45;white mdl-shadow&#45;&#45;2dp">-->
-            <!--<div id="chart_div" style="width: 100%; height: 300px;"></div>-->
-        <!--</div>-->
-        <!-- -->
-        <!--<div class="mdl-cell mdl-cell&#45;&#45;8-col-desktop mdl-cell&#45;&#45;12-col-tablet mdl-cell&#45;&#45;12-col-phone mdl-color&#45;&#45;white mdl-shadow&#45;&#45;2dp">-->
-            <!--<table class="mdl-data-table mdl-js-data-table mdl-shadow&#45;&#45;2dp">-->
-                <!--<thead>-->
-                <!--<tr>-->
-                    <!--<th class="mdl-data-table__cell&#45;&#45;non-numeric">Task</th>-->
-                    <!--<th class="mdl-data-table__cell&#45;&#45;non-numeric">Progress</th>-->
-                    <!--<th>Manager</th>-->
-                    <!--<th>Due date</th>-->
-                <!--</tr>-->
-                <!--</thead>-->
-                <!--<tbody>-->
-                <!--<tr>-->
-                    <!--<td class="mdl-data-table__cell&#45;&#45;non-numeric">Go to sleep :)</td>-->
-                    <!--<td class="mdl-data-table__cell&#45;&#45;non-numeric">-->
-                        <!--<div id="p3" class="mdl-progress mdl-js-progress"></div>-->
-                    <!--</td>-->
-                    <!--<td>Alex</td>-->
-                    <!--<td>Now</td>-->
-                <!--</tr>-->
-                <!--<tr>-->
-                    <!--<td class="mdl-data-table__cell&#45;&#45;non-numeric">To save warm</td>-->
-                    <!--<td class="mdl-data-table__cell&#45;&#45;non-numeric">-->
-                        <!--<div id="p4" class="mdl-progress mdl-js-progress"></div>-->
-                    <!--</td>-->
-                    <!--<td>Andrei</td>-->
-                    <!--<td>09.10.15</td>-->
-                <!--</tr>-->
-                <!--<tr>-->
-                    <!--<td class="mdl-data-table__cell&#45;&#45;non-numeric">Find name company</td>-->
-                    <!--<td class="mdl-data-table__cell&#45;&#45;non-numeric">-->
-                        <!--<div id="p5" class="mdl-progress mdl-js-progress"></div>-->
-                    <!--</td>-->
-                    <!--<td>Roman</td>-->
-                    <!--<td>11.10.15</td>-->
-                <!--</tr>-->
-                <!--</tbody>-->
-            <!--</table>-->
-        <!--</div>-->
-
-
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 </div>
 
 </main>
@@ -584,13 +395,9 @@
 
 
 <!-- inject:js -->
-  <script src="js/controller.js"></script>
-  <script src="js/dropdown.js"></script>
   <script src="js/material.min.js"></script>
-  <script src="js/model.js"></script>
-  <script src="js/pieChart.js"></script>
-  <script src="js/view.js"></script>
-  <script src="js/zmain.js"></script>
+  <script src="js/table/table.js"></script>
+  <script src="js/todo/todo.js"></script>
   <!-- endinject -->
 
 </body>
