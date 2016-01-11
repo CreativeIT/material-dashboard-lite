@@ -11,8 +11,8 @@
   word-wrap: break-word;
 }
 
-.list__item--border-botom {
-  border-bottom: 1px solid $list-item-border-color;
+.list__item--border-top {
+  border-top: $list-item-border;
 }
 
 

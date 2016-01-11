@@ -277,7 +277,7 @@
 
     <div class="mdl-grid">
 
-        <table class="mdl-cell mdl-cell--12-col-desktop mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+        <table class="mdl-cell mdl-cell--10-col-desktop mdl-cell--top mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
             <thead>
             <tr>
                 <th class="mdl-data-table__cell--non-numeric">Project</th>
@@ -290,44 +290,67 @@
             <tbody>
             <tr>
                 <td class="mdl-data-table__cell--non-numeric">Darkboard</td>
-                <td class="mdl-data-table__cell--non-numeric">Alex Dina Misha</td>
-                <td class="mdl-data-table__cell--non-numeric">Lyke@skywalker.com</td>
+                <td class="mdl-data-table__cell--non-numeric">
+                    <span class="label">Alex</span>
+                    <span class="label">Dina</span>
+                    <span class="label">Misha</span>
+                </td>
+                <td class="mdl-data-table__cell--non-numeric">Luke@skywalker.com</td>
                 <td class="mdl-data-table__cell--non-numeric">Jun 15</td>
                 <td class="mdl-data-table__cell--non-numeric">
                     <div id="task1" class="mdl-progress mdl-js-progress"></div>
+                    <div class="mdl-tooltip" for="task1">
+                        44%
+                    </div>
                 </td>
             </tr>
             <tr>
                 <td class="mdl-data-table__cell--non-numeric">Big financial app</td>
-                <td class="mdl-data-table__cell--non-numeric">Vlada</td>
+                <td class="mdl-data-table__cell--non-numeric">
+                    <span class="label">Vlada</span>
+                </td>
                 <td class="mdl-data-table__cell--non-numeric">Boss@financial.com</td>
                 <td class="mdl-data-table__cell--non-numeric">Mar 1</td>
                 <td class="mdl-data-table__cell--non-numeric">
                     <div id="task2" class="mdl-progress mdl-js-progress"></div>
+                    <div class="mdl-tooltip" for="task2">
+                        14%
+                    </div>
                 </td>
             </tr>
             <tr class="is-selected">
                 <td class="mdl-data-table__cell--non-numeric">New Year office decoration</td>
-                <td class="mdl-data-table__cell--non-numeric">Dina Vlada</td>
+                <td class="mdl-data-table__cell--non-numeric">
+                    <span class="label">Dina</span>
+                    <span class="label">Vlada</span>
+                </td>
                 <td class="mdl-data-table__cell--non-numeric">info@creativeit.io</td>
                 <td class="mdl-data-table__cell--non-numeric">Dec 25</td>
                 <td class="mdl-data-table__cell--non-numeric">
-                    <i class="material-icons">done</i>
+                    <i id="task3" class="material-icons">done</i>
+                    <div class="mdl-tooltip" for="task3">
+                        Done
+                    </div>
                 </td>
             </tr>
             <tr>
                 <td class="mdl-data-table__cell--non-numeric">Don't worry, be happy!!!</td>
-                <td class="mdl-data-table__cell--non-numeric">Everybody</td>
+                <td class="mdl-data-table__cell--non-numeric">
+                    <span class="label">Everybody</span>
+                </td>
                 <td class="mdl-data-table__cell--non-numeric">Contact@happyness.com</td>
                 <td class="mdl-data-table__cell--non-numeric">Yesterday</td>
                 <td class="mdl-data-table__cell--non-numeric">
                     <div id="task4" class="mdl-progress mdl-js-progress"></div>
+                    <div class="mdl-tooltip" for="task4">
+                        31%
+                    </div>
                 </td>
             </tr>
             </tbody>
         </table>
 
-        <div class="mdl-cell mdl-cell--3-col-desktop mdl-shadow--2dp">
+        <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--top mdl-shadow--2dp">
             <div class="mdl-card todo">
                 <div class="mdl-card__title">
                     <h2 class="mdl-card__title-text">To-do list</h2>
@@ -346,38 +369,38 @@
             </div>
         </div>
 
-        <div class="mdl-cell mdl-cell--3-col-desktop mdl-shadow--2dp">
+        <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--top mdl-shadow--2dp">
             <div class="mdl-card tranding">
                 <div class="mdl-card__title">
                     <h2 class="mdl-card__title-text">Tranding</h2>
                 </div>
                 <div class="mdl-card__supporting-text">
                     <ul class="list">
-                        <li class="list__item list__item--border-botom">
+                        <li class="list__item">
                             <span class="list__item-text">UX</span>
                             <span class="tranding__percent pull-right">1 %</span>
                             <i class="material-icons tranding__arrow-up pull-right" role="presentation">&#xE5C7</i>
 
                         </li>
-                        <li class="list__item list__item--border-botom">
+                        <li class="list__item list__item--border-top">
                             <span class="list__item-text">PHP</span>
                             <span class="tranding__percent pull-right">2 %</span>
                             <i class="material-icons tranding__arrow-down pull-right" role="presentation">&#xE5C5</i>
 
                         </li>
-                        <li class="list__item list__item--border-botom">
+                        <li class="list__item list__item--border-top">
                             <span class="list__item-text ">Big Data</span>
                             <span class="tranding__percent pull-right">5 %</span>
                             <i class="material-icons tranding__arrow-up pull-right" role="presentation">&#xE5C7</i>
 
                         </li>
-                        <li class="list__item list__item--border-botom">
+                        <li class="list__item list__item--border-top">
                             <span class="list__item-text">Material Design</span>
                             <span class="tranding__percent pull-right">18 %</span>
                             <i class="material-icons tranding__arrow-up pull-right" role="presentation">&#xE5C7</i>
 
                         </li>
-                        <li class="list__item">
+                        <li class="list__item list__item--border-top">
                             <span class="list__item-text">JavaScript</span>
                             <span class="tranding__percent pull-right">17 %</span>
                             <i class="material-icons tranding__arrow-up pull-right" role="presentation">&#xE5C7</i>

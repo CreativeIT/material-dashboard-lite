@@ -8,7 +8,7 @@ $color-white: 255, 255, 255;
 $color-black: 0, 0, 0;
 
 $unit-background-color: #4f4f4f;
-$separate-border-color: unquote("rgba(#{$color-white},0.1)");
+
 //$color-primary-dark: '$color-primary-dark';
 //$color-accent: '$color-accent';
 //$color-primary-contrast: '$color-primary-contrast';
@@ -73,6 +73,7 @@ $progress-main-color: unquote("rgb(#{$color-secondary})");
 $progress-secondary-color: unquote("rgba(#{$color-white}, 0.4)");
 
 /* ==========  List ========== */
+$list-separator-border-color: unquote("rgba(#{$color-white},0.1)");
 
 /* ==========  Item ========== */
 
@@ -82,6 +83,7 @@ $progress-secondary-color: unquote("rgba(#{$color-white}, 0.4)");
 /* ==========  Dropdown menu ========== */
 
 /* ==========  Tooltips  ========== */
+$tooltip-background-color: #353535;
 
 /* ==========  Footer  ========== */
 
@@ -147,17 +149,20 @@ $badge-background: unquote("rgb(#{$color-primary})");
 /* DATA TABLE */
 
 $data-table-background-color: $unit-background-color;
-$data-table-hover-color: unquote("rgba(#{$color-black}, 0.3)");
+$data-table-hover-color: unquote("rgba(#{$color-black}, 0.2)");
 $data-table-selection-color: #e0e0e0;
-
+$table-separator-border-color: unquote("rgba(#{$color-white},0.05)");
 $data-table-divider-color: unquote("rgba(#{$color-white},0.1)");
 
 /* TOOLTIP */
+$tooltip-font-size: 12px;
+$table-tooltip-vertical-padding: 4px;
+$table-tooltip-horizontal-padding: 8px;
 
 //-------------------------------------------------------
 
 $list-item-text-color: unquote("rgb(#{$color-white})");
-$list-item-border-color: $separate-border-color;
+$list-item-border: 1px solid $list-separator-border-color;
 $list-item-vertical-margin: 18px;
 $tranding-arrow-up-color: unquote("rgb(#{$color-primary})");
 $tranding-arrow-down-color: unquote("rgb(#{$color-secondary})");
