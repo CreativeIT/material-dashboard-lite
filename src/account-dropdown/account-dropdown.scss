@@ -1,0 +1,52 @@
+.account-dropdown {
+    height: $account-dropdown-height;
+
+    .label {
+	margin-top: 5px;
+    }
+
+    img {
+	margin-right: 16px;
+	float: left;
+	height: $account-dropdown-header-height;
+	width: $account-dropdown-header-height;
+	margin-top: 0;
+	margin-bottom: 0;
+    }
+    
+    li:first-child {
+	height: $account-dropdown-header-height;
+	padding-top: 15px;
+	padding-bottom: 7px;
+	@include typo-account-dropdown-header();
+    }
+
+    li {
+	border: none;
+	
+	span {
+	    color: white;
+	}
+    }
+
+    li:hover {
+	&:last-child {
+	    background-color: $dropdown-menu-hover-color;
+	}
+	
+	.round_icon i {
+	    color: $color-primary;
+	    opacity: 1;
+	}
+    }
+
+    .round_icon {
+	float: left;
+	margin-right: 12px;
+	
+	i {
+	    color: white;
+	    opacity: 0.8;
+	}
+    }
+}

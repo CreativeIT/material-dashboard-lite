@@ -52,3 +52,14 @@
 	@include typo-dropdown-menu-header();
     }
 }
+
+.dropdown-menu__divider {
+    height: 0 !important;
+    border-top: 1px solid $border-color !important;
+    margin: 8px 0 8px 0 !important;
+    padding: 0 0 0 0 !important;
+
+    &:hover {
+	background-color: $background-color !important;
+    }
+}
