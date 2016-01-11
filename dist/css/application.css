@@ -9364,7 +9364,7 @@ _:-ms-input-placeholder, :root .mdl-slider.mdl-slider.is-upgraded {
     width: 24px; }
   .round_icon span {
     font-family: 'roboto';
-    font-size: 16px;
+    font-size: 18px !important;
     vertical-align: middle;
     font-weight: 500 !important;
     color: white;
@@ -9440,7 +9440,7 @@ _:-ms-input-placeholder, :root .mdl-slider.mdl-slider.is-upgraded {
   height: 307px;
   padding-bottom: 0; }
   .dropdown-menu li {
-    border-bottom: 1px solid #757575;
+    border-bottom: 1px solid rgba(255, 255, 255,0.1);
     padding-top: 8px;
     padding-bottom: 8px;
     height: 32px;
