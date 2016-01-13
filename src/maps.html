@@ -335,18 +335,52 @@
         <div id="userNameHeader">
             Luke
 	</div>
-	<div class="demo-avatar-dropdown">
-            <img src="images/card.jpg" class="demo-avatar">
+	<div class="demo-avatar-dropdown" id="icon">
+            <img src="images/Icon_header.png" class="demo-avatar">
         </div>
         <div class=" mdl-js-ripple-effect " id="more">
             <i class="material-icons">more_vert</i>
             <span></span>
         </div>
-        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect mdl-color--grey-400" for="more">
-                <a href="profile.html"><li class="mdl-menu__item"><i class="material-icons" role="presentation">person</i>My Profile</li></a>
-                <a href="#"><li class="mdl-menu__item"><i class="material-icons" role="presentation">settings</i>Settings</li></a>
-                <a href="#"><li class="mdl-menu__item"><i class="material-icons" role="presentation">exit_to_app</i>Logout</li></a>
-            </ul>
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect dropdown-menu account-dropdown" for="icon">
+		<li class="mdl-menu__item">
+		    <header>
+			<img src="images/Icon.png" class="demo-avatar  pull-left">
+			<div class="pull-left">
+			    <span>Luke</span>
+			    <br>
+			    <span>Luke@skywalker.com</span>
+			</div>
+		    </header>
+		</li>
+		<li class="mdl-menu__item dropdown-menu__divider"></li>
+                <li class="mdl-menu__item">
+		    <i class="material-icons mdl-js-ripple-effect pull-left">account_circle</i>
+		    <span>My account</span>
+		</li>
+		<li class="mdl-menu__item">
+		    <div class="label pull-right label--primary">
+			<time>
+			    3 new
+			</time>
+		    </div>
+		    <i class="material-icons mdl-js-ripple-effect pull-left">check_box</i>
+		    <span>My tasks</span>
+		</li>
+		<li class="mdl-menu__item">
+		    <i class="material-icons mdl-js-ripple-effect pull-left">perm_contact_calendar</i>
+		    <span>My events</span>
+		</li>
+		<li class="mdl-menu__item dropdown-menu__divider"></li>
+		<li class="mdl-menu__item">
+		    <i class="material-icons mdl-js-ripple-effect pull-left">settings</i>
+		    <span>Settings</span>
+		</li>
+		<li class="mdl-menu__item">
+		    <i class="material-icons mdl-js-ripple-effect pull-left color-secondary">exit_to_app</i>
+		    <span>Log out</span>
+		</li>
+        </ul>
         <div class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-color--grey-100 mdl-shadow--16dp" for="calendar">
 
             <div class="mdl-grid">

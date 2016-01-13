@@ -51,6 +51,10 @@
 	margin-bottom: 0;
 	@include typo-dropdown-menu-header();
     }
+
+    .label {
+	margin-top: 5px;
+    }
 }
 
 .dropdown-menu__divider {
