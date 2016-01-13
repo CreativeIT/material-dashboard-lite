@@ -1,0 +1,13 @@
+.more_settings_dropdown {
+    background-color: $background-color;
+    width: $more_settings_dropdown_width;
+    height: $more_settings_dropdown_height;
+
+    li {
+	@include typo-dropdown-menu-li();
+
+	&:hover {
+	    background-color: $dropdown-menu-hover-color;
+	}
+    }
+}
