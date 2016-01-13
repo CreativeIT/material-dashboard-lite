@@ -59,7 +59,7 @@ gulp.task( 'jshint', ['babel', 'scss'], function() {
 		.pipe(jshint.reporter(stylish));
 } );
 
-gulp.task('default', ['cleanDist','jshint', 'babel', 'copyJsLib'], function () {
+gulp.task('default', ['cleanDist','jshint', 'babel', 'copyJsLib', 'copyCssLib'], function () {
 	gulp.src('src/images/**/*')
 		.pipe(gulp.dest('dist/images'));
 	gulp.src('src/**/*.html')
@@ -69,12 +69,13 @@ gulp.task('default', ['cleanDist','jshint', 'babel', 'copyJsLib'], function () {
 });
 
 gulp.task('copyJsLib', ['cleanDist'], function () {
-	return gulp.src('bower_components/material-design-lite/material.min.js')
+	return gulp.src(['bower_components/material-design-lite/material.min.js', 'bower_components/d3/d3.min.js',
+                    'bower_components/nvd3/build/nv.d3.min.js'])
 		.pipe(gulp.dest('dist/js'));
 });
 
 gulp.task('copyCssLib', ['cleanDist'], function () {
-	return gulp.src('bower_components/material-design-lite/material.min.css')
+	return gulp.src('bower_components/nvd3/build/nv.d3.min.css')
 		.pipe(gulp.dest('dist/css'));
 });
 
