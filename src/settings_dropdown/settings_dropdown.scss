@@ -1,7 +1,6 @@
-.more_settings_dropdown {
+.settings_dropdown {
     background-color: $background-color;
-    width: $more_settings_dropdown_width;
-    height: $more_settings_dropdown_height;
+    width: $settings_dropdown_width;
 
     li {
 	@include typo-dropdown-menu-li();
