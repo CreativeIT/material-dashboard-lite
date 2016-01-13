@@ -37,9 +37,6 @@
 	padding-right: $dropdown-menu-horizontal-padding;
 	height: $dropdown-menu-footer-height;
 	padding-bottom: $dropdown-menu-vertical-padding;
-	button {
-	    @include typo-dropdown-menu-footer();
-	}
     }
 
     span {

@@ -6,7 +6,10 @@
   .list__item {
     margin-bottom: 0;
     padding: 12px 16px;
-    cursor: pointer;
+    &:hover {
+      background-clip: padding-box;
+      background-color: $tranding-list-item-hover-color;
+    }
   }
   .material-icons {
     margin-top: -12px;

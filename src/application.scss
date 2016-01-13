@@ -4,8 +4,6 @@
 
 @import 'mixins';
 
-@import 'helper';
-
 @import 'card/card';
 
 @import 'checkbox/checkbox';
@@ -26,6 +24,8 @@
 
 @import 'table/table';
 
+@import 'tooltip/tooltip';
+
 @import 'notifications/notifications';
 
 @import 'tranding/tranding';
@@ -37,3 +37,5 @@
 @import 'list/list';
 
 @import 'todo/todo';
+
+@import 'helper';

@@ -42,382 +42,352 @@
     <link rel="canonical" href="http://www.example.com/">
     -->
 
-    <script type="text/javascript" src="https://www.google.com/jsapi" ></script>
-
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,300,100,700,900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,300,100,700,900' rel='stylesheet'
+          type='text/css'>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- inject:css -->
     <!-- endinject -->
     <style>
-        #view-source {
-            position: fixed;
-            display: block;
-            right: 0;
-            bottom: 0;
-            margin-right: 40px;
-            margin-bottom: 40px;
-            z-index: 900;
-        }
         .mdl-layout__header-row {
-	    background-color: #242424;
+            background-color: #242424;
         }
     </style>
 
 </head>
 <body>
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
-<header class="demo-header mdl-layout__header mdl-color--white mdl-color--grey-100">
-    <div class="mdl-layout__header-row">
-        <div class="mdl-layout-spacer"></div>
+    <header class="demo-header mdl-layout__header mdl-color--white mdl-color--grey-100">
+        <div class="mdl-layout__header-row">
+            <div class="mdl-layout-spacer"></div>
 
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+                    <i class="material-icons">search</i>
+                </label>
 
-
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-            <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
-                <i class="material-icons">search</i>
-            </label>
-
-            <div class="mdl-textfield__expandable-holder">
-                <input class="mdl-textfield__input" type="text" id="search" />
-                <label class="mdl-textfield__label" for="search">Enter your query...</label>
+                <div class="mdl-textfield__expandable-holder">
+                    <input class="mdl-textfield__input" type="text" id="search"/>
+                    <label class="mdl-textfield__label" for="search">Enter your query...</label>
+                </div>
             </div>
-        </div>
-        <div class=" mdl-js-ripple-effect " id="notification">
-            <i class="material-icons">notifications_none</i> 
-            <span class="mdl-badge" data-badge="30"></span>
-        </div>
+            <div class=" mdl-js-ripple-effect " id="notification">
+                <i class="material-icons">notifications_none</i>
+                <span class="mdl-badge" data-badge="30"></span>
+            </div>
 
-        <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right dropdown-menu notifications" for="notification">
-	    <li>
-		<header>
-		    <h4>You have 23 new notifications!</h4>
-		</header>
-	    </li>
-            <li class="mdl-menu__item">
-		<div class="label pull-right">
-		    <time>
-			just now
-		    </time>
-		</div>
-		<div class="material-icons mdl-js-ripple-effect round_icon round_icon--primary">
-		    <i class="material-icons mdl-js-ripple-effect">plus_one</i>
-		</div>
-		<span>You have 3 new orders.</span>
-	    </li>
-            <li class="mdl-menu__item">
-		<div class="label pull-right">
-		    <time>
-			1 min
-		    </time>
-		</div>
-		<div class="material-icons mdl-js-ripple-effect round_icon round_icon--secondary">
-		    <i class="material-icons mdl-js-ripple-effect">error_outline</i>
-		</div>
-		<span>Database error</span>
-	    </li>
-            <li class="mdl-menu__item">
-		<div class="label pull-right">
-		    <time>
-			2 hours
-		    </time>
-		</div>
-		<div class="material-icons mdl-js-ripple-effect round_icon round_icon--primary">
-		    <i class="material-icons mdl-js-ripple-effect">new_releases</i>
-		</div>
-		<span>The Death Star is built!</span>
-	    </li>
-            <li class="mdl-menu__item">
-		<div class="label pull-right">
-		    <time>
-			5 days
-		    </time>
-		</div>
-		<div class="material-icons mdl-js-ripple-effect round_icon round_icon--primary">
-		    <i class="material-icons mdl-js-ripple-effect">mail_outline</i>
-		</div>
-		<span>You have 4 new mails.</span>
-            </li>
-            <li>
-		<footer>
-		    <button href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">ALL NOTIFICATIONS</button>
-		</footer>
-	    </li>
-        </ul>
-
-        <div class=" mdl-js-ripple-effect " id="inbox">
-            <i class="material-icons">mail_outline</i>
-            <span class="mdl-badge" data-badge="4"></span>
-        </div>
-        <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right dropdown-menu message-notifications" for="inbox">
-	    <li>
-		<header>
-		    <h4>You have 4 new messages!</h4>
-		</header>
-	    </li>
-            <li class="mdl-menu__item">
-		
-		<div class="material-icons mdl-js-ripple-effect round_icon round_icon--primary">
-		    <span class="material-icons">A</span>
-		</div>
-		<div class="message-notifications__topic">
-		    <span>Alice</span>
-		    <br>
-		    <span>Birthday Party</span>
-		</div>
-		<div class="label pull-right label--frameless">
-		    <time>
-			just now
-		    </time>
-		</div>
-	    </li>
-            <li class="mdl-menu__item">
-		<div class="material-icons mdl-js-ripple-effect round_icon round_icon--baby-blue">
-		    <span class="material-icons">M</span>
-		</div>
-		<div class="message-notifications__topic">
-		    <span>Mike</span>
-		    <br>
-		    <span>No theme</span>
-		</div>
-		<div class="label pull-right label--frameless">
-		    <time>
-			5 min
-		    </time>
-		</div>
-	    </li>
-            <li class="mdl-menu__item">
-		<div class="material-icons mdl-js-ripple-effect round_icon round_icon--cerulean">
-		    <span class="material-icons">D</span>
-		</div>
-		<div class="message-notifications__topic">
-		    <span>Darth</span>
-		    <br>
-		    <span>Suggestion</span>
-		</div>
-		<div class="label pull-right label--frameless">
-		    <time>
-			23 hours
-		    </time>
-		</div>
-	    </li>
-            <li class="mdl-menu__item">
-		<div class="material-icons mdl-js-ripple-effect round_icon round_icon--mint">
-		    <span class="material-icons">D</span>
-		</div>
-		<div class="message-notifications__topic">
-		    <span>Don McDuket</span>
-		    <br>
-		    <span>NEWS</span>
-		</div>
-		<div class="label pull-right label--frameless">
-		    <time>
-			30 Nov
-		    </time>
-		</div>
-            </li>
-            <li>
-		<footer>
-		    <button href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">SHOW ALL MESSAGES</button>
-		</footer>
-	    </li>
-        </ul>
-        <div id="userNameHeader">
-            Luke
-	</div>
-	<div class="demo-avatar-dropdown">
-            <img src="images/card.jpg" class="demo-avatar">
-        </div>
-        <div class=" mdl-js-ripple-effect " id="more">
-            <i class="material-icons">more_vert</i>
-            <span></span>
-        </div>
-        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect mdl-color--grey-400" for="more">
-                <a href="profile.html"><li class="mdl-menu__item"><i class="material-icons" role="presentation">person</i>My Profile</li></a>
-                <a href="#"><li class="mdl-menu__item"><i class="material-icons" role="presentation">settings</i>Settings</li></a>
-                <a href="#"><li class="mdl-menu__item"><i class="material-icons" role="presentation">exit_to_app</i>Logout</li></a>
+            <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right dropdown-menu notifications"
+                for="notification">
+                <li>
+                    <header>
+                        <h4>You have 23 new notifications!</h4>
+                    </header>
+                </li>
+                <li class="mdl-menu__item">
+                    <div class="label pull-right">
+                        <time>just now</time>
+                    </div>
+                    <div class="material-icons mdl-js-ripple-effect round_icon background-color--primary">
+                        <i class="material-icons mdl-js-ripple-effect">plus_one</i>
+                    </div>
+                    <span>You have 3 new orders.</span>
+                </li>
+                <li class="mdl-menu__item">
+                    <div class="label pull-right">
+                        <time>1 min</time>
+                    </div>
+                    <div class="material-icons mdl-js-ripple-effect round_icon background-color--secondary">
+                        <i class="material-icons mdl-js-ripple-effect">error_outline</i>
+                    </div>
+                    <span>Database error</span>
+                </li>
+                <li class="mdl-menu__item">
+                    <div class="label pull-right">
+                        <time>2 hours</time>
+                    </div>
+                    <div class="material-icons mdl-js-ripple-effect round_icon background-color--primary">
+                        <i class="material-icons mdl-js-ripple-effect">new_releases</i>
+                    </div>
+                    <span>The Death Star is built!</span>
+                </li>
+                <li class="mdl-menu__item">
+                    <div class="label pull-right">
+                        <time>5 days</time>
+                    </div>
+                    <div class="material-icons mdl-js-ripple-effect round_icon background-color--primary">
+                        <i class="material-icons mdl-js-ripple-effect">mail_outline</i>
+                    </div>
+                    <span>You have 4 new mails.</span>
+                </li>
+                <li>
+                    <footer>
+                        <button href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">ALL NOTIFICATIONS
+                        </button>
+                    </footer>
+                </li>
             </ul>
-        <div class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-color--grey-100 mdl-shadow--16dp" for="calendar">
 
-            <div class="mdl-grid">
-                <div ng-app="app" >
-                    <calendar></calendar>
-                </div>
+            <div class=" mdl-js-ripple-effect " id="inbox">
+                <i class="material-icons">mail_outline</i>
+                <span class="mdl-badge" data-badge="4"></span>
             </div>
-
+            <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right dropdown-menu message-notifications"
+                for="inbox">
+                <li>
+                    <header>
+                        <h4>You have 4 new messages!</h4>
+                    </header>
+                </li>
+                <li class="mdl-menu__item">
+                    <div class="material-icons mdl-js-ripple-effect round_icon background-color--primary">
+                        <span class="material-icons">A</span>
+                    </div>
+                    <div class="message-notifications__topic">
+                        <span>Alice</span>
+                        <br>
+                        <span>Birthday Party</span>
+                    </div>
+                    <div class="label pull-right label--frameless">
+                        <time>just now</time>
+                    </div>
+                </li>
+                <li class="mdl-menu__item">
+                    <div class="material-icons mdl-js-ripple-effect round_icon background-color--baby-blue">
+                        <span class="material-icons">M</span>
+                    </div>
+                    <div class="message-notifications__topic">
+                        <span>Mike</span>
+                        <br>
+                        <span>No theme</span>
+                    </div>
+                    <div class="label pull-right label--frameless">
+                        <time>5 min</time>
+                    </div>
+                </li>
+                <li class="mdl-menu__item">
+                    <div class="material-icons mdl-js-ripple-effect round_icon background-color--cerulean">
+                        <span class="material-icons">D</span>
+                    </div>
+                    <div class="message-notifications__topic">
+                        <span>Darth</span>
+                        <br>
+                        <span>Suggestion</span>
+                    </div>
+                    <div class="label pull-right label--frameless">
+                        <time>23 hours</time>
+                    </div>
+                </li>
+                <li class="mdl-menu__item">
+                    <div class="material-icons mdl-js-ripple-effect round_icon background-color--mint">
+                        <span class="material-icons">D</span>
+                    </div>
+                    <div class="message-notifications__topic">
+                        <span>Don McDuket</span>
+                        <br>
+                        <span>NEWS</span>
+                    </div>
+                    <div class="label pull-right label--frameless">
+                        <time>30 Nov</time>
+                    </div>
+                </li>
+                <li>
+                    <footer>
+                        <button href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">SHOW ALL MESSAGES
+                        </button>
+                    </footer>
+                </li>
+            </ul>
+            <div id="userNameHeader">Luke</div>
+            <div class="demo-avatar-dropdown">
+                <img src="images/card.jpg" class="demo-avatar">
+            </div>
+            <div class=" mdl-js-ripple-effect " id="more">
+                <i class="material-icons">more_vert</i>
+                <span></span>
+            </div>
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect mdl-color--grey-400" for="more">
+                <a href="profile.html">
+                    <li class="mdl-menu__item"><i class="material-icons" role="presentation">person</i>My Profile</li>
+                </a>
+                <a href="#">
+                    <li class="mdl-menu__item"><i class="material-icons" role="presentation">settings</i>Settings</li>
+                </a>
+                <a href="#">
+                    <li class="mdl-menu__item"><i class="material-icons" role="presentation">exit_to_app</i>Logout</li>
+                </a>
+            </ul>
         </div>
-    </div>
-</header>
-<div class="demo-drawer mdl-layout__drawer" style="width:236px;margin-top:0; padding-top:0;background-color: #202020">
-    <header class="demo-drawer-header" style="height: 62px; background-image: url('images/imgo.png'); margin-top: 0; padding-top: 0;">
-        
     </header>
-    <nav class="demo-navigation mdl-navigation" style="background-color: #202020" style="padding-top:0; margin-top:0">
-        <a class="mdl-navigation__link" href="index.html">
-	    <div style="background-color: #00bcd4; opacity: 0.9; height:48px; width:2px; z-index:10;"></div>
-	    <div style="background-color: black; opacity: 0.25; height:48px; width:234px; z-index:1;"></div>
-	    <i style="z-index: 2; margin-left: -90%;color: #00bcd4; opacity:0.9" class="material-icons" role="presentation">dashboard</i>
-	    <t style="z-index: 2; color: #00bcd4; opacity:1;">Dashboard</t>
-	</a>
-        <a class="mdl-navigation__link" href="#">
-	    <div style=" height:48px; width:236px; z-index:1;"></div>
-	    <i style="z-index: 2; margin-left: -90%;" class="material-icons" role="presentation">person</i>
-	    <t>Account</t>
-	</a>
-        <a id="maps-link" class="mdl-navigation__link" href="#">
-	    <div style=" height:48px; width:236px; z-index:1;"></div>
-	    <i style="z-index: 2; margin-left: -90%;" class="material-icons" role="presentation">maps</i>
-	    <t>Maps</t>
-	</a>
+    <div class="demo-drawer mdl-layout__drawer"
+         style="width:236px;margin-top:0; padding-top:0;background-color: #202020">
+        <header class="demo-drawer-header"
+                style="height: 62px; background-image: url('images/imgo.png'); margin-top: 0; padding-top: 0;"></header>
+        <nav class="demo-navigation mdl-navigation" style="background-color: #202020"
+             style="padding-top:0; margin-top:0">
+            <a class="mdl-navigation__link" href="index.html">
+                <div style="background-color: #00bcd4; opacity: 0.9; height:48px; width:2px; z-index:10;"></div>
+                <div style="background-color: black; opacity: 0.25; height:48px; width:234px; z-index:1;"></div>
+                <i style="z-index: 2; margin-left: -90%;color: #00bcd4; opacity:0.9" class="material-icons"
+                   role="presentation">dashboard</i>
+                <t style="z-index: 2; color: #00bcd4; opacity:1;">Dashboard</t>
+            </a>
+            <a class="mdl-navigation__link" href="#">
+                <div style=" height:48px; width:236px; z-index:1;"></div>
+                <i style="z-index: 2; margin-left: -90%;" class="material-icons" role="presentation">person</i>
+                <t>Account</t>
+            </a>
+            <a id="maps-link" class="mdl-navigation__link" href="#">
+                <div style=" height:48px; width:236px; z-index:1;"></div>
+                <i style="z-index: 2; margin-left: -90%;" class="material-icons" role="presentation">maps</i>
+                <t>Maps</t>
+            </a>
 
-        <div class="mdl-layout-spacer"></div>
-    </nav>
-</div>
+            <div class="mdl-layout-spacer"></div>
+        </nav>
+    </div>
 
-<main class="mdl-layout__content">
+    <main class="mdl-layout__content">
 
-    <div class="mdl-grid">
+        <div class="mdl-grid">
 
-        <table class="mdl-cell mdl-cell--10-col-desktop mdl-cell--top mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
-            <thead>
-            <tr>
-                <th class="mdl-data-table__cell--non-numeric">Project</th>
-                <th class="mdl-data-table__cell--non-numeric">Responsible</th>
-                <th class="mdl-data-table__cell--non-numeric">Client contact</th>
-                <th class="mdl-data-table__cell--non-numeric">Dead line</th>
-                <th class="mdl-data-table__cell--non-numeric">Progress</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td class="mdl-data-table__cell--non-numeric">Darkboard</td>
-                <td class="mdl-data-table__cell--non-numeric">
-                    <span class="label">Alex</span>
-                    <span class="label">Dina</span>
-                    <span class="label">Misha</span>
-                </td>
-                <td class="mdl-data-table__cell--non-numeric">Luke@skywalker.com</td>
-                <td class="mdl-data-table__cell--non-numeric">Jun 15</td>
-                <td class="mdl-data-table__cell--non-numeric">
-                    <div id="task1" class="mdl-progress mdl-js-progress"></div>
-                    <div class="mdl-tooltip" for="task1">
-                        44%
+            <table class="mdl-cell mdl-cell--10-col-desktop mdl-cell--top mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp projects-table">
+                <thead>
+                <tr>
+                    <th class="mdl-data-table__cell--non-numeric">Project</th>
+                    <th class="mdl-data-table__cell--non-numeric">Responsible</th>
+                    <th class="mdl-data-table__cell--non-numeric">Client contact</th>
+                    <th class="mdl-data-table__cell--non-numeric">Dead line</th>
+                    <th class="mdl-data-table__cell--non-numeric">Progress</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="mdl-data-table__cell--non-numeric">Darkboard</td>
+                    <td class="mdl-data-table__cell--non-numeric">
+                        <span class="label label--mini background-color--mint">Alex</span>
+                        <span class="label label--mini background-color--primary">Dina</span>
+                        <span class="label label--mini background-color--cerulean">Misha</span>
+                    </td>
+                    <td class="mdl-data-table__cell--non-numeric">Luke@skywalker.com</td>
+                    <td class="mdl-data-table__cell--non-numeric">Jun 15</td>
+                    <td class="mdl-data-table__cell--non-numeric">
+                        <div id="task1" class="mdl-progress mdl-js-progress"></div>
+                        <div class="mdl-tooltip" for="task1">
+                            44%
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mdl-data-table__cell--non-numeric">Big financial app</td>
+                    <td class="mdl-data-table__cell--non-numeric">
+                        <span class="label label--mini background-color--baby-blue">Vlada</span>
+                    </td>
+                    <td class="mdl-data-table__cell--non-numeric">Boss@financial.com</td>
+                    <td class="mdl-data-table__cell--non-numeric">Mar 1</td>
+                    <td class="mdl-data-table__cell--non-numeric">
+                        <div id="task2" class="mdl-progress mdl-js-progress"></div>
+                        <div class="mdl-tooltip" for="task2">
+                            14%
+                        </div>
+                    </td>
+                </tr>
+                <tr class="is-selected">
+                    <td class="mdl-data-table__cell--non-numeric">New Year office decoration</td>
+                    <td class="mdl-data-table__cell--non-numeric">
+                        <span class="label label--mini background-color--primary">Dina</span>
+                        <span class="label label--mini background-color--baby-blue">Vlada</span>
+                    </td>
+                    <td class="mdl-data-table__cell--non-numeric">info@creativeit.io</td>
+                    <td class="mdl-data-table__cell--non-numeric">Dec 25</td>
+                    <td class="mdl-data-table__cell--non-numeric task-done">
+                        <i id="task3" class="material-icons">done</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mdl-data-table__cell--non-numeric">Don't worry, be happy!!!</td>
+                    <td class="mdl-data-table__cell--non-numeric">
+                        <span class="label label--mini background-color--secondary">Everybody</span>
+                    </td>
+                    <td class="mdl-data-table__cell--non-numeric">Contact@happyness.com</td>
+                    <td class="mdl-data-table__cell--non-numeric">Yesterday</td>
+                    <td class="mdl-data-table__cell--non-numeric">
+                        <div id="task4" class="mdl-progress mdl-js-progress"></div>
+                        <div class="mdl-tooltip" for="task4">
+                            31%
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--top mdl-shadow--2dp">
+                <div class="mdl-card todo">
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">To-do list</h2>
                     </div>
-                </td>
-            </tr>
-            <tr>
-                <td class="mdl-data-table__cell--non-numeric">Big financial app</td>
-                <td class="mdl-data-table__cell--non-numeric">
-                    <span class="label">Vlada</span>
-                </td>
-                <td class="mdl-data-table__cell--non-numeric">Boss@financial.com</td>
-                <td class="mdl-data-table__cell--non-numeric">Mar 1</td>
-                <td class="mdl-data-table__cell--non-numeric">
-                    <div id="task2" class="mdl-progress mdl-js-progress"></div>
-                    <div class="mdl-tooltip" for="task2">
-                        14%
-                    </div>
-                </td>
-            </tr>
-            <tr class="is-selected">
-                <td class="mdl-data-table__cell--non-numeric">New Year office decoration</td>
-                <td class="mdl-data-table__cell--non-numeric">
-                    <span class="label">Dina</span>
-                    <span class="label">Vlada</span>
-                </td>
-                <td class="mdl-data-table__cell--non-numeric">info@creativeit.io</td>
-                <td class="mdl-data-table__cell--non-numeric">Dec 25</td>
-                <td class="mdl-data-table__cell--non-numeric">
-                    <i id="task3" class="material-icons">done</i>
-                    <div class="mdl-tooltip" for="task3">
-                        Done
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td class="mdl-data-table__cell--non-numeric">Don't worry, be happy!!!</td>
-                <td class="mdl-data-table__cell--non-numeric">
-                    <span class="label">Everybody</span>
-                </td>
-                <td class="mdl-data-table__cell--non-numeric">Contact@happyness.com</td>
-                <td class="mdl-data-table__cell--non-numeric">Yesterday</td>
-                <td class="mdl-data-table__cell--non-numeric">
-                    <div id="task4" class="mdl-progress mdl-js-progress"></div>
-                    <div class="mdl-tooltip" for="task4">
-                        31%
-                    </div>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+                    <div class="mdl-card__supporting-text">
+                        <ul class="list">
 
-        <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--top mdl-shadow--2dp">
-            <div class="mdl-card todo">
-                <div class="mdl-card__title">
-                    <h2 class="mdl-card__title-text">To-do list</h2>
+                        </ul>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect">remove selected</button>
+                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--fab mdl-shadow--8dp mdl-button--colored ">
+                            <i class="material-icons mdl-js-ripple-effect">add</i>
+                        </button>
+                    </div>
                 </div>
-                <div class="mdl-card__supporting-text">
-                    <ul class="list">
+            </div>
 
-                    </ul>
-                </div>
-                <div class="mdl-card__actions">
-                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect">remove selected</button>
-                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--fab mdl-shadow--8dp mdl-button--colored ">
-                        <i class="material-icons mdl-js-ripple-effect">add</i>
-                    </button>
+            <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--top mdl-shadow--2dp">
+                <div class="mdl-card tranding">
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">Tranding</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <ul class="list">
+                            <li class="list__item">
+                                <span class="list__item-text">UX</span>
+                                <span class="tranding__percent pull-right">1 %</span>
+                                <i class="material-icons tranding__arrow-up pull-right" role="presentation">&#xE5C7</i>
+
+                            </li>
+                            <li class="list__item list__item--border-top">
+                                <span class="list__item-text">PHP</span>
+                                <span class="tranding__percent pull-right">2 %</span>
+                                <i class="material-icons tranding__arrow-down pull-right"
+                                   role="presentation">&#xE5C5</i>
+
+                            </li>
+                            <li class="list__item list__item--border-top">
+                                <span class="list__item-text ">Big Data</span>
+                                <span class="tranding__percent pull-right">5 %</span>
+                                <i class="material-icons tranding__arrow-up pull-right" role="presentation">&#xE5C7</i>
+
+                            </li>
+                            <li class="list__item list__item--border-top">
+                                <span class="list__item-text">Material Design</span>
+                                <span class="tranding__percent pull-right">18 %</span>
+                                <i class="material-icons tranding__arrow-up pull-right" role="presentation">&#xE5C7</i>
+
+                            </li>
+                            <li class="list__item list__item--border-top">
+                                <span class="list__item-text">JavaScript</span>
+                                <span class="tranding__percent pull-right">17 %</span>
+                                <i class="material-icons tranding__arrow-up pull-right" role="presentation">&#xE5C7</i>
+
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--top mdl-shadow--2dp">
-            <div class="mdl-card tranding">
-                <div class="mdl-card__title">
-                    <h2 class="mdl-card__title-text">Tranding</h2>
-                </div>
-                <div class="mdl-card__supporting-text">
-                    <ul class="list">
-                        <li class="list__item">
-                            <span class="list__item-text">UX</span>
-                            <span class="tranding__percent pull-right">1 %</span>
-                            <i class="material-icons tranding__arrow-up pull-right" role="presentation">&#xE5C7</i>
-
-                        </li>
-                        <li class="list__item list__item--border-top">
-                            <span class="list__item-text">PHP</span>
-                            <span class="tranding__percent pull-right">2 %</span>
-                            <i class="material-icons tranding__arrow-down pull-right" role="presentation">&#xE5C5</i>
-
-                        </li>
-                        <li class="list__item list__item--border-top">
-                            <span class="list__item-text ">Big Data</span>
-                            <span class="tranding__percent pull-right">5 %</span>
-                            <i class="material-icons tranding__arrow-up pull-right" role="presentation">&#xE5C7</i>
-
-                        </li>
-                        <li class="list__item list__item--border-top">
-                            <span class="list__item-text">Material Design</span>
-                            <span class="tranding__percent pull-right">18 %</span>
-                            <i class="material-icons tranding__arrow-up pull-right" role="presentation">&#xE5C7</i>
-
-                        </li>
-                        <li class="list__item list__item--border-top">
-                            <span class="list__item-text">JavaScript</span>
-                            <span class="tranding__percent pull-right">17 %</span>
-                            <i class="material-icons tranding__arrow-up pull-right" role="presentation">&#xE5C7</i>
-
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-</div>
-
-</main>
+    </main>
 </div>
 
 
 <!-- inject:js -->
-  <!-- endinject -->
+<!-- endinject -->
 
 </body>
 </html>
