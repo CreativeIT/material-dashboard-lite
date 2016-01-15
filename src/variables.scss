@@ -93,6 +93,9 @@ $tooltip-background-color: #353535;
 
 /* TEXTFIELD */
 
+$input-text-highlight-color: unquote("rgba(#{$color-primary}, 0.8)");
+$input-text-disabled-text-color: unquote("rgba(#{$color-primary}, 0.5)");
+
 /* SWITCH */
 
 /* SPINNER */
@@ -102,6 +105,9 @@ $tooltip-background-color: #353535;
 // How much the start location of the arc should rotate each time.
 
 /* RADIO */
+
+$radio-off-color: unquote("rgba(#{$color-white}, 0.8)");
+$radio-color: unquote("rgba(#{$color-primary}, 0.8)");
 
 /* MENU */
 
@@ -229,3 +235,12 @@ $dropdown-menu-footer-font-color: white;
 $dropdown-menu-vertical-padding: 16px;
 $dropdown-menu-horizontal-padding: 16px;
 $dropdown-menu-content-vertical-padding: 8px;
+
+/* employer form*/
+$employer-form-width: 670px;
+$employer-form-horizontal-padding: 15px;
+$employer-form-color-brighter: rgba(255, 255, 255, 1);
+$employer-form-color-darker: rgba(255, 255, 255, 0.6);
+$employer-form-column-width: 300px;
+$employer-form-contact-value-width: 385px;
+$employer-form-contact-type-width: 180px;

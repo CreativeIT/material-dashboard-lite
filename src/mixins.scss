@@ -37,6 +37,7 @@
 @mixin typo-message-topic($usePreferred: true) {
   @include typo-preferred-font($usePreferred);
   line-height: 1.1em;
+  
   span:first-of-type {
     font-size: 15px;
     font-weight: 500;
@@ -67,4 +68,46 @@
     font-size: 14px;
     font-weight: 300;
   }
+}
+
+@mixin typo-employer-form-header($usePreferred: true) {
+  @include typo-preferred-font($usePreferred);
+  
+  h2:first-of-type {
+    font-size: 24px;
+    font-weight: 400;
+    color: unquote("rgb(#{$color-primary})");
+    line-height: 1.2em;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+    
+  p {
+    font-size: 13px;
+    font-weight: 300;
+    color: $employer-form-color-darker;
+    line-height: 1.2em;
+  }
+}
+
+@mixin typo-employer-form-topic($usePreferred: true) {
+  @include typo-preferred-font($usePreferred);
+  font-size: 20px;
+  font-weight: 300;
+  color: $employer-form-color-darker;
+}
+
+@mixin typo-employer-form-inputs($usePreferred: true) {
+  @include typo-preferred-font($usePreferred);
+  color: $employer-form-color-brighter;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+@mixin typo-employer-form-button($usePreferred: true) {
+  @include typo-preferred-font($usePreferred);
+  font-size: 13px;
+  line-height: 13px;
+  font-weight: 400;
+  color: white;
 }
