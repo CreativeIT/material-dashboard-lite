@@ -1,4 +1,4 @@
-.tranding {
+.trending {
   .mdl-card__supporting-text {
     width: 100%;
     padding: 8px 0;
@@ -8,18 +8,18 @@
     padding: 12px 16px;
     &:hover {
       background-clip: padding-box;
-      background-color: $tranding-list-item-hover-color;
+      background-color: $trending-list-item-hover-color;
     }
   }
   .material-icons {
     margin-top: -12px;
-    font-size: $tranding-arrow-size;
+    font-size: $trending-arrow-size;
   }
   &__arrow-up {
-     color: $tranding-arrow-up-color;
+     color: $trending-arrow-up-color;
   }
   &__arrow-down {
-    color: $tranding-arrow-down-color;
+    color: $trending-arrow-down-color;
   }
   &__percent {
     text-align: right;
