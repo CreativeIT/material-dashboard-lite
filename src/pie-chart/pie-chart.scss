@@ -1,0 +1,57 @@
+.nvd3.nv-pie path {
+  stroke-width: 0px;
+}
+
+.legend__item {
+  @include typo-textfield-input;
+  font-weight: 300;
+  font-size: 16px !important;
+  color: #fff;
+}
+
+.nvd3.nv-pie .hover path {
+  fill-opacity: 1;
+}
+
+.nvd3 .nv-pie-title, .pie-title {
+  @include typo-textfield-input;
+  font-size: 22px !important;
+  fill: #fff !important;
+  font-weight: 300;
+  text-anchor: middle;
+}
+
+#chart {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+
+  .wrap {
+    max-width: 178px;
+  }
+  svg {
+    min-height: 228px;
+  }
+}
+
+.legend {
+  margin-left: 10px;
+  max-width: 144px;
+  .legend__item {
+    &:first-of-type {
+      margin-top: 16px;
+    }
+    margin-bottom: 16px;
+    .legend__text {
+      margin-left: 24px;
+      //width: 118px;
+    }
+    .legend__mark {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      margin: 3px 16px 0 0;;
+    }
+  }
+}
