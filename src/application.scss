@@ -4,8 +4,6 @@
 
 @import 'mixins';
 
-@import 'helper';
-
 @import 'card/card';
 
 @import 'checkbox/checkbox';
@@ -19,17 +17,27 @@
 @import 'round_icon/round_icon';
 
 @import 'data-table/data-table';
+
 @import 'label/label';
 
 @import 'dropdown-menu/dropdown-menu';
 
 @import 'table/table';
 
+@import 'tooltip/tooltip';
+
 @import 'notifications/notifications';
-@import 'tranding/tranding';
+
+@import 'trending/trending';
+
 @import 'message-notifications/message-notifications';
+
 @import 'sidebar/sidebar';
 
 @import 'list/list';
 
 @import 'todo/todo';
+
+@import "pie-chart/pie-chart";
+
+@import 'helper';

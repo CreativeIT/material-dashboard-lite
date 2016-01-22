@@ -4,15 +4,14 @@ $image_path: '../images';
 /* ==========  Color & Themes  ========== */
 $color-primary: 0, 188, 212;
 $color-secondary: 255, 82, 82;
+$color-baby-blue: 116, 199, 209;
+$color-cerulean: 80, 150, 215;
+$color-mint: 96, 196, 150;
 $color-white: 255, 255, 255;
 $color-black: 0, 0, 0;
 
-$unit-background-color: #4f4f4f;
-$separate-border-color: unquote("rgba(#{$color-white},0.1)");
-//$color-primary-dark: '$color-primary-dark';
-//$color-accent: '$color-accent';
-//$color-primary-contrast: '$color-primary-contrast';
-//$color-accent-contrast: '$color-accent-contrast';
+$background-color: #4e4e4e;
+
 /* ==========  Typography  ========== */
 
 /* ==========  Components  ========== */
@@ -25,10 +24,13 @@ $button-secondary-color: unquote("rgb(#{$color-white})");
 $button-primary-color-alt: unquote("rgb(#{$color-secondary})");
 // Ripple color for colored raised buttons.
 // Disabled button colors.
-$button-primary-color-disabled: #6b6b6b;                                    //background-color:
-$button-secondary-color-disabled: unquote("rgba(#{$color-white}, 0.3)");    //color:
+$button-primary-color-disabled: #6b6b6b;
+//background-color:
+$button-secondary-color-disabled: unquote("rgba(#{$color-white}, 0.3)");
+//color:
 // FAB colors and sizes.
-$button-fab-color-alt: unquote("rgb(#{$color-secondary})");;
+$button-fab-color-alt: unquote("rgb(#{$color-secondary})");
+;
 $button-fab-text-color-alt: #ffffff;
 $button-fab-hover-color-alt: #ff4c4c;
 $button-fab-active-color-alt: #f23d3d;
@@ -58,10 +60,12 @@ $checkbox-color: unquote("rgb(#{$color-secondary})");
 
 /* ==========  Text fields  ========== */
 
-$todo-input-text-label-color: unquote("rgba(#{$color-white}, 0.2)"); //placeholder color
-$todo-input-text-highlight-color: unquote("rgba(#{$color-white}, 0.7)"); //bottom line color
+$todo-input-text-label-color: unquote("rgba(#{$color-white}, 0.2)");
+//placeholder color
+$todo-input-text-highlight-color: unquote("rgba(#{$color-white}, 0.7)");
+//bottom line color
 /* ==========  Card  ========== */
-$card-background-color: $unit-background-color;
+$card-background-color: $background-color;
 $card-title-background-color: unquote("rgba(#{$color-black}, 0.3)");
 $card-actions-background-color: unquote("rgba(#{$color-white},0.05)");
 $card-text-color: unquote("rgba(#{$color-white}, 0.8)");
@@ -73,6 +77,7 @@ $progress-main-color: unquote("rgb(#{$color-secondary})");
 $progress-secondary-color: unquote("rgba(#{$color-white}, 0.4)");
 
 /* ==========  List ========== */
+$list-separator-border-color: unquote("rgba(#{$color-white},0.1)");
 
 /* ==========  Item ========== */
 
@@ -82,6 +87,7 @@ $progress-secondary-color: unquote("rgba(#{$color-white}, 0.4)");
 /* ==========  Dropdown menu ========== */
 
 /* ==========  Tooltips  ========== */
+$tooltip-background-color: #353535;
 
 /* ==========  Footer  ========== */
 
@@ -104,7 +110,7 @@ $progress-secondary-color: unquote("rgba(#{$color-white}, 0.4)");
 /* LAYOUT */
 
 /* ICON */
-$tranding-arrow-size: 48px;
+$trending-arrow-size: 48px;
 
 /* ICON TOGGLE */
 
@@ -146,25 +152,29 @@ $badge-background: unquote("rgb(#{$color-primary})");
 
 /* DATA TABLE */
 
-$data-table-background-color: $unit-background-color;
-$data-table-hover-color: unquote("rgba(#{$color-black}, 0.3)");
+$data-table-background-color: $background-color;
+$data-table-hover-color: unquote("rgba(#{$color-black}, 0.2)");
 $data-table-selection-color: #e0e0e0;
-
-$data-table-divider-color: unquote("rgba(#{$color-white},0.1)");
+$table-separator-border-color: unquote("rgba(#{$color-white},0.05)");
+$data-table-header-color: unquote("rgb(#{$color-white})");
+$data-table-color: unquote("rgb(#{$color-white})");
 
 /* TOOLTIP */
+$tooltip-font-size: 12px;
+$table-tooltip-vertical-padding: 5px;
+$table-tooltip-horizontal-padding: 8px;
 
 //-------------------------------------------------------
 
 $list-item-text-color: unquote("rgb(#{$color-white})");
-$list-item-border-color: $separate-border-color;
+$list-item-border: 1px solid $list-separator-border-color;
 $list-item-vertical-margin: 18px;
-$tranding-arrow-up-color: unquote("rgb(#{$color-primary})");
-$tranding-arrow-down-color: unquote("rgb(#{$color-secondary})");
+$trending-list-item-hover-color: unquote("rgba(#{$color-black}, 0.2)");
+$trending-arrow-up-color: unquote("rgb(#{$color-primary})");
+$trending-arrow-down-color: unquote("rgb(#{$color-secondary})");
 
-
-$header-color: rgba(0, 0, 0, 0.35);
-$card-color: #4e4e4e;
+//$header-color: rgba(0, 0, 0, 0.35);
+//$card-color: #4e4e4e;
 
 /*<deprecated>*/
 $fist-user-color: #ff5252;
@@ -172,22 +182,21 @@ $first-user-color: #ff5252;
 $second-user-color: #00bcd4;
 /*</deprecated>*/
 
-$badge-background:#00bcd4;
+$badge-background: #00bcd4;
 $primary-font-size: 10px;
 $color-accent: rgba(0, 0, 0, 0.35);
 $color-primary-contrast: white;
 $color-accent-contrast: #00bcd4;
-$color-secondary: #ff5252;
+//$color-secondary: #ff5252;
 $border-color: #757575;
 
-$background-color: #4e4e4e;
 $field-accent-color: rgba(0, 0, 0, 0.35);
 $field-primary-color-contrast: white;
 
 /* label*/
 
 $label-height: 20px;
-$label-padding:  5px 8px 5px 8px;
+$label-padding: 5px 8px 5px 8px;
 
 /* Notifications*/
 
@@ -205,7 +214,7 @@ $dropdown-menu-hover-color: rgba(0, 0, 0, .2);
 $dropdown-menu-header-height: 32px;
 $dropdown-menu-footer-height: 32px;
 $dropdown-menu-li-height: 32px;
-$dropdown-menu-header-font-color: rgba(255,255,255,0.8);
+$dropdown-menu-header-font-color: rgba(255, 255, 255, 0.8);
 $dropdown-menu-footer-font-color: white;
 $dropdown-menu-vertical-padding: 16px;
 $dropdown-menu-horizontal-padding: 16px;

@@ -10,17 +10,7 @@
 
 @mixin typo-data-table ($usePreferred: true) {
   @include typo-preferred-font($usePreferred);
-  font-size: 16px ;
   font-weight: 300;
-}
-
-
-
-@mixin typo-dropdown-menu-footer($usePreferred: true) {
-  @include typo-preferred-font($usePreferred);
-  font-size: 14px;
-  font-weight: 500;
-  color: $dropdown-menu-footer-font-color;
 }
 
 @mixin typo-dropdown-menu-header($usePreferred: true) {
@@ -40,8 +30,6 @@
 
 @mixin typo-label($usePreferred: true) {
   @include typo-preferred-font($usePreferred);
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 12px;  
   font-weight: 400;
   line-height: 1.1em;
 }

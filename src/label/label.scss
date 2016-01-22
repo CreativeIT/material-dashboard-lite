@@ -1,21 +1,20 @@
-.label  {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 2px;
-    height: $label-height;
-    padding: $label-padding;
-    margin: 0;
-    margin-left: auto;
-    @include typo-label();
-}
-
-.label--primary {
-    background-color: unquote("rgb(#{$color-primary})");
-}
-
-.label--secondary {
-    background-color: $color-secondary;
-}
-
-.label--frameless {
+.label {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.5);
+  border-radius: 2px;
+  height: $label-height;
+  padding: $label-padding;
+  margin: 0;
+  margin-left: auto;
+  font-size: 12px;
+  @include typo-label();
+  &--mini {
+    padding: 3px 8px 2px;
+    color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+    vertical-align: middle;
+  }
+  &--frameless {
     background-color: rgba(0, 0, 0, 0);
+  }
 }

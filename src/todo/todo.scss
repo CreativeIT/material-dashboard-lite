@@ -1,29 +1,33 @@
 .todo {
-  .mdl-checkbox {
-    height: auto;
-    padding-right: $checkbox-button-size/2;
-    padding-left: $checkbox-button-size*2;
-  }
-  .list__item {
-    .material-icons {
-      visibility: hidden;
+    .mdl-checkbox {
+        height: auto;
+        padding-right: $checkbox-button-size/2;
+        padding-left: $checkbox-button-size*2;
     }
-    &:hover .material-icons {
-      visibility: visible;
+    .mdl-cell .mdl-checkbox{
+        width: 100%;
     }
-  }
-  .mdl-textfield {
-    padding: 0;
-  }
-  .mdl-textfield__input {
-    padding: 2px 0;
-  }
-  .mdl-textfield__label {
-    color: $todo-input-text-label-color;
-    top: 0;
-    &:after{
-      background-color:  $todo-input-text-highlight-color;
-      bottom: 0;
+    .list__item {
+        .material-icons {
+            visibility: hidden;
+        }
+        &:hover .material-icons {
+            visibility: visible;
+        }
     }
-  }
+    .mdl-textfield {
+        width: 100%;
+        padding: 0;
+    }
+    .mdl-textfield__input {
+        padding: 2px 0;
+    }
+    .mdl-textfield__label {
+        color: $todo-input-text-label-color;
+        top: 0;
+        &:after{
+            background-color:  $todo-input-text-highlight-color;
+            bottom: 0;
+        }
+    }
 }
