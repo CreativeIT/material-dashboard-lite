@@ -9,7 +9,7 @@
 }
 
 .label--primary {
-    background-color: $color-primary;
+    background-color: unquote("rgb(#{$color-primary})");
 }
 
 .label--secondary {
