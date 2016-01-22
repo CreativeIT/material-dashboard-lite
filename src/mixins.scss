@@ -31,7 +31,7 @@
 @mixin typo-label($usePreferred: true) {
   @include typo-preferred-font($usePreferred);
   font-weight: 400;
-  line-height: 1.1em;
+  line-height: 1em;
 }
 
 @mixin typo-message-topic($usePreferred: true) {
@@ -47,5 +47,24 @@
     font-size: 12px;
     font-weight: lighter;
     color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+@mixin typo-account-dropdown-header($usePreferred: true) {
+  @include typo-preferred-font($usePreferred);
+  line-height: 1.1em;
+  span:first-of-type {
+    line-height: 1.7em;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 18px;
+    font-weight: 300;
+  }
+    
+  span {
+    color: rgba(255, 255, 255, 0.64);
+    line-height: 1.3em;
+    font-weight: 500;
+    font-size: 14px;
+    font-weight: 300;
   }
 }

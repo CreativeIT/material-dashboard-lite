@@ -45,3 +45,7 @@
 .text-color--mint {
   color: unquote("rgba(#{$color-mint}, 0.8)");
 }
+
+.color-secondary--100 {
+  color: unquote("rgba(#{$color-secondary}, 1)") !important;
+}
