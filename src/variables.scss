@@ -11,6 +11,7 @@ $color-white: 255, 255, 255;
 $color-black: 0, 0, 0;
 
 $background-color: #4e4e4e;
+$background-color-header: #242424;
 
 /* ==========  Typography  ========== */
 
@@ -46,6 +47,9 @@ $button-fab-active-color-alt: #f23d3d;
 
 // Drawer
 // Header
+$layout-header-text-color: unquote("rgb(#{$color-primary})");
+$layout-header-bg-color: $background-color-header;
+
 // Tabs
 
 /* ==========  Content Tabs  ========== */
@@ -108,6 +112,7 @@ $tooltip-background-color: #353535;
 /* LIST */
 
 /* LAYOUT */
+$layout-drawer-narrow: 236px;
 
 /* ICON */
 $trending-arrow-size: 48px;
@@ -149,6 +154,13 @@ $badge-background: unquote("rgb(#{$color-primary})");
 /* SHADOWS */
 
 /* GRID */
+$grid-desktop-gutter: 32px;
+$grid-desktop-margin: 24px;
+
+$grid-tablet-breakpoint: 600px;
+$grid-desktop-breakpoint: 1314px;
+
+//$grid-desktop-breakpoint: 1346px;
 
 /* DATA TABLE */
 

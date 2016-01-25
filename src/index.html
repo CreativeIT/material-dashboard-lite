@@ -42,41 +42,32 @@
     <link rel="canonical" href="http://www.example.com/">
     -->
 
-    <script type="text/javascript" src="https://www.google.com/jsapi" ></script>
-
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,300,100,700,900' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- inject:css -->
     <!-- endinject -->
-    <style>
-        .mdl-layout__header-row {
-	    background-color: #242424;
-        }
-    </style>
 
 </head>
 <body>
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
-<header class="demo-header mdl-layout__header mdl-color--white mdl-color--grey-100">
-    <div class="mdl-layout__header-row">
-        <div class="mdl-layout-spacer"></div>
+    <header class="demo-header mdl-layout__header">
+        <div class="mdl-layout__header-row">
+            <div class="mdl-layout-spacer"></div>
 
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+                    <i class="material-icons">search</i>
+                </label>
 
-
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-            <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
-                <i class="material-icons">search</i>
-            </label>
-
-            <div class="mdl-textfield__expandable-holder">
-                <input class="mdl-textfield__input" type="text" id="search" />
-                <label class="mdl-textfield__label" for="search">Enter your query...</label>
+                <div class="mdl-textfield__expandable-holder">
+                    <input class="mdl-textfield__input" type="text" id="search"/>
+                    <label class="mdl-textfield__label" for="search">Enter your query...</label>
+                </div>
             </div>
-        </div>
-        <div class=" mdl-js-ripple-effect " id="notification">
-            <i class="material-icons">notifications_none</i> 
-            <span class="mdl-badge" data-badge="30"></span>
-        </div>
+            <div class=" mdl-js-ripple-effect " id="notification">
+                <i class="material-icons">notifications_none</i>
+                <span class="mdl-badge" data-badge="30"></span>
+            </div>
 
         <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right dropdown-menu notifications" for="notification">
 	    <li>
@@ -273,16 +264,14 @@
         </ul>
         <div class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-color--grey-100 mdl-shadow--16dp" for="calendar">
 
-            <div class="mdl-grid">
-                <div ng-app="app" >
-                    <calendar></calendar>
-                </div>
+            <div class=" mdl-js-ripple-effect " id="inbox">
+                <i class="material-icons">mail_outline</i>
+                <span class="mdl-badge" data-badge="4"></span>
             </div>
 
         </div>
-    </div>
-</header>
-<div class="demo-drawer mdl-layout__drawer"
+    </header>
+    <div class="demo-drawer mdl-layout__drawer"
          style="width:236px;margin-top:0; padding-top:0;background-color: #202020">
         <header class="demo-drawer-header"
                 style="height: 62px; background-image: url('images/imgo.png'); margin-top: 0; padding-top: 0;"></header>
@@ -316,7 +305,7 @@
 
 
 
-            <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--top mdl-shadow--2dp">
+            <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-cell--top mdl-shadow--2dp">
                 <div class="mdl-card trending">
                     <div class="mdl-card__title">
                         <h2 class="mdl-card__title-text">Trending</h2>
@@ -360,7 +349,7 @@
 
 
 
-            <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--top mdl-shadow--2dp">
+            <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-cell--top mdl-shadow--2dp">
                 <div class="mdl-card pie-chart">
                     <div class="mdl-card__title">
                         <h2 class="mdl-card__title-text">My Day</h2>
@@ -373,7 +362,7 @@
                 </div>
             </div>
 
-            <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--top mdl-shadow--2dp">
+            <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-cell--top mdl-shadow--2dp">
                 <div class="mdl-card todo">
                     <div class="mdl-card__title">
                         <h2 class="mdl-card__title-text">To-do list</h2>
@@ -462,67 +451,6 @@
                 </tbody>
             </table>
 
-            <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--top mdl-shadow--2dp">
-                <div class="mdl-card todo">
-                    <div class="mdl-card__title">
-                        <h2 class="mdl-card__title-text">To-do list</h2>
-                    </div>
-                    <div class="mdl-card__supporting-text">
-                        <ul class="list">
-
-                        </ul>
-                    </div>
-                    <div class="mdl-card__actions">
-                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect">remove selected</button>
-                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--fab mdl-shadow--8dp mdl-button--colored ">
-                            <i class="material-icons mdl-js-ripple-effect">add</i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--top mdl-shadow--2dp">
-                <div class="mdl-card tranding">
-                    <div class="mdl-card__title">
-                        <h2 class="mdl-card__title-text">Tranding</h2>
-                    </div>
-                    <div class="mdl-card__supporting-text">
-                        <ul class="list">
-                            <li class="list__item">
-                                <span class="list__item-text">UX</span>
-                                <span class="tranding__percent pull-right">1 %</span>
-                                <i class="material-icons tranding__arrow-up pull-right" role="presentation">&#xE5C7</i>
-
-                            </li>
-                            <li class="list__item list__item--border-top">
-                                <span class="list__item-text">PHP</span>
-                                <span class="tranding__percent pull-right">2 %</span>
-                                <i class="material-icons tranding__arrow-down pull-right"
-                                   role="presentation">&#xE5C5</i>
-
-                            </li>
-                            <li class="list__item list__item--border-top">
-                                <span class="list__item-text ">Big Data</span>
-                                <span class="tranding__percent pull-right">5 %</span>
-                                <i class="material-icons tranding__arrow-up pull-right" role="presentation">&#xE5C7</i>
-
-                            </li>
-                            <li class="list__item list__item--border-top">
-                                <span class="list__item-text">Material Design</span>
-                                <span class="tranding__percent pull-right">18 %</span>
-                                <i class="material-icons tranding__arrow-up pull-right" role="presentation">&#xE5C7</i>
-
-                            </li>
-                            <li class="list__item list__item--border-top">
-                                <span class="list__item-text">JavaScript</span>
-                                <span class="tranding__percent pull-right">17 %</span>
-                                <i class="material-icons tranding__arrow-up pull-right" role="presentation">&#xE5C7</i>
-
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
         </div>
 
     </main>
@@ -530,7 +458,7 @@
 
 
 <!-- inject:js -->
-  <!-- endinject -->
+<!-- endinject -->
 
 </body>
 </html>

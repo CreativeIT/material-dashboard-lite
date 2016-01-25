@@ -8,7 +8,7 @@
             this.database = database ||
                 [
                     {
-                        title: 'Happy New Year!!!',
+                        title: 'Fix bugs',
                         id: '01.01.16',
                         completed: ''
                     },
@@ -23,12 +23,6 @@
                         title: 'Fencing',
                         id: 5451646545,
                         completed: 'checked'
-                    },
-
-                    {
-                        title: 'Fix bugs',
-                        id: 8751646545,
-                        completed: ''
                     },
 
                     {
@@ -103,13 +97,13 @@
 
         _prepareTemplate (data) {
             return `<div class="mdl-grid mdl-grid--no-spacing">
-                        <div class="mdl-cell mdl-cell--11-col">
+                        <div class="mdl-cell mdl-cell--11-col-desktop mdl-cell--7-col-tablet mdl-cell--3-col-phone">
                             <label for="${data.id}" checkboxItem class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
                                 <input type="checkbox" id="${data.id}" ${data.completed} class="mdl-checkbox__input" />
                                 <span class="mdl-checkbox__label">${data.title}</span>
                             </label>
                         </div>
-                        <div class="mdl-cell mdl-cell--1-col">
+                        <div class="mdl-cell mdl-cell--1-col-desktop mdl-cell--1-col-tablet mdl-cell--1-col-phone">
                             <button for = "${data.id}" deleteItem class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored mdl-button--mini-icon pull-right">
                                 <i class="material-icons">clear</i>
                             </button>
