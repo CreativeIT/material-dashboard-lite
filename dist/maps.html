@@ -42,7 +42,9 @@
     <link rel="canonical" href="http://www.example.com/">
     -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,300,100,700,900' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- inject:css -->
+    <link rel="stylesheet" href="css/nv.d3.css">
     <link rel="stylesheet" href="css/application.css">
     <!-- endinject -->
     <style>
@@ -211,7 +213,7 @@
 			just now
 		    </time>
 		</div>
-		<div class="material-icons mdl-js-ripple-effect round_icon round_icon--primary">
+		<div class="material-icons mdl-js-ripple-effect round_icon background-color--primary">
 		    <i class="material-icons mdl-js-ripple-effect">plus_one</i>
 		</div>
 		<span>You have 3 new orders.</span>
@@ -222,7 +224,7 @@
 			1 min
 		    </time>
 		</div>
-		<div class="material-icons mdl-js-ripple-effect round_icon round_icon--secondary">
+		<div class="material-icons mdl-js-ripple-effect round_icon background-color--secondary">
 		    <i class="material-icons mdl-js-ripple-effect">error_outline</i>
 		</div>
 		<span>Database error</span>
@@ -233,7 +235,7 @@
 			2 hours
 		    </time>
 		</div>
-		<div class="material-icons mdl-js-ripple-effect round_icon round_icon--primary">
+		<div class="material-icons mdl-js-ripple-effect round_icon background-color--primary">
 		    <i class="material-icons mdl-js-ripple-effect">new_releases</i>
 		</div>
 		<span>The Death Star is built!</span>
@@ -244,7 +246,7 @@
 			5 days
 		    </time>
 		</div>
-		<div class="material-icons mdl-js-ripple-effect round_icon round_icon--primary">
+		<div class="material-icons mdl-js-ripple-effect round_icon background-color--primary">
 		    <i class="material-icons mdl-js-ripple-effect">mail_outline</i>
 		</div>
 		<span>You have 4 new mails.</span>
@@ -268,7 +270,7 @@
 	    </li>
             <li class="mdl-menu__item">
 		
-		<div class="material-icons mdl-js-ripple-effect round_icon round_icon--primary">
+		<div class="material-icons mdl-js-ripple-effect round_icon background-color--primary">
 		    <span class="material-icons">A</span>
 		</div>
 		<div class="message-notifications__topic">
@@ -283,7 +285,7 @@
 		</div>
 	    </li>
             <li class="mdl-menu__item">
-		<div class="material-icons mdl-js-ripple-effect round_icon round_icon--baby-blue">
+		<div class="material-icons mdl-js-ripple-effect round_icon background-color--baby-blue">
 		    <span class="material-icons">M</span>
 		</div>
 		<div class="message-notifications__topic">
@@ -298,7 +300,7 @@
 		</div>
 	    </li>
             <li class="mdl-menu__item">
-		<div class="material-icons mdl-js-ripple-effect round_icon round_icon--cerulean">
+		<div class="material-icons mdl-js-ripple-effect round_icon background-color--cerulean">
 		    <span class="material-icons">D</span>
 		</div>
 		<div class="message-notifications__topic">
@@ -313,7 +315,7 @@
 		</div>
 	    </li>
             <li class="mdl-menu__item">
-		<div class="material-icons mdl-js-ripple-effect round_icon round_icon--mint">
+		<div class="material-icons mdl-js-ripple-effect round_icon background-color--mint">
 		    <span class="material-icons">D</span>
 		</div>
 		<div class="message-notifications__topic">
@@ -336,18 +338,62 @@
         <div id="userNameHeader">
             Luke
 	</div>
-	<div class="demo-avatar-dropdown">
-            <img src="images/card.jpg" class="demo-avatar">
+	<div class="demo-avatar-dropdown" id="icon">
+            <img src="images/Icon_header.png" class="demo-avatar">
         </div>
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect dropdown-menu account-dropdown" for="icon">
+		<li class="mdl-menu__item">
+		    <header>
+			<img src="images/Icon.png" class="demo-avatar  pull-left">
+			<div class="pull-left">
+			    <span>Luke</span>
+			    <br>
+			    <span>Luke@skywalker.com</span>
+			</div>
+		    </header>
+		</li>
+		<li class="mdl-menu__item dropdown-menu__divider"></li>
+                <li class="mdl-menu__item">
+		    <i class="material-icons mdl-js-ripple-effect pull-left">account_circle</i>
+		    <span>My account</span>
+		</li>
+		<li class="mdl-menu__item">
+		    <div class="label pull-right label--primary">
+			<time>
+			    3 new
+			</time>
+		    </div>
+		    <i class="material-icons mdl-js-ripple-effect pull-left">check_box</i>
+		    <span>My tasks</span>
+		</li>
+		<li class="mdl-menu__item">
+		    <i class="material-icons mdl-js-ripple-effect pull-left">perm_contact_calendar</i>
+		    <span>My events</span>
+		</li>
+		<li class="mdl-menu__item dropdown-menu__divider"></li>
+		<li class="mdl-menu__item">
+		    <i class="material-icons mdl-js-ripple-effect pull-left">settings</i>
+		    <span>Settings</span>
+		</li>
+		<li class="mdl-menu__item">
+		    <i class="material-icons mdl-js-ripple-effect pull-left color-secondary--100">exit_to_app</i>
+		    <span>Log out</span>
+		</li>
+        </ul>
         <div class=" mdl-js-ripple-effect " id="more">
             <i class="material-icons">more_vert</i>
-            <span></span>
         </div>
-        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect mdl-color--grey-400" for="more">
-                <a href="profile.html"><li class="mdl-menu__item"><i class="material-icons" role="presentation">person</i>My Profile</li></a>
-                <a href="#"><li class="mdl-menu__item"><i class="material-icons" role="presentation">settings</i>Settings</li></a>
-                <a href="#"><li class="mdl-menu__item"><i class="material-icons" role="presentation">exit_to_app</i>Logout</li></a>
-            </ul>
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect dark_dropdown" for="more">
+	    <li class="mdl-menu__item">
+		Settings
+	    </li>
+	    <li class="mdl-menu__item">
+		Support
+	    </li>
+	    <li class="mdl-menu__item">
+		Last last action
+	    </li>
+        </ul>
         <div class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-color--grey-100 mdl-shadow--16dp" for="calendar">
 
             <div class="mdl-grid">
@@ -412,7 +458,10 @@
 </div>
 
     <!-- inject:js -->
+    <script src="js/d3.js"></script>
     <script src="js/material.min.js"></script>
+    <script src="js/nv.d3.js"></script>
+    <script src="js/pie-chart/pie-chart-nvd3.js"></script>
     <script src="js/table/table.js"></script>
     <script src="js/todo/todo.js"></script>
     <!-- endinject -->
