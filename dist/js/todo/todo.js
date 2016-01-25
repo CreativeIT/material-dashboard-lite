@@ -15,7 +15,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 _classCallCheck(this, Model);
 
                 this.database = database || [{
-                    title: 'Happy New Year!!!',
+                    title: 'Fix bugs',
                     id: '01.01.16',
                     completed: ''
                 }, {
@@ -26,10 +26,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     title: 'Fencing',
                     id: 5451646545,
                     completed: 'checked'
-                }, {
-                    title: 'Fix bugs',
-                    id: 8751646545,
-                    completed: ''
                 }, {
                     title: 'Read an article about Test-Driven Development',
                     id: 5428646545,
@@ -111,7 +107,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             }, {
                 key: '_prepareTemplate',
                 value: function _prepareTemplate(data) {
-                    return '<div class="mdl-grid mdl-grid--no-spacing">\n                        <div class="mdl-cell mdl-cell--11-col">\n                            <label for="' + data.id + '" checkboxItem class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">\n                                <input type="checkbox" id="' + data.id + '" ' + data.completed + ' class="mdl-checkbox__input" />\n                                <span class="mdl-checkbox__label">' + data.title + '</span>\n                            </label>\n                        </div>\n                        <div class="mdl-cell mdl-cell--1-col">\n                            <button for = "' + data.id + '" deleteItem class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored mdl-button--mini-icon pull-right">\n                                <i class="material-icons">clear</i>\n                            </button>\n                        </div>\n                    </div>';
+                    return '<div class="mdl-grid mdl-grid--no-spacing">\n                        <div class="mdl-cell mdl-cell--11-col-desktop mdl-cell--7-col-tablet mdl-cell--3-col-phone">\n                            <label for="' + data.id + '" checkboxItem class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">\n                                <input type="checkbox" id="' + data.id + '" ' + data.completed + ' class="mdl-checkbox__input" />\n                                <span class="mdl-checkbox__label">' + data.title + '</span>\n                            </label>\n                        </div>\n                        <div class="mdl-cell mdl-cell--1-col-desktop mdl-cell--1-col-tablet mdl-cell--1-col-phone">\n                            <button for = "' + data.id + '" deleteItem class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored mdl-button--mini-icon pull-right">\n                                <i class="material-icons">clear</i>\n                            </button>\n                        </div>\n                    </div>';
                 }
 
                 /*This template for short single-line todo note*/
