@@ -68,3 +68,15 @@
     font-weight: 300;
   }
 }
+
+@mixin typo-piechart-title($usePreferred: true) {
+  @include typo-preferred-font($usePreferred);
+  fill: unquote("rgb(#{$color-white})");
+  font-weight: 300;
+}
+@mixin typo-piechart-legend($usePreferred: true) {
+  @include typo-preferred-font($usePreferred);
+  font-weight: 300;
+  font-size: 16px;
+  color: unquote("rgb(#{$color-white})");
+}

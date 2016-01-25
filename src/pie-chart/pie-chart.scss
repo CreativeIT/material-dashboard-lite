@@ -1,57 +1,45 @@
-.nvd3.nv-pie path {
-  stroke-width: 0px;
+.nvd3.nv-pie {
+  path {
+    stroke-width: 0px;
+    .hover & {
+      fill-opacity: 1;
+    }
+  }
+  .nv-pie-title {
+    @include typo-piechart-title;
+    font-size: 22px !important;
+  }
 }
 
-.legend__item {
-  @include typo-textfield-input;
-  font-weight: 300;
-  font-size: 16px !important;
-  color: #fff;
-}
-
-.nvd3.nv-pie .hover path {
-  fill-opacity: 1;
-}
-
-.nvd3 .nv-pie-title, .pie-title {
-  @include typo-textfield-input;
-  font-size: 22px !important;
-  fill: #fff !important;
-  font-weight: 300;
-  text-anchor: middle;
-}
-
-#chart {
+.pie-chart__container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-
-  .wrap {
-    max-width: 178px;
-  }
+  min-height: $pie-chart-height;
   svg {
-    min-height: 228px;
+    min-height: 180px;
+    min-width: 144px;
+    max-width: 180px;
+  }
+  .legend {
+    margin-left: 10px;
+    max-width: 144px;
+    .legend__item {
+      @include typo-piechart-legend;
+      margin-bottom: 16px;
+      &:first-of-type {
+        margin-top: 16px;
+      }
+      .legend__text {
+        margin-left: 24px;
+      }
+      .legend__mark {
+        width: 8px;
+        height: 8px;
+        margin-top: 4px;
+      }
+    }
   }
 }
 
-.legend {
-  margin-left: 10px;
-  max-width: 144px;
-  .legend__item {
-    &:first-of-type {
-      margin-top: 16px;
-    }
-    margin-bottom: 16px;
-    .legend__text {
-      margin-left: 24px;
-      //width: 118px;
-    }
-    .legend__mark {
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      margin: 3px 16px 0 0;;
-    }
-  }
-}
