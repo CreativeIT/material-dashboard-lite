@@ -1,9 +1,9 @@
 .nvd3.nv-pie {
   path {
     stroke-width: 0px;
-    .hover & {
-      fill-opacity: 1;
-    }
+  }
+  .hover path {
+    fill-opacity: 1;
   }
   .nv-pie-title {
     @include typo-piechart-title;
