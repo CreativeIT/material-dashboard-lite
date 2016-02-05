@@ -1,7 +1,11 @@
-@mixin typo-list ($usePreferred: true) {
+@mixin typo-default ($usePreferred: true) {
   @include typo-preferred-font($usePreferred);
   font-size: 16px;
   font-weight: 300;
+}
+
+@mixin typo-list ($usePreferred: true) {
+  @include typo-default($usePreferred);
 }
 
 @mixin typo-textfield-input ($usePreferred: true) {
@@ -75,8 +79,6 @@
   font-weight: 300;
 }
 @mixin typo-piechart-legend($usePreferred: true) {
-  @include typo-preferred-font($usePreferred);
-  font-weight: 300;
-  font-size: 16px;
+  @include typo-default($usePreferred);
   color: unquote("rgb(#{$color-white})");
 }
