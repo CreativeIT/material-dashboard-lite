@@ -1,20 +1,15 @@
 .robot {
-  &.mdl-card {
-    height: 450px;
-  }
+  height: 450px;
   .mdl-card__supporting-text {
-    @include typo-card;
+    @include typo-card-supporting-text;
     padding-bottom: 26px;
     color: $card-text-color;
-    a{
-      @include typo-href;
-    }
-
   }
   .mdl-card__title {
-    color: $card-title-img-color;
-    background:
-    url('../images/robot.png') center center no-repeat ;
+    background: url('../images/robot.png') center center no-repeat;
     background-size: cover;
+    .mdl-card__title-text {
+      color: $card-title-img-color;
+    }
   }
 }

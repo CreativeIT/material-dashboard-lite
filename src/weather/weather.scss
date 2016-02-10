@@ -1,26 +1,26 @@
 .weather {
+  height: 320px;
   .mdl-card__supporting-text {
     color: $card-text-color;
     background: url('../images/weather_bck.png') center center no-repeat;
     background-size: cover;
     text-align: right;
-    padding-top: 21px;
+    padding-top: 35px;
     text-shadow: $weather-shadow-4px;
-    h1 {
+    .weather-temperature {
       @include typo-weather-temperature;
       color: $card-deg-color;
-      sup{
+      sup {
         position: relative;
         top: 13px;
       }
     }
-    h3 {
+    .weather-description {
       @include typo-weather-description;
       position: relative;
       &:before {
         width: 35px;
         position: absolute;
-        top: 7px;
         right: 150px;
         content: url(../images/cloudy_and_snow.svg);
       }
@@ -29,17 +29,14 @@
   }
 
   .mdl-card__title {
-    .md-subhead {
+    .mdl-card__subtitle-text {
+      @include typo-card-subtitle-text;
       color: $card-subhead-color;
       .material-icons {
         font-size: 16px;
-        top: 3px;
+        top: 2px;
+        position: relative;
       }
     }
   }
-  &.mdl-card {
-    @include typo-card;
-    height: 320px;
-  }
-
 }
