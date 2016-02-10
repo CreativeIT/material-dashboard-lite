@@ -73,6 +73,10 @@ $card-background-color: $background-color;
 $card-title-background-color: unquote("rgba(#{$color-black}, 0.3)");
 $card-actions-background-color: unquote("rgba(#{$color-white},0.05)");
 $card-text-color: unquote("rgba(#{$color-white}, 0.8)");
+$card-href-color: unquote("rgb(#{$color-primary})");
+$card-title-img-color:  unquote("rgb(#{$color-white})");
+$card-subhead-color: unquote("rgba(#{$color-white}, 0.5)");
+$card-deg-color: unquote("rgba(#{$color-white}, 0.9)");
 
 /* ==========  Sliders ========== */
 
@@ -152,6 +156,8 @@ $button-font-weigth: 400;
 $badge-background: unquote("rgb(#{$color-primary})");
 
 /* SHADOWS */
+$weather-shadow-color: unquote("rgba(#{$color-black}, 0.4)");
+$weather-shadow-4px: 4px 4px 4px $weather-shadow-color;
 
 /* GRID */
 $grid-desktop-gutter: 32px;

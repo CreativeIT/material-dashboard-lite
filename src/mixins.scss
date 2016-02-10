@@ -8,6 +8,16 @@
   @include typo-default($usePreferred);
 }
 
+@mixin typo-card ($usePreferred: true){
+  @include typo-default($usePreferred);
+}
+
+@mixin typo-href($usePreferred: true){
+  @include typo-default($usePreferred);
+  color:  $card-href-color;
+  text-decoration: none;
+}
+
 @mixin typo-textfield-input ($usePreferred: true) {
   @include typo-preferred-font($usePreferred);
 }
@@ -81,4 +91,18 @@
 @mixin typo-piechart-legend($usePreferred: true) {
   @include typo-default($usePreferred);
   color: unquote("rgb(#{$color-white})");
+}
+
+@mixin typo-weather-temperature($usePreferred: true){
+  @include typo-preferred-font($usePreferred);
+  font-size: 100px;
+  line-height: 1;
+  margin-bottom: 0;
+}
+
+@mixin typo-weather-description($usePreferred: true){
+  @include typo-preferred-font($usePreferred);
+  margin-top: 0;
+  font-size: 18px;
+  font-weight: 300;
 }
