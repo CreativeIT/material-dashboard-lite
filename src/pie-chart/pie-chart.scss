@@ -1,16 +1,3 @@
-.nvd3.nv-pie {
-  path {
-    stroke-width: 0px;
-  }
-  .hover path {
-    fill-opacity: 1;
-  }
-  .nv-pie-title {
-    @include typo-piechart-title;
-    font-size: 22px !important;
-  }
-}
-
 .pie-chart__container {
   display: flex;
   flex-wrap: wrap;
@@ -19,27 +6,20 @@
   min-height: $pie-chart-height;
   svg {
     min-height: 180px;
-    min-width: 144px;
     max-width: 180px;
-  }
-  .legend {
-    margin-left: 10px;
-    max-width: 144px;
-    .legend__item {
-      @include typo-piechart-legend;
-      margin-bottom: 16px;
-      &:first-of-type {
-        margin-top: 16px;
+    .nvd3.nv-pie {
+      path {
+        fill-opacity: 1;
+        stroke-width: 0;
       }
-      .legend__text {
-        margin-left: 24px;
-      }
-      .legend__mark {
-        width: 8px;
-        height: 8px;
-        margin-top: 4px;
+      .nv-pie-title {
+        @include typo-piechart-title;
+        font-size: 22px !important;
       }
     }
+  }
+  .legend {
+    max-width: 184px;
   }
 }
 

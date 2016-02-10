@@ -242,5 +242,14 @@ $dropdown-menu-vertical-padding: 16px;
 $dropdown-menu-horizontal-padding: 16px;
 $dropdown-menu-content-vertical-padding: 8px;
 
-/*pie-chart*/
+/*charts*/
 $pie-chart-height: 228px;
+
+$line-chart-height: 280px;
+$line-chart-width: 100%;
+$line-chart-axis-label-color: unquote("rgba(#{$color-white},0.5)");
+$line-chart-guideline-color: unquote("rgba(#{$color-white},0.5)");
+$line-chart-guideline-width: 0.5px;
+
+$legend-mark-size: 8px;
+$legend-text-indent: $legend-mark-size + 16;

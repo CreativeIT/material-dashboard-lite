@@ -63,7 +63,6 @@
   span {
     color: rgba(255, 255, 255, 0.64);
     line-height: 1.3em;
-    font-weight: 500;
     font-size: 14px;
     font-weight: 300;
   }
@@ -74,9 +73,16 @@
   fill: unquote("rgb(#{$color-white})");
   font-weight: 300;
 }
-@mixin typo-piechart-legend($usePreferred: true) {
+
+@mixin typo-chart-legend($usePreferred: true) {
   @include typo-preferred-font($usePreferred);
   font-weight: 300;
   font-size: 16px;
   color: unquote("rgb(#{$color-white})");
+}
+
+@mixin typo-linechart-axis-label($usePreferred: true) {
+  @include typo-preferred-font($usePreferred);
+  font-size: 12px;
+  font-weight: 300;
 }

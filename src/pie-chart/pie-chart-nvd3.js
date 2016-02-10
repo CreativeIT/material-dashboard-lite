@@ -72,7 +72,7 @@
                     if (d === null) {
                         return '';
                     }
-                    d3.select(".nvtooltip").classed("mdl-tooltip", true);
+                    d3.selectAll(".nvtooltip").classed("mdl-tooltip", true);
                     return d.data.y + ' hours';
                 });
 
