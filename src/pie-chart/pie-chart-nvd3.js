@@ -72,11 +72,11 @@
                     if (d === null) {
                         return '';
                     }
-                    d3.select(".nvtooltip").classed("mdl-tooltip", true);
+                    d3.selectAll(".nvtooltip").classed("mdl-tooltip", true);
                     return d.data.y + ' hours';
                 });
 
-        d3.select(".pie-chart__container")
+        var container = d3.select(".pie-chart__container")
             .append("div")
             .append("svg")
             .datum(data)
@@ -101,7 +101,11 @@
                 clearInterval(timer);
                 return;
             }
-            pieChart.update();
+            if (container[0][0]){
+                pieChart.update();
+            } else {
+                clearInterval(timer);
+            }
         }
 
         d3.select(".nv-pie .nv-pie")
