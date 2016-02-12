@@ -12,6 +12,8 @@
 
 @import 'button/button';
 
+@import "link/link";
+
 @import 'textfield/textfield';
 
 @import 'progress/progress';
@@ -40,10 +42,20 @@
 
 @import 'todo/todo';
 
-@import "pie-chart/pie-chart";
+@import 'pie-chart/pie-chart';
+
+@import 'line-chart/line-chart';
+
+@import 'chart-legend/chart-legend';
 
 @import 'helper';
 
 @import 'account-dropdown/account-dropdown';
 
 @import 'dark_dropdown/dark_dropdown';
+
+@import "robot/robot";
+
+@import "cotoneaster/cotoneaster";
+
+@import "weather/weather";

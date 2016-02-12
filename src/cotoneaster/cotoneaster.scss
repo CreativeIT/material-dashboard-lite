@@ -1,0 +1,15 @@
+.cotoneaster {
+  height: 450px;
+  .mdl-card__supporting-text {
+    @include typo-card-supporting-text;
+    padding-bottom: 26px;
+    color: $card-text-color;
+  }
+  .mdl-card__title {
+    background: url('../images/cotoneaster.jpg') center center no-repeat;
+    background-size: cover;
+    .mdl-card__title-text {
+      color: $card-title-img-color;
+    }
+  }
+}

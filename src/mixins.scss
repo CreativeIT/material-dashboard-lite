@@ -1,7 +1,19 @@
-@mixin typo-list ($usePreferred: true) {
+@mixin typo-default ($usePreferred: true) {
   @include typo-preferred-font($usePreferred);
   font-size: 16px;
   font-weight: 300;
+}
+
+@mixin typo-list ($usePreferred: true) {
+  @include typo-default($usePreferred);
+}
+
+@mixin typo-card-supporting-text($usePreferred: true){
+  @include typo-default($usePreferred);
+}
+
+@mixin typo-card-subtitle-text($usePreferred: true){
+  @include typo-default($usePreferred);
 }
 
 @mixin typo-textfield-input ($usePreferred: true) {
@@ -63,7 +75,6 @@
   span {
     color: rgba(255, 255, 255, 0.64);
     line-height: 1.3em;
-    font-weight: 500;
     font-size: 14px;
     font-weight: 300;
   }
@@ -74,9 +85,28 @@
   fill: unquote("rgb(#{$color-white})");
   font-weight: 300;
 }
-@mixin typo-piechart-legend($usePreferred: true) {
+
+@mixin typo-chart-legend($usePreferred: true) {
   @include typo-preferred-font($usePreferred);
   font-weight: 300;
   font-size: 16px;
   color: unquote("rgb(#{$color-white})");
+}
+
+@mixin typo-linechart-axis-label($usePreferred: true) {
+  @include typo-preferred-font($usePreferred);
+  font-size: 12px;
+  font-weight: 300;
+}
+
+@mixin typo-weather-temperature($usePreferred: true){
+  @include typo-preferred-font($usePreferred);
+  font-size: 100px;
+  line-height: 1;
+}
+
+@mixin typo-weather-description($usePreferred: true){
+  @include typo-preferred-font($usePreferred);
+  font-size: 18px;
+  font-weight: 300;
 }
