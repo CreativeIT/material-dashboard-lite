@@ -2,76 +2,24 @@
     padding: 0;
     width: $employer-form-width;
     background-color: $background-color;
-    margin-top: 3%;
-    margin-bottom: 6%;
-    margin-left: calc(50% - #{$employer-form-width} / 2);
-    
-    .getmdl-select {
-	i {
-	    color: white;
-	}
+    margin: 16px auto;
 
-	&.is-focused i.material-icons {
-	    color: unquote("rgb(#{$color-primary})");
-	}
+    .mdl-radio {
+	width: 20%;
+	margin-top: 22px;
+	margin-bottom: 22px;
+	color: $employer-form-color-brighter;
 
-	.mdl-menu__container {
-	    margin-top: -45px !important;
-
-	    .mdl-menu__outline {
-		box-shadow: 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12), 0px 5px 5px -3px rgba(0, 0, 0, 0.2);
-	    }
-	}
-
-	.mdl-menu .mdl-menu__item {
-	    @include typo-employer-form-inputs();
+	span:first-of-type {
+	    margin-left: 10px;
 	}
     }
 
-    .mdl-card__supporting-text > div {
-	width: 100%;
-	width: $employer-form-width - $employer-form-horizontal-padding * 2;
-
-	.mdl-radio {
-	    width: 20%;
-	    margin-top: 22px;
-	    margin-bottom: 22px;
-	    color: $employer-form-color-brighter;
-
-	    span:first-of-type {
-		margin-left: 10px;
-	    }
-	}
-    }
-
-    .mdl-textfield--floating-label {
-	label {
-	    color: unquote("rgb(#{$color-primary})");
-	}
-    }
-
-    .mdl-textfield {
-	input, textarea {
-	    border-bottom-color: rgba(255, 255, 255, 0.2) !important;
-	    @include typo-employer-form-inputs();
-	}
-	
-	&.is-focused {
-	    &.getmdl-select {
-		input, textarea {
-		    font-weight: 300;
-		}
-	    }
-
-	    input, textarea { 
-		font-weight: 400;
-	    }
-	}
-
-	&.is-disabled input{
-	    color: $employer-form-color-darker;
-	    border-bottom-width: 2px !important;
-	}
+    .form__article > span {
+	float: left;
+	width: 100%; 
+	color: $employer-form-color-darker;
+	font-weight: 200;
     }
 
     .mdl-card__title {
@@ -103,10 +51,24 @@
 	color: $employer-form-color-darker;
     }
 
-    h3 {
-	@include typo-employer-form-topic();
-	margin-top: 24px;
-	margin-bottom: 20px;
+    .form__action {
+
+	.mdl-checkbox {
+	    .mdl-ripple {
+		background: unquote("rgb(#{$color-primary})");
+	    }
+
+	    &.is-checked {
+		.mdl-checkbox__box-outline {
+		    border-color: unquote("rgb(#{$color-primary})");
+
+		    .mdl-checkbox__tick-outline {
+			background-color: unquote("rgb(#{$color-primary})");
+			background-image: url("#{$checkbox-image-path}/tick_dark.svg?embed");
+		    }
+		}
+	    }
+	}
     }
 }
 
@@ -135,42 +97,12 @@
     }
 }
 
-.employer-form__presonal_data, .employer-form__employment {
-    div {
-	div:first-of-type {
-	    margin-right: 30px;
-	}
-
-	div {
-	    width: $employer-form-column-width;
-	}
-    }
-
-    & > span {
-	float: left;
-	width: 100%; 
-	color: $employer-form-color-darker;
-	font-weight: 200;
-    }
-}
-
 .employer-form__contacts {
     h3 {
 	margin-bottom: 40px;
     }
 
     div {
-	height: 48px;
-	div:first-of-type {
-	    margin-left: 0px;
-	    width: $employer-form-contact-value-width;
-	}
-
-	div {
-	    margin-left: 30px;
-	    width: $employer-form-contact-type-width;
-	}
-
 	.mdl-textfield.getmdl-select .mdl-textfield__input {
 	    color: $employer-form-color-darker;
 	}
@@ -184,54 +116,8 @@
 	    }
 	}
 
-	& > i {
+	i {
 	    color: $employer-form-color-brighter;
-	    margin-right: 15px;
-	    margin-top: 4px;
-	    margin-left: 5px;
-	    font-size: 20px;
-
-	    &.fa {
-		margin-right: 16px;
-		font-size: 22px;
-	    }
 	}
-    }
-}
-
-.employer-form__confirm-submit {
-    margin-bottom: 15px;
-    margin-top: 60px;
-
-    label {
-	margin-top: 4px;
-	margin-bottom: 4px;
-	margin-left: 5px;
-    }
-
-    .mdl-checkbox {
-	.mdl-ripple {
-	    background: unquote("rgb(#{$color-primary})");
-	}
-
-	&.is-checked {
-	    .mdl-checkbox__box-outline {
-		border-color: unquote("rgb(#{$color-primary})");
-
-		.mdl-checkbox__tick-outline {
-		    background-color: unquote("rgb(#{$color-primary})");
-		    background-image: url("#{$checkbox-image-path}/tick_dark.svg?embed");
-		}
-	    }
-	}
-    }
-
-    .mdl-checkbox__label {
-	margin-left: 10px;
-	@include typo-employer-form-inputs();
-    }
-
-    .mdl-button {
-	padding: 0;
     }
 }

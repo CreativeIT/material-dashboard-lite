@@ -1,13 +1,9 @@
 {
-    let confirmBlock = document.querySelectorAll(".employer-form__confirm-submit");
+    let checkbox = document.querySelector(".employer-form .form__action .mdl-checkbox__input"),
+	button = document.querySelector(".employer-form .form__action .mdl-button");
+    button.disabled = !checkbox.checked;
 
-    for (let i = 0; i < confirmBlock.length; ++i) {
-	let checkbox = confirmBlock[i].querySelector("input"),
-	    button = confirmBlock[i].querySelector("button");
+    checkbox.addEventListener('change', () => {
 	button.disabled = !checkbox.checked;
-
-	checkbox.addEventListener('change', () => {
-	    button.disabled = !checkbox.checked;
-	});
-    }
+    });
 }

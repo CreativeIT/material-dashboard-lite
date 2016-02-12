@@ -61,6 +61,11 @@ $checkbox-color: unquote("rgb(#{$color-secondary})");
 /* ==========  Text fields  ========== */
 
 $todo-input-text-label-color: unquote("rgba(#{$color-white}, 0.2)");
+
+$input-text-highlight-color: unquote("rgb(#{$color-primary})");
+$input-text-bottom-border-color: rgba(255, 255, 255, 0.2);
+$input-text-disabled-text-color: rgba(255, 255, 255, 0.6);
+
 //placeholder color
 $todo-input-text-highlight-color: unquote("rgba(#{$color-white}, 0.7)");
 //bottom line color
@@ -238,9 +243,9 @@ $dropdown-menu-content-vertical-padding: 8px;
 
 /* employer form*/
 $employer-form-width: 670px;
-$employer-form-horizontal-padding: 15px;
 $employer-form-color-brighter: rgba(255, 255, 255, 1);
 $employer-form-color-darker: rgba(255, 255, 255, 0.6);
-$employer-form-column-width: 300px;
-$employer-form-contact-value-width: 385px;
-$employer-form-contact-type-width: 180px;
+$employer-form-horizontal-padding: 15px;
+
+/* row */
+$row-col-padding: 30px;
