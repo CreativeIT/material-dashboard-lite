@@ -1,0 +1,45 @@
+.mdl-layout__drawer {
+  border: none;
+  header {
+    height: 62px;
+    background: url("../images/imgo.png");
+  }
+
+  & .mdl-navigation {
+    padding-top: 48px;
+
+    & .mdl-navigation__link {
+      @include typo-layout-navigation-link;
+      padding: 12px 0;
+      position: relative;
+      .material-icons {
+        font-size: 22px;
+        margin-left: 23px;
+        padding-right: 25px;
+        margin-top: -5px;
+        width: 22px;
+        color: $layout-drawer-navigation-link-icon-color;
+      }
+        &--current {
+          .material-icons {
+            color: $layout-drawer-navigation-link-active-color;
+          }
+          &:before {
+            position: absolute;
+            content: '';
+            width: 2px;
+            background: $layout-drawer-navigation-link-active-color;
+            height: 100%;
+            top: 0;
+          }
+        }
+
+      &:hover {
+        color: $layout-drawer-navigation-link-active-color;
+        .material-icons {
+          color: $layout-drawer-navigation-link-active-color;
+        }
+      }
+    }
+  }
+}

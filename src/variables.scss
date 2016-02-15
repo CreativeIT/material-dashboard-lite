@@ -44,8 +44,17 @@ $button-fab-active-color-alt: #f23d3d;
 /* ==========  Ripple effect  ========== */
 
 /* ==========  Layout  ========== */
+$layout-screen-size-threshold: 1126px;
 
 // Drawer
+$layout-drawer-width: 236px;
+$layout-drawer-bg-color: #202020;
+$layout-nav-color: #202020;
+$layout-drawer-navigation-link-active-background:  unquote("rgba(#{$color-black}, 0.25)");
+$layout-drawer-navigation-link-active-color: unquote("rgb(#{$color-primary})");
+$layout-nav-color:  unquote("rgba(#{$color-black}, 0.25)");
+$layout-drawer-navigation-link-icon-color: unquote("rgba(#{$color-white}, 0.56)");
+
 // Header
 $layout-header-text-color: unquote("rgb(#{$color-primary})");
 $layout-header-bg-color: $background-color-header;
@@ -73,7 +82,7 @@ $card-background-color: $background-color;
 $card-title-background-color: unquote("rgba(#{$color-black}, 0.3)");
 $card-actions-background-color: unquote("rgba(#{$color-white},0.05)");
 $card-text-color: unquote("rgba(#{$color-white}, 0.8)");
-$card-href-color: unquote("rgb(#{$color-primary})");
+$card-link-color: unquote("rgb(#{$color-primary})");
 $card-title-img-color:  unquote("rgb(#{$color-white})");
 $card-subhead-color: unquote("rgba(#{$color-white}, 0.5)");
 $card-deg-color: unquote("rgba(#{$color-white}, 0.9)");

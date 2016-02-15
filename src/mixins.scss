@@ -110,3 +110,9 @@
   font-size: 18px;
   font-weight: 300;
 }
+
+@mixin  typo-layout-navigation-link($usePreferred: true){
+  @include typo-preferred-font($usePreferred);
+  font-size: 13px;
+  font-weight: 500;
+}
