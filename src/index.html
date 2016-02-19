@@ -50,8 +50,8 @@
 
 </head>
 <body>
-<div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
-    <header class="demo-header mdl-layout__header">
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
             <div class="mdl-layout-spacer"></div>
 
@@ -65,10 +65,7 @@
                     <label class="mdl-textfield__label" for="search">Enter your query...</label>
                 </div>
             </div>
-            <div class=" mdl-js-ripple-effect " id="notification">
-                <i class="material-icons">notifications_none</i>
-                <span class="mdl-badge" data-badge="30"></span>
-            </div>
+            <div class="material-icons mdl-badge mdl-badge--overlap" id="notification" data-badge="23">notifications_none</div>
 
             <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right dropdown-menu notifications"
                 for="notification">
@@ -129,10 +126,7 @@
                 </li>
             </ul>
 
-            <div class=" mdl-js-ripple-effect " id="inbox">
-                <i class="material-icons">mail_outline</i>
-                <span class="mdl-badge" data-badge="4"></span>
-            </div>
+            <div class="material-icons mdl-badge mdl-badge--overlap" id="inbox" data-badge="4">mail_outline</div>
             <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right dropdown-menu message-notifications"
                 for="inbox">
                 <li>
@@ -211,15 +205,14 @@
             <div id="userNameHeader">
                 Luke
             </div>
-            <div class="demo-avatar-dropdown" id="icon">
-                <img src="images/Icon_header.png" class="demo-avatar">
+            <div class="avatar-dropdown" id="icon">
+                <img src="images/Icon_header.png">
             </div>
             <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect dropdown-menu account-dropdown"
                 for="icon">
                 <li class="mdl-menu__item">
                     <header>
-                        <img src="images/Icon.png" class="demo-avatar  pull-left">
-
+                        <img src="images/Icon.png" class="pull-left">
                         <div class="pull-left">
                             <span>Luke</span>
                             <br>
@@ -255,9 +248,10 @@
                     <span>Log out</span>
                 </li>
             </ul>
-            <div class=" mdl-js-ripple-effect " id="more">
+            <button id="more"
+                    class="mdl-button mdl-js-button mdl-button--icon">
                 <i class="material-icons">more_vert</i>
-            </div>
+            </button>
             <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect dark_dropdown" for="more">
                 <li class="mdl-menu__item">
                     Settings

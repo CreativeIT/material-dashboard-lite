@@ -58,6 +58,7 @@ $layout-drawer-navigation-link-icon-color: unquote("rgba(#{$color-white}, 0.56)"
 // Header
 $layout-header-text-color: unquote("rgb(#{$color-primary})");
 $layout-header-bg-color: $background-color-header;
+$layout-header-name-color: unquote("rgba(#{$color-white}, 0.5)");
 
 // Tabs
 
@@ -163,6 +164,7 @@ $button-font-weigth: 400;
 
 /* BADGE */
 $badge-background: unquote("rgb(#{$color-primary})");
+$badge-color: unquote("rgb(#{$color-white})");
 
 /* SHADOWS */
 $weather-shadow-color: unquote("rgba(#{$color-black}, 0.4)");

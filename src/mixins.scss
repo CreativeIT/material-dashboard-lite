@@ -115,4 +115,8 @@
   @include typo-preferred-font($usePreferred);
   font-size: 13px;
   font-weight: 500;
+  .material-icons {
+    font-size: 22px;
+    width: 22px;
+  }
 }

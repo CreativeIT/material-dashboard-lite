@@ -1,3 +1,18 @@
+.mdl-layout--fixed-drawer{
+  & > .mdl-layout__content {
+    margin-left: $layout-drawer-narrow;
+  }
+  &.is-upgraded:not(.is-small-screen) > .mdl-layout__header {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+main {
+  background: url("../images/Dark_background_1920x1080.png") center top no-repeat;
+  background-size: cover;
+}
+
 .mdl-layout__drawer {
   border: none;
   header {
@@ -13,11 +28,7 @@
       padding: 12px 0;
       position: relative;
       .material-icons {
-        font-size: 22px;
-        margin-left: 23px;
-        padding-right: 25px;
-        margin-top: -5px;
-        width: 22px;
+        margin: -5px 25px 0 23px;
         color: $layout-drawer-navigation-link-icon-color;
       }
         &--current {
@@ -39,6 +50,54 @@
         .material-icons {
           color: $layout-drawer-navigation-link-active-color;
         }
+      }
+    }
+  }
+}
+
+.mdl-layout__header-row{
+  color: $dropdown-menu-header-font-color;
+  .avatar-dropdown {
+    & > img {
+      width: $layout-header-icon-size;
+      height: $layout-header-icon-size;
+      margin-right: 10px;
+    }
+  }
+  .mdl-textfield{
+    padding: 22px 8px;
+  }
+
+  #more {
+    margin: 0 16px;
+  }
+
+  .material-icons.mdl-badge{
+    margin: 12px;
+    cursor: pointer;
+    &.mdl-badge--overlap {
+      &:after {
+        top: -7px;
+      }
+    }
+  }
+
+  #userNameHeader {
+    color: $layout-header-name-color;
+    padding: 0 16px 0 32px;
+  }
+
+}
+
+@media screen and (max-width: $layout-screen-size-threshold) {
+  .mdl-layout--fixed-drawer {
+    & > .mdl-layout__content {
+      margin-left: 0;
+    }
+    & > .mdl-layout__drawer {
+      transform: translateX(-$layout-drawer-width - 10px);
+      &.is-visible {
+        transform: translateX(0) !important;
       }
     }
   }
