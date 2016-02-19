@@ -13,6 +13,7 @@ var plumber = require( 'gulp-plumber' ),
 	clean = require( 'gulp-clean' ),
 	del = require('del'),
 	browserSync = require('browser-sync');
+//reload = browserSync.reload;
 
 var onError = function( err ) {
 	console.log( 'An error occurred:', err.message );
@@ -64,18 +65,18 @@ gulp.task('default', ['cleanDist','jshint', 'babel', 'copyJsLib', 'copyCssLib'],
 		.pipe(gulp.dest('dist/images'));
 	gulp.src('src/**/*.html')
 		.pipe(gulp.dest('dist/'))
-		.pipe(inject(gulp.src(['dist/js/**/*.js', 'dist/css/nv.d3.css', 'dist/css/application.css'], {read: false}), {relative: true}))
+		.pipe(inject(gulp.src(['dist/js/**/*.js', 'dist/css/*.css'], {read: false}), {relative: true}))
 		.pipe(gulp.dest('dist/'));
 });
 
 gulp.task('copyJsLib', ['cleanDist'], function () {
 	return gulp.src(['bower_components/material-design-lite/material.min.js', 'bower_components/d3/d3.js',
-                    'bower_components/nvd3/build/nv.d3.js'])
+                    'bower_components/nvd3/build/nv.d3.js', 'bower_components/getmdl-select/getmdl-select.min.js'])
 		.pipe(gulp.dest('dist/js'));
 });
 
 gulp.task('copyCssLib', ['cleanDist'], function () {
-	return gulp.src('bower_components/nvd3/build/nv.d3.css')
+	return gulp.src(['bower_components/nvd3/build/nv.d3.css', 'bower_components/getmdl-select/getmdl-select.min.css'])
 		.pipe(gulp.dest('dist/css'));
 });
 
