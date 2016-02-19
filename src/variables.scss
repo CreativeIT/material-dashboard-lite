@@ -70,12 +70,14 @@ $todo-input-text-highlight-color: unquote("rgba(#{$color-white}, 0.7)");
 //bottom line color
 /* ==========  Card  ========== */
 $card-background-color: $background-color;
+$card-text-color: unquote("rgba(#{$color-white}, 0.8)");
+$card-supporting-text-text-color: unquote("rgba(#{$color-white}, 0.8)");
+$card-subtitle-color: unquote("rgba(#{$color-white}, 0.5)");
+
 $card-title-background-color: unquote("rgba(#{$color-black}, 0.3)");
 $card-actions-background-color: unquote("rgba(#{$color-white},0.05)");
-$card-text-color: unquote("rgba(#{$color-white}, 0.8)");
 $card-href-color: unquote("rgb(#{$color-primary})");
 $card-title-img-color:  unquote("rgb(#{$color-white})");
-$card-subhead-color: unquote("rgba(#{$color-white}, 0.5)");
 $card-deg-color: unquote("rgba(#{$color-white}, 0.9)");
 
 /* ==========  Sliders ========== */
@@ -85,14 +87,34 @@ $progress-main-color: unquote("rgb(#{$color-secondary})");
 $progress-secondary-color: unquote("rgba(#{$color-white}, 0.4)");
 
 /* ==========  List ========== */
+$list-main-text-text-color: unquote("rgb(#{$color-white})");
+$list-supporting-text-text-color: unquote("rgba(#{$color-white}, 0.54)") !default;
+$list-icon-color: unquote("rgba(#{$color-white}, 0.8)");
+$list-icon-hover-color: unquote("rgb(#{$color-primary})");
+$list-avatar-color: white !default;
+
 $list-separator-border-color: unquote("rgba(#{$color-white},0.1)");
+$list-item-text-color: unquote("rgb(#{$color-white})");
+$list-item-border: 1px solid $list-separator-border-color;
+$list-item-vertical-margin: 18px;
+
 
 /* ==========  Item ========== */
 
 // Default Item Colors
+$default-item-hover-bg-color: unquote("rgba(#{$color-black}, 0.2)");
+
 // Disabled Button Colors
 
 /* ==========  Dropdown menu ========== */
+$default-dropdown-bg-color: $background-color;
+
+$dropdown-menu-width: 310px;
+$dropdown-menu-header-font-color: unquote("rgba(#{$color-white}, 0.8)");
+
+$settings_dropdown_width: 135px;
+$account-dropdown-avatar-size: 48px;
+$messages-dropdown-label-text-color: unquote("rgba(#{$color-white}, 0.5)");
 
 /* ==========  Tooltips  ========== */
 $tooltip-background-color: #353535;
@@ -115,8 +137,22 @@ $tooltip-background-color: #353535;
 
 /* LIST */
 
+$list-border: 0;
+$list-min-height: 48px !default;
+$list-min-padding: 16px !default;
+$list-bottom-padding: 16px;
+$list-avatar-text-left-distance: 64px;
+$list-icon-text-left-distance: 56px;
+
+$list-avatar-size: 32px ;
+$list-icon-size: 24px !default;
+
+$list-two-line-height: 64px;
+$list-three-line-height: 88px !default;
+
 /* LAYOUT */
 $layout-drawer-narrow: 236px;
+$layout-screen-size-threshold: 1314px;
 
 /* ICON */
 $trending-arrow-size: 48px;
@@ -129,6 +165,7 @@ $trending-arrow-size: 48px;
 
 /* CHECKBOX */
 $checkbox-button-size: 18px;
+$checkbox-padding: 0;
 
 /* CARD */
 /* Card dimensions */
@@ -161,20 +198,26 @@ $weather-shadow-4px: 4px 4px 4px $weather-shadow-color;
 
 /* GRID */
 $grid-desktop-gutter: 32px;
-$grid-desktop-margin: 24px;
+$grid-desktop-margin: 16px;
 
-$grid-tablet-breakpoint: 600px;
-$grid-desktop-breakpoint: 1314px;
+$grid-tablet-breakpoint: 644px;
+$grid-desktop-breakpoint: 1062px;
 
 //$grid-desktop-breakpoint: 1346px;
 
 /* DATA TABLE */
+$data-table-font-size: 16px;
+$data-table-header-font-size: 13px;
 
-$data-table-background-color: $background-color;
-$data-table-hover-color: unquote("rgba(#{$color-black}, 0.2)");
-$data-table-selection-color: #e0e0e0;
-$table-separator-border-color: unquote("rgba(#{$color-white},0.05)");
 $data-table-header-color: unquote("rgb(#{$color-white})");
+$data-table-divider-color: unquote("rgba(#{$color-white},0.05)");
+
+$data-table-hover-color: unquote("rgba(#{$color-black}, 0.2)");
+$data-table-selection-color: $background-color;
+
+$data-table-column-spacing: 16px;
+$data-table-column-padding: $data-table-column-spacing / 2;
+
 $data-table-color: unquote("rgb(#{$color-white})");
 
 /* TOOLTIP */
@@ -184,20 +227,10 @@ $table-tooltip-horizontal-padding: 8px;
 
 //-------------------------------------------------------
 
-$list-item-text-color: unquote("rgb(#{$color-white})");
-$list-item-border: 1px solid $list-separator-border-color;
-$list-item-vertical-margin: 18px;
 $trending-list-item-hover-color: unquote("rgba(#{$color-black}, 0.2)");
 $trending-arrow-up-color: unquote("rgb(#{$color-primary})");
 $trending-arrow-down-color: unquote("rgb(#{$color-secondary})");
 
-//$header-color: rgba(0, 0, 0, 0.35);
-//$card-color: #4e4e4e;
-
-/*<deprecated>*/
-$fist-user-color: #ff5252;
-$first-user-color: #ff5252;
-$second-user-color: #00bcd4;
 /*</deprecated>*/
 
 $badge-background: #00bcd4;
@@ -205,7 +238,6 @@ $primary-font-size: 10px;
 $color-accent: rgba(0, 0, 0, 0.35);
 $color-primary-contrast: white;
 $color-accent-contrast: #00bcd4;
-//$color-secondary: #ff5252;
 $border-color: #757575;
 
 $background-color: #4e4e4e;
@@ -213,40 +245,8 @@ $field-accent-color: rgba(0, 0, 0, 0.35);
 $field-primary-color-contrast: white;
 
 /* label*/
-
 $label-height: 12px;
 $label-padding: 5px 8px 5px 8px;
-
-/* Notifications*/
-
-/* Account-dropdown*/
-
-$account-dropdown-height: 352px;
-$account-dropdown-header-height: 48px;
-
-/* More_settings_dropdown*/
-
-$settings_dropdown_width: 135px;
-
-/*round_icon*/
-
-$round-icon-default-width: 32px;
-$round-icon-default-height: 32px;
-$round-icon-default-icon-size: 24px;
-$round-icon-default-opacity: 0.8;
-
-/*dropdown-menu*/
-$dropdown-menu-width: 310px;
-$dropdown-menu-height: 307px;
-$dropdown-menu-hover-color: rgba(0, 0, 0, .2);
-$dropdown-menu-header-height: 32px;
-$dropdown-menu-footer-height: 32px;
-$dropdown-menu-li-height: 32px;
-$dropdown-menu-header-font-color: rgba(255, 255, 255, 0.8);
-$dropdown-menu-footer-font-color: white;
-$dropdown-menu-vertical-padding: 16px;
-$dropdown-menu-horizontal-padding: 16px;
-$dropdown-menu-content-vertical-padding: 8px;
 
 /*charts*/
 $pie-chart-height: 228px;

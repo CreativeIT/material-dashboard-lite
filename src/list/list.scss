@@ -1,18 +1,18 @@
-.list {
-  @include typo-list;
-  list-style-type: none;
+.mdl-list {
   margin: 0;
-  padding: 0;
+  .mdl-list__item {
+    @include typo-list;
+  }
+  .list__item--border-top {
+    background-clip: padding-box;
+    border-top: $list-item-border;
+  }
+  .mdl-list__item-avatar {
+    padding: ($list-avatar-size - $list-icon-size)/2;
+    text-align: center;
+    .material-icons {
+      vertical-align: top;
+    }
+  }
 }
-
-.list__item {
-  margin-bottom: $list-item-vertical-margin;
-  color: $list-item-text-color;
-  word-wrap: break-word;
-}
-
-.list__item--border-top {
-  border-top: $list-item-border;
-}
-
 

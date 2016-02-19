@@ -16,15 +16,16 @@
       width: 200px;
     }
     td:nth-child(6) {
-      padding-top: 23px;
+      width: 300px;
       .mdl-progress {
         cursor: pointer;
-        min-width: 100px;
+        min-width: 80px;
         max-width: 200px;
       }
     }
     .task-done {
-      padding-top: 12px !important;
+      padding-top: 6px !important;
+      padding-bottom: 0 !important;
       color: $progress-main-color;
       .material-icons {
         cursor: pointer;

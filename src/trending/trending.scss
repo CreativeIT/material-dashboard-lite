@@ -3,16 +3,16 @@
     width: 100%;
     padding: 8px 0;
   }
-  .list__item {
-    margin-bottom: 0;
-    padding: 12px 16px;
+  .mdl-list__item {
     &:hover {
-      background-clip: padding-box;
       background-color: $trending-list-item-hover-color;
+    }
+    .mdl-list__item-secondary-content {
+      margin: 0;
     }
   }
   .material-icons {
-    margin-top: -12px;
+    line-height: 0.33333;
     font-size: $trending-arrow-size;
   }
   &__arrow-up {

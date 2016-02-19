@@ -6,6 +6,8 @@
 
 @mixin typo-list ($usePreferred: true) {
   @include typo-default($usePreferred);
+  color: white;
+  letter-spacing: 0;
 }
 
 @mixin typo-card-supporting-text($usePreferred: true){
@@ -42,7 +44,7 @@
 
 @mixin typo-label($usePreferred: true) {
   @include typo-preferred-font($usePreferred);
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1em;
 }
 

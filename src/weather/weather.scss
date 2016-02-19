@@ -1,11 +1,11 @@
 .weather {
-  height: 320px;
+  height: 329px;
   .mdl-card__supporting-text {
     color: $card-text-color;
     background: url('../images/weather_bck.png') center center no-repeat;
     background-size: cover;
     text-align: right;
-    padding-top: 35px;
+    padding-top: 38px;
     text-shadow: $weather-shadow-4px;
     .weather-temperature {
       @include typo-weather-temperature;
@@ -31,7 +31,7 @@
   .mdl-card__title {
     .mdl-card__subtitle-text {
       @include typo-card-subtitle-text;
-      color: $card-subhead-color;
+      //color: $card-subhead-color;
       .material-icons {
         font-size: 16px;
         top: 2px;

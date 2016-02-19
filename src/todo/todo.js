@@ -9,7 +9,7 @@
                 [
                     {
                         title: 'Fix bugs',
-                        id: '01.01.16',
+                        id: 1651644545,
                         completed: ''
                     },
 
@@ -75,7 +75,7 @@
 
     class View {
         constructor() {
-            this.$todoList = document.querySelector('.todo .list');
+            this.$todoList = document.querySelector('.todo .mdl-list');
             this.inputTemplate
                 =   `<div class="mdl-textfield mdl-js-textfield">
                          <input class="mdl-textfield__input" type="text" id="todo-input">
@@ -85,52 +85,36 @@
 
         insertInput () {
             let newLi = document.createElement('li');
-            newLi.classList.add('list__item');
+            newLi.classList.add('mdl-list__item');
             newLi.innerHTML = this._prepareTemplate({});
             this.$todoList.appendChild(newLi);
             View.upgradeNewMdlComponents();
-            let inputSpan = document.querySelector('.todo  .list li:last-child .mdl-checkbox__label');
+            let inputSpan = document.querySelector('.todo  .mdl-list li:last-child .mdl-checkbox__label');
             inputSpan.innerHTML = this.inputTemplate;
             View.upgradeNewMdlComponents();
-            document.querySelector('.todo .list__item:last-child .mdl-textfield__input').focus();
+            document.querySelector('.todo .mdl-list__item:last-child .mdl-textfield__input').focus();
         }
 
         _prepareTemplate (data) {
-            return `<div class="mdl-grid mdl-grid--no-spacing">
-                        <div class="mdl-cell mdl-cell--11-col-desktop mdl-cell--7-col-tablet mdl-cell--3-col-phone">
-                            <label for="${data.id}" checkboxItem class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                <input type="checkbox" id="${data.id}" ${data.completed} class="mdl-checkbox__input" />
-                                <span class="mdl-checkbox__label">${data.title}</span>
-                            </label>
-                        </div>
-                        <div class="mdl-cell mdl-cell--1-col-desktop mdl-cell--1-col-tablet mdl-cell--1-col-phone">
-                            <button for = "${data.id}" deleteItem class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored mdl-button--mini-icon pull-right">
-                                <i class="material-icons">clear</i>
-                            </button>
-                        </div>
+            return `<span class = "mdl-list__item-primary-content">
+                        <label for="${data.id}" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" checkboxItem>
+                            <input type="checkbox" id="${data.id}" ${data.completed} class="mdl-checkbox__input" />
+                            <span class="mdl-checkbox__label">${data.title}</span>
+                        </label>
+                    </span>
+                    <div class="mdl-list__item-secondary-content">
+                        <button for = "${data.id}" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored mdl-button--mini-icon pull-right" deleteItem>
+                            <i class="material-icons">clear</i>
+                        </button>
                     </div>`
-        }
-        /*This template for short single-line todo note*/
-        _prepareTemplateSingleLine (data) {
-            return `<label for="${data.id}" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" checkboxItem>
-                        <input type="checkbox" id="${data.id}" ${data.completed} class="mdl-checkbox__input" />
-                        <span class="mdl-checkbox__label">${data.title}</span>
-                    </label>
-                    <button for = "${data.id}" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored mdl-button--mini-icon pull-right" deleteItem>
-                        <i class="material-icons">clear</i>
-                    </button>`
         }
 
         showAll (database) {
             this.$todoList.innerHTML = '';
             database.forEach( (data) => {
                 let newLi = document.createElement('li');
-                newLi.classList.add('list__item');
-                if (data.id == '01.01.16') {                                 /*For example*/
-                    newLi.innerHTML = this._prepareTemplateSingleLine(data); /*used template only for one item(with id = '01.01.16')*/
-                } else {
-                    newLi.innerHTML = this._prepareTemplate(data);
-                  }
+                newLi.classList.add('mdl-list__item');
+                newLi.innerHTML = this._prepareTemplate(data);
                 this.$todoList.appendChild(newLi);
             });
             View.upgradeNewMdlComponents();
@@ -138,7 +122,7 @@
 
         show (data) {
             let newLi = document.createElement('li');
-            newLi.classList.add('list__item');
+            newLi.classList.add('mdl-list__item');
             newLi.innerHTML = this._prepareTemplate (data);
             this.$todoList.appendChild(newLi);
             View.upgradeNewMdlComponents();
@@ -182,7 +166,7 @@
                 this.$removeCompletedButton.setAttribute('disabled', 'true');
                 this.view.insertInput();
 
-                let inputTextArea = document.querySelector('.todo .list__item:last-child .mdl-textfield__input');
+                let inputTextArea = document.querySelector('.todo .mdl-list__item:last-child .mdl-textfield__input');
                 inputTextArea.addEventListener('keydown', (event) => {
                     if (event.keyCode === 27 ) {
                         this.removeItem(event);
@@ -214,7 +198,7 @@
 
         removeItem (clickTarget) {
             for (let i = 0; i < clickTarget.path.length; i++) {
-                if (clickTarget.path[i].className == 'list__item') {
+                if (clickTarget.path[i].className == 'mdl-list__item') {
                     clickTarget.path[i].remove();
                     break;
                 }
@@ -245,5 +229,4 @@
     }
 
     let todo = new Todo();
-
 }

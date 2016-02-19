@@ -8,6 +8,8 @@
 
 @import 'card/card';
 
+@import 'menu/menu';
+
 @import 'checkbox/checkbox';
 
 @import 'button/button';
@@ -18,23 +20,19 @@
 
 @import 'progress/progress';
 
-@import 'round_icon/round_icon';
-
 @import 'data-table/data-table';
 
 @import 'label/label';
-
-@import 'dropdown-menu/dropdown-menu';
 
 @import 'table/table';
 
 @import 'tooltip/tooltip';
 
-@import 'notifications/notifications';
+@import 'notifications/notifications-dropdown';
 
 @import 'trending/trending';
 
-@import 'message-notifications/message-notifications';
+@import 'message-notifications/messages-dropdown';
 
 @import 'sidebar/sidebar';
 
@@ -52,7 +50,7 @@
 
 @import 'account-dropdown/account-dropdown';
 
-@import 'dark_dropdown/dark_dropdown';
+@import 'setting-dropdown/settings-dropdown';
 
 @import "robot/robot";
 
