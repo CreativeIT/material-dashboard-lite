@@ -19,7 +19,7 @@ var onError = function( err ) {
 	this.emit( 'end' );
 }
 
-gulp.task('browser-sync', function () {
+gulp.task('serve', function () {
 	var files = [
 		'./dist/*.html',
 		'./dist/css/**/*.css',
