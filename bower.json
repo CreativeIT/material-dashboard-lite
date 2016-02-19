@@ -19,6 +19,7 @@
   "dependencies": {
     "material-design-lite": "~1.0.5",
     "d3": "~3.5.12",
-    "nvd3": "~1.8.1"
+    "nvd3": "~1.8.1",
+    "getmdl-select": "*",
   }
 }
