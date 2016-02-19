@@ -1,8 +1,24 @@
 {
   "name": "dashboard",
   "version": "1.0.0",
-  "description": "",
+  "description": "Free dashbord template with Material Design Lite",
+  "keywords": [
+    "dashboard",
+    "admin template",
+    "mdl",
+    "getmdl",
+    "Material Design",
+    "Material Design Lite",
+    "Dark",
+    "dark material design"
+  ],
   "main": "gulpfile.js",
+  "licenses" :
+  [
+    { "type": "MIT"
+    , "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ],
   "dependencies": {
     "bower": "^1.4.1",
     "gulp": "^3.9.0",
@@ -30,12 +46,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alexbananabob/dashboard.git"
+    "url": "git+https://github.com/CreativeIT/dashboard.git"
   },
-  "author": "franckevva",
-  "license": "ISC",
+  "author": "CreativeIT",
   "bugs": {
-    "url": "https://github.com/alexbananabob/dashboard/issues"
+    "url": "https://github.com/CreativeIT/dashboard/issues"
   },
-  "homepage": "https://github.com/alexbananabob/dashboard#readme"
+  "homepage": "https://github.com/CreativeIT/dashboard#readme"
 }

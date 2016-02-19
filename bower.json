@@ -5,8 +5,17 @@
   "authors": [
     "CreativeIT"
   ],
-  "description": "",
-  "main": "dist/index.html",
+  "description": "Free dashboard template with Material Design Lite",
+  "keywords": [
+    "dashboard",
+    "admin template",
+    "mdl",
+    "getmdl",
+    "Material Design",
+    "Material Design Lite",
+    "Dark",
+    "dark material design"
+  ],
   "moduleType": [],
   "license": "MIT",
   "ignore": [
