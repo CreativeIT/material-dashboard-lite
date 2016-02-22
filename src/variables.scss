@@ -46,9 +46,18 @@ $button-fab-active-color-alt: #f23d3d;
 /* ==========  Layout  ========== */
 
 // Drawer
+$layout-drawer-width: 236px;
+$layout-drawer-bg-color: #202020;
+$layout-nav-color: #202020;
+$layout-drawer-navigation-link-active-background:  unquote("rgba(#{$color-black}, 0.25)");
+$layout-drawer-navigation-link-active-color: unquote("rgb(#{$color-primary})");
+$layout-nav-color:  unquote("rgba(#{$color-black}, 0.25)");
+$layout-drawer-navigation-link-icon-color: unquote("rgba(#{$color-white}, 0.56)");
+
 // Header
 $layout-header-text-color: unquote("rgb(#{$color-primary})");
 $layout-header-bg-color: $background-color-header;
+$layout-header-name-color: unquote("rgba(#{$color-white}, 0.5)");
 
 // Tabs
 
@@ -76,6 +85,8 @@ $card-subtitle-color: unquote("rgba(#{$color-white}, 0.5)");
 
 $card-title-background-color: unquote("rgba(#{$color-black}, 0.3)");
 $card-actions-background-color: unquote("rgba(#{$color-white},0.05)");
+$card-text-color: unquote("rgba(#{$color-white}, 0.8)");
+$card-link-color: unquote("rgb(#{$color-primary})");
 $card-href-color: unquote("rgb(#{$color-primary})");
 $card-title-img-color:  unquote("rgb(#{$color-white})");
 $card-deg-color: unquote("rgba(#{$color-white}, 0.9)");
@@ -152,7 +163,7 @@ $list-three-line-height: 88px !default;
 
 /* LAYOUT */
 $layout-drawer-narrow: 236px;
-$layout-screen-size-threshold: 1314px;
+$layout-screen-size-threshold: 1806px;
 
 /* ICON */
 $trending-arrow-size: 48px;
@@ -191,19 +202,21 @@ $button-font-weigth: 400;
 
 /* BADGE */
 $badge-background: unquote("rgb(#{$color-primary})");
+$badge-color: unquote("rgb(#{$color-white})");
 
 /* SHADOWS */
 $weather-shadow-color: unquote("rgba(#{$color-black}, 0.4)");
 $weather-shadow-4px: 4px 4px 4px $weather-shadow-color;
 
 /* GRID */
+$grid-tablet-columns: 12;
+$grid-phone-columns: 5;
+
 $grid-desktop-gutter: 32px;
 $grid-desktop-margin: 16px;
 
-$grid-tablet-breakpoint: 644px;
-$grid-desktop-breakpoint: 1062px;
-
-//$grid-desktop-breakpoint: 1346px;
+$grid-tablet-breakpoint: 1005px;
+$grid-desktop-breakpoint: 1554px;
 
 /* DATA TABLE */
 $data-table-font-size: 16px;
@@ -227,7 +240,6 @@ $table-tooltip-horizontal-padding: 8px;
 
 //-------------------------------------------------------
 
-$trending-list-item-hover-color: unquote("rgba(#{$color-black}, 0.2)");
 $trending-arrow-up-color: unquote("rgb(#{$color-primary})");
 $trending-arrow-down-color: unquote("rgb(#{$color-secondary})");
 

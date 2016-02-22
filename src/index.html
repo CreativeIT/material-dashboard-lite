@@ -50,8 +50,8 @@
 
 </head>
 <body>
-<div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
-    <header class="demo-header mdl-layout__header">
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
             <div class="mdl-layout-spacer"></div>
 
@@ -65,10 +65,8 @@
                     <label class="mdl-textfield__label" for="search">Enter your query...</label>
                 </div>
             </div>
-            <div class=" mdl-js-ripple-effect " id="notification">
-                <i class="material-icons">notifications_none</i>
-                <span class="mdl-badge" data-badge="30"></span>
-            </div>
+
+            <div class="material-icons mdl-badge mdl-badge--overlap" id="notification" data-badge="23">notifications_none</div>
 
             <ul class="mdl-menu mdl-list mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right mdl-shadow--2dp notifications-dropdown" for="notification">
                 <li class="mdl-list__item">
@@ -123,10 +121,7 @@
                 </li>
             </ul>
 
-            <div class=" mdl-js-ripple-effect " id="inbox">
-                <i class="material-icons">mail_outline</i>
-                <span class="mdl-badge" data-badge="4"></span>
-            </div>
+            <div class="material-icons mdl-badge mdl-badge--overlap" id="inbox" data-badge="4">mail_outline</div>
 
             <ul class="mdl-menu mdl-list mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right mdl-shadow--2dp messages-dropdown" for="inbox">
                 <li class="mdl-list__item">
@@ -188,8 +183,8 @@
             <div id="userNameHeader">
                 Luke
             </div>
-            <div class="demo-avatar-dropdown" id="icon">
-                <img src="images/Icon_header.png" class="demo-avatar">
+            <div class="avatar-dropdown" id="icon">
+                <img src="images/Icon_header.png">
             </div>
 
             <ul class="mdl-menu mdl-list mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect mdl-shadow--2dp account-dropdown" for="icon">
@@ -253,30 +248,22 @@
             </ul>
         </div>
     </header>
-    <div class="demo-drawer mdl-layout__drawer"
-         style="width:236px;margin-top:0; padding-top:0;background-color: #202020">
-        <header class="demo-drawer-header"
-                style="height: 62px; background-image: url('images/imgo.png'); margin-top: 0; padding-top: 0;"></header>
-        <nav class="demo-navigation mdl-navigation" style="background-color: #202020"
-             style="padding-top:0; margin-top:0">
-            <a class="mdl-navigation__link" href="index.html">
-                <div style="background-color: #00bcd4; opacity: 0.9; height:48px; width:2px; z-index:10;"></div>
-                <div style="background-color: black; opacity: 0.25; height:48px; width:234px; z-index:1;"></div>
-                <i style="z-index: 2; margin-left: -90%;color: #00bcd4; opacity:0.9" class="material-icons"
-                   role="presentation">dashboard</i>
-                <t style="z-index: 2; color: #00bcd4; opacity:1;">Dashboard</t>
-            </a>
-            <a class="mdl-navigation__link" href="#">
-                <div style=" height:48px; width:236px; z-index:1;"></div>
-                <i style="z-index: 2; margin-left: -90%;" class="material-icons" role="presentation">person</i>
-                <t>Account</t>
-            </a>
-            <a id="maps-link" class="mdl-navigation__link" href="#">
-                <div style=" height:48px; width:236px; z-index:1;"></div>
-                <i style="z-index: 2; margin-left: -90%;" class="material-icons" role="presentation">maps</i>
-                <t>Maps</t>
-            </a>
 
+    <div class="mdl-layout__drawer">
+        <header></header>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link mdl-navigation__link--current" href="index.html">
+                <i class="material-icons" role="presentation">dashboard</i>
+                Dashboard
+            </a>
+            <a class="mdl-navigation__link" href="forms.html">
+                <i class="material-icons" role="presentation">person</i>
+                Account
+            </a>
+            <a class="mdl-navigation__link" href="maps.html">
+                <i class="material-icons" role="presentation">maps</i>
+                Maps
+            </a>
             <div class="mdl-layout-spacer"></div>
         </nav>
     </div>
@@ -285,9 +272,9 @@
 
         <div class="mdl-grid mdl-grid--no-spacing">
 
-            <div class="mdl-grid mdl-cell mdl-cell--9-col-desktop mdl-cell--5-col-tablet mdl-cell--top">
+            <div class="mdl-grid mdl-cell mdl-cell--9-col-desktop mdl-cell--8-col-tablet mdl-cell--3-col-phone mdl-cell--top">
 
-                <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-cell--top">
+                <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--7-col-tablet mdl-cell--5-col-phone mdl-cell--top">
                     <div class="mdl-card mdl-shadow--2dp pie-chart">
                         <div class="mdl-card__title">
                             <h2 class="mdl-card__title-text">My Day</h2>
@@ -300,7 +287,7 @@
                     </div>
                 </div>
 
-                <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-cell--top">
+                <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--5-col-tablet mdl-cell--5-col-phone mdl-cell--top">
                     <div class="mdl-card mdl-shadow--2dp weather">
                         <div class="mdl-card__title">
                             <h2 class="mdl-card__title-text">Now</h2>
@@ -320,7 +307,7 @@
                     </div>
                 </div>
 
-                <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-cell--top">
+                <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--hide-tablet mdl-cell--hide-phone mdl-cell--top">
                     <div class="mdl-card mdl-shadow--2dp trending">
                         <div class="mdl-card__title">
                             <h2 class="mdl-card__title-text">Trending</h2>
@@ -368,7 +355,7 @@
                     </div>
                 </div>
 
-                <div class="mdl-cell mdl-cell--5-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-cell--top">
+                <div class="mdl-cell mdl-cell--5-col-desktop mdl-cell--hide-tablet mdl-cell--hide-phone mdl-cell--top">
                     <div class="mdl-card mdl-shadow--2dp cotoneaster">
                         <div class="mdl-card__title mdl-card--expand">
                             <h2 class="mdl-card__title-text">Cotoneaster</h2>
@@ -384,7 +371,7 @@
                     </div>
                 </div>
 
-                <div class="mdl-cell mdl-cell--7-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-cell--top">
+                <div class="mdl-cell mdl-cell--7-col-desktop mdl-cell--12-col-tablet mdl-cell--5-col-phone mdl-cell--top">
                     <div class="mdl-card mdl-shadow--2dp line-chart">
                         <div class="mdl-card__title">
                             <h2 class="mdl-card__title-text">Startup Financing Cycle</h2>
@@ -396,8 +383,73 @@
                         </div>
                     </div>
                 </div>
+<!---->
+                <div class="mdl-cell mdl-cell--hide-desktop mdl-cell--6-col-tablet mdl-cell--5-col-phone mdl-cell--top">
+                    <div class="mdl-card mdl-shadow--2dp cotoneaster">
+                        <div class="mdl-card__title mdl-card--expand">
+                            <h2 class="mdl-card__title-text">Cotoneaster</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            <div>Cotoneaster is a genus of flowering plants in the rose family, Roseaceae, netive to the
+                                Palaearctic region, with a strong concentration of diversity in the genus in the mountains
+                                of
+                                southwestern China and the Himalayas.
+                            </div>
+                            <a href="https://en.wikipedia.org/wiki/Cotoneaster" target="_blank">Wikipedia</a>
+                        </div>
+                    </div>
+                </div>
 
-                <table class="mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--hide-phone mdl-cell--top mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp projects-table">
+                <div class="mdl-cell mdl-cell--hide-desktop mdl-cell--6-col-tablet mdl-cell--5-col-phone mdl-cell--top">
+                    <div class="mdl-card mdl-shadow--2dp trending">
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text">Trending</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            <ul class="mdl-list">
+                                <li class="mdl-list__item">
+                                    <span class="mdl-list__item-primary-content list__item-text">UX</span>
+                                    <span class="mdl-list__item-secondary-content">
+                                        <i class="material-icons trending__arrow-up" role="presentation">&#xE5C7</i>
+                                    </span>
+                                    <span class="mdl-list__item-secondary-content trending__percent">1 %</span>
+                                </li>
+                                <li class="mdl-list__item list__item--border-top">
+                                    <span class="mdl-list__item-primary-content list__item-text">PHP</span>
+                                    <span class="mdl-list__item-secondary-content">
+                                        <i class="material-icons trending__arrow-down" role="presentation">&#xE5C5</i>
+                                    </span>
+                                    <span class="mdl-list__item-secondary-content trending__percent">2 %</span>
+                                </li>
+                                <li class="mdl-list__item list__item--border-top">
+                                    <span class="mdl-list__item-primary-content list__item-text ">Big Data</span>
+                                    <span class="mdl-list__item-secondary-content">
+                                        <i class="material-icons trending__arrow-up" role="presentation">&#xE5C7</i>
+                                    </span>
+                                    <span class="mdl-list__item-secondary-content trending__percent">5 %</span>
+
+                                </li>
+                                <li class="mdl-list__item list__item--border-top">
+                                    <span class="mdl-list__item-primary-content list__item-text">Material Design</span>
+                                    <span class="mdl-list__item-secondary-content">
+                                        <i class="material-icons trending__arrow-up" role="presentation">&#xE5C7</i>
+                                    </span>
+                                    <span class="mdl-list__item-secondary-content trending__percent">18 %</span>
+                                </li>
+                                <li class="mdl-list__item list__item--border-top">
+                                    <span class="mdl-list__item-primary-content">JavaScript</span>
+                                    <span class="mdl-list__item-secondary-content">
+                                        <i class="material-icons trending__arrow-up" role="presentation">&#xE5C7</i>
+                                    </span>
+                                    <span class="mdl-list__item-secondary-content trending__percent">17 %</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+<!-- -->
+                <table class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--hide-phone mdl-cell--top mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp projects-table">
                     <thead>
                     <tr>
                         <th class="mdl-data-table__cell--non-numeric">Project</th>
@@ -469,9 +521,9 @@
 
             </div>
 
-            <div class="mdl-grid mdl-cell mdl-cell--3-col-desktop mdl-cell--3-col-tablet mdl-cell--top">
+            <div class="mdl-grid mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--2-col-phone mdl-cell--top">
 
-                <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-cell--top">
+                <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--5-col-phone mdl-cell--top">
                     <div class="mdl-card mdl-shadow--2dp robot">
                         <div class="mdl-card__title mdl-card--expand">
                             <h2 class="mdl-card__title-text">BB-8</h2>
@@ -486,7 +538,7 @@
                     </div>
                 </div>
 
-                <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-cell--top">
+                <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--5-col-phone mdl-cell--top">
                     <div class="mdl-card mdl-shadow--2dp todo">
                     <div class="mdl-card__title">
                         <h2 class="mdl-card__title-text">To-do list</h2>
@@ -510,7 +562,6 @@
 
     </main>
 </div>
-
 
 <!-- inject:js -->
 <!-- endinject -->

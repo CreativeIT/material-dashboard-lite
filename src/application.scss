@@ -6,6 +6,8 @@
 
 @import 'helper';
 
+@import "layout/layout";
+
 @import 'card/card';
 
 @import 'menu/menu';
@@ -28,13 +30,11 @@
 
 @import 'tooltip/tooltip';
 
-@import 'notifications/notifications-dropdown';
+@import 'notifications-dropdown/notifications-dropdown';
 
 @import 'trending/trending';
 
 @import 'message-notifications/messages-dropdown';
-
-@import 'sidebar/sidebar';
 
 @import 'list/list';
 
