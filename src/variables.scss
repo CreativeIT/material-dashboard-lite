@@ -54,11 +54,14 @@ $layout-drawer-navigation-link-active-background:  unquote("rgba(#{$color-black}
 $layout-drawer-navigation-link-active-color: unquote("rgb(#{$color-primary})");
 $layout-nav-color:  unquote("rgba(#{$color-black}, 0.25)");
 $layout-drawer-navigation-link-icon-color: unquote("rgba(#{$color-white}, 0.56)");
+$layout-drawer-header-color: unquote("rgb(#{$color-white})");
+$layout-drawer-header-bg-color: unquote("rgba(#{$color-black},0.85)");
 
 // Header
 $layout-header-text-color: unquote("rgb(#{$color-primary})");
 $layout-header-bg-color: $background-color-header;
 $layout-header-name-color: unquote("rgba(#{$color-white}, 0.5)");
+$layout-header-icon-hover-color: unquote("rgba(#{$color-black}, 0.3)");
 
 // Tabs
 
