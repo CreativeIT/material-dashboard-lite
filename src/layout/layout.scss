@@ -26,8 +26,9 @@ main {
     height: $layout-header-desktop-row-height;
     line-height: $layout-header-desktop-row-height;
     background: $layout-drawer-header-bg-color;
-    font-size: 28px;
-    font-weight: 300;
+    font-size: 25px;
+    font-weight: 500;
+    letter-spacing: 1px;
   }
 
   & .mdl-navigation {
@@ -128,6 +129,17 @@ main {
   .mdl-layout__header-row{
     .avatar-dropdown{
       line-height: $layout-header-mobile-row-height;
+    }
+  }
+}
+
+@media screen and (max-width: 807px) {
+  .mdl-grid > .mdl-grid {
+    width: 100% !important;
+  }
+  .mdl-layout__header-row{
+    .message, .notification{
+      display: none;
     }
   }
 }
