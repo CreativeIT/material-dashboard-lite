@@ -1,0 +1,479 @@
+<!doctype html>
+<!--
+  Material Design Lite
+  Copyright 2015 Google Inc. All rights reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Material Design Lite</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+
+    <script type="text/javascript" src="https://www.google.com/jsapi" ></script>
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,300,100,700,900' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- inject:css -->
+    <link rel="stylesheet" href="css/lib/nv.d3.css">
+    <link rel="stylesheet" href="css/application.css">
+    <!-- endinject -->
+   <!-- <link rel="stylesheet" href="css/styles.css">-->
+    <style>
+        .mdl-layout__header-row {
+	    background-color: #242424;
+        }
+    </style>
+
+</head>
+<body>
+<script>
+    var event;
+</script>
+
+<div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+<header class="demo-header mdl-layout__header mdl-color--white mdl-color--grey-100">
+    <div class="mdl-layout__header-row">
+        <div class="mdl-layout-spacer"></div>
+
+
+
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+                <i class="material-icons">search</i>
+            </label>
+
+            <div class="mdl-textfield__expandable-holder">
+                <input class="mdl-textfield__input" type="text" id="search" />
+                <label class="mdl-textfield__label" for="search">Enter your query...</label>
+            </div>
+        </div>
+        <div class=" mdl-js-ripple-effect " id="notification">
+            <i class="material-icons">notifications_none</i> 
+            <span class="mdl-badge" data-badge="30"></span>
+        </div>
+
+        <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right dropdown-menu notifications" for="notification">
+	    <li>
+		<header>
+		    <h4>You have 23 new notifications!</h4>
+		</header>
+	    </li>
+            <li class="mdl-menu__item">
+		<div class="label pull-right">
+		    <time>
+			just now
+		    </time>
+		</div>
+		<div class="material-icons mdl-js-ripple-effect round_icon round_icon--primary">
+		    <i class="material-icons mdl-js-ripple-effect">plus_one</i>
+		</div>
+		<span>You have 3 new orders.</span>
+	    </li>
+            <li class="mdl-menu__item">
+		<div class="label pull-right">
+		    <time>
+			1 min
+		    </time>
+		</div>
+		<div class="material-icons mdl-js-ripple-effect round_icon round_icon--secondary">
+		    <i class="material-icons mdl-js-ripple-effect">error_outline</i>
+		</div>
+		<span>Database error</span>
+	    </li>
+            <li class="mdl-menu__item">
+		<div class="label pull-right">
+		    <time>
+			2 hours
+		    </time>
+		</div>
+		<div class="material-icons mdl-js-ripple-effect round_icon round_icon--primary">
+		    <i class="material-icons mdl-js-ripple-effect">new_releases</i>
+		</div>
+		<span>The Death Star is built!</span>
+	    </li>
+            <li class="mdl-menu__item">
+		<div class="label pull-right">
+		    <time>
+			5 days
+		    </time>
+		</div>
+		<div class="material-icons mdl-js-ripple-effect round_icon round_icon--primary">
+		    <i class="material-icons mdl-js-ripple-effect">mail_outline</i>
+		</div>
+		<span>You have 4 new mails.</span>
+            </li>
+            <li>
+		<footer>
+		    <button href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">ALL NOTIFICATIONS</button>
+		</footer>
+	    </li>
+        </ul>
+
+        <div class=" mdl-js-ripple-effect " id="inbox">
+            <i class="material-icons">mail_outline</i>
+            <span class="mdl-badge" data-badge="4"></span>
+        </div>
+        <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right dropdown-menu message-notifications" for="inbox">
+	    <li>
+		<header>
+		    <h4>You have 4 new messages!</h4>
+		</header>
+	    </li>
+            <li class="mdl-menu__item">
+		
+		<div class="material-icons mdl-js-ripple-effect round_icon round_icon--primary">
+		    <span class="material-icons">A</span>
+		</div>
+		<div class="message-notifications__topic">
+		    <span>Alice</span>
+		    <br>
+		    <span>Birthday Party</span>
+		</div>
+		<div class="label pull-right label--frameless">
+		    <time>
+			just now
+		    </time>
+		</div>
+	    </li>
+            <li class="mdl-menu__item">
+		<div class="material-icons mdl-js-ripple-effect round_icon round_icon--baby-blue">
+		    <span class="material-icons">M</span>
+		</div>
+		<div class="message-notifications__topic">
+		    <span>Mike</span>
+		    <br>
+		    <span>No theme</span>
+		</div>
+		<div class="label pull-right label--frameless">
+		    <time>
+			5 min
+		    </time>
+		</div>
+	    </li>
+            <li class="mdl-menu__item">
+		<div class="material-icons mdl-js-ripple-effect round_icon round_icon--cerulean">
+		    <span class="material-icons">D</span>
+		</div>
+		<div class="message-notifications__topic">
+		    <span>Darth</span>
+		    <br>
+		    <span>Suggestion</span>
+		</div>
+		<div class="label pull-right label--frameless">
+		    <time>
+			23 hours
+		    </time>
+		</div>
+	    </li>
+            <li class="mdl-menu__item">
+		<div class="material-icons mdl-js-ripple-effect round_icon round_icon--mint">
+		    <span class="material-icons">D</span>
+		</div>
+		<div class="message-notifications__topic">
+		    <span>Don McDuket</span>
+		    <br>
+		    <span>NEWS</span>
+		</div>
+		<div class="label pull-right label--frameless">
+		    <time>
+			30 Nov
+		    </time>
+		</div>
+            </li>
+            <li>
+		<footer>
+		    <button href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">SHOW ALL MESSAGES</button>
+		</footer>
+	    </li>
+        </ul>
+        <div id="userNameHeader">
+            Luke
+	</div>
+	<div class="demo-avatar-dropdown">
+            <img src="images/card.jpg" class="demo-avatar">
+        </div>
+        <div class=" mdl-js-ripple-effect " id="more">
+            <i class="material-icons">more_vert</i>
+            <span></span>
+        </div>
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect mdl-color--grey-400" for="more">
+                <a href="profile.html"><li class="mdl-menu__item"><i class="material-icons" role="presentation">person</i>My Profile</li></a>
+                <a href="#"><li class="mdl-menu__item"><i class="material-icons" role="presentation">settings</i>Settings</li></a>
+                <a href="#"><li class="mdl-menu__item"><i class="material-icons" role="presentation">exit_to_app</i>Logout</li></a>
+            </ul>
+        <div class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-color--grey-100 mdl-shadow--16dp" for="calendar">
+
+            <div class="mdl-grid">
+                <div ng-app="app" >
+                    <calendar></calendar>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</header>
+<div class="demo-drawer mdl-layout__drawer" style="width:236px;margin-top:0; padding-top:0;background-color: #202020">
+    <header class="demo-drawer-header" style="height: 62px; background-image: url('images/imgo.png'); margin-top: 0; padding-top: 0;">
+        
+    </header>
+    <nav class="demo-navigation mdl-navigation" style="background-color: #202020" style="padding-top:0; margin-top:0">
+        <a class="mdl-navigation__link" href="index.html">
+	    <div style=" height:48px; width:236px; z-index:1;"></div>
+	    <i style="z-index: 2; margin-left: -90%;" class="material-icons" role="presentation">dashboard</i>
+	    <t>Dashboard</t>
+	</a>
+        <a class="mdl-navigation__link" href="profile.html">
+	    <div style="background-color: #00bcd4; opacity: 0.9; height:48px; width:2px; z-index:10;"></div>
+	    <div style="background-color: black; opacity: 0.25; height:48px; width:234px; z-index:1;"></div>
+	    <i style="z-index: 2; margin-left: -90%;color: #00bcd4; opacity:0.9" class="material-icons" role="presentation">person</i>
+	    <t style="z-index: 2; color: #00bcd4; opacity:1;">Account</t>
+	</a>
+        <a id="maps-link" class="mdl-navigation__link" href="maps.html">
+	    <div style=" height:48px; width:236px; z-index:1;"></div>
+	    <i style="z-index: 2; margin-left: -90%;" class="material-icons" role="presentation">maps</i>
+	    <t>Maps</t>
+	</a>
+
+        <div class="mdl-layout-spacer"></div>
+    </nav>
+</div>
+<main class="mdl-layout__content mdl-color--grey-100">
+	<div class="mdl-card mdl-shadow--2dp employer-form" action="#">
+		<div class="mdl-card__title">
+			<h2>Form</h2>
+			<div class="mdl-card__subtitle">Please complete the form</div>
+		</div>
+		<div class="mdl-card__supporting-text">
+			<form action="#" class="form">
+				<div class="form__article">
+					<h3>Personal data</h3>
+					<div class="mdl-grid">
+						<div class="mdl-cell mdl-cell--6-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							<input class="mdl-textfield__input" type="text" id="firstName" value="Luke"/>
+							<label class="mdl-textfield__label" for="firstName">First name</label>
+						</div>
+						<div class="mdl-cell mdl-cell--6-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							<input class="mdl-textfield__input" type="text" id="secondName" value="Skywalker"/>
+							<label class="mdl-textfield__label" for="secondName">Second name</label>
+						</div>
+					</div>
+					<div class="mdl-grid">
+						<div class="mdl-cell mdl-cell--6-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							<input class="mdl-textfield__input" type="text" id="birthday" value="25 May, 1977"/>
+							<label class="mdl-textfield__label" for="birthday">Birthday</label>
+						</div>
+						<div class="mdl-cell mdl-cell--6-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select">
+							<input class="mdl-textfield__input" value="Male" type="text" id="gender" readonly tabIndex="-1"/>
+							<label class="mdl-textfield__label" for="gender">Gender</label>
+							<ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu dark_dropdown" for="gender">
+								<li class="mdl-menu__item">Male</li>
+								<li class="mdl-menu__item">Female</li>
+							</ul>
+							<label for="gender">
+								<i class="mdl-icon-toggle__label material-icons">arrow_drop_down</i>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="form__article">
+					<h3>Employment</h3>
+					<div class="mdl-grid">
+						<div class="mdl-cell mdl-cell--6-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							<input class="mdl-textfield__input" type="text" value="CreativeIT" id="company"  disabled/>
+							<label class="mdl-textfield__label" for="company">Company</label>
+						</div>
+						<div class="mdl-cell mdl-cell--6-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							<input class="mdl-textfield__input" type="text" id="company_email" value="hello@creativit.io"  disabled/>
+							<label class="mdl-textfield__label" for="company_email">Company email</label>
+						</div>
+					</div>
+					<div class="mdl-grid">
+						<div class="mdl-cell mdl-cell--6-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							<input class="mdl-textfield__input" type="text" value="Lead developer" id="position"/>
+							<label class="mdl-textfield__label" for="position">Position</label>
+						</div>
+						<div class="mdl-cell mdl-cell--6-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select">
+							<input class="mdl-textfield__input" value="Senior" type="text" id="qualification" readonly tabIndex="-1"/>
+							<label class="mdl-textfield__label" for="qualification">Qualification</label>
+							<ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu dark_dropdown" for="qualification">
+								<li class="mdl-menu__item">Young Padawan</li>
+								<li class="mdl-menu__item">Junior</li>
+								<li class="mdl-menu__item">Middle</li>
+								<li class="mdl-menu__item">Senior</li>
+							</ul>
+							<label for="qualification">
+								<i class="mdl-icon-toggle__label material-icons">arrow_drop_down</i>
+							</label>
+						</div>
+					</div>
+					<span>Type of employment:</span>
+					<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="partition-fulltime">
+						<input type="radio" id="partition-fulltime" class="mdl-radio__button" name="employment" value="1" checked />
+						<span class="mdl-radio__label">Fulltime</span>
+					</label>
+					<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="partition-partTime">
+						<input type="radio" id="partition-partTime" class="mdl-radio__button" name="employment" value="2" />
+						<span class="mdl-radio__label">Part time</span>
+					</label>
+					<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="partition-remote">
+						<input type="radio" id="partition-remote" class="mdl-radio__button" name="employment" value="3" />
+						<span class="mdl-radio__label">Remote</span>
+					</label>
+					
+				</div>
+				<div class="form__article employer-form__contacts">
+					<h3>Contacts</h3>
+					<div class="mdl-grid">
+						<div class="mdl-cell mdl-cell--9-col input-group">
+							<i class="material-icons pull-left">call</i>
+							<div class="mdl-textfield mdl-js-textfield pull-left">
+								<input class="mdl-textfield__input" type="text" id="phone">
+								<label class="mdl-textfield__label" for="phone">XXX-XX-XX</label>
+							</div>
+						</div>
+
+						<div class="mdl-cell mdl-cell--3-col mdl-textfield mdl-js-textfield getmdl-select">
+							<input class="mdl-textfield__input" value="Mobile" type="text" id="phone_type" readonly tabIndex="-1"/>
+							<ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu dark_dropdown" for="phone_type">
+								<li class="mdl-menu__item">Mobile</li>
+								<li class="mdl-menu__item">Home</li>
+								<li class="mdl-menu__item">Work</li>
+							</ul>
+							<label for="phone_type">
+								<i class="mdl-icon-toggle__label material-icons">arrow_drop_down</i>
+							</label>
+						</div>
+					</div>
+					<div class="mdl-grid">
+						<div class="mdl-cell mdl-cell--9-col input-group">
+							<!--i class="material-icons fa fa-skype pull-left"></i-->
+							<img src="images/skype.svg">
+							<div class="mdl-textfield mdl-js-textfield pull-left">
+								<input class="mdl-textfield__input" type="text" id="skype" value="Pilot_luke"/>
+								<label class="mdl-textfield__label" for="skype">Skype</label>
+							</div>
+						</div>
+
+						<div class="mdl-cell mdl-cell--3-col mdl-textfield mdl-js-textfield getmdl-select">
+							<input class="mdl-textfield__input" value="Personal" type="text" id="skype_type" readonly tabIndex="-1"/>
+							<ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu dark_dropdown" for="skype_type">
+								<li class="mdl-menu__item">Personal</li>
+								<li class="mdl-menu__item">Work</li>
+							</ul>
+							<label for="skype_type">
+								<i class="mdl-icon-toggle__label material-icons">arrow_drop_down</i>
+							</label>
+						</div>
+					</div>
+					<div class="mdl-grid">
+						<div class="mdl-cell mdl-cell--9-col input-group">
+							<i class="material-icons pull-left">mail_outline</i>
+							<div class="mdl-textfield mdl-js-textfield pull-left">
+								<input class="mdl-textfield__input" type="text" id="email" value="luke@skywalker.com"/>
+								<label class="mdl-textfield__label" for="email">Email</label>
+							</div>
+						</div>
+
+						<div class="mdl-cell mdl-cell--3-col mdl-textfield mdl-js-textfield getmdl-select">
+							<input class="mdl-textfield__input" value="Work" type="text" id="email_type" readonly tabIndex="-1"/>
+							<ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu dark_dropdown" for="email_type">
+								<li class="mdl-menu__item">Personal</li>
+								<li class="mdl-menu__item">Work</li>
+							</ul>
+							<label for="email_type">
+								<i class="mdl-icon-toggle__label material-icons">arrow_drop_down</i>
+							</label>
+						</div>
+					</div>
+					<div class="mdl-grid">
+						<div class="mdl-cell mdl-cell--9-col input-group">
+							<i class="material-icons pull-left">place</i>
+							<div class="mdl-textfield mdl-js-textfield pull-left">
+								<input class="mdl-textfield__input" type="text" id="address"/>
+								<label class="mdl-textfield__label" for="address">Address</label>
+							</div>
+						</div>
+
+						<div class="mdl-cell mdl-cell--3-col mdl-textfield mdl-js-textfield getmdl-select">
+							<input class="mdl-textfield__input" value="Home" type="text" id="address_type" readonly tabIndex="-1"/>
+							<ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu dark_dropdown" for="address_type">
+								<li class="mdl-menu__item">Home</li>
+								<li class="mdl-menu__item">Work</li>
+							</ul>
+							<label for="address_type">
+								<i class="mdl-icon-toggle__label material-icons">arrow_drop_down</i>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="form__article employer-form__general_skills">
+					<h3>General skills</h3>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<textarea class="mdl-textfield__input" type="text" rows= "3" id="AboutMe" ></textarea>
+						<label class="mdl-textfield__label" for="AboutMe">About me</label>
+					</div>
+				</div>
+				<div class="form__action">
+					<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="isInfoReliable">
+						<input type="checkbox" id="isInfoReliable" class="mdl-checkbox__input" required/>
+						<span class="mdl-checkbox__label">Entered information is reliable</span>
+					</label>
+					<button id="submit_button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored pull-right">
+						Submit
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</main>
+</div>
+<!--<link rel="stylesheet" href="../bower_components/material-design-lite/material.min.css">-->
+  <!-- inject:js -->
+  <script src="js/d3.js"></script>
+  <script src="js/material.min.js"></script>
+  <script src="js/nv.d3.js"></script>
+  <script src="js/employer-form/employer-form.js"></script>
+  <script src="js/line-chart/line-chart-nvd3.js"></script>
+  <script src="js/pie-chart/pie-chart-nvd3.js"></script>
+  <script src="js/table/table.js"></script>
+  <script src="js/todo/todo.js"></script>
+  <!-- endinject -->
+<!--<script type="text/javascript" src="https://www.google.com/jsapi" defer></script>-->
+</body>
+</html>
+
