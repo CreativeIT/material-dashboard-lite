@@ -7,12 +7,5 @@
     background-clip: padding-box;
     border-top: $list-item-border;
   }
-  .mdl-list__item-avatar {
-    padding: ($list-avatar-size - $list-icon-size)/2;
-    text-align: center;
-    .material-icons {
-      vertical-align: top;
-    }
-  }
 }
 

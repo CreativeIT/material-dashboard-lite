@@ -5,7 +5,7 @@
   }
   .mdl-list__item {
     &:hover {
-      background-color: $trending-list-item-hover-color;
+      background-color: $default-item-hover-bg-color;
     }
     .mdl-list__item-secondary-content {
       margin: 0;

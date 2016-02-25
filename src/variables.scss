@@ -149,17 +149,13 @@ $tooltip-background-color: #353535;
 /* LIST */
 
 $list-border: 0;
-$list-min-height: 48px !default;
-$list-min-padding: 16px !default;
 $list-bottom-padding: 16px;
 $list-avatar-text-left-distance: 64px;
 $list-icon-text-left-distance: 56px;
 
 $list-avatar-size: 32px ;
-$list-icon-size: 24px !default;
 
 $list-two-line-height: 64px;
-$list-three-line-height: 88px !default;
 
 /* LAYOUT */
 $layout-drawer-narrow: 236px;
@@ -247,7 +243,7 @@ $trending-arrow-down-color: unquote("rgb(#{$color-secondary})");
 
 $badge-background: #00bcd4;
 $primary-font-size: 10px;
-$color-accent: rgba(0, 0, 0, 0.35);
+//$color-accent: rgba(0, 0, 0, 0.35);
 $color-primary-contrast: white;
 $color-accent-contrast: #00bcd4;
 $border-color: #757575;

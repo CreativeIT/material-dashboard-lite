@@ -6,20 +6,24 @@
     .mdl-list__item {
       align-items: flex-start;
       padding-bottom: 0;
-        .material-icons {
-            visibility: hidden;
-        }
-        &:hover .material-icons {
-            visibility: visible;
-        }
+      .mdl-list__item-primary-content {
+        max-width: 100%;
+        word-wrap: break-word;
+      }
+      .material-icons {
+          visibility: hidden;
+      }
+      &:hover .material-icons {
+          visibility: visible;
+      }
     }
     .mdl-checkbox {
       height: auto;
       padding-left: $checkbox-button-size*2;
     }
     .mdl-textfield {
-        width: 100%;
-        padding: 0;
+      width: 100%;
+      padding: 0;
     }
     .mdl-textfield__input {
         padding: 2px 0;
