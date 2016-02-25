@@ -74,6 +74,11 @@ $checkbox-color: unquote("rgb(#{$color-secondary})");
 /* ==========  Text fields  ========== */
 
 $todo-input-text-label-color: unquote("rgba(#{$color-white}, 0.2)");
+
+$input-text-highlight-color: unquote("rgb(#{$color-primary})");
+$input-text-bottom-border-color: rgba(255, 255, 255, 0.2);
+$input-text-disabled-text-color: rgba(255, 255, 255, 0.6);
+
 //placeholder color
 $todo-input-text-highlight-color: unquote("rgba(#{$color-white}, 0.7)");
 //bottom line color
@@ -143,6 +148,9 @@ $tooltip-background-color: #353535;
 // How much the start location of the arc should rotate each time.
 
 /* RADIO */
+
+$radio-off-color: unquote("rgba(#{$color-white}, 0.8)");
+$radio-color: unquote("rgba(#{$color-primary}, 0.8)");
 
 /* MENU */
 
@@ -267,3 +275,12 @@ $line-chart-guideline-width: 0.5px;
 
 $legend-mark-size: 8px;
 $legend-text-indent: $legend-mark-size + 16;
+
+/* employer form*/
+$employer-form-width: 670px;
+$employer-form-color-brighter: rgba(255, 255, 255, 1);
+$employer-form-color-darker: rgba(255, 255, 255, 0.6);
+$employer-form-horizontal-padding: 15px;
+
+/* row */
+$row-col-padding: 30px;
