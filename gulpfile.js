@@ -65,7 +65,7 @@ gulp.task('default', ['cleanDist','jshint', 'babel', 'copyJsLib', 'copyCssLib'],
 		.pipe(gulp.dest('dist/images'));
 	gulp.src('src/**/*.html')
 		.pipe(gulp.dest('dist/'))
-		.pipe(inject(gulp.src(['dist/js/**/*.js', 'dist/css/*.css'], {read: false}), {relative: true}))
+		.pipe(inject(gulp.src(['dist/js/**/*.js', 'dist/css/lib/*.css', 'dist/css/*.css'], {read: false}), {relative: true}))
 		.pipe(gulp.dest('dist/'));
 });
 
@@ -77,7 +77,7 @@ gulp.task('copyJsLib', ['cleanDist'], function () {
 
 gulp.task('copyCssLib', ['cleanDist'], function () {
 	return gulp.src(['bower_components/nvd3/build/nv.d3.css', 'bower_components/getmdl-select/getmdl-select.min.css'])
-		.pipe(gulp.dest('dist/css'));
+		.pipe(gulp.dest('dist/css/lib'));
 });
 
 gulp.task('cleanDist', function() {
