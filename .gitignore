@@ -12,6 +12,14 @@ src/.sass-cache/
 
 src
 
-lib
-
 public
+
+dist
+
+.gitignore
+
+bower.json
+
+gulpfile.js
+
+package.json
