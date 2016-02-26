@@ -5,7 +5,7 @@
   align-items: center;
   min-height: $pie-chart-height;
   svg {
-    min-height: 180px;
+    min-height: 200px;
     max-width: 180px;
     .nvd3.nv-pie {
       path {
@@ -19,7 +19,7 @@
     }
   }
   .legend {
-    max-width: 184px;
+    max-width: 140px;
   }
 }
 

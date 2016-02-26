@@ -15,6 +15,12 @@
 main {
   background: url("../images/Dark_background_1920x1080.png") center top no-repeat;
   background-size: cover;
+  margin-right: -18px;
+}
+
+.mdl-layout__header {
+  width: 100% !important;
+  margin-left: 0 !important;
 }
 
 .mdl-layout__drawer {
@@ -126,9 +132,20 @@ main {
       }
     }
   }
-  .mdl-layout__header-row{
-    .avatar-dropdown{
+  .mdl-layout__header-row {
+    .avatar-dropdown {
       line-height: $layout-header-mobile-row-height;
+    }
+  }
+}
+
+@media screen and (min-width: 1242px) and (max-width: 1553px) {
+  .mdl-layout--fixed-drawer {
+   .mdl-layout__drawer {
+     transform: translateX(0);
+   }
+    .mdl-layout__content {
+      margin-left: $layout-drawer-narrow;
     }
   }
 }

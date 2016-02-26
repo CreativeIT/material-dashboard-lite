@@ -1,38 +1,31 @@
 .account-dropdown {
-  height: $account-dropdown-height;
-
-  img {
-    margin-right: 16px;
-    height: $account-dropdown-header-height;
-    width: $account-dropdown-header-height;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-
-  li:first-child {
-    height: $account-dropdown-header-height;
-    padding-top: 15px;
-    padding-bottom: 7px;
-    @include typo-account-dropdown-header();
-  }
-
-  li {
-    border: none;
-  }
-
-  li:hover {
-    &:last-child {
-      background-color: $dropdown-menu-hover-color;
+  .mdl-list__item {
+    font-size: 14px;
+    &:first-child {
+      font-size: 16px;
+      padding-top: $list-min-padding/2;
+      padding-bottom: $list-min-padding/2;
+      height: $account-dropdown-avatar-size + $list-min-padding;
+      .mdl-list__item-primary-content {
+        height: $account-dropdown-avatar-size;
+        line-height: 28px;
+        .mdl-list__item-avatar {
+          height: $account-dropdown-avatar-size;
+          width: $account-dropdown-avatar-size;
+          background: url("../images/Icon.png");
+          background-size: cover;
+        }
+        .mdl-list__item-sub-title {
+          font-weight: 300;
+        }
+      }
     }
-
-    i {
-      color: unquote("rgba(#{$color-primary},1)");
+    &:hover .mdl-list__item-icon {
+      color: $list-icon-hover-color;
     }
   }
-
-  i {
-    color: unquote("rgba(#{$color-white}, 0.8)");
-    margin-right: 16px;
-    margin-top: 4px;
+  .list__item--border-top {
+    margin-top: 8px;
+    padding-top: 8px;
   }
 }

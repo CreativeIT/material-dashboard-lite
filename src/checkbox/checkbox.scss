@@ -1,13 +1,3 @@
-// Used in this place, because this variable do not have '!default' flag in MDL
-$checkbox-button-size: 18px;
-
-.mdl-checkbox {
-  width: auto;
-}
-.mdl-checkbox__box-outline {
-   width: $checkbox-button-size;
-   height: $checkbox-button-size;
-}
 .mdl-checkbox__tick-outline {
   -webkit-mask: url("#{$checkbox-image-path}/tick-mask.svg");
 }
