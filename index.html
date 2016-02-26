@@ -68,7 +68,7 @@
                 </div>
             </div>
 
-            <div class="material-icons mdl-badge mdl-badge--overlap" id="notification" data-badge="23">notifications_none</div>
+            <div class="material-icons mdl-badge mdl-badge--overlap mdl-button--icon notification" id="notification" data-badge="23">notifications_none</div>
 
             <ul class="mdl-menu mdl-list mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right mdl-shadow--2dp notifications-dropdown" for="notification">
                 <li class="mdl-list__item">
@@ -123,9 +123,8 @@
                 </li>
             </ul>
 
-            <div class="material-icons mdl-badge mdl-badge--overlap" id="inbox" data-badge="4">mail_outline</div>
-
-            <ul class="mdl-menu mdl-list mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right mdl-shadow--2dp messages-dropdown" for="inbox">
+            <div class="material-icons mdl-badge mdl-badge--overlap mdl-button--icon message" id="inbox" data-badge="4">mail_outline</div>
+             <ul class="mdl-menu mdl-list mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right mdl-shadow--2dp messages-dropdown" for="inbox">
                 <li class="mdl-list__item">
                     You have 4 new messages!
                 </li>
@@ -182,13 +181,10 @@
                 </li>
             </ul>
 
-            <div id="userNameHeader">
-                Luke
-            </div>
             <div class="avatar-dropdown" id="icon">
+                <span>Luke</span>
                 <img src="images/Icon_header.png">
             </div>
-
             <ul class="mdl-menu mdl-list mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect mdl-shadow--2dp account-dropdown" for="icon">
                 <li class="mdl-list__item mdl-list__item--two-line">
                     <span class="mdl-list__item-primary-content">
@@ -234,9 +230,10 @@
                 </li>
             </ul>
 
-            <div class=" mdl-js-ripple-effect " id="more">
+            <button id="more"
+                    class="mdl-button mdl-js-button mdl-button--icon">
                 <i class="material-icons">more_vert</i>
-            </div>
+            </button>
             <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect mdl-shadow--2dp settings-dropdown" for="more">
                 <li class="mdl-menu__item">
                     Settings
@@ -252,7 +249,7 @@
     </header>
 
     <div class="mdl-layout__drawer">
-        <header></header>
+        <header>darkboard</header>
         <nav class="mdl-navigation">
             <a class="mdl-navigation__link mdl-navigation__link--current" href="index.html">
                 <i class="material-icons" role="presentation">dashboard</i>
