@@ -177,259 +177,238 @@
     </script>
 </head>
 <body>
-<div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
-<header class="demo-header mdl-layout__header mdl-color--white mdl-color--grey-100">
-    <div class="mdl-layout__header-row">
-        <div class="mdl-layout-spacer"></div>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+	<header class="mdl-layout__header">
+		<div class="mdl-layout__header-row">
+			<div class="mdl-layout-spacer"></div>
 
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+				<label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+					<i class="material-icons">search</i>
+				</label>
 
-
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-            <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
-                <i class="material-icons">search</i>
-            </label>
-
-            <div class="mdl-textfield__expandable-holder">
-                <input class="mdl-textfield__input" type="text" id="search" />
-                <label class="mdl-textfield__label" for="search">Enter your query...</label>
-            </div>
-        </div>
-        <div class=" mdl-js-ripple-effect " id="notification">
-            <i class="material-icons">notifications_none</i> 
-            <span class="mdl-badge" data-badge="30"></span>
-        </div>
-
-        <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right dropdown-menu notifications" for="notification">
-	    <li>
-		<header>
-		    <h4>You have 23 new notifications!</h4>
-		</header>
-	    </li>
-            <li class="mdl-menu__item">
-		<div class="label pull-right">
-		    <time>
-			just now
-		    </time>
-		</div>
-		<div class="material-icons mdl-js-ripple-effect round_icon background-color--primary">
-		    <i class="material-icons mdl-js-ripple-effect">plus_one</i>
-		</div>
-		<span>You have 3 new orders.</span>
-	    </li>
-            <li class="mdl-menu__item">
-		<div class="label pull-right">
-		    <time>
-			1 min
-		    </time>
-		</div>
-		<div class="material-icons mdl-js-ripple-effect round_icon background-color--secondary">
-		    <i class="material-icons mdl-js-ripple-effect">error_outline</i>
-		</div>
-		<span>Database error</span>
-	    </li>
-            <li class="mdl-menu__item">
-		<div class="label pull-right">
-		    <time>
-			2 hours
-		    </time>
-		</div>
-		<div class="material-icons mdl-js-ripple-effect round_icon background-color--primary">
-		    <i class="material-icons mdl-js-ripple-effect">new_releases</i>
-		</div>
-		<span>The Death Star is built!</span>
-	    </li>
-            <li class="mdl-menu__item">
-		<div class="label pull-right">
-		    <time>
-			5 days
-		    </time>
-		</div>
-		<div class="material-icons mdl-js-ripple-effect round_icon background-color--primary">
-		    <i class="material-icons mdl-js-ripple-effect">mail_outline</i>
-		</div>
-		<span>You have 4 new mails.</span>
-            </li>
-            <li>
-		<footer>
-		    <button href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">ALL NOTIFICATIONS</button>
-		</footer>
-	    </li>
-        </ul>
-
-        <div class=" mdl-js-ripple-effect " id="inbox">
-            <i class="material-icons">mail_outline</i>
-            <span class="mdl-badge" data-badge="4"></span>
-        </div>
-        <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right dropdown-menu message-notifications" for="inbox">
-	    <li>
-		<header>
-		    <h4>You have 4 new messages!</h4>
-		</header>
-	    </li>
-            <li class="mdl-menu__item">
-		
-		<div class="material-icons mdl-js-ripple-effect round_icon background-color--primary">
-		    <span class="material-icons">A</span>
-		</div>
-		<div class="message-notifications__topic">
-		    <span>Alice</span>
-		    <br>
-		    <span>Birthday Party</span>
-		</div>
-		<div class="label pull-right label--frameless">
-		    <time>
-			just now
-		    </time>
-		</div>
-	    </li>
-            <li class="mdl-menu__item">
-		<div class="material-icons mdl-js-ripple-effect round_icon background-color--baby-blue">
-		    <span class="material-icons">M</span>
-		</div>
-		<div class="message-notifications__topic">
-		    <span>Mike</span>
-		    <br>
-		    <span>No theme</span>
-		</div>
-		<div class="label pull-right label--frameless">
-		    <time>
-			5 min
-		    </time>
-		</div>
-	    </li>
-            <li class="mdl-menu__item">
-		<div class="material-icons mdl-js-ripple-effect round_icon background-color--cerulean">
-		    <span class="material-icons">D</span>
-		</div>
-		<div class="message-notifications__topic">
-		    <span>Darth</span>
-		    <br>
-		    <span>Suggestion</span>
-		</div>
-		<div class="label pull-right label--frameless">
-		    <time>
-			23 hours
-		    </time>
-		</div>
-	    </li>
-            <li class="mdl-menu__item">
-		<div class="material-icons mdl-js-ripple-effect round_icon background-color--mint">
-		    <span class="material-icons">D</span>
-		</div>
-		<div class="message-notifications__topic">
-		    <span>Don McDuket</span>
-		    <br>
-		    <span>NEWS</span>
-		</div>
-		<div class="label pull-right label--frameless">
-		    <time>
-			30 Nov
-		    </time>
-		</div>
-            </li>
-            <li>
-		<footer>
-		    <button href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">SHOW ALL MESSAGES</button>
-		</footer>
-	    </li>
-        </ul>
-        <div id="userNameHeader">
-            Luke
-	</div>
-	<div class="demo-avatar-dropdown" id="icon">
-            <img src="images/Icon_header.png" class="demo-avatar">
-        </div>
-        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect dropdown-menu account-dropdown" for="icon">
-		<li class="mdl-menu__item">
-		    <header>
-			<img src="images/Icon.png" class="demo-avatar  pull-left">
-			<div class="pull-left">
-			    <span>Luke</span>
-			    <br>
-			    <span>Luke@skywalker.com</span>
+				<div class="mdl-textfield__expandable-holder">
+					<input class="mdl-textfield__input" type="text" id="search"/>
+					<label class="mdl-textfield__label" for="search">Enter your query...</label>
+				</div>
 			</div>
-		    </header>
-		</li>
-		<li class="mdl-menu__item dropdown-menu__divider"></li>
-                <li class="mdl-menu__item">
-		    <i class="material-icons mdl-js-ripple-effect pull-left">account_circle</i>
-		    <span>My account</span>
-		</li>
-		<li class="mdl-menu__item">
-		    <div class="label pull-right label--primary">
-			<time>
-			    3 new
-			</time>
-		    </div>
-		    <i class="material-icons mdl-js-ripple-effect pull-left">check_box</i>
-		    <span>My tasks</span>
-		</li>
-		<li class="mdl-menu__item">
-		    <i class="material-icons mdl-js-ripple-effect pull-left">perm_contact_calendar</i>
-		    <span>My events</span>
-		</li>
-		<li class="mdl-menu__item dropdown-menu__divider"></li>
-		<li class="mdl-menu__item">
-		    <i class="material-icons mdl-js-ripple-effect pull-left">settings</i>
-		    <span>Settings</span>
-		</li>
-		<li class="mdl-menu__item">
-		    <i class="material-icons mdl-js-ripple-effect pull-left color-secondary--100">exit_to_app</i>
-		    <span>Log out</span>
-		</li>
-        </ul>
-        <div class=" mdl-js-ripple-effect " id="more">
-            <i class="material-icons">more_vert</i>
-        </div>
-        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect dark_dropdown" for="more">
-	    <li class="mdl-menu__item">
-		Settings
-	    </li>
-	    <li class="mdl-menu__item">
-		Support
-	    </li>
-	    <li class="mdl-menu__item">
-		Last last action
-	    </li>
-        </ul>
-        <div class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-color--grey-100 mdl-shadow--16dp" for="calendar">
+			<div class="material-icons mdl-badge mdl-badge--overlap mdl-button--icon notification" id="notification" data-badge="23">notifications_none</div>
 
-            <div class="mdl-grid">
-                <div ng-app="app" >
-                    <calendar></calendar>
-                </div>
-            </div>
+			<ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right dropdown-menu notifications"
+				for="notification">
+				<li>
+					<header>
+						<h4>You have 23 new notifications!</h4>
+					</header>
+				</li>
+				<li class="mdl-menu__item">
+					<div class="label pull-right">
+						<time>
+							just now
+						</time>
+					</div>
+					<div class="material-icons mdl-js-ripple-effect round_icon background-color--primary">
+						<i class="material-icons mdl-js-ripple-effect">plus_one</i>
+					</div>
+					<span>You have 3 new orders.</span>
+				</li>
+				<li class="mdl-menu__item">
+					<div class="label pull-right">
+						<time>
+							1 min
+						</time>
+					</div>
+					<div class="material-icons mdl-js-ripple-effect round_icon background-color--secondary">
+						<i class="material-icons mdl-js-ripple-effect">error_outline</i>
+					</div>
+					<span>Database error</span>
+				</li>
+				<li class="mdl-menu__item">
+					<div class="label pull-right">
+						<time>
+							2 hours
+						</time>
+					</div>
+					<div class="material-icons mdl-js-ripple-effect round_icon background-color--primary">
+						<i class="material-icons mdl-js-ripple-effect">new_releases</i>
+					</div>
+					<span>The Death Star is built!</span>
+				</li>
+				<li class="mdl-menu__item">
+					<div class="label pull-right">
+						<time>
+							5 days
+						</time>
+					</div>
+					<div class="material-icons mdl-js-ripple-effect round_icon background-color--primary">
+						<i class="material-icons mdl-js-ripple-effect">mail_outline</i>
+					</div>
+					<span>You have 4 new mails.</span>
+				</li>
+				<li>
+					<footer>
+						<button href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">ALL NOTIFICATIONS
+						</button>
+					</footer>
+				</li>
+			</ul>
 
-        </div>
-    </div>
-</header>
-<div class="demo-drawer mdl-layout__drawer" style="width:236px;margin-top:0; padding-top:0;background-color: #202020">
-    <header class="demo-drawer-header" style="height: 62px; background-image: url('images/imgo.png'); margin-top: 0; padding-top: 0;">
-        
-    </header>
-    <nav class="demo-navigation mdl-navigation" style="background-color: #202020" style="padding-top:0; margin-top:0">
-        <a class="mdl-navigation__link" href="index.html">
-	    <div style=" height:48px; width:236px; z-index:1;"></div>
-	    
-	    <i style="z-index: 2; margin-left: -90%;" class="material-icons" role="presentation">dashboard</i>
-	    <t>Dashboard</t>
-	</a>
-        <a class="mdl-navigation__link" href="forms.html">
-	    <div style=" height:48px; width:236px; z-index:1;"></div>
-	    <i style="z-index: 2; margin-left: -90%;" class="material-icons" role="presentation">person</i>
-	    <t>Account</t>
-	</a>
-        <a id="maps-link" class="mdl-navigation__link" href="maps.html">
-	    <div style="background-color: #00bcd4; opacity: 0.9; height:48px; width:2px; z-index:10;"></div>
-	    <div style="background-color: black; opacity: 0.25; height:48px; width:234px; z-index:1;"></div>
-	    
-	    <i style="z-index: 2; margin-left: -90%;color: #00bcd4; opacity:0.9" class="material-icons" role="presentation">maps</i>
-	    <t style="z-index: 2; color: #00bcd4; opacity:1;">Maps</t>
-	</a>
+			<div class="material-icons mdl-badge mdl-badge--overlap mdl-button--icon message" id="inbox" data-badge="4">mail_outline</div>
+			<ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right dropdown-menu message-notifications"
+				for="inbox">
+				<li>
+					<header>
+						<h4>You have 4 new messages!</h4>
+					</header>
+				</li>
+				<li class="mdl-menu__item">
 
-        <div class="mdl-layout-spacer"></div>
-    </nav>
-</div>
+					<div class="material-icons mdl-js-ripple-effect round_icon background-color--primary">
+						<span class="material-icons">A</span>
+					</div>
+					<div class="message-notifications__topic">
+						<span>Alice</span>
+						<br>
+						<span>Birthday Party</span>
+					</div>
+					<div class="label pull-right label--frameless">
+						<time>
+							just now
+						</time>
+					</div>
+				</li>
+				<li class="mdl-menu__item">
+					<div class="material-icons mdl-js-ripple-effect round_icon background-color--baby-blue">
+						<span class="material-icons">M</span>
+					</div>
+					<div class="message-notifications__topic">
+						<span>Mike</span>
+						<br>
+						<span>No theme</span>
+					</div>
+					<div class="label pull-right label--frameless">
+						<time>
+							5 min
+						</time>
+					</div>
+				</li>
+				<li class="mdl-menu__item">
+					<div class="material-icons mdl-js-ripple-effect round_icon background-color--cerulean">
+						<span class="material-icons">D</span>
+					</div>
+					<div class="message-notifications__topic">
+						<span>Darth</span>
+						<br>
+						<span>Suggestion</span>
+					</div>
+					<div class="label pull-right label--frameless">
+						<time>
+							23 hours
+						</time>
+					</div>
+				</li>
+				<li class="mdl-menu__item">
+					<div class="material-icons mdl-js-ripple-effect round_icon background-color--mint">
+						<span class="material-icons">D</span>
+					</div>
+					<div class="message-notifications__topic">
+						<span>Don McDuket</span>
+						<br>
+						<span>NEWS</span>
+					</div>
+					<div class="label pull-right label--frameless">
+						<time>
+							30 Nov
+						</time>
+					</div>
+				</li>
+				<li>
+					<footer>
+						<button href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">SHOW ALL MESSAGES
+						</button>
+					</footer>
+				</li>
+			</ul>
+			<div class="avatar-dropdown" id="icon">
+				<span>Luke</span>
+				<img src="images/Icon_header.png">
+			</div>
+			<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect dropdown-menu account-dropdown"
+				for="icon">
+				<li class="mdl-menu__item">
+					<header>
+						<img src="images/Icon.png" class="pull-left">
+						<div class="pull-left">
+							<span>Luke</span>
+							<br>
+							<span>Luke@skywalker.com</span>
+						</div>
+					</header>
+				</li>
+				<li class="mdl-menu__item dropdown-menu__divider"></li>
+				<li class="mdl-menu__item">
+					<i class="material-icons mdl-js-ripple-effect pull-left">account_circle</i>
+					<span>My account</span>
+				</li>
+				<li class="mdl-menu__item">
+					<div class="label pull-right label--primary">
+						<time>
+							3 new
+						</time>
+					</div>
+					<i class="material-icons mdl-js-ripple-effect pull-left">check_box</i>
+					<span>My tasks</span>
+				</li>
+				<li class="mdl-menu__item">
+					<i class="material-icons mdl-js-ripple-effect pull-left">perm_contact_calendar</i>
+					<span>My events</span>
+				</li>
+				<li class="mdl-menu__item dropdown-menu__divider"></li>
+				<li class="mdl-menu__item">
+					<i class="material-icons mdl-js-ripple-effect pull-left">settings</i>
+					<span>Settings</span>
+				</li>
+				<li class="mdl-menu__item">
+					<i class="material-icons mdl-js-ripple-effect pull-left color-secondary--100">exit_to_app</i>
+					<span>Log out</span>
+				</li>
+			</ul>
+			<button id="more"
+					class="mdl-button mdl-js-button mdl-button--icon">
+				<i class="material-icons">more_vert</i>
+			</button>
+			<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect dark_dropdown" for="more">
+				<li class="mdl-menu__item">
+					Settings
+				</li>
+				<li class="mdl-menu__item">
+					Support
+				</li>
+				<li class="mdl-menu__item">
+					Last last action
+				</li>
+			</ul>
+		</div>
+	</header>
+
+	<div class="mdl-layout__drawer">
+		<header>darkboard</header>
+		<nav class="mdl-navigation">
+			<a class="mdl-navigation__link" href="index.html">
+				<i class="material-icons" role="presentation">dashboard</i>
+				Dashboard
+			</a>
+			<a class="mdl-navigation__link" href="forms.html">
+				<i class="material-icons" role="presentation">person</i>
+				Account
+			</a>
+			<a class="mdl-navigation__link mdl-navigation__link--current" href="maps.html">
+				<i class="material-icons" role="presentation">maps</i>
+				Maps
+			</a>
+			<div class="mdl-layout-spacer"></div>
+		</nav>
+	</div>
     <main class="mdl-layout__content mdl-color--grey-100">
         <div id="map-widget"  class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--4-col-desktop mdl-color--white mdl-shadow--2dp">
 	    <p style="font-size: 20px; color: black;">Google Maps</p>

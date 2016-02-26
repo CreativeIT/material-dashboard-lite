@@ -1,12 +1,12 @@
 {
-  "name": "dashboard",
+  "name": "getmdl-dashboard",
   "version": "0.0.0",
-  "homepage": "https://github.com/alexbananabob/dashboard",
+  "homepage": "https://github.com/CreativeIT/getmdl-dashboard",
   "authors": [
-    "franckevva"
+    "CreativeIT"
   ],
   "description": "",
-  "main": "public/pages/index.html",
+  "main": "dist/index.html",
   "moduleType": [],
   "license": "MIT",
   "ignore": [
@@ -17,9 +17,8 @@
     "tests"
   ],
   "dependencies": {
-    "material-design-lite": "~1.0.5",
-    "d3": "~3.5.12",
-    "nvd3": "~1.8.1",
-    "getmdl-select": "*"
+    "material-design-lite": "~1.1.1",
+    "d3": "~3.5.14",
+    "nvd3": "~1.8.2"
   }
 }
