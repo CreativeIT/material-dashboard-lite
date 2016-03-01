@@ -2,7 +2,7 @@
   height: 329px;
   .mdl-card__supporting-text {
     color: $card-text-color;
-    background: url('../images/weather_bck.png') center center no-repeat;
+    background: url('../../images/weather_bck.png') center center no-repeat;
     background-size: cover;
     text-align: right;
     padding-top: 38px;
@@ -22,7 +22,7 @@
         width: 35px;
         position: absolute;
         right: 150px;
-        content: url(../images/cloudy_and_snow.svg);
+        content: url(../../images/cloudy_and_snow.svg);
       }
     }
 

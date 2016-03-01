@@ -16,7 +16,7 @@
 
 @import 'button/button';
 
-@import "link/link";
+@import "widgets/link/link";
 
 @import 'textfield/textfield';
 
@@ -26,40 +26,40 @@
 
 @import 'label/label';
 
-@import 'table/table';
+@import 'widgets/table/table';
 
 @import 'tooltip/tooltip';
 
-@import 'notifications-dropdown/notifications-dropdown';
+@import 'widgets/notifications-dropdown/notifications-dropdown';
 
-@import 'trending/trending';
+@import 'widgets/trending/trending';
 
-@import 'message-notifications/messages-dropdown';
+@import 'widgets/message-notifications/messages-dropdown';
 
 @import 'list/list';
 
-@import 'todo/todo';
+@import 'widgets/todo/todo';
 
-@import 'pie-chart/pie-chart';
+@import 'widgets/pie-chart/pie-chart';
 
-@import 'line-chart/line-chart';
+@import 'widgets/line-chart/line-chart';
 
-@import 'chart-legend/chart-legend';
+@import 'widgets/chart-legend/chart-legend';
 
 @import 'helper';
 
-@import 'account-dropdown/account-dropdown';
+@import 'widgets/account-dropdown/account-dropdown';
 
-@import 'setting-dropdown/settings-dropdown';
+@import 'widgets/setting-dropdown/settings-dropdown';
 
-@import "robot/robot";
+@import "widgets/robot/robot";
 
-@import "cotoneaster/cotoneaster";
+@import "widgets/cotoneaster/cotoneaster";
 
-@import "weather/weather";
+@import "widgets/weather/weather";
 
-@import 'employer-form/employer-form';
+@import 'widgets/employer-form/employer-form';
 
-@import 'form/form';
+@import 'widgets/form/form';
 
-@import 'input-group/input-group';
+@import 'widgets/input-group/input-group';
