@@ -6,6 +6,8 @@
 
 @mixin typo-list ($usePreferred: true) {
   @include typo-default($usePreferred);
+  color: white;
+  letter-spacing: 0;
 }
 
 @mixin typo-card-supporting-text($usePreferred: true){
@@ -42,14 +44,13 @@
 
 @mixin typo-label($usePreferred: true) {
   @include typo-preferred-font($usePreferred);
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1em;
 }
 
 @mixin typo-message-topic($usePreferred: true) {
   @include typo-preferred-font($usePreferred);
   line-height: 1.1em;
-  
   span:first-of-type {
     font-size: 15px;
     font-weight: 500;
@@ -76,7 +77,6 @@
   span {
     color: rgba(255, 255, 255, 0.64);
     line-height: 1.3em;
-    font-weight: 500;
     font-size: 14px;
     font-weight: 300;
   }
@@ -111,6 +111,16 @@
   @include typo-preferred-font($usePreferred);
   font-size: 18px;
   font-weight: 300;
+}
+
+@mixin  typo-layout-navigation-link($usePreferred: true){
+  @include typo-preferred-font($usePreferred);
+  font-size: 13px;
+  font-weight: 500;
+  .material-icons {
+    font-size: 22px;
+    width: 22px;
+  }
 }
 
 @mixin typo-employer-form-header($usePreferred: true) {

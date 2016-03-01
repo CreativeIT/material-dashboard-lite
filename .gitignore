@@ -6,12 +6,8 @@ bower_components
 
 src/.sass-cache/
 
+dist/
+
 .idea
 
 .temp
-
-lib
-
-public
-
-dist

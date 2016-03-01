@@ -50,8 +50,8 @@
 
 </head>
 <body>
-<div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
-    <header class="demo-header mdl-layout__header">
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header is-small-screen">
+    <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
             <div class="mdl-layout-spacer"></div>
 
@@ -65,200 +65,174 @@
                     <label class="mdl-textfield__label" for="search">Enter your query...</label>
                 </div>
             </div>
-            <div class=" mdl-js-ripple-effect " id="notification">
-                <i class="material-icons">notifications_none</i>
-                <span class="mdl-badge" data-badge="30"></span>
-            </div>
 
-            <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right dropdown-menu notifications"
-                for="notification">
-                <li>
-                    <header>
-                        <h4>You have 23 new notifications!</h4>
-                    </header>
+            <div class="material-icons mdl-badge mdl-badge--overlap mdl-button--icon notification" id="notification" data-badge="23">notifications_none</div>
+
+            <ul class="mdl-menu mdl-list mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right mdl-shadow--2dp notifications-dropdown" for="notification">
+                <li class="mdl-list__item">
+                        You have 23 new notifications!
                 </li>
-                <li class="mdl-menu__item">
-                    <div class="label pull-right">
-                        <time>
-                            just now
-                        </time>
-                    </div>
-                    <div class="material-icons mdl-js-ripple-effect round_icon background-color--primary">
-                        <i class="material-icons mdl-js-ripple-effect">plus_one</i>
-                    </div>
-                    <span>You have 3 new orders.</span>
+                <li class="mdl-menu__item mdl-list__item list__item--border-top">
+                    <span class="mdl-list__item-primary-content">
+                        <span class="mdl-list__item-avatar background-color--primary">
+                            <i class="material-icons">plus_one</i>
+                        </span>
+                        <span>You have 3 new orders.</span>
+                    </span>
+                    <span class="mdl-list__item-secondary-content">
+                      <span class="label">just now</span>
+                    </span>
                 </li>
-                <li class="mdl-menu__item">
-                    <div class="label pull-right">
-                        <time>
-                            1 min
-                        </time>
-                    </div>
-                    <div class="material-icons mdl-js-ripple-effect round_icon background-color--secondary">
-                        <i class="material-icons mdl-js-ripple-effect">error_outline</i>
-                    </div>
-                    <span>Database error</span>
+                <li class="mdl-menu__item mdl-list__item list__item--border-top">
+                    <span class="mdl-list__item-primary-content">
+                        <span class="mdl-list__item-avatar background-color--secondary">
+                            <i class="material-icons">error_outline</i>
+                        </span>
+                      <span>Database error</span>
+                    </span>
+                    <span class="mdl-list__item-secondary-content">
+                      <span class="label">1 min</span>
+                    </span>
                 </li>
-                <li class="mdl-menu__item">
-                    <div class="label pull-right">
-                        <time>
-                            2 hours
-                        </time>
-                    </div>
-                    <div class="material-icons mdl-js-ripple-effect round_icon background-color--primary">
-                        <i class="material-icons mdl-js-ripple-effect">new_releases</i>
-                    </div>
-                    <span>The Death Star is built!</span>
+                <li class="mdl-menu__item mdl-list__item list__item--border-top">
+                    <span class="mdl-list__item-primary-content">
+                        <span class="mdl-list__item-avatar background-color--primary">
+                            <i class="material-icons">new_releases</i>
+                        </span>
+                      <span>The Death Star is built!</span>
+                    </span>
+                    <span class="mdl-list__item-secondary-content">
+                      <span class="label">2 hours</span>
+                    </span>
                 </li>
-                <li class="mdl-menu__item">
-                    <div class="label pull-right">
-                        <time>
-                            5 days
-                        </time>
-                    </div>
-                    <div class="material-icons mdl-js-ripple-effect round_icon background-color--primary">
-                        <i class="material-icons mdl-js-ripple-effect">mail_outline</i>
-                    </div>
-                    <span>You have 4 new mails.</span>
+                <li class="mdl-menu__item mdl-list__item list__item--border-top">
+                    <span class="mdl-list__item-primary-content">
+                        <span class="mdl-list__item-avatar background-color--primary">
+                            <i class="material-icons">mail_outline</i>
+                        </span>
+                      <span>You have 4 new mails.</span>
+                    </span>
+                    <span class="mdl-list__item-secondary-content">
+                      <span class="label">5 days</span>
+                    </span>
                 </li>
-                <li>
-                    <footer>
-                        <button href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">ALL NOTIFICATIONS
-                        </button>
-                    </footer>
+                <li class="mdl-list__item list__item--border-top">
+                    <button href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">ALL NOTIFICATIONS</button>
                 </li>
             </ul>
 
-            <div class=" mdl-js-ripple-effect " id="inbox">
-                <i class="material-icons">mail_outline</i>
-                <span class="mdl-badge" data-badge="4"></span>
-            </div>
-            <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right dropdown-menu message-notifications"
-                for="inbox">
-                <li>
-                    <header>
-                        <h4>You have 4 new messages!</h4>
-                    </header>
+            <div class="material-icons mdl-badge mdl-badge--overlap mdl-button--icon message" id="inbox" data-badge="4">mail_outline</div>
+             <ul class="mdl-menu mdl-list mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right mdl-shadow--2dp messages-dropdown" for="inbox">
+                <li class="mdl-list__item">
+                    You have 4 new messages!
                 </li>
-                <li class="mdl-menu__item">
-
-                    <div class="material-icons mdl-js-ripple-effect round_icon background-color--primary">
-                        <span class="material-icons">A</span>
-                    </div>
-                    <div class="message-notifications__topic">
+                <li class="mdl-menu__item mdl-list__item mdl-list__item--two-line list__item--border-top">
+                    <span class="mdl-list__item-primary-content">
+                        <span class="mdl-list__item-avatar background-color--primary">
+                            <text>A</text>
+                        </span>
                         <span>Alice</span>
-                        <br>
-                        <span>Birthday Party</span>
-                    </div>
-                    <div class="label pull-right label--frameless">
-                        <time>
-                            just now
-                        </time>
-                    </div>
+                        <span class="mdl-list__item-sub-title">Birthday Party</span>
+                    </span>
+                    <span class="mdl-list__item-secondary-content">
+                      <span class="label label--transparent">just now</span>
+                    </span>
                 </li>
-                <li class="mdl-menu__item">
-                    <div class="material-icons mdl-js-ripple-effect round_icon background-color--baby-blue">
-                        <span class="material-icons">M</span>
-                    </div>
-                    <div class="message-notifications__topic">
+                <li class="mdl-menu__item mdl-list__item mdl-list__item--two-line list__item--border-top">
+                    <span class="mdl-list__item-primary-content">
+                        <span class="mdl-list__item-avatar background-color--baby-blue">
+                            <text>M</text>
+                        </span>
                         <span>Mike</span>
-                        <br>
-                        <span>No theme</span>
-                    </div>
-                    <div class="label pull-right label--frameless">
-                        <time>
-                            5 min
-                        </time>
-                    </div>
+                        <span class="mdl-list__item-sub-title">No theme</span>
+                    </span>
+                    <span class="mdl-list__item-secondary-content">
+                      <span class="label label--transparent">5 min</span>
+                    </span>
                 </li>
-                <li class="mdl-menu__item">
-                    <div class="material-icons mdl-js-ripple-effect round_icon background-color--cerulean">
-                        <span class="material-icons">D</span>
-                    </div>
-                    <div class="message-notifications__topic">
+                <li class="mdl-menu__item mdl-list__item mdl-list__item--two-line list__item--border-top">
+                    <span class="mdl-list__item-primary-content">
+                        <span class="mdl-list__item-avatar background-color--cerulean">
+                            <text>D</text>
+                        </span>
                         <span>Darth</span>
-                        <br>
-                        <span>Suggestion</span>
-                    </div>
-                    <div class="label pull-right label--frameless">
-                        <time>
-                            23 hours
-                        </time>
-                    </div>
+                        <span class="mdl-list__item-sub-title">Suggestion</span>
+                    </span>
+                    <span class="mdl-list__item-secondary-content">
+                      <span class="label label--transparent">23 hours</span>
+                    </span>
                 </li>
-                <li class="mdl-menu__item">
-                    <div class="material-icons mdl-js-ripple-effect round_icon background-color--mint">
-                        <span class="material-icons">D</span>
-                    </div>
-                    <div class="message-notifications__topic">
+                <li class="mdl-menu__item mdl-list__item mdl-list__item--two-line list__item--border-top">
+                    <span class="mdl-list__item-primary-content">
+                        <span class="mdl-list__item-avatar background-color--mint">
+                            <text>D</text>
+                        </span>
                         <span>Don McDuket</span>
-                        <br>
-                        <span>NEWS</span>
-                    </div>
-                    <div class="label pull-right label--frameless">
-                        <time>
-                            30 Nov
-                        </time>
-                    </div>
+                        <span class="mdl-list__item-sub-title">NEWS</span>
+                    </span>
+                    <span class="mdl-list__item-secondary-content">
+                      <span class="label label--transparent">30 Nov</span>
+                    </span>
                 </li>
-                <li>
-                    <footer>
-                        <button href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">SHOW ALL MESSAGES
-                        </button>
-                    </footer>
+                <li class="mdl-list__item list__item--border-top">
+                        <button href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">SHOW ALL MESSAGES</button>
                 </li>
             </ul>
-            <div id="userNameHeader">
-                Luke
-            </div>
-            <div class="demo-avatar-dropdown" id="icon">
-                <img src="images/Icon_header.png" class="demo-avatar">
-            </div>
-            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect dropdown-menu account-dropdown"
-                for="icon">
-                <li class="mdl-menu__item">
-                    <header>
-                        <img src="images/Icon.png" class="demo-avatar  pull-left">
 
-                        <div class="pull-left">
-                            <span>Luke</span>
-                            <br>
-                            <span>Luke@skywalker.com</span>
-                        </div>
-                    </header>
+            <div class="avatar-dropdown" id="icon">
+                <span>Luke</span>
+                <img src="images/Icon_header.png">
+            </div>
+            <ul class="mdl-menu mdl-list mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect mdl-shadow--2dp account-dropdown" for="icon">
+                <li class="mdl-list__item mdl-list__item--two-line">
+                    <span class="mdl-list__item-primary-content">
+                        <span class="material-icons mdl-list__item-avatar"></span>
+                        <span>Luke</span>
+                        <span class="mdl-list__item-sub-title">Luke@skywalker.com</span>
+                    </span>
                 </li>
-                <li class="mdl-menu__item dropdown-menu__divider"></li>
-                <li class="mdl-menu__item">
-                    <i class="material-icons mdl-js-ripple-effect pull-left">account_circle</i>
-                    <span>My account</span>
+                <li class="list__item--border-top"></li>
+                <li class="mdl-menu__item mdl-list__item">
+                    <span class="mdl-list__item-primary-content">
+                        <i class="material-icons mdl-list__item-icon">account_circle</i>
+                        My account
+                    </span>
                 </li>
-                <li class="mdl-menu__item">
-                    <div class="label pull-right label--primary">
-                        <time>
-                            3 new
-                        </time>
-                    </div>
-                    <i class="material-icons mdl-js-ripple-effect pull-left">check_box</i>
-                    <span>My tasks</span>
+                <li class="mdl-menu__item mdl-list__item">
+                    <span class="mdl-list__item-primary-content">
+                        <i class="material-icons mdl-list__item-icon">check_box</i>
+                        My tasks
+                    </span>
+                    <span class="mdl-list__item-secondary-content">
+                      <span class="label background-color--primary">3 new</span>
+                    </span>
                 </li>
-                <li class="mdl-menu__item">
-                    <i class="material-icons mdl-js-ripple-effect pull-left">perm_contact_calendar</i>
-                    <span>My events</span>
+                <li class="mdl-menu__item mdl-list__item">
+                    <span class="mdl-list__item-primary-content">
+                        <i class="material-icons mdl-list__item-icon">perm_contact_calendar</i>
+                        My events
+                    </span>
                 </li>
-                <li class="mdl-menu__item dropdown-menu__divider"></li>
-                <li class="mdl-menu__item">
-                    <i class="material-icons mdl-js-ripple-effect pull-left">settings</i>
-                    <span>Settings</span>
+                <li class="list__item--border-top"></li>
+                <li class="mdl-menu__item mdl-list__item">
+                    <span class="mdl-list__item-primary-content">
+                        <i class="material-icons mdl-list__item-icon">settings</i>
+                        Settings
+                    </span>
                 </li>
-                <li class="mdl-menu__item">
-                    <i class="material-icons mdl-js-ripple-effect pull-left color-secondary--100">exit_to_app</i>
-                    <span>Log out</span>
+                <li class="mdl-menu__item mdl-list__item">
+                    <span class="mdl-list__item-primary-content">
+                        <i class="material-icons mdl-list__item-icon text-color--secondary">exit_to_app</i>
+                        Log out
+                    </span>
                 </li>
             </ul>
-            <div class=" mdl-js-ripple-effect " id="more">
+
+            <button id="more"
+                    class="mdl-button mdl-js-button mdl-button--icon">
                 <i class="material-icons">more_vert</i>
-            </div>
-            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect dark_dropdown" for="more">
+            </button>
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect mdl-shadow--2dp settings-dropdown" for="more">
                 <li class="mdl-menu__item">
                     Settings
                 </li>
@@ -266,140 +240,308 @@
                     Support
                 </li>
                 <li class="mdl-menu__item">
-                    Last last action
+                    F.A.Q.
                 </li>
             </ul>
         </div>
     </header>
-    <div class="demo-drawer mdl-layout__drawer"
-         style="width:236px;margin-top:0; padding-top:0;background-color: #202020">
-        <header class="demo-drawer-header"
-                style="height: 62px; background-image: url('images/imgo.png'); margin-top: 0; padding-top: 0;"></header>
-        <nav class="demo-navigation mdl-navigation" style="background-color: #202020"
-             style="padding-top:0; margin-top:0">
-            <a class="mdl-navigation__link" href="index.html">
-                <div style="background-color: #00bcd4; opacity: 0.9; height:48px; width:2px; z-index:10;"></div>
-                <div style="background-color: black; opacity: 0.25; height:48px; width:234px; z-index:1;"></div>
-                <i style="z-index: 2; margin-left: -90%;color: #00bcd4; opacity:0.9" class="material-icons"
-                   role="presentation">dashboard</i>
-                <t style="z-index: 2; color: #00bcd4; opacity:1;">Dashboard</t>
-            </a>
-            <a class="mdl-navigation__link" href="#">
-                <div style=" height:48px; width:236px; z-index:1;"></div>
-                <i style="z-index: 2; margin-left: -90%;" class="material-icons" role="presentation">person</i>
-                <t>Account</t>
-            </a>
-            <a id="maps-link" class="mdl-navigation__link" href="#">
-                <div style=" height:48px; width:236px; z-index:1;"></div>
-                <i style="z-index: 2; margin-left: -90%;" class="material-icons" role="presentation">maps</i>
-                <t>Maps</t>
-            </a>
 
+    <div class="mdl-layout__drawer">
+        <header>darkboard</header>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link mdl-navigation__link--current" href="index.html">
+                <i class="material-icons" role="presentation">dashboard</i>
+                Dashboard
+            </a>
+            <a class="mdl-navigation__link" href="forms.html">
+                <i class="material-icons" role="presentation">person</i>
+                Account
+            </a>
+            <a class="mdl-navigation__link" href="maps.html">
+                <i class="material-icons" role="presentation">maps</i>
+                Maps
+            </a>
             <div class="mdl-layout-spacer"></div>
         </nav>
     </div>
 
     <main class="mdl-layout__content">
 
-        <div class="mdl-grid">
+        <div class="mdl-grid mdl-grid--no-spacing">
 
-            <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-cell--top mdl-shadow--2dp">
-                <div class="mdl-card line-chart">
-                    <div class="mdl-card__title">
-                        <h2 class="mdl-card__title-text">Startup Financing Cycle</h2>
-                    </div>
-                    <div class="mdl-card__supporting-text">
-                        <div class="line-chart__container">
+            <div class="mdl-grid mdl-cell mdl-cell--9-col-desktop mdl-cell--8-col-tablet mdl-cell--3-col-phone mdl-cell--top">
 
+                <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--7-col-tablet mdl-cell--5-col-phone mdl-cell--top">
+                    <div class="mdl-card mdl-shadow--2dp pie-chart">
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text">My Day</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            <div class="pie-chart__container">
+
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-cell--top mdl-shadow--2dp">
-                <div class="mdl-card trending">
-                    <div class="mdl-card__title">
-                        <h2 class="mdl-card__title-text">Trending</h2>
-                    </div>
-                    <div class="mdl-card__supporting-text">
-                        <ul class="list">
-                            <li class="list__item">
-                                <span class="list__item-text">UX</span>
-                                <span class="trending__percent pull-right">1 %</span>
-                                <i class="material-icons trending__arrow-up pull-right" role="presentation">&#xE5C7</i>
+                <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--5-col-tablet mdl-cell--5-col-phone mdl-cell--top">
+                    <div class="mdl-card mdl-shadow--2dp weather">
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text">Now</h2>
 
-                            </li>
-                            <li class="list__item list__item--border-top">
-                                <span class="list__item-text">PHP</span>
-                                <span class="trending__percent pull-right">2 %</span>
-                                <i class="material-icons trending__arrow-down pull-right"
-                                   role="presentation">&#xE5C5</i>
-
-                            </li>
-                            <li class="list__item list__item--border-top">
-                                <span class="list__item-text ">Big Data</span>
-                                <span class="trending__percent pull-right">5 %</span>
-                                <i class="material-icons trending__arrow-up pull-right" role="presentation">&#xE5C7</i>
-
-                            </li>
-                            <li class="list__item list__item--border-top">
-                                <span class="list__item-text">Material Design</span>
-                                <span class="trending__percent pull-right">18 %</span>
-                                <i class="material-icons trending__arrow-up pull-right" role="presentation">&#xE5C7</i>
-
-                            </li>
-                            <li class="list__item list__item--border-top">
-                                <span class="list__item-text">JavaScript</span>
-                                <span class="trending__percent pull-right">17 %</span>
-                                <i class="material-icons trending__arrow-up pull-right" role="presentation">&#xE5C7</i>
-
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-cell--top mdl-shadow--2dp">
-                <div class="mdl-card pie-chart">
-                    <div class="mdl-card__title">
-                        <h2 class="mdl-card__title-text">My Day</h2>
-                    </div>
-                    <div class="mdl-card__supporting-text">
-                        <div class="pie-chart__container">
-
+                            <div class="mdl-layout-spacer"></div>
+                            <div class="mdl-card__subtitle-text">
+                                <i class="material-icons">room</i>
+                                Minsk, Belarus
+                            </div>
+                        </div>
+                        <div class="mdl-card__supporting-text mdl-card--expand">
+                            <p class="weather-temperature">-11<sup>&deg;</sup></p>
+                            <p class="weather-description">
+                                Cloudy and snow
+                            </p>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-cell--top mdl-shadow--2dp">
-                <div class="mdl-card weather">
-                    <div class="mdl-card__title">
-                        <h2 class="mdl-card__title-text">Now</h2>
+                <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--hide-tablet mdl-cell--hide-phone mdl-cell--top">
+                    <div class="mdl-card mdl-shadow--2dp trending">
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text">Trending</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            <ul class="mdl-list">
+                                <li class="mdl-list__item">
+                                    <span class="mdl-list__item-primary-content list__item-text">UX</span>
+                                    <span class="mdl-list__item-secondary-content">
+                                        <i class="material-icons trending__arrow-up" role="presentation">&#xE5C7</i>
+                                    </span>
+                                    <span class="mdl-list__item-secondary-content trending__percent">1 %</span>
+                                </li>
+                                <li class="mdl-list__item list__item--border-top">
+                                    <span class="mdl-list__item-primary-content list__item-text">PHP</span>
+                                    <span class="mdl-list__item-secondary-content">
+                                        <i class="material-icons trending__arrow-down" role="presentation">&#xE5C5</i>
+                                    </span>
+                                    <span class="mdl-list__item-secondary-content trending__percent">2 %</span>
+                                </li>
+                                <li class="mdl-list__item list__item--border-top">
+                                    <span class="mdl-list__item-primary-content list__item-text ">Big Data</span>
+                                    <span class="mdl-list__item-secondary-content">
+                                        <i class="material-icons trending__arrow-up" role="presentation">&#xE5C7</i>
+                                    </span>
+                                    <span class="mdl-list__item-secondary-content trending__percent">5 %</span>
 
-                        <div class="mdl-layout-spacer"></div>
-                        <div class="mdl-card__subtitle-text">
-                            <i class="material-icons">room</i>
-                            Minsk, Belarus
+                                </li>
+                                <li class="mdl-list__item list__item--border-top">
+                                    <span class="mdl-list__item-primary-content list__item-text">Material Design</span>
+                                    <span class="mdl-list__item-secondary-content">
+                                        <i class="material-icons trending__arrow-up" role="presentation">&#xE5C7</i>
+                                    </span>
+                                    <span class="mdl-list__item-secondary-content trending__percent">18 %</span>
+                                </li>
+                                <li class="mdl-list__item list__item--border-top">
+                                    <span class="mdl-list__item-primary-content">JavaScript</span>
+                                    <span class="mdl-list__item-secondary-content">
+                                        <i class="material-icons trending__arrow-up" role="presentation">&#xE5C7</i>
+                                    </span>
+                                    <span class="mdl-list__item-secondary-content trending__percent">17 %</span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="mdl-card__supporting-text mdl-card--expand">
-                        <p class="weather-temperature">-11<sup>&deg;</sup></p>
-                        <p class="weather-description">
-                            Cloudy and snow
-                        </p>
+                </div>
+
+                <div class="mdl-cell mdl-cell--5-col-desktop mdl-cell--hide-tablet mdl-cell--hide-phone mdl-cell--top">
+                    <div class="mdl-card mdl-shadow--2dp cotoneaster">
+                        <div class="mdl-card__title mdl-card--expand">
+                            <h2 class="mdl-card__title-text">Cotoneaster</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            <div>Cotoneaster is a genus of flowering plants in the rose family, Roseaceae, netive to the
+                                Palaearctic region, with a strong concentration of diversity in the genus in the mountains
+                                of
+                                southwestern China and the Himalayas.
+                            </div>
+                            <a href="https://en.wikipedia.org/wiki/Cotoneaster" target="_blank">Wikipedia</a>
+                        </div>
                     </div>
                 </div>
+
+                <div class="mdl-cell mdl-cell--7-col-desktop mdl-cell--12-col-tablet mdl-cell--5-col-phone mdl-cell--top">
+                    <div class="mdl-card mdl-shadow--2dp line-chart">
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text">Startup Financing Cycle</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            <div class="line-chart__container">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<!---->
+                <div class="mdl-cell mdl-cell--hide-desktop mdl-cell--6-col-tablet mdl-cell--5-col-phone mdl-cell--top">
+                    <div class="mdl-card mdl-shadow--2dp cotoneaster">
+                        <div class="mdl-card__title mdl-card--expand">
+                            <h2 class="mdl-card__title-text">Cotoneaster</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            <div>Cotoneaster is a genus of flowering plants in the rose family, Roseaceae, netive to the
+                                Palaearctic region, with a strong concentration of diversity in the genus in the mountains
+                                of
+                                southwestern China and the Himalayas.
+                            </div>
+                            <a href="https://en.wikipedia.org/wiki/Cotoneaster" target="_blank">Wikipedia</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mdl-cell mdl-cell--hide-desktop mdl-cell--6-col-tablet mdl-cell--5-col-phone mdl-cell--top">
+                    <div class="mdl-card mdl-shadow--2dp trending">
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text">Trending</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            <ul class="mdl-list">
+                                <li class="mdl-list__item">
+                                    <span class="mdl-list__item-primary-content list__item-text">UX</span>
+                                    <span class="mdl-list__item-secondary-content">
+                                        <i class="material-icons trending__arrow-up" role="presentation">&#xE5C7</i>
+                                    </span>
+                                    <span class="mdl-list__item-secondary-content trending__percent">1 %</span>
+                                </li>
+                                <li class="mdl-list__item list__item--border-top">
+                                    <span class="mdl-list__item-primary-content list__item-text">PHP</span>
+                                    <span class="mdl-list__item-secondary-content">
+                                        <i class="material-icons trending__arrow-down" role="presentation">&#xE5C5</i>
+                                    </span>
+                                    <span class="mdl-list__item-secondary-content trending__percent">2 %</span>
+                                </li>
+                                <li class="mdl-list__item list__item--border-top">
+                                    <span class="mdl-list__item-primary-content list__item-text ">Big Data</span>
+                                    <span class="mdl-list__item-secondary-content">
+                                        <i class="material-icons trending__arrow-up" role="presentation">&#xE5C7</i>
+                                    </span>
+                                    <span class="mdl-list__item-secondary-content trending__percent">5 %</span>
+
+                                </li>
+                                <li class="mdl-list__item list__item--border-top">
+                                    <span class="mdl-list__item-primary-content list__item-text">Material Design</span>
+                                    <span class="mdl-list__item-secondary-content">
+                                        <i class="material-icons trending__arrow-up" role="presentation">&#xE5C7</i>
+                                    </span>
+                                    <span class="mdl-list__item-secondary-content trending__percent">18 %</span>
+                                </li>
+                                <li class="mdl-list__item list__item--border-top">
+                                    <span class="mdl-list__item-primary-content">JavaScript</span>
+                                    <span class="mdl-list__item-secondary-content">
+                                        <i class="material-icons trending__arrow-up" role="presentation">&#xE5C7</i>
+                                    </span>
+                                    <span class="mdl-list__item-secondary-content trending__percent">17 %</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+<!-- -->
+                <table class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--hide-phone mdl-cell--top mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp projects-table">
+                    <thead>
+                    <tr>
+                        <th class="mdl-data-table__cell--non-numeric">Project</th>
+                        <th class="mdl-data-table__cell--non-numeric">Responsible</th>
+                        <th class="mdl-data-table__cell--non-numeric">Client contact</th>
+                        <th class="mdl-data-table__cell--non-numeric">Deadline</th>
+                        <th class="mdl-data-table__cell--non-numeric">Progress</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">Darkboard</td>
+                        <td class="mdl-data-table__cell--non-numeric">
+                            <span class="label label--mini background-color--mint">Alex</span>
+                            <span class="label label--mini background-color--primary">Dina</span>
+                            <span class="label label--mini background-color--cerulean">Misha</span>
+                        </td>
+                        <td class="mdl-data-table__cell--non-numeric">Luke@skywalker.com</td>
+                        <td class="mdl-data-table__cell--non-numeric">Jun 15</td>
+                        <td class="mdl-data-table__cell--non-numeric">
+                            <div id="task1" class="mdl-progress mdl-js-progress"></div>
+                            <div class="mdl-tooltip" for="task1">
+                                44%
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">Big financial app</td>
+                        <td class="mdl-data-table__cell--non-numeric">
+                            <span class="label label--mini background-color--baby-blue">Vlada</span>
+                        </td>
+                        <td class="mdl-data-table__cell--non-numeric">Boss@financial.com</td>
+                        <td class="mdl-data-table__cell--non-numeric">Mar 1</td>
+                        <td class="mdl-data-table__cell--non-numeric">
+                            <div id="task2" class="mdl-progress mdl-js-progress"></div>
+                            <div class="mdl-tooltip" for="task2">
+                                14%
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="is-selected">
+                        <td class="mdl-data-table__cell--non-numeric">New Year office decoration</td>
+                        <td class="mdl-data-table__cell--non-numeric">
+                            <span class="label label--mini background-color--primary">Dina</span>
+                            <span class="label label--mini background-color--baby-blue">Vlada</span>
+                        </td>
+                        <td class="mdl-data-table__cell--non-numeric">info@creativeit.io</td>
+                        <td class="mdl-data-table__cell--non-numeric">Dec 25</td>
+                        <td class="mdl-data-table__cell--non-numeric task-done">
+                            <i id="task3" class="material-icons">done</i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">Don't worry, be happy!!!</td>
+                        <td class="mdl-data-table__cell--non-numeric">
+                            <span class="label label--mini background-color--secondary">Everybody</span>
+                        </td>
+                        <td class="mdl-data-table__cell--non-numeric">Contact@happyness.com</td>
+                        <td class="mdl-data-table__cell--non-numeric">Yesterday</td>
+                        <td class="mdl-data-table__cell--non-numeric">
+                            <div id="task4" class="mdl-progress mdl-js-progress"></div>
+                            <div class="mdl-tooltip" for="task4">
+                                31%
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
             </div>
 
-            <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-cell--top mdl-shadow--2dp">
-                <div class="mdl-card todo">
+            <div class="mdl-grid mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--2-col-phone mdl-cell--top">
+
+                <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--5-col-phone mdl-cell--top">
+                    <div class="mdl-card mdl-shadow--2dp robot">
+                        <div class="mdl-card__title mdl-card--expand">
+                            <h2 class="mdl-card__title-text">BB-8</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            <div>
+                                A skittish but loyal astromech, BB-8 accompanied Poe Dameron on many missions for the
+                                Resistance helping keep his X-wing in working order.
+                            </div>
+                            <a href="http://www.starwars.com/databank/bb-8" target="_blank">Star Wars Databank</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--5-col-phone mdl-cell--top">
+                    <div class="mdl-card mdl-shadow--2dp todo">
                     <div class="mdl-card__title">
                         <h2 class="mdl-card__title-text">To-do list</h2>
                     </div>
                     <div class="mdl-card__supporting-text">
-                        <ul class="list">
+                        <ul class="mdl-list">
 
                         </ul>
                     </div>
@@ -410,114 +552,13 @@
                         </button>
                     </div>
                 </div>
-            </div>
-
-            <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-cell--top mdl-shadow--2dp">
-                <div class="mdl-card mdl-shadow--2dp robot">
-                    <div class="mdl-card__title mdl-card--expand">
-                        <h2 class="mdl-card__title-text">BB-8</h2>
-                    </div>
-                    <div class="mdl-card__supporting-text">
-                        <div>
-                            A skittish but loyal astromech, BB-8 accompanied Poe Dameron on many missions for the
-                            Resistance helping keep his X-wing in working order.
-                        </div>
-                        <a href="http://www.starwars.com/databank/bb-8" target="_blank">Star Wars Databank</a>
-                    </div>
                 </div>
+
             </div>
-
-            <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-cell--top mdl-shadow--2dp">
-                <div class="mdl-card mdl-shadow--2dp cotoneaster">
-                    <div class="mdl-card__title mdl-card--expand">
-                        <h2 class="mdl-card__title-text">Cotoneaster</h2>
-                    </div>
-                    <div class="mdl-card__supporting-text">
-                        <div>Cotoneaster is a genus of flowering plants in the rose family, Roseaceae, netive to the
-                            Palaearctic region, with a strong concentration of diversity in the genus in the mountains
-                            of
-                            southwestern China and the Himalayas.
-                        </div>
-                        <a href="https://en.wikipedia.org/wiki/Cotoneaster" target="_blank">Wikipedia</a>
-                    </div>
-                </div>
-            </div>
-
-            <table class="mdl-cell mdl-cell--10-col-desktop mdl-cell--top mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp projects-table">
-                <thead>
-                <tr>
-                    <th class="mdl-data-table__cell--non-numeric">Project</th>
-                    <th class="mdl-data-table__cell--non-numeric">Responsible</th>
-                    <th class="mdl-data-table__cell--non-numeric">Client contact</th>
-                    <th class="mdl-data-table__cell--non-numeric">Deadline</th>
-                    <th class="mdl-data-table__cell--non-numeric">Progress</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td class="mdl-data-table__cell--non-numeric">Darkboard</td>
-                    <td class="mdl-data-table__cell--non-numeric">
-                        <span class="label label--mini background-color--mint">Alex</span>
-                        <span class="label label--mini background-color--primary">Dina</span>
-                        <span class="label label--mini background-color--cerulean">Misha</span>
-                    </td>
-                    <td class="mdl-data-table__cell--non-numeric">Luke@skywalker.com</td>
-                    <td class="mdl-data-table__cell--non-numeric">Jun 15</td>
-                    <td class="mdl-data-table__cell--non-numeric">
-                        <div id="task1" class="mdl-progress mdl-js-progress"></div>
-                        <div class="mdl-tooltip" for="task1">
-                            44%
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="mdl-data-table__cell--non-numeric">Big financial app</td>
-                    <td class="mdl-data-table__cell--non-numeric">
-                        <span class="label label--mini background-color--baby-blue">Vlada</span>
-                    </td>
-                    <td class="mdl-data-table__cell--non-numeric">Boss@financial.com</td>
-                    <td class="mdl-data-table__cell--non-numeric">Mar 1</td>
-                    <td class="mdl-data-table__cell--non-numeric">
-                        <div id="task2" class="mdl-progress mdl-js-progress"></div>
-                        <div class="mdl-tooltip" for="task2">
-                            14%
-                        </div>
-                    </td>
-                </tr>
-                <tr class="is-selected">
-                    <td class="mdl-data-table__cell--non-numeric">New Year office decoration</td>
-                    <td class="mdl-data-table__cell--non-numeric">
-                        <span class="label label--mini background-color--primary">Dina</span>
-                        <span class="label label--mini background-color--baby-blue">Vlada</span>
-                    </td>
-                    <td class="mdl-data-table__cell--non-numeric">info@creativeit.io</td>
-                    <td class="mdl-data-table__cell--non-numeric">Dec 25</td>
-                    <td class="mdl-data-table__cell--non-numeric task-done">
-                        <i id="task3" class="material-icons">done</i>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="mdl-data-table__cell--non-numeric">Don't worry, be happy!!!</td>
-                    <td class="mdl-data-table__cell--non-numeric">
-                        <span class="label label--mini background-color--secondary">Everybody</span>
-                    </td>
-                    <td class="mdl-data-table__cell--non-numeric">Contact@happyness.com</td>
-                    <td class="mdl-data-table__cell--non-numeric">Yesterday</td>
-                    <td class="mdl-data-table__cell--non-numeric">
-                        <div id="task4" class="mdl-progress mdl-js-progress"></div>
-                        <div class="mdl-tooltip" for="task4">
-                            31%
-                        </div>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-
         </div>
 
     </main>
 </div>
-
 
 <!-- inject:js -->
 <!-- endinject -->
