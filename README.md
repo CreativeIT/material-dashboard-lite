@@ -4,7 +4,7 @@ Welcome to first dark dashboard on the Material Design Lite!
 
 ![dashboard-avatar](https://trello-attachments.s3.amazonaws.com/56af74f7f1b5b81a201453c4/2000x1105/aebadb1186036fc73544e7fde0e43863/Darkboard_Showcase_1_3.png)
 
-Its much more fun with the [demo](http://creativeit.github.io/getmdl-dashboard/dist/index.html).
+Its much more fun with the [demo](http://creativeit.github.io/getmdl-dashboard/index.html).
 
 Material admin template is absolutely free for commecial usage theme, that uses google's implementation of material design -- [Material Design Lite](http://www.getmdl.io) library. It doesn’t rely on any JavaScript frameworks and aims to be responsive and optimized for cross-device usage. All components are created with CSS (scss), JavaScript (es6), and HTML5.
 
