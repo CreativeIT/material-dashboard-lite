@@ -13,10 +13,10 @@
     "dark material design"
   ],
   "main": "gulpfile.js",
-  "licenses" :
-  [
-    { "type": "MIT"
-    , "url": "http://www.opensource.org/licenses/mit-license.php"
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
     }
   ],
   "dependencies": {
@@ -31,6 +31,7 @@
     "gulp-babel": "^5.3.0",
     "gulp-clean": "^0.3.1",
     "gulp-inject": "^3.0.0",
+    "gulp-jscs": "^3.0.2",
     "gulp-jshint": "^1.12.0",
     "gulp-livereload": "^3.8.1",
     "gulp-minify-css": "^1.2.1",
