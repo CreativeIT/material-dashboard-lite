@@ -11,10 +11,10 @@
         word-wrap: break-word;
       }
       .material-icons {
-          visibility: hidden;
+        visibility: hidden;
       }
       &:hover .material-icons {
-          visibility: visible;
+        visibility: visible;
       }
     }
     .mdl-checkbox {
@@ -26,15 +26,15 @@
       padding: 0;
     }
     .mdl-textfield__input {
-        padding: 2px 0;
+      padding: 2px 0;
     }
     .mdl-textfield__label {
-        color: $todo-input-text-label-color;
-        top: 0;
-        &:after{
-            background-color:  $todo-input-text-highlight-color;
-            bottom: 0;
-        }
+      color: $todo-input-text-label-color;
+      top: 0;
+      &:after {
+        background-color: $todo-input-text-highlight-color;
+        bottom: 0;
+      }
     }
   }
   .mdl-card__actions {

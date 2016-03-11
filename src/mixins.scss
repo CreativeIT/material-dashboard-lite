@@ -1,28 +1,28 @@
-@mixin typo-default ($usePreferred: true) {
+@mixin typo-default($usePreferred: true) {
   @include typo-preferred-font($usePreferred);
   font-size: 16px;
   font-weight: 300;
 }
 
-@mixin typo-list ($usePreferred: true) {
+@mixin typo-list($usePreferred: true) {
   @include typo-default($usePreferred);
   color: white;
   letter-spacing: 0;
 }
 
-@mixin typo-card-supporting-text($usePreferred: true){
+@mixin typo-card-supporting-text($usePreferred: true) {
   @include typo-default($usePreferred);
 }
 
-@mixin typo-card-subtitle-text($usePreferred: true){
+@mixin typo-card-subtitle-text($usePreferred: true) {
   @include typo-default($usePreferred);
 }
 
-@mixin typo-textfield-input ($usePreferred: true) {
+@mixin typo-textfield-input($usePreferred: true) {
   @include typo-preferred-font($usePreferred);
 }
 
-@mixin typo-data-table ($usePreferred: true) {
+@mixin typo-data-table($usePreferred: true) {
   @include typo-preferred-font($usePreferred);
   font-weight: 300;
 }
@@ -41,7 +41,6 @@
   color: white;
 }
 
-
 @mixin typo-label($usePreferred: true) {
   @include typo-preferred-font($usePreferred);
   font-weight: 300;
@@ -56,7 +55,7 @@
     font-weight: 500;
     color: white;
   }
-    
+
   span {
     font-size: 12px;
     font-weight: lighter;
@@ -73,7 +72,7 @@
     font-size: 18px;
     font-weight: 300;
   }
-    
+
   span {
     color: rgba(255, 255, 255, 0.64);
     line-height: 1.3em;
@@ -101,19 +100,19 @@
   font-weight: 300;
 }
 
-@mixin typo-weather-temperature($usePreferred: true){
+@mixin typo-weather-temperature($usePreferred: true) {
   @include typo-preferred-font($usePreferred);
   font-size: 100px;
   line-height: 1;
 }
 
-@mixin typo-weather-description($usePreferred: true){
+@mixin typo-weather-description($usePreferred: true) {
   @include typo-preferred-font($usePreferred);
   font-size: 18px;
   font-weight: 300;
 }
 
-@mixin  typo-layout-navigation-link($usePreferred: true){
+@mixin typo-layout-navigation-link($usePreferred: true) {
   @include typo-preferred-font($usePreferred);
   font-size: 13px;
   font-weight: 500;
@@ -125,20 +124,20 @@
 
 @mixin typo-employer-form-header($usePreferred: true) {
   @include typo-preferred-font($usePreferred);
-  
+
   h2:first-of-type {
     font-size: 24px;
     font-weight: 400;
-    color: rgba(255, 255, 255, 0.8);//$employer-form-color-darker;//unquote("rgb(#{$color-primary})");
+    color: rgba(255, 255, 255, 0.8); //$employer-form-color-darker;//unquote("rgb(#{$color-primary})");
     line-height: 1.2em;
     margin-top: 0;
     margin-bottom: 0;
   }
-    
+
   .mdl-card__subtitle {
     font-size: 13px;
     font-weight: 300;
-    color: rgba(255, 255, 255, 0.2);//$employer-form-color-darker;
+    color: rgba(255, 255, 255, 0.2); //$employer-form-color-darker;
     line-height: 1.2em;
   }
 }

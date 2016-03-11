@@ -1,123 +1,123 @@
 .employer-form {
-    padding: 0;
-    width: $employer-form-width;
-    background-color: $background-color;
-    margin: 16px auto;
+  padding: 0;
+  width: $employer-form-width;
+  background-color: $background-color;
+  margin: 16px auto;
 
-    .mdl-radio {
-	width: 20%;
-	margin-top: 22px;
-	margin-bottom: 22px;
-	color: $employer-form-color-brighter;
+  .mdl-radio {
+    width: 20%;
+    margin-top: 22px;
+    margin-bottom: 22px;
+    color: $employer-form-color-brighter;
 
-	span:first-of-type {
-	    margin-left: 10px;
-	}
+    span:first-of-type {
+      margin-left: 10px;
     }
+  }
 
-    .form__article > span {
-	float: left;
-	width: 100%; 
-	color: $employer-form-color-darker;
-	font-weight: 200;
+  .form__article > span {
+    float: left;
+    width: 100%;
+    color: $employer-form-color-darker;
+    font-weight: 200;
+  }
+
+  .mdl-card__title {
+    background-color: $color-accent;
+    height: 66px;
+    width: 100%;
+    padding-top: 16px;
+    padding-left: $employer-form-horizontal-padding;
+    padding-right: $employer-form-horizontal-padding;
+    padding-bottom: 0;
+    display: block;
+    @include typo-employer-form-header();
+  }
+
+  button.mdl-button.mdl-button--colored {
+    width: 68px;
+    height: 32px;
+    @include typo-employer-form-button();
+    background-color: unquote("rgb(#{$color-primary})");
+
+    &:disabled {
+      background-color: gray;
+      color: $employer-form-color-darker;
     }
+  }
 
-    .mdl-card__title {
-	background-color: $color-accent;
-	height: 66px;
-	width: 100%;
-	padding-top: 16px;
-	padding-left: $employer-form-horizontal-padding;
-	padding-right: $employer-form-horizontal-padding;
-	padding-bottom: 0;
-	display: block;
-	@include typo-employer-form-header();
+  label {
+    font-size: 15px;
+    color: $employer-form-color-darker;
+  }
+
+  .form__action {
+
+    .mdl-checkbox {
+      .mdl-ripple {
+        background: unquote("rgb(#{$color-primary})");
+      }
+
+      &.is-checked {
+        .mdl-checkbox__box-outline {
+          border-color: unquote("rgb(#{$color-primary})");
+
+          .mdl-checkbox__tick-outline {
+            background-color: unquote("rgb(#{$color-primary})");
+            background-image: url("#{$checkbox-image-path}/tick_dark.svg?embed");
+          }
+        }
+      }
     }
-
-    button.mdl-button.mdl-button--colored {
-	width: 68px;
-	height: 32px;
-	@include typo-employer-form-button();
-	background-color: unquote("rgb(#{$color-primary})");
-
-	&:disabled {
-	    background-color: gray;
-	    color: $employer-form-color-darker;
-	}
-    }
-
-    label {
-	font-size: 15px;
-	color: $employer-form-color-darker;
-    }
-
-    .form__action {
-
-	.mdl-checkbox {
-	    .mdl-ripple {
-		background: unquote("rgb(#{$color-primary})");
-	    }
-
-	    &.is-checked {
-		.mdl-checkbox__box-outline {
-		    border-color: unquote("rgb(#{$color-primary})");
-
-		    .mdl-checkbox__tick-outline {
-			background-color: unquote("rgb(#{$color-primary})");
-			background-image: url("#{$checkbox-image-path}/tick_dark.svg?embed");
-		    }
-		}
-	    }
-	}
-    }
+  }
 }
 
 .employer-form__general_skills {
-    margin-top: 24px;
+  margin-top: 24px;
 
-    div {
-	width: 100%;
-    }
+  div {
+    width: 100%;
+  }
 
-    h3 {
-	margin-bottom: 0;
-	margin-top: 0;
-    }
+  h3 {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
 
-    .mdl-textfield label {
-	color: $employer-form-color-darker;
-    }
+  .mdl-textfield label {
+    color: $employer-form-color-darker;
+  }
 
-    .mdl-textfield--floating-label.is-focused .mdl-textfield__label {
-	color: unquote("rgb(#{$color-primary})");
-    }
+  .mdl-textfield--floating-label.is-focused .mdl-textfield__label {
+    color: unquote("rgb(#{$color-primary})");
+  }
 
-    textarea {
-	height: 90px;
-    }
+  textarea {
+    height: 90px;
+  }
 }
 
 .employer-form__contacts {
-    h3 {
-	margin-bottom: 40px;
+  h3 {
+    margin-bottom: 40px;
+  }
+
+  div {
+    .mdl-textfield.getmdl-select .mdl-textfield__input {
+      color: $employer-form-color-darker;
     }
 
-    div {
-	.mdl-textfield.getmdl-select .mdl-textfield__input {
-	    color: $employer-form-color-darker;
-	}
+    .mdl-textfield {
+      padding-top: 0;
 
-	.mdl-textfield {
-	    padding-top: 0;
-
-	    label {
-		top: 4px;
-		font-weight: 300;
-	    }
-	}
-
-	i {
-	    color: $employer-form-color-brighter;
-	}
+      label {
+        top: 4px;
+        font-weight: 300;
+      }
     }
+
+    i {
+      color: $employer-form-color-brighter;
+    }
+  }
 }

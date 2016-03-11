@@ -31,7 +31,7 @@ $button-secondary-color-disabled: unquote("rgba(#{$color-white}, 0.3)");
 //color:
 // FAB colors and sizes.
 $button-fab-color-alt: unquote("rgb(#{$color-secondary})");
-;
+
 $button-fab-text-color-alt: #ffffff;
 $button-fab-hover-color-alt: #ff4c4c;
 $button-fab-active-color-alt: #f23d3d;
@@ -44,15 +44,14 @@ $button-fab-active-color-alt: #f23d3d;
 /* ==========  Ripple effect  ========== */
 
 /* ==========  Layout  ========== */
-$layout-screen-size-threshold: 1126px;
 
 // Drawer
 $layout-drawer-width: 236px;
 $layout-drawer-bg-color: #202020;
 $layout-nav-color: #202020;
-$layout-drawer-navigation-link-active-background:  unquote("rgba(#{$color-black}, 0.25)");
+$layout-drawer-navigation-link-active-background: unquote("rgba(#{$color-black}, 0.25)");
 $layout-drawer-navigation-link-active-color: unquote("rgb(#{$color-primary})");
-$layout-nav-color:  unquote("rgba(#{$color-black}, 0.25)");
+$layout-nav-color: unquote("rgba(#{$color-black}, 0.25)");
 $layout-drawer-navigation-link-icon-color: unquote("rgba(#{$color-white}, 0.56)");
 $layout-drawer-header-color: unquote("rgb(#{$color-white})");
 $layout-drawer-header-bg-color: unquote("rgba(#{$color-black},0.85)");
@@ -76,7 +75,6 @@ $checkbox-color: unquote("rgb(#{$color-secondary})");
 /* ==========  Spinner  ========== */
 
 /* ==========  Text fields  ========== */
-
 $todo-input-text-label-color: unquote("rgba(#{$color-white}, 0.2)");
 
 $input-text-highlight-color: unquote("rgb(#{$color-primary})");
@@ -85,7 +83,9 @@ $input-text-disabled-text-color: rgba(255, 255, 255, 0.6);
 
 //placeholder color
 $todo-input-text-highlight-color: unquote("rgba(#{$color-white}, 0.7)");
+
 //bottom line color
+
 /* ==========  Card  ========== */
 $card-background-color: $background-color;
 $card-text-color: unquote("rgba(#{$color-white}, 0.8)");
@@ -98,7 +98,7 @@ $card-text-color: unquote("rgba(#{$color-white}, 0.8)");
 $card-link-color: unquote("rgb(#{$color-primary})");
 $card-href-color: unquote("rgb(#{$color-primary})");
 
-$card-title-img-color:  unquote("rgb(#{$color-white})");
+$card-title-img-color: unquote("rgb(#{$color-white})");
 $card-deg-color: unquote("rgba(#{$color-white}, 0.9)");
 
 /* ==========  Sliders ========== */
@@ -109,20 +109,18 @@ $progress-secondary-color: unquote("rgba(#{$color-white}, 0.4)");
 
 /* ==========  List ========== */
 $list-main-text-text-color: unquote("rgb(#{$color-white})");
-$list-supporting-text-text-color: unquote("rgba(#{$color-white}, 0.54)") !default;
+$list-supporting-text-text-color: unquote("rgba(#{$color-white}, 0.54)");
 $list-icon-color: unquote("rgba(#{$color-white}, 0.8)");
 $list-icon-hover-color: unquote("rgb(#{$color-primary})");
-$list-avatar-color: white !default;
 
-$list-separator-border-color: unquote("rgba(#{$color-white},0.1)");
-$list-item-text-color: unquote("rgb(#{$color-white})");
-$list-item-border: 1px solid $list-separator-border-color;
-$list-item-vertical-margin: 18px;
-
+$list-border-color: unquote("rgba(#{$color-white},0.1)");
+$list-item-border: 1px solid $list-border-color;
 
 /* ==========  Item ========== */
 
 // Default Item Colors
+$default-item-focus-bg-color: unquote("rgba(#{$color-black}, 0.15)");
+$default-item-active-bg-color: unquote("rgba(#{$color-black}, 0.15)");
 $default-item-hover-bg-color: unquote("rgba(#{$color-black}, 0.2)");
 
 // Disabled Button Colors
@@ -132,7 +130,6 @@ $default-dropdown-bg-color: $background-color;
 
 $dropdown-menu-width: 310px;
 $dropdown-menu-header-font-color: unquote("rgba(#{$color-white}, 0.8)");
-
 $settings_dropdown_width: 135px;
 $account-dropdown-avatar-size: 48px;
 $messages-dropdown-label-text-color: unquote("rgba(#{$color-white}, 0.5)");
@@ -153,31 +150,26 @@ $tooltip-background-color: #353535;
 // How much the start location of the arc should rotate each time.
 
 /* RADIO */
-
 $radio-off-color: unquote("rgba(#{$color-white}, 0.8)");
 $radio-color: unquote("rgba(#{$color-primary}, 0.8)");
 
 /* MENU */
 
 /* LIST */
-
 $list-border: 0;
 $list-bottom-padding: 16px;
 $list-avatar-text-left-distance: 64px;
 $list-icon-text-left-distance: 56px;
-
-$list-avatar-size: 32px ;
-
+$list-avatar-size: 32px;
 $list-two-line-height: 64px;
 
 /* LAYOUT */
 $layout-drawer-narrow: 236px;
 $layout-header-mobile-indent: 8px;
 $layout-header-desktop-indent: 20px;
-$layout-screen-size-threshold: 1806px;
+$layout-screen-size-threshold: 1440px;
 
 /* ICON */
-$trending-arrow-size: 48px;
 
 /* ICON TOGGLE */
 
@@ -195,17 +187,12 @@ $card-height: auto;
 $card-width: auto;
 $card-title-font-size: 24px;
 $card-title-text-font-weight: 400;
-$card-title-vertical-padding: 20px;
+$card-vertical-padding: 20px;
 
 /* Cover image */
 
 /* BUTTON */
 $button-font-weigth: 400;
-/**
- *
- * Dimensions
- *
- */
 
 /* ANIMATION */
 
@@ -216,33 +203,29 @@ $badge-background: unquote("rgb(#{$color-primary})");
 $badge-color: unquote("rgb(#{$color-white})");
 
 /* SHADOWS */
-$weather-shadow-color: unquote("rgba(#{$color-black}, 0.4)");
-$weather-shadow-4px: 4px 4px 4px $weather-shadow-color;
 
 /* GRID */
 $grid-tablet-columns: 12;
-$grid-phone-columns: 5;
+$grid-phone-columns: 4;
 
 $grid-desktop-gutter: 32px;
 $grid-desktop-margin: 16px;
 
-$grid-tablet-breakpoint: 1005px;
-$grid-desktop-breakpoint: 1554px;
+$grid-tablet-breakpoint: 1152px;
+$grid-desktop-breakpoint: 1920px;
+$phone-breakpoint: 800px;
 
 /* DATA TABLE */
 $data-table-font-size: 16px;
 $data-table-header-font-size: 13px;
 
+$data-table-color: unquote("rgb(#{$color-white})");
 $data-table-header-color: unquote("rgb(#{$color-white})");
 $data-table-divider-color: unquote("rgba(#{$color-white},0.05)");
-
 $data-table-hover-color: unquote("rgba(#{$color-black}, 0.2)");
 $data-table-selection-color: $background-color;
 
 $data-table-column-spacing: 16px;
-$data-table-column-padding: $data-table-column-spacing / 2;
-
-$data-table-color: unquote("rgb(#{$color-white})");
 
 /* TOOLTIP */
 $tooltip-font-size: 12px;
@@ -251,27 +234,18 @@ $table-tooltip-horizontal-padding: 8px;
 
 //-------------------------------------------------------
 
+/* WIDGETS & COMPONENTS */
+
+/* Trending */
+$trending-arrow-size: 48px;
 $trending-arrow-up-color: unquote("rgb(#{$color-primary})");
 $trending-arrow-down-color: unquote("rgb(#{$color-secondary})");
 
-/*</deprecated>*/
-
-$badge-background: #00bcd4;
-$primary-font-size: 10px;
-//$color-accent: rgba(0, 0, 0, 0.35);
-$color-primary-contrast: white;
-$color-accent-contrast: #00bcd4;
-$border-color: #757575;
-
-$background-color: #4e4e4e;
-$field-accent-color: rgba(0, 0, 0, 0.35);
-$field-primary-color-contrast: white;
-
-/* label*/
+/* label */
 $label-height: 12px;
 $label-padding: 5px 8px 5px 8px;
 
-/*charts*/
+/* charts */
 $pie-chart-height: 228px;
 
 $line-chart-height: 280px;
@@ -283,11 +257,14 @@ $line-chart-guideline-width: 0.5px;
 $legend-mark-size: 8px;
 $legend-text-indent: $legend-mark-size + 16;
 
-/* employer form*/
+/* employer form */
 $employer-form-width: 670px;
 $employer-form-color-brighter: rgba(255, 255, 255, 1);
 $employer-form-color-darker: rgba(255, 255, 255, 0.6);
 $employer-form-horizontal-padding: 15px;
+
+$weather-shadow-color: unquote("rgba(#{$color-black}, 0.4)");
+$weather-shadow-4px: 4px 4px 4px $weather-shadow-color;
 
 /* row */
 $row-col-padding: 30px;

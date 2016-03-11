@@ -4,15 +4,16 @@
     height: $line-chart-height;
     width: $line-chart-width;
     .y-axis-label, .x-axis-label {
-       @include typo-linechart-axis-label;
-       fill: $line-chart-axis-label-color;
-     }
+      @include typo-linechart-axis-label;
+      fill: $line-chart-axis-label-color;
+    }
     .nv-lineChart {
       .nv-guideline {
         stroke: $line-chart-guideline-color;
         stroke-width: $line-chart-guideline-width;
       }
-      .tick { // setting?
+      .tick {
+        // setting?
         opacity: 0.1 !important;
         &.zero {
           opacity: 0.5 !important;

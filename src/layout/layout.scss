@@ -2,16 +2,6 @@
   background: $layout-drawer-bg-color;
 }
 
-.mdl-layout--fixed-drawer {
-  & > .mdl-layout__content {
-    margin-left: $layout-drawer-narrow;
-  }
-  &.is-upgraded:not(.is-small-screen) > .mdl-layout__header {
-    margin-left: 0;
-    width: 100%;
-  }
-}
-
 main {
   background: url("../images/Dark_background_1920x1080.png") center top no-repeat;
   background-size: cover;
@@ -38,8 +28,13 @@ main {
   }
 
   & .mdl-navigation {
+    flex-grow: 1;
     padding-top: 48px;
-
+    padding-bottom: 8px;
+    .mdl-layout-spacer {
+        border-bottom: 1px solid unquote("rgba(#{$color-white}, 0.1)");
+        margin-bottom: 8px;
+    }
     & .mdl-navigation__link {
       @include typo-layout-navigation-link;
       padding: 12px 0;
@@ -101,7 +96,7 @@ main {
     height: $button-fab-font-size;
     width: $button-fab-font-size;
     min-width: 0;
-    padding: 6px 4px;
+    padding: 4px 4px;
     &:hover {
       background: $layout-header-icon-hover-color;
     }
@@ -139,23 +134,12 @@ main {
   }
 }
 
-@media screen and (min-width: 1242px) and (max-width: 1553px) {
-  .mdl-layout--fixed-drawer {
-   .mdl-layout__drawer {
-     transform: translateX(0);
-   }
-    .mdl-layout__content {
-      margin-left: $layout-drawer-narrow;
-    }
-  }
-}
-
-@media screen and (max-width: 807px) {
-  .mdl-grid > .mdl-grid {
+@media screen and (max-width: $phone-breakpoint - 1px) {
+  .mdl-grid > .mdl-grid .mdl-cell {
     width: 100% !important;
   }
-  .mdl-layout__header-row{
-    .message, .notification{
+  .mdl-layout__header-row {
+    .message, .notification {
       display: none;
     }
   }

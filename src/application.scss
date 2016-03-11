@@ -4,9 +4,7 @@
 
 @import 'mixins';
 
-@import 'helper';
-
-@import "layout/layout";
+@import 'layout/layout';
 
 @import 'card/card';
 
@@ -16,7 +14,7 @@
 
 @import 'button/button';
 
-@import "widgets/link/link";
+@import 'widgets/link/link';
 
 @import 'textfield/textfield';
 
@@ -46,20 +44,20 @@
 
 @import 'widgets/chart-legend/chart-legend';
 
-@import 'helper';
-
 @import 'widgets/account-dropdown/account-dropdown';
 
 @import 'widgets/setting-dropdown/settings-dropdown';
 
-@import "widgets/robot/robot";
+@import 'widgets/robot/robot';
 
-@import "widgets/cotoneaster/cotoneaster";
+@import 'widgets/cotoneaster/cotoneaster';
 
-@import "widgets/weather/weather";
+@import 'widgets/weather/weather';
 
 @import 'widgets/employer-form/employer-form';
 
 @import 'widgets/form/form';
 
 @import 'widgets/input-group/input-group';
+
+@import 'helper';
