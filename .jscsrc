@@ -1,4 +1,4 @@
 {
-    "preset": "google",
-    "requireCurlyBraces": true
+  "preset": "google",
+  "requireCurlyBraces": true
 }

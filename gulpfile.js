@@ -14,7 +14,6 @@ var gulp = require('gulp'),
     clean = require('gulp-clean'),
     del = require('del'),
     browserSync = require('browser-sync');
-//reload = browserSync.reload;
 
 var onError = function (err) {
     console.log('An error occurred:', err.message);
@@ -80,7 +79,7 @@ gulp.task('default', ['cleanDist', 'jshint', 'babel', 'copyJsLib', 'copyCssLib']
 
 gulp.task('copyJsLib', ['cleanDist'], function () {
     return gulp.src(['bower_components/material-design-lite/material.js', 'bower_components/d3/d3.js',
-        'bower_components/nvd3/build/nv.d3.js', 'bower_components/getmdl-select/getmdl-select.js'])
+        'bower_components/nvd3/build/nv.d3.js', 'bower_components/getmdl-select/getmdl-select.min.js'])
         .pipe(gulp.dest('dist/js'));
 });
 
@@ -91,7 +90,7 @@ gulp.task('copyMinJsLib', ['cleanDist'], function () {
 });
 
 gulp.task('copyCssLib', ['cleanDist'], function () {
-    return gulp.src(['bower_components/nvd3/build/nv.d3.css', 'bower_components/getmdl-select/getmdl-select.css'])
+    return gulp.src(['bower_components/nvd3/build/nv.d3.css', 'bower_components/getmdl-select/getmdl-select.min.css'])
         .pipe(gulp.dest('dist/css/lib'));
 });
 
@@ -104,16 +103,17 @@ gulp.task('cleanDist', function () {
     return del('dist/**/*');
 });
 
-gulp.task('copySrcForTheBuild', ['copyMinCssLib', 'copyMinJsLib', 'copyHtml'], function () {
+gulp.task('minifyJs', ['cleanDist'], function () {
     return gulp.src('src/**/*.js')
         .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest('dist/js'))
         .pipe(plumber({errorHandler: onError}))
         .pipe(babel())
-        .pipe(gulp.dest('dist/js'))
         .pipe(uglify())
-        .pipe(gulp.dest('dist/js'))
-        .pipe(gulp.src('src/application.scss'))
+        .pipe(gulp.dest('dist/js'));
+});
+
+gulp.task('minifyCss', ['cleanDist'], function () {
+    return gulp.src('src/application.scss')
         .pipe(plumber({errorHandler: onError}))
         .pipe(sass())
         .pipe(minifycss())
@@ -121,16 +121,12 @@ gulp.task('copySrcForTheBuild', ['copyMinCssLib', 'copyMinJsLib', 'copyHtml'], f
         .pipe(gulp.dest('dist/css'));
 });
 
-gulp.task('copyHtml', ['cleanDist'], function () {
-    return gulp.src('src/**/*.html')
+gulp.task('build', ['minifyJs', 'minifyCss', 'copyMinCssLib', 'copyMinJsLib'], function () {
+    gulp.src('src/*.html')
+        .pipe(gulp.dest('dist/'))
+        .pipe(inject(gulp.src(['dist/js/**/*.js', 'dist/css/lib/*.css',
+            'dist/css/*.css'], {read: false}), {relative: true}))
         .pipe(gulp.dest('dist/'));
-});
-
-gulp.task('build', ['copySrcForTheBuild'], function () {
     gulp.src('src/images/**/*')
         .pipe(gulp.dest('dist/images'));
-    gulp.src('dist/*.html')
-        .pipe(inject(gulp.src([ 'dist/js/**/*.js', 'dist/css/lib/*.css',
-                                'dist/css/*.css'], {read: false}), {relative: true}))
-        .pipe(gulp.dest('dist/'));
 });

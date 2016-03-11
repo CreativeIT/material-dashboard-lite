@@ -1,11 +1,11 @@
 {
   "name": "getmdl-dashboard",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "homepage": "https://github.com/CreativeIT/getmdl-dashboard",
   "authors": [
     "CreativeIT"
   ],
-  "description": "",
+  "description": "Free dashboard template with Material Design Lite",
   "main": "dist/index.html",
   "moduleType": [],
   "license": "MIT",
@@ -17,9 +17,9 @@
     "tests"
   ],
   "dependencies": {
-    "material-design-lite": "~1.1.1",
-    "d3": "~3.5.14",
-    "nvd3": "~1.8.2",
+    "material-design-lite": "1.1.1",
+    "d3": "3.5.14",
+    "nvd3": "1.8.2",
     "getmdl-select": "*"
   }
 }
