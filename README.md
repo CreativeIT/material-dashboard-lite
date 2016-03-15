@@ -4,11 +4,11 @@ Welcome to first dark dashboard on the Material Design Lite!
 
 ![dashboard-avatar](https://trello-attachments.s3.amazonaws.com/56af74f7f1b5b81a201453c4/2000x1105/796e1dae05e88ba87162dd8bbf188e65/Darkboard_Showcase_1_3.png)
 
-Its much more fun with the [demo](http://creativeit.github.io/getmdl-dashboard/index.html).
+Its much more fun with the [demo](http://creativeit.github.io/material-dashboard-lite/index.html).
 
 Material admin template is absolutely free for commercial usage theme, that uses google's implementation of material design -- [Material Design Lite](http://www.getmdl.io) library. It doesn’t rely on any JavaScript frameworks and aims to be responsive and optimized for cross-device usage. All components are created with CSS (scss), JavaScript (es6), and HTML5.
 
->**Important**: We are still working on the project and there will be much more awesome, check out our [issues](https://github.com/CreativeIT/getmdl-dashboard/issues) to see what features are coming soon.
+>**Important**: We are still working on the project and there will be much more awesome, check out our [issues](https://github.com/CreativeIT/material-dashboard-lite/issues) to see what features are coming soon.
 
 #SETUP and USAGE
 The steps bellow will take you through cloning your own fork, installing dependencies and building:
@@ -16,13 +16,13 @@ The steps bellow will take you through cloning your own fork, installing depende
 1. Fork and/or clone our repository. To use Git from command line, see the [Setting up Git](https://help.github.com/articles/set-up-git/) and [Fork a repo](https://help.github.com/articles/fork-a-repo/) articles. 
   
   ```
-    git clone https://github.com/CreativeIT/getmdl-dashboard.git
+    git clone https://github.com/CreativeIT/material-dashboard-lite.git
   ```
 
 2. Open your copied repo folder in terminal and install [npm](https://www.npmjs.com/) components with command:
   
   ```
-    cd getmdl-dashboard
+    cd material-dashboard-lite
     npm install
   ```
 
@@ -81,6 +81,6 @@ Designed with passion and coffee by CreativeIT
 
 * Create issue report or feature request
 
-* [Tweet about it](https://twitter.com/intent/tweet?text=Wow!%20New%20%23free%20dark%20%23dashboard%20on%20%23MaterialDesignLite!%0Ahttp://creativeit.github.io/getmdl-dashboard/index.html%0A&via=CreativeITeam&hashtags=materialDesign,responsive,UI,JS)
+* [Tweet about it](https://twitter.com/intent/tweet?text=Wow!%20New%20%23free%20dark%20%23dashboard%20on%20%23MaterialDesignLite!%0Ahttp://creativeit.github.io/material-dashboard-lite/index.html%0A&via=CreativeITeam&hashtags=materialDesign,responsive,UI,JS)
 
 * Follow [us on Twitter](https://twitter.com/intent/follow?screen_name=CreativeITeam)
