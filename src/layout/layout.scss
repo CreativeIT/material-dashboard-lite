@@ -111,6 +111,9 @@ main {
 
 @media screen and (max-width: $layout-screen-size-threshold) {
   .mdl-layout--fixed-drawer {
+    main {
+      margin-right: 0;
+    }
     & > .mdl-layout__content {
       margin-left: 0;
     }

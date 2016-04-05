@@ -10739,6 +10739,8 @@ main {
       right: -8px; }
 
 @media screen and (max-width: 1440px) {
+  .mdl-layout--fixed-drawer main {
+    margin-right: 0; }
   .mdl-layout--fixed-drawer > .mdl-layout__content {
     margin-left: 0; }
   .mdl-layout--fixed-drawer > .mdl-layout__drawer {
@@ -11159,7 +11161,7 @@ a {
 
 .employer-form {
   padding: 0;
-  width: 670px;
+  max-width: 670px;
   background-color: #4e4e4e;
   margin: 16px auto; }
   .employer-form .mdl-radio {
