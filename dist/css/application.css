@@ -559,6 +559,12 @@ textarea {
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */ }
+
+@media print, (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */ }
+
 /* ==========================================================================
    Print styles.
    Inlined to avoid the additional HTTP request:
@@ -11161,7 +11167,7 @@ a {
 
 .employer-form {
   padding: 0;
-  max-width: 670px;
+  width: 670px;
   background-color: #4e4e4e;
   margin: 16px auto; }
   .employer-form .mdl-radio {
