@@ -224,6 +224,9 @@
           this.controller = new Controller(this.model, this.view);
         }
     }
+  let todoContainer = document.querySelector('.todo')
+    if (todoContainer) {
+        let todo = new Todo();
+    }
 
-  let todo = new Todo();
 }

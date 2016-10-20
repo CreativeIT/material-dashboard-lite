@@ -259,7 +259,9 @@
           color: 'rgb(255, 82, 82)'
         }
     ];
-
-  let lineChart = new LineChart(7, '#4a4a4a', 20, data, nv);
-  lineChart.drawChart();
+  let lineChartContainer = document.querySelector('.line-chart__container');
+    if (lineChartContainer) {
+        let lineChart = new LineChart(7, '#4a4a4a', 20, data, nv);
+        lineChart.drawChart();
+    }
 }
