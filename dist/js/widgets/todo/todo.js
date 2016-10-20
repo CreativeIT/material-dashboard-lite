@@ -243,6 +243,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       this.controller = new Controller(this.model, this.view);
     };
 
-    var todo = new Todo();
+    var todoContainer = document.querySelector('.todo');
+    if (todoContainer) {
+      var todo = new Todo();
+    }
   })();
 }

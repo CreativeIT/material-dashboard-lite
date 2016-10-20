@@ -235,8 +235,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       key: 'Fail',
       color: 'rgb(255, 82, 82)'
     }];
-
-    var lineChart = new LineChart(7, '#4a4a4a', 20, data, nv);
-    lineChart.drawChart();
+    var lineChartContainer = document.querySelector('.line-chart__container');
+    if (lineChartContainer) {
+      var lineChart = new LineChart(7, '#4a4a4a', 20, data, nv);
+      lineChart.drawChart();
+    }
   })();
 }

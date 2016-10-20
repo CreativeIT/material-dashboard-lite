@@ -11349,6 +11349,45 @@ a {
 .input-group .mdl-textfield {
   width: calc(100% - 40.5px); }
 
+.map {
+  min-height: 630px;
+  position: relative; }
+  .map .map__window {
+    background: rgba(0, 0, 0, 0.3); }
+    .map .map__window .gm-style > div:nth-of-type(2), .map .map__window .gm-style > .gmnoprint:not(.gm-bundled-control), .map .map__window .gm-style > .gm-style-cc {
+      display: none; }
+  .map .mdl-card__supporting-text {
+    min-height: 185px; }
+  .map h5 {
+    margin-top: 0; }
+  .map div > a {
+    font-size: 14px; }
+  .map .map__target-location, .map .map__target-opening-hours {
+    margin-bottom: 10px; }
+    .map .map__target-location > *, .map .map__target-opening-hours > * {
+      vertical-align: middle; }
+    .map .map__target-location .material-icons, .map .map__target-opening-hours .material-icons {
+      color: rgb(0, 188, 212);
+      margin-top: -2px;
+      margin-right: 5px;
+      font-size: 20px; }
+  .map .map__target-image {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    width: 170px;
+    height: 170px;
+    margin: 0 10px 5px 15px; }
+  .map .map__target-picture {
+    height: 100%;
+    transition: opacity 0.3s;
+    background: url("../images/map_target_images_sprite.png") no-repeat top left;
+    background-size: cover; }
+  .map .map__target-info, .map .map__target-picture {
+    opacity: 1;
+    transition: opacity 0.2s; }
+    .map .map__target-info--hide, .map .map__target-picture--hide {
+      opacity: 0; }
+
 .pull-right {
   float: right; }
 
