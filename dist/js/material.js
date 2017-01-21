@@ -145,6 +145,27 @@ componentHandler = (function() {
   }
 
   /**
+   * Create an event object.
+   *
+   * @param {string} eventType The type name of the event.
+   * @param {boolean} bubbles Whether the event should bubble up the DOM.
+   * @param {boolean} cancelable Whether the event can be canceled.
+   * @returns {!Event}
+   */
+  function createEvent_(eventType, bubbles, cancelable) {
+    if ('CustomEvent' in window && typeof window.CustomEvent === 'function') {
+      return new CustomEvent(eventType, {
+        bubbles: bubbles,
+        cancelable: cancelable
+      });
+    } else {
+      var ev = document.createEvent('Events');
+      ev.initEvent(eventType, bubbles, cancelable);
+      return ev;
+    }
+  }
+
+  /**
    * Searches existing DOM for elements of our component type and upgrades them
    * if they have not already been upgraded.
    *
@@ -188,6 +209,13 @@ componentHandler = (function() {
     if (!(typeof element === 'object' && element instanceof Element)) {
       throw new Error('Invalid argument provided to upgrade MDL element.');
     }
+    // Allow upgrade to be canceled by canceling emitted event.
+    var upgradingEv = createEvent_('mdl-componentupgrading', true, true);
+    element.dispatchEvent(upgradingEv);
+    if (upgradingEv.defaultPrevented) {
+      return;
+    }
+
     var upgradedList = getUpgradedListOfElement_(element);
     var classesToUpgrade = [];
     // If jsClass is not provided scan the registered components to find the
@@ -230,9 +258,8 @@ componentHandler = (function() {
           'Unable to find a registered component for the given class.');
       }
 
-      var ev = document.createEvent('Events');
-      ev.initEvent('mdl-componentupgraded', true, true);
-      element.dispatchEvent(ev);
+      var upgradedEv = createEvent_('mdl-componentupgraded', true, false);
+      element.dispatchEvent(upgradedEv);
     }
   }
 
@@ -244,10 +271,10 @@ componentHandler = (function() {
    */
   function upgradeElementsInternal(elements) {
     if (!Array.isArray(elements)) {
-      if (typeof elements.item === 'function') {
-        elements = Array.prototype.slice.call(/** @type {Array} */ (elements));
-      } else {
+      if (elements instanceof Element) {
         elements = [elements];
+      } else {
+        elements = Array.prototype.slice.call(elements);
       }
     }
     for (var i = 0, n = elements.length, element; i < n; i++) {
@@ -345,17 +372,18 @@ componentHandler = (function() {
    * @param {?componentHandler.Component} component
    */
   function deconstructComponentInternal(component) {
-    var componentIndex = createdComponents_.indexOf(component);
-    createdComponents_.splice(componentIndex, 1);
+    if (component) {
+      var componentIndex = createdComponents_.indexOf(component);
+      createdComponents_.splice(componentIndex, 1);
 
-    var upgrades = component.element_.getAttribute('data-upgraded').split(',');
-    var componentPlace = upgrades.indexOf(component[componentConfigProperty_].classAsString);
-    upgrades.splice(componentPlace, 1);
-    component.element_.setAttribute('data-upgraded', upgrades.join(','));
+      var upgrades = component.element_.getAttribute('data-upgraded').split(',');
+      var componentPlace = upgrades.indexOf(component[componentConfigProperty_].classAsString);
+      upgrades.splice(componentPlace, 1);
+      component.element_.setAttribute('data-upgraded', upgrades.join(','));
 
-    var ev = document.createEvent('Events');
-    ev.initEvent('mdl-componentdowngraded', true, true);
-    component.element_.dispatchEvent(ev);
+      var ev = createEvent_('mdl-componentdowngraded', true, false);
+      component.element_.dispatchEvent(ev);
+    }
   }
 
   /**
@@ -486,9 +514,9 @@ window.addEventListener('load', function() {
 // MIT license
 if (!Date.now) {
     /**
-   * Date.now polyfill.
-   * @return {number} the current Date
-   */
+     * Date.now polyfill.
+     * @return {number} the current Date
+     */
     Date.now = function () {
         return new Date().getTime();
     };
@@ -508,9 +536,9 @@ for (var i = 0; i < vendors.length && !window.requestAnimationFrame; ++i) {
 if (/iP(ad|hone|od).*OS 6/.test(window.navigator.userAgent) || !window.requestAnimationFrame || !window.cancelAnimationFrame) {
     var lastTime = 0;
     /**
-   * requestAnimationFrame polyfill.
-   * @param  {!Function} callback the callback function.
-   */
+     * requestAnimationFrame polyfill.
+     * @param  {!Function} callback the callback function.
+     */
     window.requestAnimationFrame = function (callback) {
         var now = Date.now();
         var nextTime = Math.max(lastTime + 16, now);
@@ -1672,7 +1700,9 @@ MaterialRadio.prototype.onChange_ = function (event) {
         var button = radios[i].querySelector('.' + this.CssClasses_.RADIO_BTN);
         // Different name == different group, so no point updating those.
         if (button.getAttribute('name') === this.btnElement_.getAttribute('name')) {
-            radios[i]['MaterialRadio'].updateClasses_();
+            if (typeof radios[i]['MaterialRadio'] !== 'undefined') {
+                radios[i]['MaterialRadio'].updateClasses_();
+            }
         }
     }
 };
@@ -1778,7 +1808,7 @@ MaterialRadio.prototype['enable'] = MaterialRadio.prototype.enable;
    */
 MaterialRadio.prototype.check = function () {
     this.btnElement_.checked = true;
-    this.updateClasses_();
+    this.onChange_(null);
 };
 MaterialRadio.prototype['check'] = MaterialRadio.prototype.check;
 /**
@@ -1788,7 +1818,7 @@ MaterialRadio.prototype['check'] = MaterialRadio.prototype.check;
    */
 MaterialRadio.prototype.uncheck = function () {
     this.btnElement_.checked = false;
-    this.updateClasses_();
+    this.onChange_(null);
 };
 MaterialRadio.prototype['uncheck'] = MaterialRadio.prototype.uncheck;
 /**
@@ -2701,13 +2731,15 @@ function MaterialTab(tab, ctx) {
             tab.appendChild(rippleContainer);
         }
         tab.addEventListener('click', function (e) {
-            e.preventDefault();
-            var href = tab.href.split('#')[1];
-            var panel = ctx.element_.querySelector('#' + href);
-            ctx.resetTabState_();
-            ctx.resetPanelState_();
-            tab.classList.add(ctx.CssClasses_.ACTIVE_CLASS);
-            panel.classList.add(ctx.CssClasses_.ACTIVE_CLASS);
+            if (tab.getAttribute('href').charAt(0) === '#') {
+                e.preventDefault();
+                var href = tab.href.split('#')[1];
+                var panel = ctx.element_.querySelector('#' + href);
+                ctx.resetTabState_();
+                ctx.resetPanelState_();
+                tab.classList.add(ctx.CssClasses_.ACTIVE_CLASS);
+                panel.classList.add(ctx.CssClasses_.ACTIVE_CLASS);
+            }
         });
     }
 }
@@ -2774,7 +2806,8 @@ MaterialTextfield.prototype.CssClasses_ = {
     IS_FOCUSED: 'is-focused',
     IS_DISABLED: 'is-disabled',
     IS_INVALID: 'is-invalid',
-    IS_UPGRADED: 'is-upgraded'
+    IS_UPGRADED: 'is-upgraded',
+    HAS_PLACEHOLDER: 'has-placeholder'
 };
 /**
    * Handle input being entered.
@@ -2928,6 +2961,9 @@ MaterialTextfield.prototype.init = function () {
                     this.maxRows = this.Constant_.NO_MAX_ROWS;
                 }
             }
+            if (this.input_.hasAttribute('placeholder')) {
+                this.element_.classList.add(this.CssClasses_.HAS_PLACEHOLDER);
+            }
             this.boundUpdateClassesHandler = this.updateClasses_.bind(this);
             this.boundFocusHandler = this.onFocus_.bind(this);
             this.boundBlurHandler = this.onBlur_.bind(this);
@@ -3030,16 +3066,16 @@ MaterialTooltip.prototype.handleMouseEnter_ = function (event) {
     if (this.element_.classList.contains(this.CssClasses_.LEFT) || this.element_.classList.contains(this.CssClasses_.RIGHT)) {
         left = props.width / 2;
         if (top + marginTop < 0) {
-            this.element_.style.top = 0;
-            this.element_.style.marginTop = 0;
+            this.element_.style.top = '0';
+            this.element_.style.marginTop = '0';
         } else {
             this.element_.style.top = top + 'px';
             this.element_.style.marginTop = marginTop + 'px';
         }
     } else {
         if (left + marginLeft < 0) {
-            this.element_.style.left = 0;
-            this.element_.style.marginLeft = 0;
+            this.element_.style.left = '0';
+            this.element_.style.marginLeft = '0';
         } else {
             this.element_.style.left = left + 'px';
             this.element_.style.marginLeft = marginLeft + 'px';
@@ -3057,11 +3093,11 @@ MaterialTooltip.prototype.handleMouseEnter_ = function (event) {
     this.element_.classList.add(this.CssClasses_.IS_ACTIVE);
 };
 /**
-   * Handle mouseleave for tooltip.
+   * Hide tooltip on mouseleave or scroll
    *
    * @private
    */
-MaterialTooltip.prototype.handleMouseLeave_ = function () {
+MaterialTooltip.prototype.hideTooltip_ = function () {
     this.element_.classList.remove(this.CssClasses_.IS_ACTIVE);
 };
 /**
@@ -3069,7 +3105,7 @@ MaterialTooltip.prototype.handleMouseLeave_ = function () {
    */
 MaterialTooltip.prototype.init = function () {
     if (this.element_) {
-        var forElId = this.element_.getAttribute('for');
+        var forElId = this.element_.getAttribute('for') || this.element_.getAttribute('data-mdl-for');
         if (forElId) {
             this.forElement_ = document.getElementById(forElId);
         }
@@ -3079,11 +3115,12 @@ MaterialTooltip.prototype.init = function () {
                 this.forElement_.setAttribute('tabindex', '0');
             }
             this.boundMouseEnterHandler = this.handleMouseEnter_.bind(this);
-            this.boundMouseLeaveHandler = this.handleMouseLeave_.bind(this);
+            this.boundMouseLeaveAndScrollHandler = this.hideTooltip_.bind(this);
             this.forElement_.addEventListener('mouseenter', this.boundMouseEnterHandler, false);
             this.forElement_.addEventListener('touchend', this.boundMouseEnterHandler, false);
-            this.forElement_.addEventListener('mouseleave', this.boundMouseLeaveHandler, false);
-            window.addEventListener('touchstart', this.boundMouseLeaveHandler);
+            this.forElement_.addEventListener('mouseleave', this.boundMouseLeaveAndScrollHandler, false);
+            window.addEventListener('scroll', this.boundMouseLeaveAndScrollHandler, true);
+            window.addEventListener('touchstart', this.boundMouseLeaveAndScrollHandler);
         }
     }
 };
@@ -3133,6 +3170,7 @@ window['MaterialLayout'] = MaterialLayout;
 MaterialLayout.prototype.Constant_ = {
     MAX_WIDTH: '(max-width: 1024px)',
     TAB_SCROLL_PIXELS: 100,
+    RESIZE_TIMEOUT: 100,
     MENU_ICON: '&#xE5D2;',
     CHEVRON_LEFT: 'chevron_left',
     CHEVRON_RIGHT: 'chevron_right'
@@ -3190,6 +3228,7 @@ MaterialLayout.prototype.CssClasses_ = {
     TAB_BAR_BUTTON: 'mdl-layout__tab-bar-button',
     TAB_BAR_LEFT_BUTTON: 'mdl-layout__tab-bar-left-button',
     TAB_BAR_RIGHT_BUTTON: 'mdl-layout__tab-bar-right-button',
+    TAB_MANUAL_SWITCH: 'mdl-layout__tab-manual-switch',
     PANEL: 'mdl-layout__tab-panel',
     HAS_DRAWER: 'has-drawer',
     HAS_TABS: 'has-tabs',
@@ -3235,7 +3274,8 @@ MaterialLayout.prototype.contentScrollHandler_ = function () {
    * @private
    */
 MaterialLayout.prototype.keyboardEventHandler_ = function (evt) {
-    if (evt.keyCode === this.Keycodes_.ESCAPE) {
+    // Only react when the drawer is open.
+    if (evt.keyCode === this.Keycodes_.ESCAPE && this.drawer_.classList.contains(this.CssClasses_.IS_DRAWER_OPEN)) {
         this.toggleDrawer();
     }
 };
@@ -3339,9 +3379,13 @@ MaterialLayout.prototype.init = function () {
     if (this.element_) {
         var container = document.createElement('div');
         container.classList.add(this.CssClasses_.CONTAINER);
+        var focusedElement = this.element_.querySelector(':focus');
         this.element_.parentElement.insertBefore(container, this.element_);
         this.element_.parentElement.removeChild(this.element_);
         container.appendChild(this.element_);
+        if (focusedElement) {
+            focusedElement.focus();
+        }
         var directChildren = this.element_.childNodes;
         var numChildren = directChildren.length;
         for (var c = 0; c < numChildren; c++) {
@@ -3476,8 +3520,9 @@ MaterialLayout.prototype.init = function () {
             tabContainer.appendChild(leftButton);
             tabContainer.appendChild(this.tabBar_);
             tabContainer.appendChild(rightButton);
-            // Add and remove buttons depending on scroll position.
-            var tabScrollHandler = function () {
+            // Add and remove tab buttons depending on scroll position and total
+            // window size.
+            var tabUpdateHandler = function () {
                 if (this.tabBar_.scrollLeft > 0) {
                     leftButton.classList.add(this.CssClasses_.IS_ACTIVE);
                 } else {
@@ -3489,8 +3534,20 @@ MaterialLayout.prototype.init = function () {
                     rightButton.classList.remove(this.CssClasses_.IS_ACTIVE);
                 }
             }.bind(this);
-            this.tabBar_.addEventListener('scroll', tabScrollHandler);
-            tabScrollHandler();
+            this.tabBar_.addEventListener('scroll', tabUpdateHandler);
+            tabUpdateHandler();
+            // Update tabs when the window resizes.
+            var windowResizeHandler = function () {
+                // Use timeouts to make sure it doesn't happen too often.
+                if (this.resizeTimeoutId_) {
+                    clearTimeout(this.resizeTimeoutId_);
+                }
+                this.resizeTimeoutId_ = setTimeout(function () {
+                    tabUpdateHandler();
+                    this.resizeTimeoutId_ = null;
+                }.bind(this), this.Constant_.RESIZE_TIMEOUT);
+            }.bind(this);
+            window.addEventListener('resize', windowResizeHandler);
             if (this.tabBar_.classList.contains(this.CssClasses_.JS_RIPPLE_EFFECT)) {
                 this.tabBar_.classList.add(this.CssClasses_.RIPPLE_IGNORE_EVENTS);
             }
@@ -3535,22 +3592,15 @@ function MaterialLayoutTab(tab, tabs, panels, layout) {
         rippleContainer.appendChild(ripple);
         tab.appendChild(rippleContainer);
     }
-    tab.addEventListener('click', function (e) {
-        if (tab.getAttribute('href').charAt(0) === '#') {
-            e.preventDefault();
-            selectTab();
-        }
-    });
+    if (!layout.tabBar_.classList.contains(layout.CssClasses_.TAB_MANUAL_SWITCH)) {
+        tab.addEventListener('click', function (e) {
+            if (tab.getAttribute('href').charAt(0) === '#') {
+                e.preventDefault();
+                selectTab();
+            }
+        });
+    }
     tab.show = selectTab;
-    tab.addEventListener('click', function (e) {
-        e.preventDefault();
-        var href = tab.href.split('#')[1];
-        var panel = layout.content_.querySelector('#' + href);
-        layout.resetTabState_(tabs);
-        layout.resetPanelState_(panels);
-        tab.classList.add(layout.CssClasses_.IS_ACTIVE);
-        panel.classList.add(layout.CssClasses_.IS_ACTIVE);
-    });
 }
 window['MaterialLayoutTab'] = MaterialLayoutTab;
 // The component registers itself. It can assume componentHandler is available
@@ -3810,8 +3860,8 @@ MaterialRipple.prototype.downHandler_ = function (event) {
             x = Math.round(bound.width / 2);
             y = Math.round(bound.height / 2);
         } else {
-            var clientX = event.clientX ? event.clientX : event.touches[0].clientX;
-            var clientY = event.clientY ? event.clientY : event.touches[0].clientY;
+            var clientX = event.clientX !== undefined ? event.clientX : event.touches[0].clientX;
+            var clientY = event.clientY !== undefined ? event.clientY : event.touches[0].clientY;
             x = Math.round(clientX - bound.left);
             y = Math.round(clientY - bound.top);
         }
