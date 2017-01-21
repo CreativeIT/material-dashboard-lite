@@ -1,0 +1,67 @@
+.mdl-checkbox__tick-outline {
+  -webkit-mask: url("#{$checkbox-image-path}/tick-mask.svg");
+}
+
+//CHECKBOXES
+.mdl-checkbox--colored-yellow {
+  @include colored-checkbox($color-yellow);
+}
+
+.mdl-checkbox--colored-blue {
+  @include colored-checkbox($color-blue);
+}
+
+.mdl-checkbox--colored-red {
+  @include colored-checkbox($color-red);
+}
+
+.mdl-checkbox--colored-light-blue {
+  @include colored-checkbox($color-light-blue);
+}
+
+.mdl-checkbox--colored-purple {
+  @include colored-checkbox($color-purple);
+}
+
+//RADIO
+.mdl-radio--colored-yellow {
+  @include colored-radio($color-yellow);
+}
+
+.mdl-radio--colored-blue {
+  @include colored-radio($color-blue);
+}
+
+.mdl-radio--colored-red {
+  @include colored-radio($color-red);
+}
+
+.mdl-radio--colored-light-blue {
+  @include colored-radio($color-light-blue);
+}
+
+.mdl-radio--colored-purple {
+  @include colored-radio($color-purple);
+}
+
+
+//SWITCHES
+.mdl-switch--colored-red {
+  @include colored-switch($color-red);
+}
+
+.mdl-switch--colored-yellow {
+  @include colored-switch($color-yellow);
+}
+
+.mdl-switch--colored-blue {
+  @include colored-switch($color-blue);
+}
+
+.mdl-switch--colored-light-blue {
+  @include colored-switch($color-light-blue);
+}
+
+.mdl-switch--colored-purple {
+  @include colored-switch($color-purple);
+}

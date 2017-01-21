@@ -1,0 +1,22 @@
+.ui-toggles {
+  .ui-section {
+    padding-right: 16px;
+    &:first-of-type {
+      min-width: 140px;
+    }
+    h6 {
+      padding-left: 16px;
+      margin-top: 8px;
+    }
+  }
+  .mdl-list__item {
+    padding: 8px 16px;
+  }
+  .mdl-switch__label {
+    position: static;
+    margin-left: 24px;
+  }
+  .mdl-checkbox__label {
+    margin-left: 8px;
+  }
+}

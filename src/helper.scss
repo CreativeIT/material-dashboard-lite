@@ -46,6 +46,10 @@
   color: unquote("rgba(#{$color-mint}, 0.8)") !important;
 }
 
+.text-color--gray {
+  color: unquote("rgb(#{$palette-grey-500})");
+}
+
 .getmdl-select {
   .mdl-icon-toggle__label {
 	color: white;

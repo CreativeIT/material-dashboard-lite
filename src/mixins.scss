@@ -163,3 +163,46 @@
   font-weight: 400;
   color: white;
 }
+
+
+@mixin colored-radio ($color) {
+  .mdl-ripple {
+    background-color: rgba($color,.8)
+  }
+  &.is-checked {
+    .mdl-radio__outer-circle {
+      border-color: $color;
+    }
+    .mdl-radio__inner-circle {
+      background-color: $color;
+    }
+  }
+}
+
+@mixin colored-switch ($color) {
+  .mdl-ripple {
+    background-color: rgba($color,.8)
+  }
+  &.is-checked {
+    .mdl-switch__track {
+      background-color: rgba($color,.5);
+    }
+    .mdl-switch__thumb {
+      background-color: $color;
+    }
+  }
+}
+
+@mixin colored-checkbox ($color) {
+  .mdl-ripple {
+    background-color: rgba($color,.8)
+  }
+  &.is-checked {
+    .mdl-checkbox__tick-outline {
+      background-color: $color;
+    }
+    .mdl-checkbox__box-outline {
+      border-color: $color;
+    }
+  }
+}

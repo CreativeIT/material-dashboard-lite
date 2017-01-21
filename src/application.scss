@@ -10,7 +10,7 @@
 
 @import 'menu/menu';
 
-@import 'checkbox/checkbox';
+@import 'toggles/toggles';
 
 @import 'button/button';
 
@@ -61,5 +61,11 @@
 @import 'widgets/input-group/input-group';
 
 @import "widgets/map/map";
+
+@import "widgets/ui-buttons/ui-buttons";
+
+@import "widgets/ui-progress-bars/ui-progress-bars";
+
+@import "widgets/ui-toggles/ui-toggles";
 
 @import 'helper';

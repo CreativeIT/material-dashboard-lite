@@ -1,3 +1,4 @@
+@import "../bower_components/material-design-lite/src/color-definitions";
 /* ==========  IMAGES  ========== */
 $image_path: '../images';
 
@@ -12,6 +13,12 @@ $color-black: 0, 0, 0;
 
 $background-color: #4e4e4e;
 $background-color-header: #242424;
+
+$color-red: #ff5252;
+$color-blue: #51a8f9;
+$color-yellow: #ffc107;
+$color-light-blue: #00bcd4;
+$color-purple: #7726d3;
 
 /* ==========  Typography  ========== */
 
@@ -142,8 +149,10 @@ $tooltip-background-color: #353535;
 /* TEXTFIELD */
 
 /* SWITCH */
+$switch-off-thumb-color: unquote("rgb(#{$palette-grey-500})");
 
 /* SPINNER */
+
 
 // Amount of circle the arc takes up.
 // Time it takes to expand and contract arc.
@@ -179,6 +188,7 @@ $layout-screen-size-threshold: 1440px;
 
 /* CHECKBOX */
 $checkbox-button-size: 18px;
+$checkbox-label-height: 24px;
 $checkbox-padding: 0;
 
 /* CARD */

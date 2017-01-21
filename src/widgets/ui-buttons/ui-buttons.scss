@@ -1,0 +1,35 @@
+.ui-buttons {
+  h6 {
+    margin-top: 8px;
+    margin-bottom: 0;
+  }
+  li {
+    min-height: 56px;
+  }
+  .mdl-button--icon .material-icons {
+    font-size: 20px;
+  }
+  .ui-section {
+    padding-right: 16px;
+    h6 {
+      padding-left: 8px;
+    }
+    .mdl-list__item {
+      padding: 8px 16px 8px 8px;
+    }
+    &:nth-of-type(2) {
+      .mdl-button {
+        min-width: 130px;
+        i {
+          margin-right: 4px;
+          font-size: 22px;
+        }
+      }
+    }
+    &:nth-of-type(3) {
+      .mdl-button {
+        min-width: 130px;
+      }
+    }
+  }
+}
