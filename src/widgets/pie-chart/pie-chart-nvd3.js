@@ -108,7 +108,7 @@
       }
     }
 
-    d3.select('.nv-pie .nv-pie')
+    d3.select('.pie-chart__container .nv-pie .nv-pie')
         .append('image')
         .attr('width', '30')
         .attr('height', '30')

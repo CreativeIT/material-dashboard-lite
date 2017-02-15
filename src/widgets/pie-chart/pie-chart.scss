@@ -1,4 +1,4 @@
-.pie-chart__container {
+.chart1__container, .chart2__container, .pie-chart__container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -20,6 +20,18 @@
   }
   .legend {
     max-width: 140px;
+  }
+}
+
+.chart1__container .nv-label {
+  text {
+    fill: white !important;
+  }
+}
+
+.discrete-bar-chart__container {
+  & > div {
+    height: 400px;
   }
 }
 

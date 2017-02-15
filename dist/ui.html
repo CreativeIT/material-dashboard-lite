@@ -263,24 +263,30 @@
     </header>
 
     <div class="mdl-layout__drawer">
-        <header>darkboard</header>
+        <header class="mdl-layout__drawer-header--full">darkboard</header>
+        <header class="mdl-layout__drawer-header--mini">db</header>
         <nav class="mdl-navigation">
-            <a class="mdl-navigation__link" href="index.html">
+            <a class="mdl-navigation__link" href="index.html" title="Dashboard">
                 <i class="material-icons" role="presentation">dashboard</i>
                 Dashboard
             </a>
-            <a class="mdl-navigation__link" href="forms.html">
+            <a class="mdl-navigation__link" href="forms.html" title="Account">
                 <i class="material-icons" role="presentation">person</i>
                 Account
             </a>
-            <a class="mdl-navigation__link" href="maps.html">
+            <a class="mdl-navigation__link" href="maps.html" title="Map">
                 <i class="material-icons" role="presentation">map</i>
                 Maps
             </a>
-            <a class="mdl-navigation__link mdl-navigation__link--current" href="ui.html">
+            <a class="mdl-navigation__link mdl-navigation__link--current" href="ui.html" title="UI Elements">
                 <i class="material-icons">view_comfy</i>
                 UI Elements
             </a>
+            <a class="mdl-navigation__link" href="charts.html" title="Charts">
+                <i class="material-icons">multiline_chart</i>
+                Charts
+            </a>
+
 
             <div class="mdl-layout-spacer"></div>
             <a class="mdl-navigation__link" href="https://github.com/CreativeIT/getmdl-dashboard">
@@ -644,7 +650,7 @@
             </div>
 
             <!-- UI Progress bar-->
-            <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+            <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
                 <div class="mdl-card mdl-shadow--2dp ui-progress-bars">
                     <div class="mdl-card__title">
                         <h2 class="mdl-card__title-text">Progress bar</h2>
@@ -688,23 +694,64 @@
                             </li>
                         </ul>
                         <ul class="mdl-list pull-left">
-                                <li class="mdl-list__item">
-                                    <span class="text-color--gray">Indeterminate</span>
-                                </li>
-                                <li class="mdl-list__item">
-                                    <div id="p5" class="mdl-progress mdl-js-progress mdl-progress__indeterminate mdl-progress--red"></div>
-                                </li>
-                                <li class="mdl-list__item">
-                                    <div id="p6" class="mdl-progress mdl-js-progress mdl-progress__indeterminate mdl-progress--yellow"></div>
-                                </li>
-                                <li class="mdl-list__item">
-                                    <div id="p7" class="mdl-progress mdl-js-progress mdl-progress__indeterminate mdl-progress--light-blue"></div>
-                                </li>
-                                <li class="mdl-list__item">
-                                    <div id="p8" class="mdl-progress mdl-js-progress mdl-progress__indeterminate mdl-progress--purple"></div>
-                                </li>
+                            <li class="mdl-list__item">
+                                <span class="text-color--gray">Indeterminate</span>
+                            </li>
+                            <li class="mdl-list__item">
+                                <div id="p5" class="mdl-progress mdl-js-progress mdl-progress__indeterminate mdl-progress--red"></div>
+                            </li>
+                            <li class="mdl-list__item">
+                                <div id="p6" class="mdl-progress mdl-js-progress mdl-progress__indeterminate mdl-progress--yellow"></div>
+                            </li>
+                            <li class="mdl-list__item">
+                                <div id="p7" class="mdl-progress mdl-js-progress mdl-progress__indeterminate mdl-progress--light-blue"></div>
+                            </li>
+                            <!--<li class="mdl-list__item">-->
+                                <!--<div id="p8" class="mdl-progress mdl-js-progress mdl-progress__indeterminate mdl-progress&#45;&#45;purple"></div>-->
+                            <!--</li>-->
+                        </ul>
 
-                            </ul>
+                        <ul class="mdl-list pull-left">
+                            <li class="mdl-list__item">
+                                <span class="text-color--gray">Buffering</span>
+                            </li>
+                            <li class="mdl-list__item">
+                                <div id="p9" class="mdl-progress mdl-js-progress mdl-progress--red"></div>
+                                <script>
+                                    document.querySelector('#p9').addEventListener('mdl-componentupgraded', function() {
+                                        this.MaterialProgress.setProgress(33);
+                                        this.MaterialProgress.setBuffer(87);
+                                    });
+                                </script>
+                            </li>
+                            <li class="mdl-list__item">
+                                <div id="p10" class="mdl-progress mdl-js-progress mdl-progress--yellow"></div>
+                                <script>
+                                    document.querySelector('#p10').addEventListener('mdl-componentupgraded', function() {
+                                        this.MaterialProgress.setProgress(60);
+                                        this.MaterialProgress.setBuffer(60);
+                                    });
+                                </script>
+                            </li>
+                            <li class="mdl-list__item">
+                                <div id="pp1" class="mdl-progress mdl-js-progress mdl-progress--light-blue"></div>
+                                <script>
+                                    document.querySelector('#pp1').addEventListener('mdl-componentupgraded', function() {
+                                        this.MaterialProgress.setProgress(50);
+                                        this.MaterialProgress.setBuffer(60);
+                                    });
+                                </script>
+                            </li>
+                            <li class="mdl-list__item">
+                                <div id="pp2" class="mdl-progress mdl-js-progress mdl-progress--purple"></div>
+                                <script>
+                                    document.querySelector('#pp2').addEventListener('mdl-componentupgraded', function() {
+                                        this.MaterialProgress.setProgress(13);
+                                        this.MaterialProgress.setBuffer(77);
+                                    });
+                                </script>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
