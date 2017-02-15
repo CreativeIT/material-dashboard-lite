@@ -1,7 +1,10 @@
+//.mdl-progress__indeterminate > .auxbar {
+//  background: transparent;
+//}
 .mdl-progress {
   min-width: 100px;
   width: auto;
-  > .bufferbar {
+  & > .bufferbar {
     background: {
       image: none;
       color: $progress-secondary-color;
@@ -10,55 +13,38 @@
   &:focus {
     outline: none;
   }
-  &--red {
-    &, &.mdl-progress__indeterminate {
-      & > .bar1 {
-        background-color: $color-red;
-      }
-      & > .bar3 {
-        background: transparent !important;
+  @mixin progress-colored ($color) {
+    & > .progressbar.bar1 {
+      background-color: $color;
+    }
+    &.mdl-progress.mdl-progress__indeterminate > .auxbar {
+      background: {
+        image: none;
+        color: transparent;
       }
     }
+    @supports (-webkit-appearance:none) {
+      &.mdl-progress:not(.mdl-progress__indeterminate) > .auxbar {
+        background-image: linear-gradient(to right, $color, $color),
+        linear-gradient(to right, $color, $color);
+        mask: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+Cjxzdmcgd2lkdGg9IjEyIiBoZWlnaHQ9IjQiIHZpZXdQb3J0PSIwIDAgMTIgNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxlbGxpcHNlIGN4PSIyIiBjeT0iMiIgcng9IjIiIHJ5PSIyIj4KICAgIDxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9ImN4IiBmcm9tPSIyIiB0bz0iLTEwIiBkdXI9IjAuNnMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiAvPgogIDwvZWxsaXBzZT4KICA8ZWxsaXBzZSBjeD0iMTQiIGN5PSIyIiByeD0iMiIgcnk9IjIiIGNsYXNzPSJsb2FkZXIiPgogICAgPGFuaW1hdGUgYXR0cmlidXRlTmFtZT0iY3giIGZyb209IjE0IiB0bz0iMiIgZHVyPSIwLjZzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgLz4KICA8L2VsbGlwc2U+Cjwvc3ZnPgo=");
+        -webkit-mask: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+Cjxzdmcgd2lkdGg9IjEyIiBoZWlnaHQ9IjQiIHZpZXdQb3J0PSIwIDAgMTIgNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxlbGxpcHNlIGN4PSIyIiBjeT0iMiIgcng9IjIiIHJ5PSIyIj4KICAgIDxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9ImN4IiBmcm9tPSIyIiB0bz0iLTEwIiBkdXI9IjAuNnMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiAvPgogIDwvZWxsaXBzZT4KICA8ZWxsaXBzZSBjeD0iMTQiIGN5PSIyIiByeD0iMiIgcnk9IjIiIGNsYXNzPSJsb2FkZXIiPgogICAgPGFuaW1hdGUgYXR0cmlidXRlTmFtZT0iY3giIGZyb209IjE0IiB0bz0iMiIgZHVyPSIwLjZzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgLz4KICA8L2VsbGlwc2U+Cjwvc3ZnPgo=");
+      }
+    }
+  }
+  &--red {
+    @include progress-colored($color-red);
   }
   &--blue {
-    &, &.mdl-progress__indeterminate {
-      & > .bar1 {
-        background-color: $color-blue;
-      }
-      & > .bar3 {
-        background: transparent !important;
-      }
-    }
+    @include progress-colored($color-blue);
   }
   &--yellow {
-    &, &.mdl-progress__indeterminate {
-      & > .bar1 {
-        background-color: $color-yellow;
-      }
-      & > .bar3 {
-        background: transparent !important;
-      }
-    }
-
+    @include progress-colored($color-yellow);
   }
   &--light-blue {
-    &, &.mdl-progress__indeterminate {
-      & > .bar1 {
-        background-color: $color-light-blue;
-      }
-      & > .bar3 {
-        background: transparent !important;
-      }
-    }
+    @include progress-colored($color-light-blue);
   }
   &--purple {
-    &, &.mdl-progress__indeterminate {
-      & > .bar1 {
-        background-color: $color-purple;
-      }
-      & > .bar3 {
-        background: transparent !important;
-      }
-    }
+    @include progress-colored($color-purple);
   }
 }

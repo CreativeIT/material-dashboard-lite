@@ -11,14 +11,17 @@ $color-mint: 96, 196, 150;
 $color-white: 255, 255, 255;
 $color-black: 0, 0, 0;
 
-$background-color: #4e4e4e;
-$background-color-header: #242424;
 
+$color-gray: #242424;
+$color-gray-light: #4e4e4e;
 $color-red: #ff5252;
 $color-blue: #51a8f9;
 $color-yellow: #ffc107;
 $color-light-blue: #00bcd4;
 $color-purple: #7726d3;
+
+$background-color: $color-gray-light;
+$background-color-header: $color-gray;
 
 /* ==========  Typography  ========== */
 
@@ -54,6 +57,7 @@ $button-fab-active-color-alt: #f23d3d;
 
 // Drawer
 $layout-drawer-width: 236px;
+$layout-drawer-mini-width: 70px;
 $layout-drawer-bg-color: #202020;
 $layout-nav-color: #202020;
 $layout-drawer-navigation-link-active-background: unquote("rgba(#{$color-black}, 0.25)");
@@ -176,8 +180,7 @@ $list-two-line-height: 64px;
 $layout-drawer-narrow: 236px;
 $layout-header-mobile-indent: 8px;
 $layout-header-desktop-indent: 20px;
-$layout-screen-size-threshold: 1440px;
-
+//$layout-screen-size-threshold: 1440px;
 /* ICON */
 
 /* ICON TOGGLE */

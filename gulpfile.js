@@ -28,7 +28,7 @@ gulp.task('check-js-style', function () {
         .pipe(gulp.dest('src'));
 });
 
-gulp.task('serve', ['watch'], function () {
+gulp.task('serve', ['default', 'watch'], function () {
     var files = [
         './dist/*.html',
         './dist/css/**/*.css',
