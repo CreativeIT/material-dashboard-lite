@@ -31,8 +31,8 @@ main {
     padding-top: 48px;
     padding-bottom: 8px;
     .mdl-layout-spacer {
-        border-bottom: 1px solid unquote("rgba(#{$color-white}, 0.1)");
-        margin-bottom: 8px;
+      border-bottom: 1px solid unquote("rgba(#{$color-white}, 0.1)");
+      margin-bottom: 8px;
     }
     & .mdl-navigation__link {
       @include typo-layout-navigation-link;
@@ -53,6 +53,36 @@ main {
         color: $layout-drawer-navigation-link-active-color;
         .material-icons {
           color: $layout-drawer-navigation-link-active-color;
+        }
+      }
+    }
+
+    .sub-navigation {
+      & .mdl-navigation__link {
+        i:last-child {
+          margin: 0 16px 0 0;
+          float: right;
+        }
+      }
+      .mdl-navigation {
+        display: none;
+        padding: 5px 0px 20px;
+        & .mdl-navigation__link {
+          padding-left: 72px;
+          &--current {
+            border-left: none;
+          }
+        }
+      }
+
+      &--show {
+        .mdl-navigation {
+          display: block;
+        }
+        & .mdl-navigation__link {
+          i:last-child {
+            transform: rotate(180deg);
+          }
         }
       }
     }

@@ -32,4 +32,14 @@
       }
     }
   }
+
+  &.buttons-with-icons, &.buttons-social, &.buttons-basic {
+    min-width: 360px;
+  }
+  &.buttons-icons {
+    min-width: 260px;
+    > .mdl-card {
+      height: 100%;
+    }
+  }
 }
