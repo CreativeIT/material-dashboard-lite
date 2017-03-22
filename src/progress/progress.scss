@@ -36,13 +36,13 @@
     @include progress-colored($color-red);
   }
   &--blue {
-    @include progress-colored($color-blue);
+    @include progress-colored($color-light-blue);
   }
   &--yellow {
-    @include progress-colored($color-yellow);
+    @include progress-colored($color-orange);
   }
   &--light-blue {
-    @include progress-colored($color-light-blue);
+    @include progress-colored($color-teal);
   }
   &--purple {
     @include progress-colored($color-purple);

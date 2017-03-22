@@ -4,11 +4,11 @@
 
 //CHECKBOXES
 .mdl-checkbox--colored-yellow {
-  @include colored-checkbox($color-yellow);
+  @include colored-checkbox($color-orange);
 }
 
 .mdl-checkbox--colored-blue {
-  @include colored-checkbox($color-blue);
+  @include colored-checkbox($color-light-blue);
 }
 
 .mdl-checkbox--colored-red {
@@ -16,7 +16,7 @@
 }
 
 .mdl-checkbox--colored-light-blue {
-  @include colored-checkbox($color-light-blue);
+  @include colored-checkbox($color-teal);
 }
 
 .mdl-checkbox--colored-purple {
@@ -25,11 +25,11 @@
 
 //RADIO
 .mdl-radio--colored-yellow {
-  @include colored-radio($color-yellow);
+  @include colored-radio($color-orange);
 }
 
 .mdl-radio--colored-blue {
-  @include colored-radio($color-blue);
+  @include colored-radio($color-light-blue);
 }
 
 .mdl-radio--colored-red {
@@ -37,7 +37,7 @@
 }
 
 .mdl-radio--colored-light-blue {
-  @include colored-radio($color-light-blue);
+  @include colored-radio($color-teal);
 }
 
 .mdl-radio--colored-purple {
@@ -51,15 +51,15 @@
 }
 
 .mdl-switch--colored-yellow {
-  @include colored-switch($color-yellow);
+  @include colored-switch($color-orange);
 }
 
 .mdl-switch--colored-blue {
-  @include colored-switch($color-blue);
+  @include colored-switch($color-light-blue);
 }
 
 .mdl-switch--colored-light-blue {
-  @include colored-switch($color-light-blue);
+  @include colored-switch($color-teal);
 }
 
 .mdl-switch--colored-purple {
