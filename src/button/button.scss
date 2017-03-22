@@ -27,31 +27,31 @@
     &-blue {
       &.mdl-button--raised:not([disabled]) {
         &, &:hover {
-          background-color: $color-blue;
-        }
-      }
-      &.mdl-button--icon:not([disabled]) {
-        color: $color-blue;
-      }
-    }
-    &-yellow {
-      &.mdl-button--raised:not([disabled]) {
-        &, &:hover {
-          background-color: $color-yellow;
-        }
-      }
-      &.mdl-button--icon:not([disabled]) {
-        color: $color-yellow;
-      }
-    }
-    &-light-blue {
-      &.mdl-button--raised:not([disabled]) {
-        &, &:hover {
           background-color: $color-light-blue;
         }
       }
       &.mdl-button--icon:not([disabled]) {
         color: $color-light-blue;
+      }
+    }
+    &-yellow {
+      &.mdl-button--raised:not([disabled]) {
+        &, &:hover {
+          background-color: $color-orange;
+        }
+      }
+      &.mdl-button--icon:not([disabled]) {
+        color: $color-orange;
+      }
+    }
+    &-light-blue {
+      &.mdl-button--raised:not([disabled]) {
+        &, &:hover {
+          background-color: $color-teal;
+        }
+      }
+      &.mdl-button--icon:not([disabled]) {
+        color: $color-teal;
       }
     }
     &-purple {

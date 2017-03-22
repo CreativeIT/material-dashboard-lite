@@ -14,9 +14,6 @@ main {
 
 .mdl-layout__drawer {
   border: none;
-  .mdl-layout__drawer-header--mini {
-    display: none;
-  }
   header {
     text-align: center;
     text-transform: uppercase;
@@ -166,25 +163,6 @@ main {
     .avatar-dropdown {
       line-height: $layout-header-mobile-row-height;
     }
-  }
-}
-
-@media screen and (min-width: $layout-screen-size-threshold) and (max-width: 1440px) {
-  .mdl-navigation {
-    width: $layout-drawer-width;
-  }
-  .mdl-layout__drawer {
-    width: $layout-drawer-mini-width;
-    overflow: hidden;
-    .mdl-layout__drawer-header--full {
-      display: none;
-    }
-    .mdl-layout__drawer-header--mini {
-      display: block;
-    }
-  }
-  .mdl-layout--fixed-drawer > .mdl-layout__content {
-    margin-left: $layout-drawer-mini-width;
   }
 }
 
