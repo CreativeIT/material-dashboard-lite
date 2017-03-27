@@ -1,0 +1,56 @@
+$color-dark-gray: #333434;
+$color-gray: #4e4e4e;
+$color-red: #ff5252;
+$color-light-blue: #51a8f9;
+$color-orange: #ffc107;
+$color-teal: #00bcd4;
+$color-purple: #7726d3;
+$color-green: #00d45a;
+
+.color--red {
+  background-color: $color-red !important;
+}
+
+.color-text--red {
+  color: $color-red !important;
+}
+
+.color--orange {
+  background-color: $color-orange !important;
+}
+
+.color-text--orange {
+  color: $color-orange !important;
+}
+
+.color--green {
+  background-color: $color-green !important;
+}
+
+.color-text--green {
+  color: $color-green !important;
+}
+
+.color--light-blue {
+  background-color: $color-light-blue !important;
+}
+
+.color-text--light-blue {
+  color: $color-light-blue !important;
+}
+
+.color--purple {
+  background-color: $color-purple !important;
+}
+
+.color-text--purple {
+  color: $color-purple !important;
+}
+
+.color--teal {
+  background-color: $color-teal !important;
+}
+
+.color-text--teal {
+  color: $color-teal !important;
+}

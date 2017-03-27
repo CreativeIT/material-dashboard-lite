@@ -50,6 +50,14 @@
   color: unquote("rgb(#{$palette-grey-500})");
 }
 
+//new colors
+.color-red {
+  color: $color-red;
+}
+.mdl-color--orange-50 {
+  color: $color-orange;
+}
+
 .getmdl-select {
   .mdl-icon-toggle__label {
 	color: white;
