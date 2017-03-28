@@ -86,7 +86,9 @@
         insertInput() {
           let newLi = document.createElement('li');
           newLi.classList.add('mdl-list__item');
-          newLi.innerHTML = this._prepareTemplate({});
+          newLi.innerHTML = this._prepareTemplate({
+              id: "input"
+          });
           this.$todoList.appendChild(newLi);
           View.upgradeNewMdlComponents();
           let inputSpan = document.querySelector('.todo .mdl-list li:last-child .mdl-checkbox__label');
@@ -143,20 +145,20 @@
           this.view = view;
 
           this.view.$todoList.addEventListener('mouseup', event => {
-            let clickTarget = event.path[1];
+            let clickTarget = event.path ? event.path[1] : event.target;
             if (clickTarget.hasAttribute('deleteItem')) {
               let id = clickTarget.getAttribute('for');
               this.model.deleteItem(id);
-              this.removeItem(event);
-            } else
-                    if (clickTarget.hasAttribute('checkboxItem')) {
-                      this.check(clickTarget);
-                    } else {
-                      clickTarget = event.target;
-                      if (clickTarget.hasAttribute('checkboxItem')) {
-                        this.check(clickTarget);
-                      }
-                    }
+              this.removeItem(id);
+            } else {
+                clickTarget = event.target;
+                if (clickTarget.hasAttribute('checkboxitem')) {
+                    this.check(clickTarget);
+                } else {
+                    clickTarget = clickTarget.parentNode;
+                    this.check(clickTarget);
+                }
+            }
           });
 
           this.$addItemButton.addEventListener('click', () => {
@@ -167,11 +169,12 @@
             let inputTextArea = document.querySelector('.todo .mdl-list__item:last-child .mdl-textfield__input');
             inputTextArea.addEventListener('keydown', event => {
               if (event.keyCode === 27) {
-                this.removeItem(event);
+                this.removeItem('input');
+
               } else {
                 if (event.keyCode === 13) {
                   this.addItem(inputTextArea.value);
-                  this.removeItem(event);
+                  this.removeItem('input');
                 }
               }
             });
@@ -193,13 +196,8 @@
           this.view.show(this.model.createItem(title));
         };
 
-        removeItem(clickTarget) {
-          for (let i = 0; i < clickTarget.path.length; i++) {
-            if (clickTarget.path[i].className == 'mdl-list__item') {
-              clickTarget.path[i].remove();
-              break;
-            }
-          }
+        removeItem(id) {
+          document.querySelector(`[for="${id}"]`).parentNode.parentNode.remove();
           this.$addItemButton.removeAttribute('disabled');
           this.$removeCompletedButton.removeAttribute('disabled');
         };
@@ -211,7 +209,10 @@
 
         check(checkbox) {
           let id = checkbox.getAttribute('for');
-          this.model.checkItem(id);
+          if (!isNaN(id)) {
+              this.model.checkItem(id);
+          }
+
         };
     }
 
