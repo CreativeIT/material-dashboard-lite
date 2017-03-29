@@ -2,7 +2,6 @@
 /* ==========  IMAGES  ========== */
 $image_path: '../images';
 
-$trim-color-classes: true;
 /* ==========  Color & Themes  ========== */
 $color-primary: 0, 188, 212;
 $color-secondary: 255, 82, 82;
@@ -109,6 +108,9 @@ $card-deg-color: unquote("rgba(#{$color-white}, 0.9)");
 
 /* ==========  Sliders ========== */
 
+$range-bg-color: unquote("rgba(#{$color-white}, 0.45)");
+$range-color: unquote("rgb(#{$color-secondary})");
+
 /* ========== Progress ========== */
 $progress-main-color: unquote("rgb(#{$color-secondary})");
 $progress-secondary-color: unquote("rgba(#{$color-white}, 0.4)");
@@ -187,7 +189,7 @@ $layout-screen-size-threshold: 1440px;
 /* CHECKBOX */
 $checkbox-button-size: 18px;
 $checkbox-label-height: 24px;
-$checkbox-padding: 0;
+$checkbox-padding: 8px;
 
 /* CARD */
 /* Card dimensions */

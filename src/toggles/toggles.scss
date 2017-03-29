@@ -2,66 +2,103 @@
   -webkit-mask: url("#{$checkbox-image-path}/tick-mask.svg");
 }
 
+.mdl-switch__label {
+  left: 0;
+  margin-left: 16px;
+}
+
 //CHECKBOXES
-.mdl-checkbox--colored-yellow {
+.checkbox--colored-orange {
   @include colored-checkbox($color-orange);
 }
 
-.mdl-checkbox--colored-blue {
+.checkbox--colored-light-blue {
   @include colored-checkbox($color-light-blue);
 }
 
-.mdl-checkbox--colored-red {
+.checkbox--colored-red {
   @include colored-checkbox($color-red);
 }
 
-.mdl-checkbox--colored-light-blue {
+.checkbox--colored-teal {
   @include colored-checkbox($color-teal);
 }
 
-.mdl-checkbox--colored-purple {
+.checkbox--colored-purple {
   @include colored-checkbox($color-purple);
 }
 
+.checkbox--colored-green {
+  @include colored-checkbox($color-green);
+}
+
 //RADIO
-.mdl-radio--colored-yellow {
+.radio--colored-orange {
   @include colored-radio($color-orange);
 }
 
-.mdl-radio--colored-blue {
+.radio--colored-light-blue {
   @include colored-radio($color-light-blue);
 }
 
-.mdl-radio--colored-red {
+.radio--colored-red {
   @include colored-radio($color-red);
 }
 
-.mdl-radio--colored-light-blue {
+.radio--colored-teal {
   @include colored-radio($color-teal);
 }
 
-.mdl-radio--colored-purple {
+.radio--colored-purple {
   @include colored-radio($color-purple);
+}
+
+.radio--colored-green {
+  @include colored-radio($color-green);
 }
 
 
 //SWITCHES
-.mdl-switch--colored-red {
+.switch--colored-red {
   @include colored-switch($color-red);
 }
 
-.mdl-switch--colored-yellow {
+.switch--colored-orange {
   @include colored-switch($color-orange);
 }
 
-.mdl-switch--colored-blue {
+.switch--colored-light-blue {
   @include colored-switch($color-light-blue);
 }
 
-.mdl-switch--colored-light-blue {
+.switch--colored-teal {
   @include colored-switch($color-teal);
 }
 
-.mdl-switch--colored-purple {
+.switch--colored-purple {
   @include colored-switch($color-purple);
+}
+
+.switch--colored-green {
+  @include colored-switch($color-green);
+}
+
+//ICON TOOGLES
+.icon-toggle--colored-light-blue {
+  @include colored-icon-toggle($color-light-blue);
+}
+.icon-toggle--colored-teal {
+  @include colored-icon-toggle($color-teal);
+}
+.icon-toggle--colored-orange {
+  @include colored-icon-toggle($color-orange);
+}
+.icon-toggle--colored-purple {
+  @include colored-icon-toggle($color-purple);
+}
+.icon-toggle--colored-red {
+  @include colored-icon-toggle($color-red);
+}
+.icon-toggle--colored-green {
+  @include colored-icon-toggle($color-green);
 }
