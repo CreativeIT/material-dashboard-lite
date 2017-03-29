@@ -58,9 +58,11 @@ main {
     }
 
     .sub-navigation {
+      cursor: pointer;
       & .mdl-navigation__link {
         i:last-child {
           margin: 0 16px 0 0;
+          transition: transform 0.3s;
           float: right;
         }
       }

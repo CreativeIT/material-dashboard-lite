@@ -6,6 +6,10 @@
   float: left;
 }
 
+.clearfix {
+  clear: both;
+}
+
 .background-color--primary {
    background-color: unquote("rgba(#{$color-primary}, 0.9)");
  }

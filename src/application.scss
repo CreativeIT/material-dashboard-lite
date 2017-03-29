@@ -8,6 +8,12 @@
 
 @import 'card/card';
 
+@import "chip/chip";
+
+@import "badge/badge";
+
+@import "slider/slider";
+
 @import 'menu/menu';
 
 @import 'toggles/toggles';
@@ -64,12 +70,12 @@
 
 @import "widgets/ui-buttons/ui-buttons";
 
-@import "widgets/ui-progress-bars/ui-progress-bars";
-
-@import "widgets/ui-toggles/ui-toggles";
-
 @import "widgets/ui-colors/ui-colors";
 
 @import "widgets/ui-cards/ui-cards";
+
+@import "widgets/ui-typography/ui-typography";
+
+@import "widgets/ui-components/ui-components";
 
 @import 'helper';

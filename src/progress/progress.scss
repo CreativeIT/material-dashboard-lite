@@ -1,6 +1,3 @@
-//.mdl-progress__indeterminate > .auxbar {
-//  background: transparent;
-//}
 .mdl-progress {
   min-width: 100px;
   width: auto;
@@ -13,38 +10,24 @@
   &:focus {
     outline: none;
   }
-  @mixin progress-colored ($color) {
-    & > .progressbar.bar1 {
-      background-color: $color;
-    }
-    &.mdl-progress.mdl-progress__indeterminate > .auxbar {
-      background: {
-        image: none;
-        color: transparent;
-      }
-    }
-    @supports (-webkit-appearance:none) {
-      &.mdl-progress:not(.mdl-progress__indeterminate) > .auxbar {
-        background-image: linear-gradient(to right, $color, $color),
-        linear-gradient(to right, $color, $color);
-        mask: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+Cjxzdmcgd2lkdGg9IjEyIiBoZWlnaHQ9IjQiIHZpZXdQb3J0PSIwIDAgMTIgNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxlbGxpcHNlIGN4PSIyIiBjeT0iMiIgcng9IjIiIHJ5PSIyIj4KICAgIDxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9ImN4IiBmcm9tPSIyIiB0bz0iLTEwIiBkdXI9IjAuNnMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiAvPgogIDwvZWxsaXBzZT4KICA8ZWxsaXBzZSBjeD0iMTQiIGN5PSIyIiByeD0iMiIgcnk9IjIiIGNsYXNzPSJsb2FkZXIiPgogICAgPGFuaW1hdGUgYXR0cmlidXRlTmFtZT0iY3giIGZyb209IjE0IiB0bz0iMiIgZHVyPSIwLjZzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgLz4KICA8L2VsbGlwc2U+Cjwvc3ZnPgo=");
-        -webkit-mask: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+Cjxzdmcgd2lkdGg9IjEyIiBoZWlnaHQ9IjQiIHZpZXdQb3J0PSIwIDAgMTIgNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxlbGxpcHNlIGN4PSIyIiBjeT0iMiIgcng9IjIiIHJ5PSIyIj4KICAgIDxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9ImN4IiBmcm9tPSIyIiB0bz0iLTEwIiBkdXI9IjAuNnMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiAvPgogIDwvZWxsaXBzZT4KICA8ZWxsaXBzZSBjeD0iMTQiIGN5PSIyIiByeD0iMiIgcnk9IjIiIGNsYXNzPSJsb2FkZXIiPgogICAgPGFuaW1hdGUgYXR0cmlidXRlTmFtZT0iY3giIGZyb209IjE0IiB0bz0iMiIgZHVyPSIwLjZzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgLz4KICA8L2VsbGlwc2U+Cjwvc3ZnPgo=");
-      }
-    }
+}
+.progress--colored {
+  &-red {
+    @include colored-progress($color-red);
   }
-  &--red {
-    @include progress-colored($color-red);
+  &-light-blue {
+    @include colored-progress($color-light-blue);
   }
-  &--blue {
-    @include progress-colored($color-light-blue);
+  &-orange {
+    @include colored-progress($color-orange);
   }
-  &--yellow {
-    @include progress-colored($color-orange);
+  &-light-teal {
+    @include colored-progress($color-teal);
   }
-  &--light-blue {
-    @include progress-colored($color-teal);
+  &-purple {
+    @include colored-progress($color-purple);
   }
-  &--purple {
-    @include progress-colored($color-purple);
+  &-green {
+    @include colored-progress($color-green);
   }
 }
