@@ -1,0 +1,18 @@
+.ui-icons {
+  .itemcontainer {
+    display: inline-block;
+    width: 150px;
+    height: 100px;
+    text-align: center;
+    .caption {
+      margin-top: 10px;
+    }
+  }
+  hr {
+    border-top: 1px solid gray;
+    margin: 1em -20px;
+  }
+  .section-name {
+    margin: 15px 5px;
+  }
+}
