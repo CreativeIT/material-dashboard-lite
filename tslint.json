@@ -38,14 +38,19 @@
       true,
       100
     ],
+    "no-trailing-whitespace": true,
+    "one-line": [
+      true,
+      "check-open-brace",
+      "check-whitespace"
+    ],
     "no-string-literal": false,
     "no-use-before-declare": true,
     "object-literal-sort-keys": false,
     "ordered-imports": false,
     "quotemark": [
       true,
-      "single",
-      "avoid-escape"
+      "single"
     ],
     "variable-name": [
       true,

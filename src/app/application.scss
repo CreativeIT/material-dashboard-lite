@@ -1,38 +1,38 @@
-@import 'variables';
+@import 'theme/sass/variables';
 
 @import '../../bower_components/material-design-lite/src/material-design-lite';
 
-@import 'mixins';
+@import 'theme/sass/mixins';
 
-@import 'layout/layout';
+@import 'theme/sass/layout/layout';
 
-@import 'components/card/card';
+@import 'theme/sass/card/card';
 
-@import "components/chip/chip";
+@import "theme/sass/chip/chip";
 
-@import "components/badge/badge";
+@import "theme/sass/badge/badge";
 
-@import "components/slider/slider";
+@import "theme/sass/slider/slider";
 
-@import 'components/menu/menu';
+@import 'theme/sass/menu/menu';
 
-@import 'components/toggles/toggles';
+@import 'theme/sass/toggles/toggles';
 
-@import 'components/button/button';
+@import 'theme/sass/button/button';
 
 @import 'pages/widgets/link/link';
 
-@import 'components/textfield/textfield';
+@import 'theme/sass/textfield/textfield';
 
-@import 'components/progress/progress';
+@import 'theme/sass/progress/progress';
 
-@import 'components/data-table/data-table';
+@import 'theme/sass/data-table/data-table';
 
-@import 'components/label/label';
+@import 'theme/sass/label/label';
 
 @import 'pages/widgets/table/table';
 
-@import 'components/tooltip/tooltip';
+@import 'theme/sass/tooltip/tooltip';
 
 @import 'pages/widgets/notifications-dropdown/notifications-dropdown';
 
@@ -40,7 +40,7 @@
 
 @import 'pages/widgets/message-notifications/messages-dropdown';
 
-@import 'components/list/list';
+@import 'theme/sass/list/list';
 
 @import 'pages/widgets/todo/todo';
 
@@ -80,4 +80,4 @@
 
 @import "pages/widgets/ui-icons/ui-icons";
 
-@import 'helper';
+@import 'theme/sass/helper';

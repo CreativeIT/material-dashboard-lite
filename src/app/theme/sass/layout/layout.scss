@@ -3,7 +3,7 @@
 }
 
 main {
-  background: url("../images/Dark_background_1920x1080.png") center top no-repeat;
+  background: url($images-root + "dark_bg.png") center top no-repeat;
   background-size: cover;
 }
 

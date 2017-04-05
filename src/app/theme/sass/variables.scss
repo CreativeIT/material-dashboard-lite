@@ -1,6 +1,10 @@
-@import "../../bower_components/material-design-lite/src/color-definitions";
+@import "../../../../bower_components/material-design-lite/src/color-definitions";
+@import "palette";
+
 /* ==========  IMAGES  ========== */
 $image_path: '../images';
+$assets-root: 'assets/';
+$images-root: $assets-root + 'img/';
 
 /* ==========  Color & Themes  ========== */
 $color-primary: 0, 188, 212;
@@ -10,8 +14,6 @@ $color-cerulean: 80, 150, 215;
 $color-mint: 96, 196, 150;
 $color-white: 255, 255, 255;
 $color-black: 0, 0, 0;
-
-@import "app/palette";
 
 $background-color: $color-gray;
 $background-color-header: $color-dark-gray;
