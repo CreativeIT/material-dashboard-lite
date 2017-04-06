@@ -1,3 +1,5 @@
+@import "../dashboard";
+
 .robot {
   height: 450px;
   .mdl-card__supporting-text {
@@ -5,7 +7,7 @@
     padding-bottom: 26px;
   }
   .mdl-card__title {
-    background: url('../images/robot.png') center center no-repeat;
+    background: url($images-root + 'robot.png') center center no-repeat;
     background-size: cover;
     .mdl-card__title-text {
       color: $card-title-img-color;

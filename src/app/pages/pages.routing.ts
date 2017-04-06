@@ -1,7 +1,6 @@
 import { Routes, RouterModule }  from '@angular/router';
 import { PagesComponent } from './pages.component';
 import { ModuleWithProviders } from '@angular/core';
-import { DashboardComponent } from './index';
 // noinspection TypeScriptValidateTypes
 
 // export function loadChildren(path) { return System.import(path); };
@@ -12,7 +11,7 @@ export const routes: Routes = [
     component: PagesComponent,
     children: [
       {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
-      {path: 'dashboard', component: DashboardComponent}
+      {path: 'dashboard', loadChildren: 'app/pages/dashboard/dashboard.module#DashboardModule'}
     ]
   }
 ];

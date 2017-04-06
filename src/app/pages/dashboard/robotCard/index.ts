@@ -1,0 +1,1 @@
+export * from './robotCard.component';

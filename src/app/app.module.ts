@@ -27,7 +27,7 @@ import { AppState, InternalStateType } from './app.service';
 import './styles/styles.scss';
 import './styles/headings.css';
 import { PagesModule } from './pages/pages.module';
-import { routing } from './app.routes';
+import { routing } from './app.routing';
 import { NgaModule } from './theme/nga.module';
 
 // Application wide providers
