@@ -1,4 +1,6 @@
-.line-chart__container {
+.line-chart__container,
+.line-chart-1__container,
+.line-chart-2__container {
   min-height: $line-chart-height;
   svg {
     height: $line-chart-height;
@@ -6,6 +8,18 @@
     .y-axis-label, .x-axis-label {
       @include typo-linechart-axis-label;
       fill: $line-chart-axis-label-color;
+    }
+    .nv-axis {
+      &.nv-x {
+        text {
+          display: none;
+        }
+      }
+      &.nv-y {
+          text {
+            display: none;
+          }
+      }
     }
     .nv-lineChart {
       .nv-guideline {
