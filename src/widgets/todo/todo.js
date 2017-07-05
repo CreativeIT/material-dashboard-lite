@@ -105,7 +105,7 @@
                         </label>
                     </span>
                     <div class="mdl-list__item-secondary-content">
-                        <button for = "${data.id}" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored mdl-button--mini-icon pull-right" deleteItem>
+                        <button for = "${data.id}" class="mdl-button mdl-js-button mdl-button--icon button--colored mdl-button--mini-icon pull-right" deleteItem>
                             <i class="material-icons">clear</i>
                         </button>
                     </div>`;

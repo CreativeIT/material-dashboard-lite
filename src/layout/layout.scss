@@ -26,13 +26,14 @@ main {
     letter-spacing: 1px;
   }
 
+
   & .mdl-navigation {
     flex-grow: 1;
     padding-top: 48px;
     padding-bottom: 8px;
-    .mdl-layout-spacer {
-      border-bottom: 1px solid unquote("rgba(#{$color-white}, 0.1)");
-      margin-bottom: 8px;
+    hr {
+      border-top: 1px solid unquote("rgba(#{$color-white}, 0.1)");
+      margin: 8px 0;
     }
     & .mdl-navigation__link {
       @include typo-layout-navigation-link;

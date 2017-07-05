@@ -9,6 +9,10 @@
   .mdl-list__item {
     padding: 8px 16px ;
   }
+  .mdl-card__supporting-text {
+    display: flex;
+    justify-content: space-around;
+  }
   .buttons-with-icons,
   .buttons-social,
   .buttons-basic,
@@ -22,7 +26,7 @@
       min-width: 125px;
     }
     .mdl-list:nth-child(3) {
-      clear: both;
+      //clear: both;
     }
   }
 }

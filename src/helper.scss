@@ -54,14 +54,6 @@
   color: unquote("rgb(#{$palette-grey-500})");
 }
 
-//new colors
-.color-red {
-  color: $color-red;
-}
-.mdl-color--orange-50 {
-  color: $color-orange;
-}
-
 .getmdl-select {
   .mdl-icon-toggle__label {
 	color: white;
@@ -104,4 +96,8 @@
     &.is-disabled input{
 	border-bottom-width: 2px !important;
     }
+}
+
+.mdl-grid:not(.ui-typography) .mdl-card:not(.robot):not(.todo) {
+  height: 100%;
 }

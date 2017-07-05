@@ -262,51 +262,58 @@
     <div class="mdl-layout__drawer">
         <header>darkboard</header>
         <nav class="mdl-navigation">
-            <a class="mdl-navigation__link" href="index.html">
-                <i class="material-icons" role="presentation">dashboard</i>
-                Dashboard
-            </a>
-            <div class="sub-navigation sub-navigation--show">
-                <a class="mdl-navigation__link mdl-navigation__link--current">
-                    <i class="material-icons">view_comfy</i>
-                    UI
-                    <i class="material-icons">keyboard_arrow_down</i>
-                </a>
-                <div class="mdl-navigation">
-                    <a class="mdl-navigation__link mdl-navigation__link--current" href="ui-buttons.html">
-                        Buttons
-                    </a>
-                    <a class="mdl-navigation__link" href="ui-cards.html">
-                        Cards
-                    </a>
-                    <a class="mdl-navigation__link" href="ui-colors.html">
-                        Colors
-                    </a>
-                    <a class="mdl-navigation__link" href="ui-components.html">
-                        Components
-                    </a>
-                    <a class="mdl-navigation__link" href="ui-icons.html">
-                        Icons
-                    </a>
-                    <a class="mdl-navigation__link" href="ui-typography.html">
-                        Typography
-                    </a>
-                </div>
-            </div>
-            <a class="mdl-navigation__link" href="forms.html">
-                <i class="material-icons" role="presentation">person</i>
-                Account
-            </a>
-            <a class="mdl-navigation__link" href="maps.html">
-                <i class="material-icons" role="presentation">map</i>
-                Maps
-            </a>
-            <a class="mdl-navigation__link" href="charts.html">
-                <i class="material-icons">multiline_chart</i>
-                Charts
-            </a>
 
-            <div class="mdl-layout-spacer"></div>
+            <div class="scroll__wrapper" id="scroll__wrapper">
+                <div class="scroller" id="scroller">
+                    <div class="scroll__container" id="scroll__container">
+                        <a class="mdl-navigation__link" href="index.html">
+                            <i class="material-icons" role="presentation">dashboard</i>
+                            Dashboard
+                        </a>
+                        <div class="sub-navigation sub-navigation--show">
+                            <a class="mdl-navigation__link mdl-navigation__link--current">
+                                <i class="material-icons">view_comfy</i>
+                                UI
+                                <i class="material-icons">keyboard_arrow_down</i>
+                            </a>
+                            <div class="mdl-navigation">
+                                <a class="mdl-navigation__link mdl-navigation__link--current" href="ui-buttons.html">
+                                    Buttons
+                                </a>
+                                <a class="mdl-navigation__link" href="ui-cards.html">
+                                    Cards
+                                </a>
+                                <a class="mdl-navigation__link" href="ui-colors.html">
+                                    Colors
+                                </a>
+                                <a class="mdl-navigation__link" href="ui-components.html">
+                                    Components
+                                </a>
+                                <a class="mdl-navigation__link" href="ui-icons.html">
+                                    Icons
+                                </a>
+                                <a class="mdl-navigation__link" href="ui-typography.html">
+                                    Typography
+                                </a>
+                            </div>
+                        </div>
+                        <a class="mdl-navigation__link" href="forms.html">
+                            <i class="material-icons" role="presentation">person</i>
+                            Account
+                        </a>
+                        <a class="mdl-navigation__link" href="maps.html">
+                            <i class="material-icons" role="presentation">map</i>
+                            Maps
+                        </a>
+                        <a class="mdl-navigation__link" href="charts.html">
+                            <i class="material-icons">multiline_chart</i>
+                            Charts
+                        </a>
+                    </div>
+                </div>
+                <div class='scroller__bar' id="scroller__bar"></div>
+            </div>
+            <hr>
             <a class="mdl-navigation__link" href="https://github.com/CreativeIT/getmdl-dashboard">
                 <i class="material-icons" role="presentation">link</i>
                 GitHub
@@ -319,7 +326,7 @@
 
             <!-- UI Buttons-->
 
-            <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--3-col-tablet mdl-cell--2-col-phone buttons-basic">
+            <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--2-col-phone buttons-basic">
                 <div class="mdl-card mdl-shadow--2dp">
                     <div class="mdl-card__title">
                         <h2 class="mdl-card__title-text">Basic buttons</h2>
@@ -330,27 +337,32 @@
                                 <span class="text-color--gray">Normal</span>
                             </li>
                             <li class="mdl-list__item">
-                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored-light-blue">
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect button--colored-light-blue">
                                     Button
                                 </button>
                             </li>
                             <li class="mdl-list__item">
-                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored-blue">
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect button--colored-teal">
                                     Button
                                 </button>
                             </li>
                             <li class="mdl-list__item">
-                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored-yellow">
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect button--colored-orange">
                                     Button
                                 </button>
                             </li>
                             <li class="mdl-list__item">
-                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored-red">
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect button--colored-red">
                                     Button
                                 </button>
                             </li>
                             <li class="mdl-list__item">
-                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored-purple">
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect button--colored-green">
+                                    Button
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect button--colored-purple">
                                     Button
                                 </button>
                             </li>
@@ -360,59 +372,47 @@
                                     <span class="text-color--gray">Disabled</span>
                                 </li>
                                 <li class="mdl-list__item">
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored-light-blue"
+                                    <button class="mdl-button mdl-js-button mdl-button--raised button--colored-light-blue"
                                             disabled>
                                         Button
                                     </button>
                                 </li>
                                 <li class="mdl-list__item">
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored-blue"
+                                    <button class="mdl-button mdl-js-button mdl-button--raised button--colored-teal"
                                             disabled>
                                         Button
                                     </button>
                                 </li>
                                 <li class="mdl-list__item">
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored-yellow"
+                                    <button class="mdl-button mdl-js-button mdl-button--raised button--colored-orange"
                                             disabled>
                                         Button
                                     </button>
                                 </li>
                                 <li class="mdl-list__item">
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored-red"
+                                    <button class="mdl-button mdl-js-button mdl-button--raised button--colored-red"
                                             disabled>
                                         Button
                                     </button>
                                 </li>
                                 <li class="mdl-list__item">
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored-purple"
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect button--colored-green"
+                                            disabled>
+                                        Button
+                                    </button>
+                                </li>
+                                <li class="mdl-list__item">
+                                    <button class="mdl-button mdl-js-button mdl-button--raised button--colored-purple"
                                             disabled>
                                         Button
                                     </button>
                                 </li>
                             </ul>
-                        <ul class="mdl-list">
-                            <li class="mdl-list__item">
-                                <span class="text-color--gray">Without background</span>
-                            </li>
-
-                            <li class="mdl-list__item pull-left">
-                                <button class="mdl-button mdl-js-button">
-                                    Button
-                                </button>
-                            </li>
-
-                            <li class="mdl-list__item pull-left">
-                                <button class="mdl-button mdl-js-button"
-                                        disabled>
-                                    Button
-                                </button>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
 
-            <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--3-col-tablet mdl-cell--2-col-phone buttons-with-icons">
+            <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--2-col-phone buttons-with-icons">
                 <div class="mdl-card mdl-shadow--2dp">
                     <div class="mdl-card__title">
                         <h2 class="mdl-card__title-text">Buttons with icons</h2>
@@ -424,31 +424,37 @@
                                 <span class="text-color--gray">Normal</span>
                             </li>
                             <li class="mdl-list__item">
-                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored-light-blue">
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect button--colored-light-blue">
                                     <i class="material-icons">assignment_returned</i>
                                     Archive
                                 </button>
                             </li>
                             <li class="mdl-list__item">
-                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored-blue">
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect button--colored-teal">
                                     <i class="material-icons">create</i>
                                     Create
                                 </button>
                             </li>
                             <li class="mdl-list__item">
-                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored-yellow">
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect button--colored-orange">
                                     <i class="material-icons">drafts</i>
                                     Drafts
                                 </button>
                             </li>
                             <li class="mdl-list__item">
-                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored-red">
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect button--colored-red">
                                     <i class="material-icons">forward</i>
                                     Forward
                                 </button>
                             </li>
                             <li class="mdl-list__item">
-                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored-purple">
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect button--colored-green">
+                                    <i class="material-icons">attach_file</i>
+                                    Attach
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect button--colored-purple">
                                     <i class="material-icons">reply</i>
                                     Reply
                                 </button>
@@ -459,66 +465,54 @@
                                     <span class="text-color--gray">Disabled</span>
                                 </li>
                                 <li class="mdl-list__item">
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored-light-blue"
+                                    <button class="mdl-button mdl-js-button mdl-button--raised button--colored-light-blue"
                                             disabled>
                                         <i class="material-icons">assignment_returned</i>
                                         Archive
                                     </button>
                                 </li>
                                 <li class="mdl-list__item">
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored-blue"
+                                    <button class="mdl-button mdl-js-button mdl-button--raised button--colored-teal"
                                             disabled>
                                         <i class="material-icons">create</i>
                                         Create
                                     </button>
                                 </li>
                                 <li class="mdl-list__item">
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored-yellow"
+                                    <button class="mdl-button mdl-js-button mdl-button--raised button--colored-orange"
                                             disabled>
                                         <i class="material-icons">drafts</i>
                                         Drafts
                                     </button>
                                 </li>
                                 <li class="mdl-list__item">
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored-red"
+                                    <button class="mdl-button mdl-js-button mdl-button--raised button--colored-red"
                                             disabled>
                                         <i class="material-icons">forward</i>
                                         Forward
                                     </button>
                                 </li>
                                 <li class="mdl-list__item">
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored-purple"
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect button--colored-green"
+                                            disabled>
+                                        <i class="material-icons">attach_file</i>
+                                        Attach
+                                    </button>
+                                </li>
+                                <li class="mdl-list__item">
+                                    <button class="mdl-button mdl-js-button mdl-button--raised button--colored-purple"
                                             disabled>
                                         <i class="material-icons">reply</i>
                                         Reply
                                     </button>
                                 </li>
                             </ul>
-                        <ul class="mdl-list">
-                            <li class="mdl-list__item">
-                                <span class="text-color--gray">Without background</span>
-                            </li>
-
-                            <li class="mdl-list__item pull-left">
-                                <button class="mdl-button mdl-js-button">
-                                    <i class="material-icons">send</i>
-                                    Send
-                                </button>
-                            </li>
-
-                            <li class="mdl-list__item pull-left">
-                                <button class="mdl-button mdl-js-button" disabled>
-                                    <i class="material-icons">send</i>
-                                    Send
-                                </button>
-                            </li>
-                        </ul>
                     </div>
 
                 </div>
             </div>
 
-            <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--3-col-tablet mdl-cell--2-col-phone buttons-social">
+            <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--2-col-phone buttons-social">
                 <div class="mdl-card mdl-shadow--2dp ">
                     <div class="mdl-card__title">
                         <h2 class="mdl-card__title-text">Social buttons</h2>
@@ -529,33 +523,39 @@
                                 <span class="text-color--gray">Normal</span>
                             </li>
                             <li class="mdl-list__item">
-                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--facebook">
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect button--facebook">
                                     <i class="material-icons"></i>
                                     Facebook
                                 </button>
                             </li>
                             <li class="mdl-list__item">
-                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--twitter">
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect button--twitter">
                                     <i class="material-icons"></i>
                                     Twitter
                                 </button>
                             </li>
                             <li class="mdl-list__item">
-                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--dribble">
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect button--dribbble">
                                     <i class="material-icons"></i>
-                                    Dribble
+                                    Dribbble
                                 </button>
                             </li>
                             <li class="mdl-list__item">
-                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--behance">
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect button--behance">
                                     <i class="material-icons"></i>
                                     Behance
                                 </button>
                             </li>
                             <li class="mdl-list__item">
-                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--linkedin">
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect button--linkedin">
                                     <i class="material-icons"></i>
                                     Linkedin
+                                </button>
+                            </li>
+                            <li class="mdl-list__item pull-left">
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect button--github">
+                                    <i class="material-icons"></i>
+                                    Github
                                 </button>
                             </li>
                         </ul>
@@ -564,64 +564,52 @@
                                     <span class="text-color--gray">Disabled</span>
                                 </li>
                                 <li class="mdl-list__item">
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--facebook"
+                                    <button class="mdl-button mdl-js-button mdl-button--raised button--facebook"
                                             disabled>
                                         <i class="material-icons"></i>
                                         Facebook
                                     </button>
                                 </li>
                                 <li class="mdl-list__item">
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--twitter"
+                                    <button class="mdl-button mdl-js-button mdl-button--raised button--twitter"
                                             disabled>
                                         <i class="material-icons"></i>
                                         Twitter
                                     </button>
                                 </li>
                                 <li class="mdl-list__item">
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--dribble"
+                                    <button class="mdl-button mdl-js-button mdl-button--raised button--dribbble"
                                             disabled>
                                         <i class="material-icons"></i>
-                                        Dribble
+                                        Dribbble
                                     </button>
                                 </li>
                                 <li class="mdl-list__item">
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--behance"
+                                    <button class="mdl-button mdl-js-button mdl-button--raised button--behance"
                                             disabled>
                                         <i class="material-icons"></i>
                                         Behance
                                     </button>
                                 </li>
                                 <li class="mdl-list__item">
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--linkedin"
+                                    <button class="mdl-button mdl-js-button mdl-button--raised button--linkedin"
                                             disabled>
                                         <i class="material-icons"></i>
                                         Linkedin
                                     </button>
                                 </li>
+                                <li class="mdl-list__item">
+                                    <button class="mdl-button mdl-js-button mdl-button--raised button--github" disabled>
+                                        <i class="material-icons"></i>
+                                        Github
+                                    </button>
+                                </li>
                             </ul>
-                        <ul class="mdl-list">
-                            <li class="mdl-list__item">
-                                <span class="text-color--gray">Without background</span>
-                            </li>
-                            <li class="mdl-list__item pull-left">
-                                <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--github">
-                                    <i class="material-icons"></i>
-                                    Github
-                                </button>
-                            </li>
-
-                            <li class="mdl-list__item pull-left">
-                                <button class="mdl-button mdl-js-button mdl-button--github" disabled>
-                                    <i class="material-icons"></i>
-                                    Github
-                                </button>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
 
-            <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--3-col-tablet mdl-cell--2-col-phone buttons-icons">
+            <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone buttons-icons">
                 <div class="mdl-card mdl-shadow--2dp">
                     <div class="mdl-card__title">
                         <h2 class="mdl-card__title-text">Icon buttons</h2>
@@ -633,27 +621,27 @@
                                 <span class="text-color--gray">Normal</span>
                             </li>
                             <li class="mdl-list__item">
-                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect mdl-button--colored-light-blue">
+                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect button--colored-light-blue">
                                     <i class="material-icons">assignment_returned</i>
                                 </button>
                             </li>
                             <li class="mdl-list__item">
-                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect mdl-button--colored-blue">
+                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect button--colored-teal">
                                     <i class="material-icons">create</i>
                                 </button>
                             </li>
                             <li class="mdl-list__item">
-                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect mdl-button--colored-yellow">
+                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect button--colored-orange">
                                     <i class="material-icons">drafts</i>
                                 </button>
                             </li>
                             <li class="mdl-list__item">
-                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect mdl-button--colored-red">
+                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect button--colored-red">
                                     <i class="material-icons">forward</i>
                                 </button>
                             </li>
                             <li class="mdl-list__item">
-                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect mdl-button--colored-purple">
+                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect button--colored-purple">
                                     <i class="material-icons">reply</i>
                                 </button>
                             </li>
@@ -663,36 +651,73 @@
                                 </button>
                             </li>
                         </ul>
+
+                        <ul class="mdl-list pull-left">
+                            <li class="mdl-list__item">
+                                <span class="text-color--gray">Social</span>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect button--facebook">
+                                    <i class="material-icons"></i>
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect button--twitter">
+                                    <i class="material-icons"></i>
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect button--dribbble">
+                                    <i class="material-icons"></i>
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect button--behance">
+                                    <i class="material-icons"></i>
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect button--linkedin">
+                                    <i class="material-icons"></i>
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect button--github">
+                                    <i class="material-icons"></i>
+                                </button>
+                            </li>
+                        </ul>
+                        <!--icon disabled-->
                         <ul class="mdl-list pull-left">
                             <li class="mdl-list__item">
                                 <span class="text-color--gray">Disabled</span>
                             </li>
                             <li class="mdl-list__item">
-                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored-light-blue"
+                                <button class="mdl-button mdl-js-button mdl-button--icon button--colored-light-blue"
                                         disabled>
                                     <i class="material-icons">assignment_returned</i>
                                 </button>
                             </li>
                             <li class="mdl-list__item">
-                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored-blue"
+                                <button class="mdl-button mdl-js-button mdl-button--icon button--colored-teal"
                                         disabled>
                                     <i class="material-icons">create</i>
                                 </button>
                             </li>
                             <li class="mdl-list__item">
-                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored-yellow"
+                                <button class="mdl-button mdl-js-button mdl-button--icon button--colored-orange"
                                         disabled>
                                     <i class="material-icons">drafts</i>
                                 </button>
                             </li>
                             <li class="mdl-list__item">
-                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored-red"
+                                <button class="mdl-button mdl-js-button mdl-button--icon button--colored-red"
                                         disabled>
                                     <i class="material-icons">forward</i>
                                 </button>
                             </li>
                             <li class="mdl-list__item">
-                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored-purple"
+                                <button class="mdl-button mdl-js-button mdl-button--icon button--colored-purple"
                                         disabled>
                                     <i class="material-icons">reply</i>
                                 </button>
@@ -703,12 +728,389 @@
                                 </button>
                             </li>
                         </ul>
+                        <ul class="mdl-list pull-left">
+                            <li class="mdl-list__item">
+                                <span class="text-color--gray"></span>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-button--icon button--facebook"
+                                        disabled>
+                                    <i class="material-icons"></i>
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-button--icon button--twitter"
+                                        disabled>
+                                    <i class="material-icons"></i>
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-button--icon button--dribbble"
+                                        disabled>
+                                    <i class="material-icons"></i>
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-button--icon button--behance"
+                                        disabled>
+                                    <i class="material-icons"></i>
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-button--icon button--linkedin"
+                                        disabled>
+                                    <i class="material-icons"></i>
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-button--icon button--github"
+                                        disabled>
+                                    <i class="material-icons"></i>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone buttons-icons">
+                <div class="mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text"> Raised Icon buttons</h2>
+                    </div>
+
+                    <div class="mdl-card__supporting-text">
+                        <ul class="mdl-list pull-left">
+                            <li class="mdl-list__item">
+                                <span class="text-color--gray">Normal</span>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--raised mdl-js-ripple-effect button--colored-light-blue">
+                                    <i class="material-icons">assignment_returned</i>
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--raised mdl-js-ripple-effect button--colored-teal">
+                                    <i class="material-icons">create</i>
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--raised mdl-js-ripple-effect button--colored-orange">
+                                    <i class="material-icons">drafts</i>
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--raised mdl-js-ripple-effect button--colored-red">
+                                    <i class="material-icons">forward</i>
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--raised mdl-js-ripple-effect button--colored-purple">
+                                    <i class="material-icons">reply</i>
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--raised mdl-js-ripple-effect">
+                                    <i class="material-icons">send</i>
+                                </button>
+                            </li>
+                        </ul>
+
+                        <ul class="mdl-list pull-left">
+                            <li class="mdl-list__item">
+                                <span class="text-color--gray">Social</span>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--raised mdl-js-ripple-effect button--facebook">
+                                    <i class="material-icons"></i>
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--raised mdl-js-ripple-effect button--twitter">
+                                    <i class="material-icons"></i>
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--raised mdl-js-ripple-effect button--dribbble">
+                                    <i class="material-icons"></i>
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--raised mdl-js-ripple-effect button--behance">
+                                    <i class="material-icons"></i>
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--raised mdl-js-ripple-effect button--linkedin">
+                                    <i class="material-icons"></i>
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--raised mdl-js-ripple-effect button--github">
+                                    <i class="material-icons"></i>
+                                </button>
+                            </li>
+                        </ul>
+                        <!--icon disabled-->
+                        <ul class="mdl-list pull-left">
+                            <li class="mdl-list__item">
+                                <span class="text-color--gray">Disabled</span>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--raised button--colored-light-blue"
+                                        disabled>
+                                    <i class="material-icons">assignment_returned</i>
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--raised button--colored-teal"
+                                        disabled>
+                                    <i class="material-icons">create</i>
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--raised button--colored-orange"
+                                        disabled>
+                                    <i class="material-icons">drafts</i>
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--raised button--colored-red"
+                                        disabled>
+                                    <i class="material-icons">forward</i>
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--raised button--colored-purple"
+                                        disabled>
+                                    <i class="material-icons">reply</i>
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--raised" disabled>
+                                    <i class="material-icons">send</i>
+                                </button>
+                            </li>
+                        </ul>
+                        <ul class="mdl-list pull-left">
+                            <li class="mdl-list__item">
+                                <span class="text-color--gray"></span>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--raised mdl-js-ripple-effect button--facebook"
+                                        disabled>
+                                    <i class="material-icons"></i>
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--raised mdl-js-ripple-effect button--twitter"
+                                        disabled>
+                                    <i class="material-icons"></i>
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--raised mdl-js-ripple-effect button--dribbble"
+                                        disabled>
+                                    <i class="material-icons"></i>
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--raised mdl-js-ripple-effect button--behance"
+                                        disabled>
+                                    <i class="material-icons"></i>
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--raised mdl-js-ripple-effect button--linkedin"
+                                        disabled>
+                                    <i class="material-icons"></i>
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--raised mdl-js-ripple-effect button--github"
+                                        disabled>
+                                    <i class="material-icons"></i>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--7-col-tablet mdl-cell--4-col-phone">
+                <div class="mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">Buttons without background</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <!--BB-->
+                        <ul class="mdl-list pull-left">
+                            <li class="mdl-list__item">
+                                <span class="text-color--gray">Basic button</span>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-js-ripple-effect color-text--light-blue">
+                                    Button
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-js-ripple-effect color-text--teal">
+                                    Button
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-js-ripple-effect color-text--orange">
+                                    Button
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-js-ripple-effect color-text--red">
+                                    Button
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-js-ripple-effect color-text--green">
+                                    Button
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-js-ripple-effect button--colored-purple">
+                                    Button
+                                </button>
+                            </li>
+                        </ul>
+                        <!--disabled-->
+                        <ul class="mdl-list pull-left">
+                            <li class="mdl-list__item">
+                                <span class="text-color--gray">Disabled</span>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button button--colored-light-blue"
+                                        disabled>
+                                    Button
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button button--colored--teal"
+                                        disabled>
+                                    Button
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button button--colored-orange"
+                                        disabled>
+                                    Button
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button button--colored-red"
+                                        disabled>
+                                    Button
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button button--colored-green"
+                                        disabled>
+                                    Button
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button button--colored-purple"
+                                        disabled>
+                                    Button
+                                </button>
+                            </li>
+                        </ul>
+                        <!--BWI-->
+                        <ul class="mdl-list pull-left">
+                            <li class="mdl-list__item">
+                                <span class="text-color--gray">Button with icon</span>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-js-ripple-effect button--colored-light-blue">
+                                    <i class="material-icons">assignment_returned</i>
+                                    Archive
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-js-ripple-effect button--colored-teal">
+                                    <i class="material-icons">create</i>
+                                    Create
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-js-ripple-effect button--colored-orange">
+                                    <i class="material-icons">drafts</i>
+                                    Drafts
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-js-ripple-effect button--colored-red">
+                                    <i class="material-icons">forward</i>
+                                    Forward
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-js-ripple-effect button--colored-green">
+                                    <i class="material-icons">attach_file</i>
+                                    Attach
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-js-ripple-effect button--colored-purple">
+                                    <i class="material-icons">reply</i>
+                                    Reply
+                                </button>
+                            </li>
+                        </ul>
+                        <!--SB-->
+                        <ul class="mdl-list pull-left">
+                            <li class="mdl-list__item">
+                                <span class="text-color--gray">Normal</span>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-js-ripple-effect button--facebook">
+                                    <i class="material-icons"></i>
+                                    Facebook
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-js-ripple-effect button--twitter">
+                                    <i class="material-icons"></i>
+                                    Twitter
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-js-ripple-effect button--dribbble">
+                                    <i class="material-icons"></i>
+                                    Dribbble
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-js-ripple-effect button--behance">
+                                    <i class="material-icons"></i>
+                                    Behance
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-js-ripple-effect button--linkedin">
+                                    <i class="material-icons"></i>
+                                    Linkedin
+                                </button>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button class="mdl-button mdl-js-button mdl-js-ripple-effect button--github">
+                                    <i class="material-icons"></i>
+                                    Github
+                                </button>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
             <!--FAB BUTTONS-->
-            <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--4-col-phone buttons-fab">
+            <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--5-col-tablet mdl-cell--4-col-phone buttons-fab">
                 <div class="mdl-card mdl-shadow--2dp">
                     <div class="mdl-card__title">
                         <h2 class="mdl-card__title-text">Fab button</h2>
@@ -755,12 +1157,19 @@
                         <h2 class="mdl-card__title-text">How to use</h2>
                     </div>
                     <div class="mdl-card__supporting-text">
-                        To use button with background, you need to use Sass variable naming as the
-                        corresponding color in lowercase with prefix "colored-red".<br>
-                        If the color name is composed of more than one world, the words are separated by a dash "-".
-                    </div>
-                    <div class="mdl-card__supporting-text">
-                        <span class=""> Example: You want to use color naming "Teal". Sass variable for this color is <span>$color-teal</span></span>
+                        <p>
+                            To use button with color background, you need to use CSS class naming as the
+                            corresponding color in lowercase with prefix <code><b>button--colored-</b></code>.<br>
+                            If the color name is composed of more than one world, the words are separated by a dash "-".<br>
+                            You can see the names of the colors <a href="ui-colors.html">here</a>.
+                            <br><br>
+                            <i class="color-text--teal">Example: You want to use colored button with color naming "Teal". CSS class for this case is <code><b>.button--colored-teal</b></code></i>
+                            <br><br><br>
+                            To use social button, you need to use CSS class naming as the
+                            corresponding social network in lowercase with prefix <code><b>button--</b></code>.
+                            <br><br>
+                            <i class="color-text--teal">Example: You want to use Facebook button. CSS class for this case is <code><b>.button--facebook</b></code></i>
+                        </p>
                     </div>
                 </div>
             </div>
