@@ -9,27 +9,9 @@
     padding: 0;
     width: 100%;
   }
-  .bordered-table td, .bordered-table th {
-    border-right: 1px solid #606060;
-  }
-  .bordered-table tr :last-child {
-    border-right: none;
-  }
-  .stripped-table td, .stripped-table th{
-    border: none;
-    border-right: 1px solid #676767;
-  }
-  .stripped-table tr :last-child {
-    border-right: none;
-  }
-  .stripped-table tbody tr:nth-child(odd){
-    background-color: #606060;
-  }
-  .borderless-table td {
-    border: none;
-  }
   .label__availability {
     margin-right: 2px;
   }
 
 }
+
