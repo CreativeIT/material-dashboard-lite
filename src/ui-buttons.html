@@ -261,11 +261,10 @@
 
     <div class="mdl-layout__drawer">
         <header>darkboard</header>
-        <nav class="mdl-navigation">
-
-            <div class="scroll__wrapper" id="scroll__wrapper">
-                <div class="scroller" id="scroller">
-                    <div class="scroll__container" id="scroll__container">
+        <div class="scroll__wrapper" id="scroll__wrapper">
+            <div class="scroller" id="scroller">
+                <div class="scroll__container" id="scroll__container">
+                    <nav class="mdl-navigation">
                         <a class="mdl-navigation__link" href="index.html">
                             <i class="material-icons" role="presentation">dashboard</i>
                             Dashboard
@@ -312,17 +311,17 @@
                             <i class="material-icons">multiline_chart</i>
                             Charts
                         </a>
-                    </div>
+                        <div class="mdl-layout-spacer"></div>
+                        <hr>
+                        <a class="mdl-navigation__link" href="https://github.com/CreativeIT/getmdl-dashboard">
+                            <i class="material-icons" role="presentation">link</i>
+                            GitHub
+                        </a>
+                    </nav>
                 </div>
-                <div class='scroller__bar' id="scroller__bar"></div>
             </div>
-            <div class="mdl-layout-spacer"></div>
-            <hr>
-            <a class="mdl-navigation__link" href="https://github.com/CreativeIT/getmdl-dashboard">
-                <i class="material-icons" role="presentation">link</i>
-                GitHub
-            </a>
-        </nav>
+            <div class='scroller__bar' id="scroller__bar"></div>
+        </div>
     </div>
 
     <main class="mdl-layout__content">

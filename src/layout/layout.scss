@@ -1,5 +1,6 @@
 .mdl-layout {
   background: $layout-drawer-bg-color;
+  overflow: hidden;
 }
 
 main {
@@ -31,6 +32,7 @@ main {
     flex-grow: 1;
     padding-top: 48px;
     padding-bottom: 8px;
+    bottom: 0;
     hr {
       border-top: 1px solid unquote("rgba(#{$color-white}, 0.1)");
       margin: 8px 0;
