@@ -11,20 +11,15 @@
         let scrollWidth = scroller.offsetWidth - scroller.clientWidth;
         scroller.style.width = 'calc(100% + ' + scrollWidth +'px)';
 
-        console.log('scrollWidth', scroller.style.width);
-
         scroller.addEventListener('scroll', () => {
             if (scrollBarHeight > 8) {
                 scrollbar.style.top = 2 + scroller.scrollTop + 'px';
             } else {                                            //need to find coefficient
                 scrollbar.style.top = 2 + scroller.scrollTop*((scroller.offsetHeight - 12)/(container.offsetHeight - scroller.offsetHeight)) + 'px'; //It's Math, yeah
             }
-
-            console.log(container.offsetHeight, scroller.offsetHeight, scroller.scrollTop);
         });
 
         function calcBarHeight () {
-            console.log(container.offsetHeight, scroller.offsetHeight);
             if (container.offsetHeight > scroller.offsetHeight) {
                 scrollBarHeight = scroller.offsetHeight - (container.offsetHeight - scroller.offsetHeight) - 4;
                 if (scrollBarHeight > 8) {
