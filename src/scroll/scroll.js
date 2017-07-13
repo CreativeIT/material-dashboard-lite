@@ -14,7 +14,7 @@
         scroller.addEventListener('scroll', () => {
             if (scrollBarHeight > 8) {
                 scrollbar.style.top = 2 + scroller.scrollTop + 'px';
-            } else {                                            //need to find coefficient
+            } else {
                 scrollbar.style.top = 2 + scroller.scrollTop*((scroller.offsetHeight - 12)/(container.offsetHeight - scroller.offsetHeight)) + 'px'; //It's Math, yeah
             }
         });
