@@ -90,22 +90,26 @@
     }
     
     &.is-focused {
-	&.getmdl-select {
-	    input, textarea {
-		font-weight: 300;
-	    }
-	}
+      &.getmdl-select {
+          input, textarea {
+          font-weight: 300;
+          }
+      }
 
-	input, textarea { 
-	    font-weight: 400;
-	}
+      input, textarea {
+          font-weight: 400;
+      }
+
     }
 
     &.is-disabled input{
 	border-bottom-width: 2px !important;
     }
-    label {
-      color: $employer-form-color-darker !important;
+
+    &:not(.is-focused) {
+      .mdl-textfield__label {
+        color: $employer-form-color-darker !important;
+      }
     }
 }
 
