@@ -1,21 +1,5 @@
-<!doctype html>
-<!--
-  Material Design Lite
-  Copyright 2015 Google Inc. All rights reserved.
-
-  Licensed under the Apache License, Version 2.0 (the "License");
-  you may not use this file except in compliance with the License.
-  You may obtain a copy of the License at
-
-      https://www.apache.org/licenses/LICENSE-2.0
-
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License
--->
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <link rel="icon" type="image/png" href="images/DB_16х16.png">
     <meta charset="utf-8">
@@ -48,14 +32,13 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- inject:css -->
     <!-- endinject -->
-
 </head>
 <body>
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header is-small-screen">
     <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
             <div class="mdl-layout-spacer"></div>
-
+            <!-- Search-->
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
                 <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
                     <i class="material-icons">search</i>
@@ -71,7 +54,7 @@
                  data-badge="23">
                 notifications_none
             </div>
-
+            <!-- Notifications dropdown-->
             <ul class="mdl-menu mdl-list mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right mdl-shadow--2dp notifications-dropdown"
                 for="notification">
                 <li class="mdl-list__item">
@@ -129,7 +112,7 @@
             <div class="material-icons mdl-badge mdl-badge--overlap mdl-button--icon message" id="inbox" data-badge="4">
                 mail_outline
             </div>
-
+            <!-- Messages dropdown-->
             <ul class="mdl-menu mdl-list mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right mdl-shadow--2dp messages-dropdown"
                 for="inbox">
                 <li class="mdl-list__item">
@@ -192,7 +175,7 @@
                 <span>Luke</span>
                 <img src="images/Icon_header.png">
             </div>
-
+            <!-- Account dropdawn-->
             <ul class="mdl-menu mdl-list mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect mdl-shadow--2dp account-dropdown"
                 for="icon">
                 <li class="mdl-list__item mdl-list__item--two-line">
@@ -279,7 +262,7 @@
                                 <a class="mdl-navigation__link" href="ui-buttons.html">
                                     Buttons
                                 </a>
-                                <a class="mdl-navigation__link mdl-navigation__link--current" href="ui-cards.html">
+                                <a class="mdl-navigation__link" href="ui-cards.html">
                                     Cards
                                 </a>
                                 <a class="mdl-navigation__link" href="ui-colors.html">
@@ -288,7 +271,7 @@
                                 <a class="mdl-navigation__link" href="ui-components.html">
                                     Components
                                 </a>
-                                <a class="mdl-navigation__link" href="ui-form-components.html">
+                                <a class="mdl-navigation__link mdl-navigation__link--current" href="ui-form-components.html">
                                     Form Components
                                 </a>
                                 <a class="mdl-navigation__link" href="ui-icons.html">
@@ -327,196 +310,109 @@
         </div>
     </div>
 
-    <main class="mdl-layout__content">
-        <div class="mdl-grid ui-cards">
-            <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--4-col-phone">
-                <h3>Basic cards</h3>
-            </div>
+    <main class="mdl-layout__content ui-form-components">
 
-            <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--4-col-tablet mdl-cell--2-col-phone">
-                <div class="mdl-card mdl-shadow--2dp">
+        <div class="mdl-grid mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--4-col-phone mdl-cell--top">
+
+            <div class="mdl-cell mdl-cell--7-col-desktop mdl-cell--7-col-tablet mdl-cell--4-col-phone">
+                <div class="mdl-card">
                     <div class="mdl-card__title">
-                        <h2 class="mdl-card__title-text">Shanghai</h2>
+                        <h5 class="mdl-card__title-text text-color--white">Text fields</h5>
                     </div>
                     <div class="mdl-card__supporting-text">
-                        <small>City in China</small>
-
-                        Shanghai, on China’s central coast, is the country's biggest city and a global financial hub.
-                        Its heart is the Bund, a famed waterfront promenade lined with colonial-era buildings.
-                        Across the Huangpu River rises the Pudong district’s futuristic skyline, including
-                        632m Shanghai Tower and the Oriental Pearl TV Tower, with distinctive pink spheres.
-                        Sprawling Yu Garden has traditional pavilions, towers and ponds.
-                        <br><br>
-                        <b>Weather:</b> 9°C, Wind NE at 11 km/h, 79% Humidity
-                        <br>
-                        <b>Local time:</b> Thursday 9:58 PM
-                        <br>
-                        <b>Population:</b> 24.15 million (2015)
+                        <form class="form form--basic">
+                            <div class="mdl-grid">
+                                <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone form__article">
+                                    <h3 class="text-color--smooth-gray">BASIC INPUT</h3>
+                                    <div class="mdl-textfield mdl-js-textfield full-size">
+                                        <input class="mdl-textfield__input" type="text" id="first-name">
+                                        <label class="mdl-textfield__label" for="first-name">First Name</label>
+                                    </div>
+                                    <div class="mdl-textfield mdl-js-textfield full-size">
+                                        <input class="mdl-textfield__input" type="text" id="last-name">
+                                        <label class="mdl-textfield__label" for="last-name">Last Name</label>
+                                    </div>
+                                    <div class="mdl-textfield mdl-js-textfield full-size">
+                                        <input class="mdl-textfield__input" type="text" id="e-mail">
+                                        <label class="mdl-textfield__label" for="e-mail">Email</label>
+                                    </div>
+                                </div>
+                                <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone form__article">
+                                    <h3 class="text-color--smooth-gray">INPUT WITH FLOATING LABEL</h3>
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full-size">
+                                        <input class="mdl-textfield__input" type="text" id="floating-first-name">
+                                        <label class="mdl-textfield__label" for="floating-first-name">First Name</label>
+                                    </div>
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full-size">
+                                        <input class="mdl-textfield__input" type="text" id="floating-last-name">
+                                        <label class="mdl-textfield__label" for="floating-last-name">Last Name</label>
+                                    </div>
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full-size">
+                                        <input class="mdl-textfield__input" type="text" id="floating-e-mail">
+                                        <label class="mdl-textfield__label" for="floating-e-mail">Email</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
 
-            <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--4-col-tablet mdl-cell--2-col-phone">
-                <div class="mdl-card mdl-shadow--2dp">
+            <div class="mdl-cell mdl-cell--5-col-desktop mdl-cell--5-col-tablet mdl-cell--4-col-phone">
+                <div class="mdl-card">
                     <div class="mdl-card__title">
-                        <h2 class="mdl-card__title-text">Moscow</h2>
-                    </div>
-                    <div class="mdl-card__supporting-text mdl-card--expand">
-                        <small>Capital of Russia</small>
-                        Moscow, on the Moskva River in western Russia, is the nation’s cosmopolitan capital.
-                        In its historic core is the Kremlin, a complex that’s home to the president and tsarist treasures in the Armoury.
-                        Outside its walls is Red Square, Russia's symbolic center. It's home to Lenin’s Mausoleum,
-                        the State Historical Museum's comprehensive collection and St. Basil’s Cathedral, known for its colorful,
-                        onion-shaped domes.
-                        <br><br>
-                        <b>Weather:</b> 9°C, Wind W at 26 km/h, 47% Humidity
-                        <br>
-                        <b>Local time:</b> Thursday 5:13 PM
-                        <br>
-                        <b>Population:</b> 11.92 million (2012)
-                    </div>
-                    <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button color-text--orange mdl-js-button mdl-js-ripple-effect"
-                           href="https://www.google.by/maps/place/Moscow,+Russia/@55.7494733,37.35232,10z/data=!3m1!4b1!4m5!3m4!1s0x46b54afc73d4b0c9:0x3d44d6cc5757cf4c!8m2!3d55.755826!4d37.6173"
-                           target="_blank">
-                            Show on map
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--4-col-tablet mdl-cell--2-col-phone">
-                <div class="mdl-card mdl-shadow--2dp">
-                    <div class="mdl-card__title">
-                        <h2 class="mdl-card__title-text">London</h2>
-                    </div>
-                    <div class="mdl-card__supporting-text mdl-card--expand">
-                        <small>Capital of England</small>
-                        London, the capital of England and the United Kingdom, is a 21st-century city with history stretching back to Roman times.
-                        At its centre stand the imposing Houses of Parliament, the iconic ‘Big Ben’ clock tower and Westminster Abbey,
-                        site of British monarch coronations. Across the Thames River, the London Eye observation wheel provides panoramic
-                        views of the South Bank cultural complex, and the entire city.
-                        <br><br>
-                        <b>Weather:</b> 11°C, Wind NE at 31 km/h, 57% Humidity
-                        <br>
-                        <b>Local time:</b> Thursday 2:22 PM
-                        <br>
-                        <b>Population:</b> 8.674 million (2015)
-                    </div>
-                    <div class="mdl-card__actions">
-                        <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored-yellow pull-right"
-                           href="https://www.google.by/maps/place/London,+UK/data=!4m2!3m1!1s0x47d8a00baf21de75:0x52963a5addd52a99?sa=X&ved=0ahUKEwig76SihPfSAhVCCpoKHTuzBDsQ8gEIeTAN"
-                           target="_blank">
-                            Show on map
-                        </a>
-                    </div>
-
-                    <div class="mdl-card__menu">
-                        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                            <i class="material-icons">more_vert</i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--4-col-phone">
-                <h3>Image cards</h3>
-            </div>
-
-            <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--4-col-tablet mdl-cell--2-col-phone">
-                <div class="mdl-card mdl-shadow--2dp">
-                    <div class="mdl-card__title">
-                        <h2 class="mdl-card__title-text">Istanbul</h2>
+                        <h5 class="mdl-card__title-text text-color--white">PROFILE INFO</h5>
                     </div>
                     <div class="mdl-card__supporting-text">
-                        <small>City in Turkey</small>
-                        Istanbul is a major city in Turkey that straddles Europe and Asia across the Bosphorus Strait.
-                        Its Old City reflects cultural influences of the many empires that once ruled here.
-                        In the Sultanahmet district, the open-air, Roman-era Hippodrome was for centuries the site of chariot races,
-                        and Egyptian obelisks also remain.
-                        The iconic Byzantine Hagia Sophia features a soaring 6th-century dome and rare Christian mosaics.
-                        <br><br>
-                        <b>Weather:</b> 12°C, Wind S at 13 km/h, 71% Humidity
-                        <br>
-                        <b>Local time:</b> Friday 4:00 PM
-                        <br>
-                        <b>Population:</b> 14.8 million (Dec 31, 2016)
-                    </div>
-                </div>
-            </div>
+                        <form class="form form--basic">
+                            <div class="mdl-grid">
+                                <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--3-col-tablet mdl-cell--1-col-phone">
+                                    <div class="profile-image color--smooth-gray profile-image--round">
+                                        <img src="images/Bobby.PNG">
+                                    </div>
+                                </div>
+                                <div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone form__article">
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full-size">
+                                        <input class="mdl-textfield__input" type="text" value="Bob" id="profile-floating-first-name">
+                                        <label class="mdl-textfield__label" for="profile-floating-first-name">First Name</label>
+                                    </div>
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full-size">
+                                        <input class="mdl-textfield__input" type="text" value="Kelso" id="profile-floating-last-name">
+                                        <label class="mdl-textfield__label" for="profile-floating-last-name">Last Name</label>
+                                    </div>
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full-size">
+                                        <input class="mdl-textfield__input" type="text" value="BobbyK@darkboard.io" id="profile-floating-e-mail">
+                                        <label class="mdl-textfield__label" for="floating-e-mail">Email</label>
+                                    </div>
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select">
+                                        <input class="mdl-textfield__input" type="text" id="location" readonly tabIndex="-1"/>
 
-            <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--4-col-tablet mdl-cell--2-col-phone">
-                <div class="mdl-card mdl-shadow--2dp">
-                    <div class="mdl-card__title">
-                        <h2 class="mdl-card__title-text">Tokyo</h2>
-                    </div>
-                    <div class="mdl-card__supporting-text mdl-card--expand">
-                        <small>Capital of Japan</small>
-                        Tokyo, officially Tokyo Metropolis, is the capital of Japan and one of its 47 prefectures.
-                        The Greater Tokyo Area is the most populous metropolitan area in the world.
-                        It is the seat of the Emperor of Japan and the Japanese government.
-                        <a class="color-text--light-blue" href="https://en.wikipedia.org/wiki/Tokyo" target="_blank">Wikipedia</a>
-                        <br><br>
-                        <b>Weather:</b> 5°C, Wind NW at 26 km/h, 54% Humidity
-                        <br>
-                        <b>Local time:</b> Friday 10:04 PM
-                        <br>
-                        <b>Population:</b> 13.62 million (Jul 31, 2016)
-                    </div>
-                    <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button color-text--light-blue mdl-js-button mdl-js-ripple-effect"
-                           href="https://www.google.by/maps/place/Tokyo,+Japan/@35.6730185,139.4302008,10z/data=!3m1!4b1!4m5!3m4!1s0x605d1b87f02e57e7:0x2e01618b22571b89!8m2!3d35.6894875!4d139.6917064"
-                           target="_blank">
-                            Show on map
-                        </a>
-                    </div>
-                </div>
-            </div>
+                                        <label class="mdl-textfield__label" for="location">Location</label>
 
-            <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--4-col-tablet mdl-cell--2-col-phone">
-                <div class="mdl-card mdl-shadow--2dp">
-                    <div class="mdl-card__title">
-                        <h2 class="mdl-card__title-text">São Paulo</h2>
-                    </div>
-                    <div class="mdl-card__supporting-text mdl-card--expand">
-                        <small>Municipality in Brazil</small>
-                        São Paulo, Brazil’s vibrant financial center, is among the world's most populous cities,
-                        with numerous cultural institutions and a rich architectural tradition.
-                        Its iconic buildings range from its neo-Gothic cathedral and the 1929 Martinelli skyscraper to modernist
-                        architect Oscar Niemeyer’s curvy Edifício Copan.
-                        The colonial-style Pátio do Colégio church marks where Jesuit priests founded the city in 1554.
-                        <br><br>
-                        <b>Weather:</b> 24°C, Wind E at 10 km/h, 62% Humidity
-                        <br>
-                        <b>Local time:</b> Friday 10:05 AM
-                        <br>
-                        <b>Population:</b> 12.04 million (2016)
-                    </div>
-                    <div class="mdl-card__actions">
-                        <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored-light-blue pull-right"
-                           href="https://www.google.by/maps/place/S%C3%A3o+Paulo,+State+of+S%C3%A3o+Paulo,+Brazil/data=!4m2!3m1!1s0x94ce448183a461d1:0x9ba94b08ff335bae?sa=X&ved=0ahUKEwjQ1pf_g_fSAhVHWSwKHQoNDc0Q8gEIjwEwEQ"
-                           target="_blank">
-                            Show on map
-                        </a>
-                    </div>
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-                        <i class="material-icons">favorite_border</i>
-                    </button>
-                    <div class="mdl-card__menu">
-                        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                            <i class="material-icons">share</i>
-                        </button>
+                                        <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu dark_dropdown" for="location">
+                                            <li class="mdl-menu__item">Minsk</li>
+                                            <li class="mdl-menu__item">Berlin</li>
+                                            <li class="mdl-menu__item">Moscow</li>
+                                            <li class="mdl-menu__item">NYC</li>
+                                        </ul>
+
+                                        <label for="location">
+                                            <i class="mdl-icon-toggle__label material-icons">arrow_drop_down</i>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
+
     </main>
 
 </div>
 
 <!-- inject:js -->
 <!-- endinject -->
-
 </body>
 </html>

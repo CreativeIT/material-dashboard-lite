@@ -54,6 +54,14 @@
   color: unquote("rgb(#{$palette-grey-500})");
 }
 
+.text-color--white {
+  color: white !important;
+}
+
+.text-color--smooth-gray {
+  color: $color-smooth-gray !important;
+}
+
 .getmdl-select {
   .mdl-icon-toggle__label {
 	color: white;
@@ -96,8 +104,17 @@
     &.is-disabled input{
 	border-bottom-width: 2px !important;
     }
+    label {
+      color: $employer-form-color-darker !important;
+    }
 }
 
 .mdl-grid:not(.ui-typography) .mdl-card:not(.robot):not(.todo) {
   height: 100%;
+}
+
+h5{
+  &.mdl-card__title-text  {
+    font-size: 20px;
+  }
 }
