@@ -108,7 +108,13 @@
 
     &:not(.is-focused) {
       .mdl-textfield__label {
-        color: $employer-form-color-darker !important;
+        color: $color-smoke !important;
+      }
+    }
+
+    &:not(.is-focused):not(.is-dirty) {
+      .mdl-textfield__label {
+        font-size: 14px !important;
       }
     }
 }

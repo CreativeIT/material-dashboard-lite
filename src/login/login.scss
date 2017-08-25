@@ -1,0 +1,32 @@
+.login {
+  font-size: 14px;
+  .mdl-card__login.mdl-card {
+    width: 450px;
+    min-height: 500px;
+    margin: auto;
+    .mdl-card__supporting-text {
+      min-height: inherit;
+      width: 100%;
+      padding: 32px 24px;
+      box-sizing: border-box;
+      .mdl-card__title-text {
+        font-size: 17px;
+        font-weight: bold;
+      }
+      .login-name {
+        font-size: 24px;
+        display: block;
+        padding: 0 0 8px 0;
+      }
+      .login-link {
+        display: inline-block;
+        padding: 12px 0;
+        font-size: 14px;
+        color: #dddddd;
+      }
+      .submit-cell {
+        display: flex;
+      }
+    }
+  }
+}
