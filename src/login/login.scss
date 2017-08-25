@@ -18,11 +18,25 @@
         display: block;
         padding: 0 0 8px 0;
       }
+
       .login-link {
-        display: inline-block;
         padding: 12px 0;
+      }
+
+      .login-link, .login-link * {
+        display: inline-block;
         font-size: 14px;
+        font-weight: inherit;
         color: #dddddd;
+      }
+      .underlined {
+        display: inline-block;
+        border-bottom: 1px solid $color-light-blue;
+      }
+      .checkbox--inline {
+        display: inline;
+        padding-top: 4px;
+        padding-left: 35px;
       }
       .submit-cell {
         display: flex;

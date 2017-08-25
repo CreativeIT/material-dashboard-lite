@@ -106,7 +106,7 @@
 	border-bottom-width: 2px !important;
     }
 
-    &:not(.is-focused) {
+    &:not(.is-focused), &:not(.mdl-textfield--floating-label) {
       .mdl-textfield__label {
         color: $color-smoke !important;
       }
