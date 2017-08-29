@@ -1,6 +1,10 @@
-.login {
+.login, .not-found {
+  .mdl-button {
+    font-weight: 500;
+  }
+  font-family: Roboto, Helvetica, sans-serif;
   font-size: 14px;
-  .mdl-card__login.mdl-card {
+  .mdl-card__login.mdl-card, .mdl-card__not-found.mdl-card {
     width: 450px;
     min-height: 500px;
     margin: auto;
@@ -40,6 +44,24 @@
       }
       .submit-cell {
         display: flex;
+      }
+
+      .text--huge {
+        font-size: 120px;
+        font-weight: bold;
+        display: inline-block;
+        padding: 100px 0 40px 0;
+      }
+
+      .text--sorry {
+        font-size: 28px;
+        font-weight: 300;
+      }
+
+      .alignment--bottom-right {
+        position: absolute;
+        bottom: 39px;
+        right: 46px;
       }
     }
   }
