@@ -9,6 +9,7 @@
             scrollBarHeight;
 
         let scrollWidth = scroller.offsetWidth - scroller.clientWidth;
+        scrollWidth = scrollWidth < 17 ? 17 : scrollWidth;
         scroller.style.width = 'calc(100% + ' + scrollWidth +'px)';
 
         scroller.addEventListener('scroll', () => {
