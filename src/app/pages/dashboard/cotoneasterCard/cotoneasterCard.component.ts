@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'cotoneaster-card',
-  styleUrls: ['./cotoneasterCard.scss'],
-  templateUrl: './cotoneasterCard.html'
+ // styleUrls: ['./cotoneasterCard.scss'],
+  templateUrl: './cotoneasterCard.html',
+ // encapsulation: ViewEncapsulation.None
 })
 export class CotoneasterCardComponent {
 

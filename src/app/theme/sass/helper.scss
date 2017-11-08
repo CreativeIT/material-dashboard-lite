@@ -11,23 +11,23 @@
 }
 
 .background-color--primary {
-   background-color: unquote("rgba(#{$color-primary}, 0.9)");
- }
+  background-color: unquote("rgba(#{$color-primary}, 0.9)") !important;
+}
 
 .background-color--secondary {
-  background-color: unquote("rgba(#{$color-secondary}, 0.9)");
+  background-color: unquote("rgba(#{$color-secondary}, 0.9)") !important;
 }
 
 .background-color--baby-blue {
-  background-color: unquote("rgba(#{$color-baby-blue}, 0.9)");
+  background-color: unquote("rgba(#{$color-baby-blue}, 0.9)") !important;
 }
 
 .background-color--cerulean {
-  background-color: unquote("rgba(#{$color-cerulean}, 0.9)");
+  background-color: unquote("rgba(#{$color-cerulean}, 0.9)") !important;
 }
 
 .background-color--mint {
-  background-color: unquote("rgba(#{$color-mint}, 0.9)");
+  background-color: unquote("rgba(#{$color-mint}, 0.9)") !important;
 }
 
 .text-color--primary {
@@ -51,57 +51,58 @@
 }
 
 .text-color--gray {
-  color: unquote("rgb(#{$palette-grey-500})");
+  color: unquote("rgb(#{$palette-grey-500})") !important;
 }
 
 //new colors
 .color-red {
-  color: $color-red;
+  color: $color-red !important;
 }
+
 .mdl-color--orange-50 {
-  color: $color-orange;
+  color: $color-orange !important;
 }
 
 .getmdl-select {
   .mdl-icon-toggle__label {
-	color: white;
-    }
+    color: white;
+  }
 
-    &.is-focused i.material-icons {
-	color: unquote("rgb(#{$color-primary})");
-    }
+  &.is-focused i.material-icons {
+    color: unquote("rgb(#{$color-primary})");
+  }
 
-    .mdl-menu__container {
-	margin-top: -45px !important;
+  .mdl-menu__container {
+    margin-top: -45px !important;
 
-	.mdl-menu__outline {
+    .mdl-menu__outline {
       box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
-	}
     }
+  }
 
-    .mdl-menu .mdl-menu__item {
-	@include typo-employer-form-inputs();
-    }
+  .mdl-menu .mdl-menu__item {
+    @include typo-employer-form-inputs();
+  }
 }
 
 .mdl-textfield {
+  input, textarea {
+    @include typo-employer-form-inputs();
+  }
+
+  &.is-focused {
+    &.getmdl-select {
+      input, textarea {
+        font-weight: 300;
+      }
+    }
+
     input, textarea {
-	@include typo-employer-form-inputs();
+      font-weight: 400;
     }
-    
-    &.is-focused {
-	&.getmdl-select {
-	    input, textarea {
-		font-weight: 300;
-	    }
-	}
+  }
 
-	input, textarea { 
-	    font-weight: 400;
-	}
-    }
-
-    &.is-disabled input{
-	border-bottom-width: 2px !important;
-    }
+  &.is-disabled input {
+    border-bottom-width: 2px !important;
+  }
 }

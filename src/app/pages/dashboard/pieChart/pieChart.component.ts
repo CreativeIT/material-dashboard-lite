@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'pie-chart',
   styleUrls: ['./pieChart.scss'],
-  templateUrl: './pieChart.html'
+  templateUrl: './pieChart.html',
+  encapsulation: ViewEncapsulation.None
 })
 export class PieChartComponent implements OnInit{
 

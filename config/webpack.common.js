@@ -22,6 +22,7 @@ const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const ngcWebpack = require('ngc-webpack');
 
+
 /*
  * Webpack Constants
  */
@@ -162,18 +163,38 @@ module.exports = function (options) {
          * Returns compiled css content as string
          *
          */
-        {
-          test: /\.scss$/,
-          use: ['raw-loader', 'sass-loader']
-        },
+        /*     {
+         test: /\.scss$/,
+         use: ['raw-loader', 'sass-loader']
+         },*/
+
+        /*     {
+         test: /app\.scss$/,
+         use: ExtractTextPlugin.extract({
+         fallback: 'style-loader',
+         use: 'css-loader!sass-loader?sourceMap'
+         })
+         },*/
 
         {
-          test: /initial\.scss$/,
+          test: /\.scss$/,
           use: ExtractTextPlugin.extract({
             fallback: 'style-loader',
-            use: 'css-loader!sass-loader?sourceMap'
+            use: "css-loader!autoprefixer-loader!sass-loader"
           })
         },
+        /*
+         {
+         test: /\.scss$/,
+         loader: extractCSS.extract(['css-loader','sass?sourceMap'])
+         },
+         {
+         test: /\.css$/,
+         include: helpers.root('src/app'),
+         loader: 'raw-loader'
+         },
+         */
+
 
         /* Raw loader support for *.html
          * Returns file content as string
