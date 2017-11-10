@@ -12,9 +12,9 @@ export class TableCardComponent {
   data: Object[];
 
   constructor() {
-    let task1 = document.querySelector('#task1'),
-      task2 = document.querySelector('#task2'),
-      task4 = document.querySelector('#task4');
+    let task1 = document.querySelector('#task1');
+    let task2 = document.querySelector('#task2');
+    let task4 = document.querySelector('#task4');
 
     /*    if (task1 && task2 && task4) {
      task1.addEventListener('mdl-componentupgraded', () => {
@@ -99,6 +99,6 @@ export class TableCardComponent {
         progress: 31,
         isSelected: false
       }
-    ]
+    ];
   }
 }

@@ -6,7 +6,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   templateUrl: './pieChart.html',
   encapsulation: ViewEncapsulation.None
 })
-export class PieChartComponent implements OnInit{
+export class PieChartComponent implements OnInit {
 
   constructor() {
     console.log('PieChartComponent component');
@@ -14,7 +14,7 @@ export class PieChartComponent implements OnInit{
 
   ngOnInit() {
     {
-      var colors = [
+      const colors = [
         'rgba(96, 196, 150, 1)',
         'rgba(80, 150, 215, 1)',
         'rgba(0, 188, 212, 1)',
@@ -23,36 +23,36 @@ export class PieChartComponent implements OnInit{
         'rgba(0, 0, 0, 0)'
       ];
 
-      var data = [
+      const data = [
         {
-          'key': 'Coding',
-          'y': 0,
-          'end': 9
+          key: 'Coding',
+          y: 0,
+          end: 9
         },
         {
-          'key': 'Eating',
-          'y': 0,
-          'end': 3
+          key: 'Eating',
+          y: 0,
+          end: 3
         },
         {
-          'key': 'Sleeping',
-          'y': 0,
-          'end': 3
+          key: 'Sleeping',
+          y: 0,
+          end: 3
         },
         {
-          'key': 'Meditation',
-          'y': 0,
-          'end': 3
+          key: 'Meditation',
+          y: 0,
+          end: 3
         },
         {
-          'key': 'The fight against evil',
-          'y': 0,
-          'end': 6
+          key: 'The fight against evil',
+          y: 0,
+          end: 6
         }
         ,
         {
-          'key': 'Pending',
-          'y': 23.9
+          key: 'Pending',
+          y: 23.9
         }
       ];
 

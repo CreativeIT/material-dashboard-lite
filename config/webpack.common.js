@@ -163,10 +163,10 @@ module.exports = function (options) {
          * Returns compiled css content as string
          *
          */
-        /*     {
-         test: /\.scss$/,
-         use: ['raw-loader', 'sass-loader']
-         },*/
+        {
+          test: /\.scss$/,
+          use: ['raw-loader', 'sass-loader']
+        },
 
         /*     {
          test: /app\.scss$/,
@@ -176,13 +176,13 @@ module.exports = function (options) {
          })
          },*/
 
-        {
-          test: /\.scss$/,
-          use: ExtractTextPlugin.extract({
-            fallback: 'style-loader',
-            use: "css-loader!autoprefixer-loader!sass-loader"
-          })
-        },
+        // {
+        //   test: /\.scss$/,
+        //   use: ExtractTextPlugin.extract({
+        //     fallback: 'style-loader',
+        //     use: "css-loader!autoprefixer-loader!sass-loader"
+        //   })
+        // },
         /*
          {
          test: /\.scss$/,

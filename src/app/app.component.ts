@@ -7,7 +7,7 @@ import {
   ViewEncapsulation
 } from '@angular/core';
 import { AppState } from './app.service';
-import 'style-loader!./app.scss';
+// import 'style-loader!./app.scss';
 
 /*
  * App Component
@@ -15,6 +15,7 @@ import 'style-loader!./app.scss';
  */
 @Component({
   selector: 'app',
+  styleUrls: ['./app.scss', './styles/styles.scss', './styles/headings.css'],
   template: `
    <router-outlet></router-outlet>
   `

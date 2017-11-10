@@ -232,7 +232,10 @@ export class LineChartComponent {
         graphGood.push({x: i / 10, y: (-.01055 * (i - 80.3) * (i - 80.3) + 27) / 15});
       }
       else {
-        graphGood.push({x: i / 10, y: (((i / 2) - 45) * ((i / 2) - 45) * ((i / 2) - 45)) / 15000 + 1.805});
+        graphGood.push({
+          x: i / 10,
+          y: (((i / 2) - 45) * ((i / 2) - 45) * ((i / 2) - 45)) / 15000 + 1.805
+        });
       }
     }
   }
