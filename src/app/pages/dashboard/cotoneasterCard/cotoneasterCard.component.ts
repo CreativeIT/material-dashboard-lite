@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'cotoneaster-card',
- // styleUrls: ['./cotoneasterCard.scss'],
+  styleUrls: ['./cotoneasterCard.scss'],
   templateUrl: './cotoneasterCard.html',
  // encapsulation: ViewEncapsulation.None
 })
