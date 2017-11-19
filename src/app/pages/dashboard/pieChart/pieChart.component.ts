@@ -12,7 +12,7 @@ export class PieChartComponent implements OnInit {
     console.log('PieChartComponent component');
   }
 
-  ngOnInit() {
+  public ngOnInit() {
     {
       const colors = [
         'rgba(96, 196, 150, 1)',
@@ -56,25 +56,25 @@ export class PieChartComponent implements OnInit {
         }
       ];
 
-     /* nv.addGraph(() => {
-        var innerRadius = 0.86,
-          outerRadius = 1.02;
+      nv.addGraph(() => {
+        const innerRadius = 0.86;
+        const outerRadius = 1.02;
 
-        var pieChart = nv.models.pieChart()
-          .x(d => {return d.key;})
-          .y(d => {return d.y;})
+        const pieChart = nv.models.pieChart()
+          .x(d => d.key)
+          .y(d => d.y)
           .showLabels(false)
           .donut(true)
           .growOnHover(true)
           .padAngle(.04)
           .cornerRadius(0)
-          .margin({'left': -10, 'right': -10, 'top': -10, 'bottom': -10})
+          .margin({ left: -10, right: -10, top: -10, bottom: -10 })
           .color(colors)
-          .arcsRadius([{'inner': innerRadius, 'outer': outerRadius},
-            {'inner': innerRadius, 'outer': outerRadius},
-            {'inner': innerRadius, 'outer': outerRadius},
-            {'inner': innerRadius, 'outer': outerRadius},
-            {'inner': innerRadius, 'outer': outerRadius}
+          .arcsRadius([{ inner: innerRadius, outer: outerRadius },
+              { inner: innerRadius, outer: outerRadius },
+              { inner: innerRadius, outer: outerRadius },
+              { inner: innerRadius, outer: outerRadius },
+              { inner: innerRadius, outer: outerRadius }
           ])
           .showLegend(false)
           .title('0 hours')
@@ -83,59 +83,56 @@ export class PieChartComponent implements OnInit {
         pieChart.tooltip.enabled(true)
           .hideDelay(0)
           .headerEnabled(false)
-          .contentGenerator(d => {
+          .contentGenerator((d) => {
             if (d === null) {
-              return '';
+                return '';
             }
             d3.selectAll('.nvtooltip').classed('mdl-tooltip', true);
-            return d.data.y + ' hours';
+            return `${d.data.y} hours`;
           });
 
-        var container = d3.select('.pie-chart__container')
+        const container = d3.select('.pie-chart__container')
           .append('div')
           .append('svg')
           .datum(data)
-          .transition().duration(1200)
+          .transition()
+          .duration(1200)
           .call(pieChart);
 
-        var h = 0, i = 0;
-        var timer = setInterval(animatePie, 70, data);
-
-        function animatePie(data) {
+        let h = 0;
+        let i = 0;
+        const timer = setInterval((data) => {
           if (i < data.length - 1) {
             if (data[i].y < data[i].end) {
               data[i].y++;
               data[data.length - 1].y--;
-              pieChart.title((h + 1) + ' hours');
+              pieChart.title(`${h + 1} hours`);
               h++;
-            }
-            else {
+            } else {
               i++;
             }
-          }
-          else {
+          } else {
             data.splice(data.length - 1, 1);
             clearInterval(timer);
             return;
           }
           if (container[0][0]) {
             pieChart.update();
-          }
-          else {
+          } else {
             clearInterval(timer);
           }
-        }
+        }, 70, data);
 
         d3.select('.pie-chart__container .nv-pie .nv-pie')
           .append('image')
           .attr('width', '30')
           .attr('height', '30')
-          .attr('xlink:href', 'images/watch_white.svg')
+          .attr('xlink:href', 'assets/images/watch_white.svg')
           .attr('transform', 'translate(-15,-35)');
 
-        var color = d3.scale.ordinal().range(colors);
+        const color = d3.scale.ordinal().range(colors);
 
-        var legend = d3.select('.pie-chart__container')
+        const legend = d3.select('.pie-chart__container')
           .append('div')
           .attr('class', 'legend')
           .selectAll('.legend__item')
@@ -146,19 +143,14 @@ export class PieChartComponent implements OnInit {
 
         legend.append('div')
           .attr('class', 'legend__mark pull-left')
-          .style('background-color', d => {
-            return color(d.key);
-          });
+          .style('background-color', (d) => color(d.key));
 
         legend.append('div')
           .attr('class', 'legend__text')
-          .text(d => {
-            return d.key;
-          });
+          .text((d) => d.key);
 
         return pieChart;
-      });*/
+      });
     }
-
   }
 }
