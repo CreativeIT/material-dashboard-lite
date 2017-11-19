@@ -5,6 +5,7 @@ import {
   QueryList,
   ElementRef,
   Renderer,
+  AfterViewInit,
 } from '@angular/core';
 
 @Component({
@@ -12,8 +13,8 @@ import {
   styleUrls: ['./todoList.scss'],
   templateUrl: './todoList.html',
 })
-export class TodoListComponent {
-  private items: Object[] = [
+export class TodoListComponent implements AfterViewInit {
+  public items = [
     {
       title: 'Fix bugs',
       id: 1651644545,
@@ -35,7 +36,7 @@ export class TodoListComponent {
       completed: false
     }
   ];
-  public createdItem: Object = null;
+  public createdItem = null;
 
   @ViewChild('todoInput')
   set todoInput(element: ElementRef) {

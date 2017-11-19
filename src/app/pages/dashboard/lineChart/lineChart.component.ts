@@ -1,52 +1,149 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 
 @Component({
   selector: 'line-chart',
   styleUrls: ['./lineChart.scss'],
   templateUrl: './lineChart.html',
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
-export class LineChartComponent {
+export class LineChartComponent implements OnInit {
+  private options;
+  private container;
+  private maxX;
+  private xStep;
+  private columns;
+  private color;
+  private margin;
+  private data;
+  private drawStep;
+  private durationResizeAnimation = 500;
+  private svg;
+  private svgHeight;
+  private svgWidth;
+  private barsLayout;
+  private lineChart;
+  private timer;
 
-/*
-  constructor(columns, color, margin, data, nv) {
-    this.columns = columns;
-    this.color = color;
-    this.margin = margin;
-    this.data = data;
-    this.nv = nv;
-    this.maxX = 130;
-    this.drawStep = 6; // It shows how many points will be drawn in one step
-    this.durationResizeAnimation = 500;
+  public ngOnInit() {
+    this.options = {
+      container: d3.select('.line-chart__container'),
+      maxX: 13,
+      xStep: 0.125,
+      xDrawStep: 4,
+      rowBgColor: '#4a4a4a',
+      margin: 20,
+      xAxis: 'TIME',
+      yAxis: 'REVENUE',
+      animationTime: 400,
+      data: [
+        {
+          values: [],
+          key: 'Awesome',
+          color: 'rgb(80, 150, 215)',
+          graphFunction(i) {
+            const INTERVAL_1 = 2.8;
+            const INTERVAL_2 = 7.1;
+            const INTERVAL_3 = 11.0;
+
+            if (i < INTERVAL_1) {
+              this.values.push({x: i, y: (3.43 * i * i - 6.7 * i) / 14});
+            } else {
+              if (i < INTERVAL_2) {
+                this.values.push({x: i, y: -(i - 7.1) * (i - 7.1) / 10.26 + 2.378});
+              } else {
+                if (i < INTERVAL_3) {
+                  this.values.push({x: i, y: -0.4 / (i - 4.3) + 2.53});
+                } else {
+                  this.values.push({x: i, y: ((i - 11.4) * (i - 11.4) * (i - 11.4)) / 13 + 2.476});
+                }
+              }
+            }
+          }
+        },
+        {
+          values: [],
+          key: 'Good',
+          color: 'rgb(0, 188, 212)',
+          fillOpacity: 0.00001,
+          area: true,
+
+          graphFunction(i) {
+            const INTERVAL_1 = 3.0;
+            const INTERVAL_2 = 8.2;
+
+            if (i < INTERVAL_1) {
+              this.values.push({x: i, y: (3.255 * i * i - 9.6 * i) / 16});
+            } else {
+              if (i < INTERVAL_2) {
+                this.values.push({x: i, y: (-1.055 * (i - 8.03) * (i - 8.03) + 27) / 15});
+              } else {
+                this.values.push({x: i, y: ((i - 9) * (i - 9) * (i - 9)) / 120 + 1.805});
+              }
+            }
+          }
+        },
+        {
+          values: [],
+          key: 'Fail',
+          color: 'rgb(255, 82, 82)',
+
+          graphFunction(i) {
+            const INTERVAL_1 = 3.1;
+            const INTERVAL_2 = 10.3;
+
+            if (i < INTERVAL_1) {
+              this.values.push({x: i, y: (2.255 * i * i - 9.1 * i) / 13});
+            } else {
+              if (i < INTERVAL_2) {
+                this.values.push({x: i, y: .82 * Math.sin((i - 4.5) / 2.1)});
+              } else {
+                this.values.push({x: i, y: -(i - 13) * (i - 13) * (i - 13) / 64});
+              }
+            }
+          }
+        }
+      ],
+    };
+
+    this.container = this.options.container;
+    this.maxX = this.options.maxX;
+    this.xStep = this.options.xStep;
+    this.columns = this.options.maxX / 2;
+    this.color = this.options.rowBgColor;
+    this.margin = this.options.margin;
+    this.data = this.options.data;
+    this.drawStep = this.xStep * this.options.xDrawStep;
+
+    if (this.options.container[0][0]) {
+      this.drawChart();
+    }
   }
 
   _addSvgContainer() {
-    this.svg = d3.select('.line-chart__container')
-      .append('div')
-      .append('svg');
+    this.svg = this.container.append('div').append('svg');
   }
 
   _getSvgSizes() {
-    let svgWidth = getComputedStyle(this.svg[0][0]).width,
-      svgHeight = getComputedStyle(this.svg[0][0]).height;
+    let svgWidth = getComputedStyle(this.svg[0][0]).width;
+    let svgHeight = getComputedStyle(this.svg[0][0]).height;
     this.svgWidth = svgWidth.slice(0, svgWidth.length - 2);
     this.svgHeight = svgHeight.slice(0, svgHeight.length - 2) - this.margin;
   }
 
   _addAxisLabels() {
-    d3.selectAll('.line-chart__container svg .y-axis-label')
-      .remove();
-    d3.select('.line-chart__container svg')
+    this.container.selectAll('svg .y-axis-label').remove();
+    this.container.select('svg')
       .append('text')
       .attr('class', 'y-axis-label')
-      .attr('x', '-72')
+      .attr('x', -(23 + this.options.yAxis.length*7))
       .attr('y', '12')
       .attr('transform', 'rotate(-90)')
-      .text('REVENUE');
-    d3.select('.line-chart__container svg')
+      .text(this.options.yAxis || '');
+
+    this.container.select('svg')
       .append('text')
       .attr('class', 'x-axis-label')
-      .text('TIME');
+      .text(this.options.xAxis || '');
   }
 
   _buildBackground() {
@@ -72,22 +169,18 @@ export class LineChartComponent {
   }
 
   _setBackgroundSizes() {
-    let availableBarWidth = (this.svgWidth - 2 * this.margin) / this.columns,
-      barWidth = availableBarWidth / 2;
+    let availableBarWidth = (this.svgWidth - 2 * this.margin) / this.columns;
+    let barWidth = availableBarWidth / 2;
     this.barsLayout
       .attr('fill', this.color)
       .attr('y', this.margin)
-      .attr('height', function (d, i) {
-        return d;
-      })
+      .attr('height', (d, i) => d)
       .transition().duration(this.durationResizeAnimation)
       .attr('width', barWidth)
-      .attr('x', function (d, i) {
-        return i * availableBarWidth;
-      });
-    d3.select('.line-chart__container svg .x-axis-label')
+      .attr('x', (d, i) => i * availableBarWidth);
+    this.container.select('svg .x-axis-label')
       .transition().duration(this.durationResizeAnimation)
-      .attr('x', this.svgWidth - this.margin - 30)
+      .attr('x', this.svgWidth - this.margin - 7 - this.options.xAxis.length * 7)
       .attr('y', this.svgHeight - (this.svgHeight) / 4 + this.margin + 14);
   }
 
@@ -115,7 +208,7 @@ export class LineChartComponent {
     this.lineChart = nv.models.lineChart()
       .margin({top: this.margin, right: this.margin, bottom: 0, left: this.margin})
       .useInteractiveGuideline(true)
-      .xDomain([0, 13.6])
+      .xDomain([0, this.options.maxX])
       .yDomain([-1.01, 3])
       .showLegend(false)
       .showYAxis(true)
@@ -127,18 +220,15 @@ export class LineChartComponent {
 
     this.lineChart.xAxis
       .showMaxMin(false)
-      .tickValues([0])
-      .tickFormat(d3.format('c'));
+      .tickValues([0]);
 
     this.lineChart.yAxis
       .showMaxMin(false)
-      .ticks(10)
-      .tickFormat(d3.format('c'));
+      .ticks(10);
   }
 
   _buildLegend() {
-    let legend = d3.select('.line-chart__container')
-      .append('div')
+    let legend = this.container.append('div')
       .attr('class', 'legend')
       .selectAll('.legend__item')
       .data(this.data)
@@ -148,15 +238,11 @@ export class LineChartComponent {
 
     legend.append('div')
       .attr('class', 'legend__mark pull-left')
-      .style('background-color', d => {
-        return d.color;
-      });
+      .style('background-color', (d) => d.color);
 
     legend.append('div')
       .attr('class', 'legend__text')
-      .text(d => {
-        return d.key;
-      });
+      .text((d) => d.key);
   }
 
   resizeBackground() {
@@ -165,124 +251,36 @@ export class LineChartComponent {
   }
 
   _animateGraphs() {
-    let i = 1;
+    let i = 0;
     this.timer = setInterval(() => {
       this._calcAllGraphs(i);
       this._drawNextStep(i);
-      i++;
+      i += this.xStep;
       this._checkEndOfAnimation(i);
-    }, 15);
+    }, Math.round(
+      this.options.animationTime / ((this.maxX / this.xStep) / this.options.xDrawStep)
+    ));
   }
 
   _drawNextStep(i) {
-    if (i % this.drawStep == 0 || i == this.maxX) {
+    if (i !== 0 && i % this.drawStep === 0 || i === this.options.maxX) {
       this.lineChart.update();
     }
   }
 
   _checkEndOfAnimation(i) {
-    if (i == this.maxX + 1) {
+    if (i >= this.options.maxX + 1) {
       this.lineChart.duration(this.durationResizeAnimation);
-      this.data[1].fillOpacity = 0.11;
-      this.lineChart.update();
+      this.data.forEach((item) => {
+        item.fillOpacity = 0.11;
+      });
+
       clearInterval(this.timer);
+      this.lineChart.update();
     }
   }
 
   _calcAllGraphs(i) {
-    this._calcFirstGraph(i);
-    this._calcSecondGraph(i);
-    this._calcThirdGraph(i);
+    this.data.forEach((item) => item.graphFunction(i));
   }
-
-  _calcFirstGraph(i) {
-    const INTERVAL_1 = 28,
-      INTERVAL_2 = 71,
-      INTERVAL_3 = 110;
-    let graphAwesome = this.data[0].values;
-
-    if (i < INTERVAL_1) {
-      graphAwesome.push({x: i / 10, y: (.0343 * i * i - .67 * i) / 14});
-    }
-    else {
-      if (i < INTERVAL_2) {
-        graphAwesome.push({x: i / 10, y: -(i - 71) * (i - 71) / 1026 + 2.378});
-      }
-      else {
-        if (i < INTERVAL_3) {
-          graphAwesome.push({x: i / 10, y: -4 / (i - 43) + 2.53});
-        }
-        else {
-          graphAwesome.push({x: i / 10, y: ((i - 114) * (i - 114) * (i - 114)) / 13000 + 2.476});
-        }
-      }
-    }
-  }
-
-  _calcSecondGraph(i) {
-    const INTERVAL_1 = 30,
-      INTERVAL_2 = 82;
-    let graphGood = this.data[1].values;
-
-    if (i < INTERVAL_1) {
-      graphGood.push({x: i / 10, y: (.03255 * i * i - .96 * i) / 16});
-    }
-    else {
-      if (i < INTERVAL_2) {
-        graphGood.push({x: i / 10, y: (-.01055 * (i - 80.3) * (i - 80.3) + 27) / 15});
-      }
-      else {
-        graphGood.push({
-          x: i / 10,
-          y: (((i / 2) - 45) * ((i / 2) - 45) * ((i / 2) - 45)) / 15000 + 1.805
-        });
-      }
-    }
-  }
-
-  _calcThirdGraph(i) {
-    const INTERVAL_1 = 31,
-      INTERVAL_2 = 103;
-    let graphFail = this.data[2].values;
-
-    if (i < INTERVAL_1) {
-      graphFail.push({x: i / 10, y: (.02255 * i * i - .91 * i) / 13});
-    }
-    else {
-      if (i < INTERVAL_2) {
-        graphFail.push({x: i / 10, y: .82 * Math.sin((i - 45) / 21)});
-      }
-      else {
-        graphFail.push({x: i / 10, y: -(i - 130) * (i - 130) * (i - 130) / 64000});
-      }
-    }
-  }
-}
-
-let data = [
-  {
-    values: [{x: 0, y: 0}],
-    key: 'Awesome',
-    color: 'rgb(80, 150, 215)'
-  },
-  {
-    values: [{x: 0, y: 0}],
-    key: 'Good',
-    color: 'rgb(0, 188, 212)',
-    fillOpacity: 0.00001,
-    area: true
-  },
-  {
-    values: [{x: 0, y: 0}],
-    key: 'Fail',
-    color: 'rgb(255, 82, 82)'
-  }
-];
-let lineChartContainer = document.querySelector('.line-chart__container');
-if (lineChartContainer) {
-  let lineChart = new LineChart(7, '#4a4a4a', 20, data, nv);
-  lineChart.drawChart();
-}
-*/
-
 }
