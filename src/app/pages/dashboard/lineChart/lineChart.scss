@@ -3,7 +3,7 @@
 .line-chart__container {
   min-height: $line-chart-height;
   svg {
-    height: $line-chart-height;
+    height: $line-chart-height !important;
     width: $line-chart-width;
     .y-axis-label, .x-axis-label {
       @include typo-linechart-axis-label;

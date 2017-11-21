@@ -27,7 +27,7 @@ export class LineChartComponent implements OnInit {
   public ngOnInit() {
     this.options = {
       container: d3.select('.line-chart__container'),
-      maxX: 13,
+      maxX: 14,
       xStep: 0.125,
       xDrawStep: 4,
       rowBgColor: '#4a4a4a',
