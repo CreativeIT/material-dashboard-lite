@@ -1,21 +1,19 @@
-/*
- * Angular 2 decorators and services
- */
 import {
   Component,
   OnInit,
   ViewEncapsulation
 } from '@angular/core';
 import { AppState } from './app.service';
-// import 'style-loader!./app.scss';
 
-/*
- * App Component
- * Top Level Component
- */
 @Component({
   selector: 'app',
-  styleUrls: ['./app.scss', './styles/styles.scss', './styles/headings.css', './application.scss'],
+  styleUrls: [
+    './app.scss',
+    './styles/styles.scss',
+    './styles/headings.css',
+    './application.scss',
+    '../../bower_components/getmdl-select/getmdl-select.min.css',
+  ],
   encapsulation: ViewEncapsulation.None,
   template: `
    <router-outlet></router-outlet>

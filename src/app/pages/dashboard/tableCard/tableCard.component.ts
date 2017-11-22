@@ -8,8 +8,8 @@ import { Component, ViewEncapsulation } from '@angular/core';
 })
 export class TableCardComponent {
 
-  tableHeader: string[];
-  data: Object[];
+  public tableHeader: string[];
+  public data: Object[];
 
   constructor() {
     let task1 = document.querySelector('#task1');
@@ -87,7 +87,7 @@ export class TableCardComponent {
         isSelected: false
       },
       {
-        project: "Don't worry, be happy!!!",
+        project: 'Don\'t worry, be happy!!!',
         responsible: [
           {
             color: 'secondary',

@@ -3,12 +3,12 @@ declare const componentHandler: any;
 import { Component, AfterViewInit } from '@angular/core';
 
 @Component({
-  selector: 'dashboard',
-  templateUrl: './dashboard.html',
+  selector: 'forms',
+  template: `<employer-form></employer-form>`,
 })
-export class DashboardComponent implements AfterViewInit {
+export class FormsComponent implements AfterViewInit {
   constructor() {
-    console.log('dashboard component');
+    console.log('forms component');
   }
 
   public ngAfterViewInit() {

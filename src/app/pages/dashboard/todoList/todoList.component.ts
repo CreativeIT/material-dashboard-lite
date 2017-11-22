@@ -1,3 +1,5 @@
+declare const componentHandler: any;
+
 import {
   Component,
   ViewChild,

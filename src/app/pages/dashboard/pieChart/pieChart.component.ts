@@ -1,3 +1,6 @@
+declare const d3: any;
+declare const nv: any;
+
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
@@ -61,8 +64,8 @@ export class PieChartComponent implements OnInit {
         const outerRadius = 1.02;
 
         const pieChart = nv.models.pieChart()
-          .x(d => d.key)
-          .y(d => d.y)
+          .x((d) => d.key)
+          .y((d) => d.y)
           .showLabels(false)
           .donut(true)
           .growOnHover(true)
@@ -101,18 +104,18 @@ export class PieChartComponent implements OnInit {
 
         let h = 0;
         let i = 0;
-        const timer = setInterval((data) => {
-          if (i < data.length - 1) {
-            if (data[i].y < data[i].end) {
-              data[i].y++;
-              data[data.length - 1].y--;
+        const timer = setInterval((_data) => {
+          if (i < _data.length - 1) {
+            if (_data[i].y < _data[i].end) {
+              _data[i].y++;
+              _data[_data.length - 1].y--;
               pieChart.title(`${h + 1} hours`);
               h++;
             } else {
               i++;
             }
           } else {
-            data.splice(data.length - 1, 1);
+            _data.splice(_data.length - 1, 1);
             clearInterval(timer);
             return;
           }

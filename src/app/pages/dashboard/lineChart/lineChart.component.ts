@@ -1,3 +1,6 @@
+declare const d3: any;
+declare const nv: any;
+
 import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 
 @Component({
@@ -119,23 +122,23 @@ export class LineChartComponent implements OnInit {
     }
   }
 
-  _addSvgContainer() {
+  private _addSvgContainer() {
     this.svg = this.container.append('div').append('svg');
   }
 
-  _getSvgSizes() {
+  private _getSvgSizes() {
     let svgWidth = getComputedStyle(this.svg[0][0]).width;
     let svgHeight = getComputedStyle(this.svg[0][0]).height;
     this.svgWidth = svgWidth.slice(0, svgWidth.length - 2);
-    this.svgHeight = svgHeight.slice(0, svgHeight.length - 2) - this.margin;
+    this.svgHeight = +svgHeight.slice(0, svgHeight.length - 2) - this.margin;
   }
 
-  _addAxisLabels() {
+  private _addAxisLabels() {
     this.container.selectAll('svg .y-axis-label').remove();
     this.container.select('svg')
       .append('text')
       .attr('class', 'y-axis-label')
-      .attr('x', -(23 + this.options.yAxis.length*7))
+      .attr('x', -(23 + this.options.yAxis.length * 7))
       .attr('y', '12')
       .attr('transform', 'rotate(-90)')
       .text(this.options.yAxis || '');
@@ -146,7 +149,7 @@ export class LineChartComponent implements OnInit {
       .text(this.options.xAxis || '');
   }
 
-  _buildBackground() {
+  private _buildBackground() {
     this._addSvgContainer();
     this._getSvgSizes();
 
@@ -168,7 +171,7 @@ export class LineChartComponent implements OnInit {
     this._setBackgroundSizes();
   }
 
-  _setBackgroundSizes() {
+  private _setBackgroundSizes() {
     let availableBarWidth = (this.svgWidth - 2 * this.margin) / this.columns;
     let barWidth = availableBarWidth / 2;
     this.barsLayout
@@ -184,14 +187,14 @@ export class LineChartComponent implements OnInit {
       .attr('y', this.svgHeight - (this.svgHeight) / 4 + this.margin + 14);
   }
 
-  drawChart() {
+  private drawChart() {
     this._buildBackground();
     this._buildLegend();
     this._buildNvGraph();
     this._animateGraphs();
   }
 
-  _buildNvGraph() {
+  private _buildNvGraph() {
     this._tuneNvGraph();
 
     nv.addGraph(() => {
@@ -204,7 +207,7 @@ export class LineChartComponent implements OnInit {
     });
   }
 
-  _tuneNvGraph() {
+  private _tuneNvGraph() {
     this.lineChart = nv.models.lineChart()
       .margin({top: this.margin, right: this.margin, bottom: 0, left: this.margin})
       .useInteractiveGuideline(true)
@@ -227,7 +230,7 @@ export class LineChartComponent implements OnInit {
       .ticks(10);
   }
 
-  _buildLegend() {
+  private _buildLegend() {
     let legend = this.container.append('div')
       .attr('class', 'legend')
       .selectAll('.legend__item')
@@ -245,12 +248,12 @@ export class LineChartComponent implements OnInit {
       .text((d) => d.key);
   }
 
-  resizeBackground() {
+  private resizeBackground() {
     this._getSvgSizes();
     this._setBackgroundSizes();
   }
 
-  _animateGraphs() {
+  private _animateGraphs() {
     let i = 0;
     this.timer = setInterval(() => {
       this._calcAllGraphs(i);
@@ -262,13 +265,13 @@ export class LineChartComponent implements OnInit {
     ));
   }
 
-  _drawNextStep(i) {
+  private _drawNextStep(i) {
     if (i !== 0 && i % this.drawStep === 0 || i === this.options.maxX) {
       this.lineChart.update();
     }
   }
 
-  _checkEndOfAnimation(i) {
+  private _checkEndOfAnimation(i) {
     if (i >= this.options.maxX + 1) {
       this.lineChart.duration(this.durationResizeAnimation);
       this.data.forEach((item) => {
@@ -280,7 +283,7 @@ export class LineChartComponent implements OnInit {
     }
   }
 
-  _calcAllGraphs(i) {
+  private _calcAllGraphs(i) {
     this.data.forEach((item) => item.graphFunction(i));
   }
 }
