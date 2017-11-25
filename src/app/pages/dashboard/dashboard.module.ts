@@ -7,14 +7,14 @@ import { DashboardComponent } from './dashboard.component';
 import { routing } from './dashboard.routing';
 
 import {
-  WeatherWidgetComponent,
+  WeatherComponent,
   CotoneasterCardComponent,
   LineChartComponent,
   TableCardComponent,
   RobotCardComponent,
   TodoListComponent,
-  TrendingWidgetComponent,
-  PieChartComponent
+  TrendingComponent,
+  PieChartComponent,
 } from './index';
 
 @NgModule({
@@ -26,14 +26,14 @@ import {
   ],
   declarations: [
     DashboardComponent,
-    WeatherWidgetComponent,
+    WeatherComponent,
     CotoneasterCardComponent,
     LineChartComponent,
     TableCardComponent,
     RobotCardComponent,
     TodoListComponent,
-    TrendingWidgetComponent,
-    PieChartComponent
+    TrendingComponent,
+    PieChartComponent,
   ],
   providers: []
 })

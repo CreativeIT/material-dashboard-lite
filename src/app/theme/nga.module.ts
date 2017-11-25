@@ -7,14 +7,16 @@ import {
   BaPageTopComponent,
   BaSidebarComponent,
   BaMsgMenuComponent,
-  BaNotificationMenuComponent
+  BaNotificationMenuComponent,
+  BaCardComponent,
 } from './components';
 
 const NGA_COMPONENTS = [
   BaPageTopComponent,
   BaSidebarComponent,
   BaMsgMenuComponent,
-  BaNotificationMenuComponent
+  BaNotificationMenuComponent,
+  BaCardComponent,
 ];
 
 const NGA_DIRECTIVES = [];

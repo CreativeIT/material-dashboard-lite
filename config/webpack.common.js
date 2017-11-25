@@ -168,34 +168,6 @@ module.exports = function (options) {
           use: ['raw-loader', 'sass-loader']
         },
 
-        /*     {
-         test: /app\.scss$/,
-         use: ExtractTextPlugin.extract({
-         fallback: 'style-loader',
-         use: 'css-loader!sass-loader?sourceMap'
-         })
-         },*/
-
-        // {
-        //   test: /\.scss$/,
-        //   use: ExtractTextPlugin.extract({
-        //     fallback: 'style-loader',
-        //     use: "css-loader!autoprefixer-loader!sass-loader"
-        //   })
-        // },
-        /*
-         {
-         test: /\.scss$/,
-         loader: extractCSS.extract(['css-loader','sass?sourceMap'])
-         },
-         {
-         test: /\.css$/,
-         include: helpers.root('src/app'),
-         loader: 'raw-loader'
-         },
-         */
-
-
         /* Raw loader support for *.html
          * Returns file content as string
          *

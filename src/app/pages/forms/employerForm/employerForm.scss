@@ -1,8 +1,8 @@
-@import '../../../theme/theme';
+@import '../../../theme/helpers';
 
 .employer-form {
   padding: 0;
-  width: $employer-form-width !important;
+  width: $employer-form-width;
   background-color: $background-color;
   margin: 16px auto;
 
