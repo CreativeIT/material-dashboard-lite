@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { BaNotificationMenuService } from './ba-notifications-menu.service';
+import { BaNotificationMenuService } from './ba-notification-menu.service';
 
 @Component({
   selector: 'ba-notification-menu',
@@ -8,7 +8,7 @@ import { BaNotificationMenuService } from './ba-notifications-menu.service';
   providers: [BaNotificationMenuService],
 })
 export class BaNotificationMenuComponent {
-  private notifications: Object[];
+  public notifications: Object[];
 
   constructor(BaNotificationMenuService: BaNotificationMenuService) {
     this.notifications = BaNotificationMenuService.getNotifications();

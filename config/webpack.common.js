@@ -81,7 +81,7 @@ module.exports = function (options) {
       extensions: ['.ts', '.js', '.json', '.css', '.scss'],
 
       // An array of directory names to be resolved to the current directory
-      modules: [helpers.root('src'), helpers.root('node_modules')],
+      modules: [helpers.root('src/app'), helpers.root('node_modules'), helpers.root('bower_components')],
 
     },
 

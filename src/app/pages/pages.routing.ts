@@ -11,8 +11,8 @@ export const routes: Routes = [
     component: PagesComponent,
     children: [
       {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
-      {path: 'dashboard', loadChildren: 'app/pages/dashboard/dashboard.module#DashboardModule'},
-      {path: 'forms', loadChildren: 'app/pages/forms/forms.module#FormsModule'},
+      {path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule'},
+      {path: 'forms', loadChildren: './forms/forms.module#FormsModule'},
     ]
   }
 ];

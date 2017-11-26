@@ -4,4 +4,4 @@ export { BaSidebarComponent } from './ba-sidebar/ba-sidebar.component';
 export { BaMsgMenuComponent } from './ba-msg-menu/ba-msg-menu.component';
 export {
   BaNotificationMenuComponent,
-} from './ba-notifications-menu/ba-notification-menu.component';
+} from './ba-notification-menu/ba-notification-menu.component';
