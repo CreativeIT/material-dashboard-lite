@@ -10,34 +10,16 @@ import {
   AfterViewInit,
 } from '@angular/core';
 
+import { TodoListService } from './todo-list.service';
+
 @Component({
   selector: 'todo-list',
   styleUrls: ['./todo-list.component.scss'],
   templateUrl: './todo-list.component.html',
+  providers: [TodoListService],
 })
 export class TodoListComponent implements AfterViewInit {
-  public items = [
-    {
-      title: 'Fix bugs',
-      id: 1651644545,
-      completed: false
-    },
-    {
-      title: 'Implement 30% of my feature',
-      id: 1651646545,
-      completed: false
-    },
-    {
-      title: 'Fencing',
-      id: 5451646545,
-      completed: true
-    },
-    {
-      title: 'Read an article about Test-Driven Development',
-      id: 5428646545,
-      completed: false
-    }
-  ];
+  public items;
   public createdItem = null;
 
   @ViewChild('todoInput')
@@ -50,10 +32,18 @@ export class TodoListComponent implements AfterViewInit {
   @ViewChildren('listItem')
   private todoItems: QueryList<ElementRef>;
 
-  constructor(private renderer: Renderer) {}
+  constructor(private renderer: Renderer, todoListService: TodoListService) {
+    this.items = todoListService.getItems();
+  }
 
   public ngAfterViewInit(): void {
-    this.todoItems.changes.subscribe(() => componentHandler.upgradeDom());
+    this.todoItems.changes.subscribe((r) => {
+      componentHandler.upgradeElement(r.last.nativeElement.querySelector('[checkboxitem]'));
+      const textField = r.last.nativeElement.querySelector('.mdl-textfield');
+      if (textField) {
+        componentHandler.upgradeElement(textField);
+      }
+    });
   }
 
   public deleteItem(item): void {

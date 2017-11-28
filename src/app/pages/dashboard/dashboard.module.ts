@@ -1,10 +1,9 @@
 import { NgModule }      from '@angular/core';
 import { CommonModule }  from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { NgaModule } from 'theme/nga.module';
+import { ThemeModule } from 'theme/theme.module';
 
 import { DashboardComponent } from './dashboard.component';
-import { routing } from './dashboard.routing';
 
 import {
   WeatherComponent,
@@ -20,9 +19,8 @@ import {
 @NgModule({
   imports: [
     CommonModule,
-    NgaModule,
+    ThemeModule,
     FormsModule,
-    routing
   ],
   declarations: [
     DashboardComponent,
@@ -35,7 +33,6 @@ import {
     TrendingComponent,
     PieChartComponent,
   ],
-  providers: []
 })
 export class DashboardModule {
 }

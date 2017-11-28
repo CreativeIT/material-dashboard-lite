@@ -1,15 +1,19 @@
 import { NgModule }      from '@angular/core';
 import { CommonModule }  from '@angular/common';
 
-import { routing }       from './pages.routing';
+import { PagesRoutingModule }       from './pages-routing.module';
 import { PagesComponent } from './pages.component';
-import { NgaModule } from '../theme/nga.module';
+import { ThemeModule } from 'theme/theme.module';
+import { DashboardModule } from './dashboard/dashboard.module';
+import { AccountModule } from './account/account.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    NgaModule,
-    routing
+    ThemeModule,
+    PagesRoutingModule,
+    DashboardModule,
+    AccountModule,
   ],
   declarations: [
     PagesComponent
