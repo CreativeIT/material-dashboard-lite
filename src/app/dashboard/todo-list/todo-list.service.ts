@@ -23,7 +23,7 @@ export class TodoListService {
         title: 'Read an article about Test-Driven Development',
         id: 5428646545,
         completed: false
-      }
+      },
     ];
   }
 }

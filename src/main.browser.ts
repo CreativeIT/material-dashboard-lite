@@ -1,9 +1,9 @@
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { decorateModuleRef } from './app/environment';
+import { decorateModuleRef } from 'environment';
 import { bootloader } from '@angularclass/hmr';
 import { ViewEncapsulation } from '@angular/core';
 
-import { AppModule } from './app';
+import { AppModule } from 'app.module';
 
 export function main(): Promise<any> {
   return platformBrowserDynamic()

@@ -1,3 +1,4 @@
+export { DashboardModule } from './dashboard.module';
 export { DashboardComponent } from './dashboard.component';
 export { WeatherComponent } from './weather/weather.component';
 export { TrendingComponent } from './trending/trending.component';

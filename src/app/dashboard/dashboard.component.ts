@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { UpgradeDomAfterViewInit } from 'pages/pages.helpers';
+import { UpgradeDomAfterViewInit } from 'helpers';
 
 @Component({
   selector: 'dashboard',

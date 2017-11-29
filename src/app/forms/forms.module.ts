@@ -3,7 +3,7 @@ import { CommonModule }  from '@angular/common';
 import { FormsModule as NgFormsModule } from '@angular/forms';
 import { ThemeModule } from 'theme/theme.module';
 
-import { AccountComponent } from './account.component';
+import { FormsComponent } from './forms.component';
 
 import { EmployerFormComponent } from './employer-form/employer-form.component';
 
@@ -14,9 +14,9 @@ import { EmployerFormComponent } from './employer-form/employer-form.component';
     NgFormsModule,
   ],
   declarations: [
-    AccountComponent,
+    FormsComponent,
     EmployerFormComponent,
   ],
   providers: [],
 })
-export class AccountModule {}
+export class FormsModule {}

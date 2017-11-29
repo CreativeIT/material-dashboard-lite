@@ -2,18 +2,17 @@ import { Routes, RouterModule }  from '@angular/router';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
 import { PagesComponent } from './pages.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { AccountComponent } from './account/account.component';
+import { ErrorComponent } from 'error/error.component';
+import { LoginComponent } from 'login/login.component';
 
 @NgModule({
   imports: [RouterModule.forChild([
     {
-      path: 'pages',
+      path: '',
       component: PagesComponent,
       children: [
-        { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
-        { path: 'dashboard', component: DashboardComponent },
-        { path: 'account', component: AccountComponent },
+        { path: '404', component: ErrorComponent },
+        { path: 'login', component: LoginComponent },
       ],
     },
   ])],

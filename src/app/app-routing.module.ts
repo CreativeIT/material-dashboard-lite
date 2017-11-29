@@ -3,9 +3,10 @@ import { NgModule } from '@angular/core';
 
 @NgModule({
   imports: [RouterModule.forRoot([
-    {path: '', redirectTo: 'pages', pathMatch: 'full'},
-    {path: '**', redirectTo: 'pages/dashboard'},
-  ], { useHash: true })],
+    { path: '', loadChildren: 'layout/layout.module#LayoutModule' },
+    { path: 'pages', loadChildren: 'pages/pages.module#PagesModule' },
+    { path: '**', redirectTo: 'pages/404' },
+  ], { useHash: true, enableTracing: true })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
