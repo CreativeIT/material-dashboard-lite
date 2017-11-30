@@ -1,6 +1,7 @@
 @import '~theme/helpers';
 
 .todo {
+  height: auto !important;
   .mdl-card__supporting-text {
     width: 100%;
     padding: 0;
@@ -40,6 +41,7 @@
     }
   }
   .mdl-card__actions {
+    padding: 8px 16px;
     margin-top: 20px;
     background: $card-actions-background-color;
   }

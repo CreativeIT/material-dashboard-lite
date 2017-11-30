@@ -9,6 +9,18 @@
       @include typo-linechart-axis-label;
       fill: $line-chart-axis-label-color;
     }
+    .nv-axis {
+      &.nv-x {
+        text {
+          display: none;
+        }
+      }
+      &.nv-y {
+          text {
+            display: none;
+          }
+      }
+    }
     .nv-lineChart {
       .nv-guideline {
         stroke: $line-chart-guideline-color;

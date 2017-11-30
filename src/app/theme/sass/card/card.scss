@@ -10,3 +10,7 @@
   //background-color: $card-actions-background-color;
   padding: 8px 16px;
 }
+
+.mdl-card, .mdl-card__supporting-text {
+  overflow: inherit;
+}

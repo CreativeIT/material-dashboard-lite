@@ -1,10 +1,9 @@
 @import '~theme/helpers';
 
-.weather > div {
-  height: 329px;
+.weather {
   .mdl-card__supporting-text {
     color: $card-text-color;
-    background: url($images-root + 'weather_bck.png') center center no-repeat;
+    background: url('assets/images/weather_bck.png') center center no-repeat;
     background-size: cover;
     text-align: right;
     padding-top: 38px;
@@ -20,11 +19,12 @@
     .weather-description {
       @include typo-weather-description;
       position: relative;
+      color: white;
       &:before {
         width: 35px;
         position: absolute;
         right: 150px;
-        content: url($images-root + 'cloudy_and_snow.svg');
+        content: url(assets/images/cloudy_and_snow.svg);
       }
     }
 

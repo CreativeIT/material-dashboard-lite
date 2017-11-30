@@ -11,23 +11,23 @@
 }
 
 .background-color--primary {
-  background-color: unquote("rgba(#{$color-primary}, 0.9)") !important;
+  background-color: unquote("rgba(#{$color-primary}, 0.9)");
 }
 
 .background-color--secondary {
-  background-color: unquote("rgba(#{$color-secondary}, 0.9)") !important;
+  background-color: unquote("rgba(#{$color-secondary}, 0.9)");
 }
 
 .background-color--baby-blue {
-  background-color: unquote("rgba(#{$color-baby-blue}, 0.9)") !important;
+  background-color: unquote("rgba(#{$color-baby-blue}, 0.9)");
 }
 
 .background-color--cerulean {
-  background-color: unquote("rgba(#{$color-cerulean}, 0.9)") !important;
+  background-color: unquote("rgba(#{$color-cerulean}, 0.9)");
 }
 
 .background-color--mint {
-  background-color: unquote("rgba(#{$color-mint}, 0.9)") !important;
+  background-color: unquote("rgba(#{$color-mint}, 0.9)");
 }
 
 .text-color--primary {
@@ -51,16 +51,15 @@
 }
 
 .text-color--gray {
-  color: unquote("rgb(#{$palette-grey-500})") !important;
+  color: unquote("rgb(#{$palette-grey-500})");
 }
 
-//new colors
-.color-red {
-  color: $color-red !important;
+.text-color--white {
+  color: white !important;
 }
 
-.mdl-color--orange-50 {
-  color: $color-orange !important;
+.text-color--smooth-gray {
+  color: $color-smooth-gray !important;
 }
 
 .getmdl-select {
@@ -104,5 +103,23 @@
 
   &.is-disabled input {
     border-bottom-width: 2px !important;
+  }
+  &:not(.is-focused), &:not(.mdl-textfield--floating-label) {
+    .mdl-textfield__label {
+      color: $color-smoke !important;
+    }
+  }
+  &:not(.is-focused):not(.is-dirty) {
+    .mdl-textfield__label {
+      font-size: 14px !important;
+    }
+  }
+}
+.mdl-grid:not(.ui-typography) .mdl-card:not(.robot):not(.todo) {
+  height: 100%;
+}
+h5{
+  &.mdl-card__title-text  {
+    font-size: 20px;
   }
 }

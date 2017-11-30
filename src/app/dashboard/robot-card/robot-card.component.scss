@@ -1,13 +1,12 @@
 @import '~theme/helpers';
 
-.robot > div {
-  height: 450px;
+.robot {
   .mdl-card__supporting-text {
     @include typo-card-supporting-text;
     padding-bottom: 26px;
   }
   .mdl-card__title {
-    background: url($images-root + 'robot.png') center center no-repeat;
+    background: url('assets/images/robot.png') center center no-repeat;
     background-size: cover;
     .mdl-card__title-text {
       color: $card-title-img-color;
