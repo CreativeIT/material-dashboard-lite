@@ -164,6 +164,17 @@
   color: white;
 }
 
+@mixin colored-button ($color) {
+  &.mdl-button--raised {
+    &, &:hover {
+      background-color: $color;
+      color: #ffffff;
+    }
+  }
+  & {
+    color: $color;
+  }
+}
 
 @mixin colored-radio ($color) {
   .mdl-ripple {

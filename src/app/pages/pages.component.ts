@@ -2,12 +2,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'pages',
-  templateUrl: './pages.html'
+  template: `<router-outlet></router-outlet>`,
 })
-export class PagesComponent {
-
-  constructor() {
-    console.log('pages component');
-  }
-
-}
+export class PagesComponent {}

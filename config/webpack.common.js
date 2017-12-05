@@ -81,7 +81,7 @@ module.exports = function (options) {
       extensions: ['.ts', '.js', '.json', '.css', '.scss'],
 
       // An array of directory names to be resolved to the current directory
-      modules: [helpers.root('src'), helpers.root('node_modules')],
+      modules: [helpers.root('src/app'), helpers.root('node_modules'), helpers.root('bower_components')],
 
     },
 
@@ -163,38 +163,10 @@ module.exports = function (options) {
          * Returns compiled css content as string
          *
          */
-        /*     {
-         test: /\.scss$/,
-         use: ['raw-loader', 'sass-loader']
-         },*/
-
-        /*     {
-         test: /app\.scss$/,
-         use: ExtractTextPlugin.extract({
-         fallback: 'style-loader',
-         use: 'css-loader!sass-loader?sourceMap'
-         })
-         },*/
-
         {
           test: /\.scss$/,
-          use: ExtractTextPlugin.extract({
-            fallback: 'style-loader',
-            use: "css-loader!autoprefixer-loader!sass-loader"
-          })
+          use: ['raw-loader', 'sass-loader']
         },
-        /*
-         {
-         test: /\.scss$/,
-         loader: extractCSS.extract(['css-loader','sass?sourceMap'])
-         },
-         {
-         test: /\.css$/,
-         include: helpers.root('src/app'),
-         loader: 'raw-loader'
-         },
-         */
-
 
         /* Raw loader support for *.html
          * Returns file content as string
