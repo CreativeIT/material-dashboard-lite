@@ -34,7 +34,7 @@ main {
     padding-bottom: 8px;
     bottom: 0;
     hr {
-      border-top: 1px solid unquote("rgba(#{$color-white}, 0.1)");
+      border-top: 1px solid $list-border-color;
       margin: 8px 0;
     }
     & .mdl-navigation__link {

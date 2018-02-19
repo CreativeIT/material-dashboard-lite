@@ -1,4 +1,9 @@
 .projects-table {
+  thead {
+    th {
+      color: rgba(255,255,255,.9);
+    }
+  }
   tbody {
     td:nth-child(1) {
       width: 1px;
@@ -27,15 +32,26 @@
       padding-top: 6px !important;
       padding-bottom: 0 !important;
       color: $progress-main-color;
-      .material-icons {
+      .material-icons, span {
+        color: white;
         cursor: pointer;
+      }
+      .material-icons {
+        background: $color-red;
+        border-radius: 24px;
+        font-size: 16px;
+        padding: 2px;
+        margin-right: 4px;
+      }
+      span {
+        vertical-align: text-bottom;
       }
     }
   }
 }
 
 @media screen and (max-width: 848px) {
-  .projects-table {
+  .dashboard .mdl-cell.mdl-cell--12-col-desktop.mdl-cell--12-col-tablet.mdl-cell--4-col-phone {
     display: none;
   }
 }

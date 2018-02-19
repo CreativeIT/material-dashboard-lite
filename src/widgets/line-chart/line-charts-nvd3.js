@@ -1,6 +1,17 @@
 'use strict';
 
 {
+    const COLORS = {
+        red: '#f44336',
+        lightBlue: '#03a9f4',
+        orange: '#ffc107',
+        amber: '#ff9800',
+        teal: '#00bcd4',
+        purple: '#7726d3',
+        green: '#00d45a',
+        rowBgColor: '#4a4a4a',
+    };
+
     document.addEventListener("DOMContentLoaded", () => {
         class LineChart {
             constructor(options) {
@@ -199,7 +210,7 @@
             {
                 values: [],
                 key: 'Awesome',
-                color: 'rgb(80, 150, 215)',
+                color: COLORS.teal,
 
                 graphFunction: function (i) {
                     const INTERVAL_1 = 2.8,
@@ -224,7 +235,7 @@
             {
                 values: [],
                 key: 'Good',
-                color: 'rgb(0, 188, 212)',
+                color: COLORS.orange,
                 fillOpacity: 0.00001,
                 area: true,
 
@@ -246,7 +257,7 @@
             {
                 values: [],
                 key: 'Fail',
-                color: 'rgb(255, 82, 82)',
+                color: COLORS.red,
 
                 graphFunction: function (i) {
                     const INTERVAL_1 = 3.1,
@@ -269,7 +280,7 @@
             maxX: 13,
             xStep: 0.125,
             xDrawStep: 4,
-            rowBgColor: '#4a4a4a',
+            rowBgColor: COLORS.rowBgColor,
             margin: 20,
             xAxis: 'TIME',
             yAxis: 'REVENUE',
@@ -287,7 +298,7 @@
             {
                 values: [],
                 key: 'Sin(x)',
-                color: '#51a8f9',
+                color: COLORS.lightBlue,
                 fillOpacity: 0.00001,
                 area: true,
 
@@ -298,7 +309,7 @@
             {
                 values: [],
                 key: 'Cos(x+10)+1/2',
-                color: '#ff5252',
+                color: COLORS.red,
                 fillOpacity: 0.00001,
                 area: true,
 
@@ -309,7 +320,7 @@
             {
                 values: [],
                 key: 'Cos(x)+1',
-                color: '#7726d3',
+                color: COLORS.purple,
                 fillOpacity: 0.00001,
                 area: true,
 
@@ -323,7 +334,7 @@
             maxX: 10,
             xStep: 0.125,
             xDrawStep: 4,
-            rowBgColor: '#4a4a4a',
+            rowBgColor: COLORS.rowBgColor,
             margin: 20,
             xAxis: 'X',
             yAxis: 'Y',
@@ -342,7 +353,7 @@
             {
                 values: [],
                 key: 'Teal graph',
-                color: '#00bcd4',
+                color: COLORS.teal,
                 fillOpacity: 0.00001,
                 area: true,
 
@@ -357,8 +368,8 @@
             },
             {
                 values: [],
-                key: 'Purple graph',
-                color: '#ffc107',
+                key: 'Orange graph',
+                color: COLORS.orange,
                 fillOpacity: 0.00001,
                 area: true,
 
@@ -372,8 +383,8 @@
             },
             {
                 values: [],
-                key: 'Orange graph',
-                color: '#00d45a',//'#7726d3',
+                key: 'Green graph',
+                color: COLORS.green,
                 fillOpacity: 0.00001,
                 //area: true,
 
@@ -404,7 +415,7 @@
             maxX: 14,
             xStep: 0.125,
             xDrawStep: 4,
-            rowBgColor: '#4a4a4a',
+            rowBgColor: COLORS.rowBgColor,
             margin: 20,
             animationTime: 400,
             xAxis: 'X',

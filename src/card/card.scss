@@ -4,6 +4,7 @@
 
 .mdl-card__supporting-text {
   width: calc(100% - #{$card-horizontal-padding*2});
+  line-height: 22px;
 }
 
 .mdl-card__actions {
@@ -13,6 +14,10 @@
 
 .mdl-card, .mdl-card__supporting-text {
   overflow: inherit;
+}
+
+.mdl-card {
+  height: 100%;
 }
 
 

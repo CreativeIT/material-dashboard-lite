@@ -1,17 +1,27 @@
 'use strict';
 
 {
+    const COLORS = {
+        red: '#f44336',
+        lightBlue: '#03a9f4',
+        orange: '#ffc107',
+        amber: '#ff9800',
+        teal: '#00bcd4',
+        purple: '#7726d3',
+        green: '#00d45a',
+        rowBgColor: '#4a4a4a',
+    };
+
     document.addEventListener("DOMContentLoaded", () => {
 //pie chart on index page
         let container = d3.select('.pie-chart__container');
         if (container[0][0]) {
             let colors = [
-                'rgba(96, 196, 150, 1)',
-                'rgba(80, 150, 215, 1)',
-                'rgba(0, 188, 212, 1)',
-                'rgba(116, 199, 209, 1)',
-                'rgba(255, 82, 82, 1)',
-                'rgba(0, 0, 0, 0)'
+                COLORS.lightBlue,
+                COLORS.red,
+                COLORS.amber,
+                COLORS.orange,
+                COLORS.teal
             ];
 
             let data = [
@@ -156,11 +166,11 @@
         let container1 = d3.select('.chart1__container');
         if (container1[0][0]) {
             let colors = [
-                '#7726d3',
-                '#ff5252',
-                '#ffc107',
-                '#00bcd4',
-                '#51a8f9'
+                COLORS.purple,
+                COLORS.red,
+                COLORS.orange,
+                COLORS.teal,
+                COLORS.lightBlue
             ];
 
             let data = [
@@ -286,11 +296,11 @@
         let container2 = d3.select('.chart2__container');
         if (container2[0][0]) {
             let colors = [
-                '#7726d3',
-                '#ff5252',
-                '#ffc107',
-                '#00bcd4',
-                '#51a8f9'
+                COLORS.purple,
+                COLORS.red,
+                COLORS.orange,
+                COLORS.teal,
+                COLORS.lightBlue
             ];
 
             let data = [

@@ -5,8 +5,8 @@
   font-family: Roboto, Helvetica, sans-serif;
   font-size: 14px;
   .mdl-card__login.mdl-card, .mdl-card__not-found.mdl-card {
-    width: 450px;
-    min-height: 500px;
+    max-width: 450px;
+    //min-height: 500px;
     margin: auto;
     .mdl-card__supporting-text {
       min-height: inherit;
@@ -64,5 +64,9 @@
         right: 46px;
       }
     }
+  }
+  .mdl-layout__content {
+    padding: 16px;
+    display: flex;
   }
 }
