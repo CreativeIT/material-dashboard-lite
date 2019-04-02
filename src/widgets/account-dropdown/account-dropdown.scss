@@ -4,6 +4,11 @@
   }
   .mdl-list__item {
     font-size: 14px;
+    &:hover .mdl-list__item-icon {
+      color: $list-icon-hover-color;
+    }
+  }
+  & > .mdl-list__item {
     &:first-child {
       font-size: 16px;
       padding-top: $list-min-padding/2;
@@ -22,9 +27,6 @@
           font-weight: 300;
         }
       }
-    }
-    &:hover .mdl-list__item-icon {
-      color: $list-icon-hover-color;
     }
   }
   .list__item--border-top {

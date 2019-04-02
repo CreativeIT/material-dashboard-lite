@@ -64,24 +64,30 @@
 
 .getmdl-select {
   .mdl-icon-toggle__label {
-	color: white;
-    }
+    color: white;
+  }
 
-    &.is-focused i.material-icons {
-	color: unquote("rgb(#{$color-primary})");
-    }
+  &.is-focused i.material-icons {
+    color: unquote("rgb(#{$color-primary})");
+  }
 
-    .mdl-menu__container {
-	margin-top: -45px !important;
+  .mdl-menu__container {
+    margin-top: -45px !important;
+    //box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+  }
 
-	.mdl-menu__outline {
+    .mdl-menu__outline {
       box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
-	}
     }
 
-    .mdl-menu .mdl-menu__item {
-	@include typo-employer-form-inputs();
-    }
+
+  .mdl-textfield__input {
+    cursor: pointer;
+  }
+
+  .mdl-menu .mdl-menu__item {
+    @include typo-employer-form-inputs();
+  }
 }
 
 .mdl-textfield {

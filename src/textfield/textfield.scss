@@ -2,7 +2,21 @@
   width: auto;
   .mdl-textfield__input {
     @include typo-textfield-input;
+
+    &:-webkit-autofill {
+      border-color: #6b6b6b !important;
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-box-shadow: 0 0 0 30px $background-color inset;
+      -webkit-text-fill-color: unquote("rgb(#{$color-white})") !important;
+      border-color: unquote("rgb(#{$color-primary})");
+    }
   }
+
   &.full-size {
     width: 100%;
   }
