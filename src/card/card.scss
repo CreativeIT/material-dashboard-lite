@@ -4,11 +4,20 @@
 
 .mdl-card__supporting-text {
   width: calc(100% - #{$card-horizontal-padding*2});
+  line-height: 22px;
 }
 
 .mdl-card__actions {
   //background-color: $card-actions-background-color;
   padding: 8px 16px;
+}
+
+.mdl-card, .mdl-card__supporting-text {
+  overflow: inherit;
+}
+
+.mdl-card {
+  height: 100%;
 }
 
 

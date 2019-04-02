@@ -44,9 +44,9 @@
 
 @import 'widgets/todo/todo';
 
-@import 'widgets/pie-chart/pie-chart';
+@import 'widgets/charts/charts';
 
-@import 'widgets/line-chart/line-chart';
+@import 'widgets/line-chart/line-charts';
 
 @import 'widgets/chart-legend/chart-legend';
 
@@ -80,4 +80,16 @@
 
 @import "widgets/ui-icons/ui-icons";
 
+@import "widgets/ui-tables/ui-tables";
+
+@import "widgets/ui-form-components/ui-form-components";
+
+@import "scroll/scroll";
+
 @import 'helper';
+
+@import "form/form";
+
+@import "login/login";
+
+@import "404/404";

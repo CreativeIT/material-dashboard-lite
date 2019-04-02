@@ -1,5 +1,6 @@
 .mdl-layout {
   background: $layout-drawer-bg-color;
+  overflow: hidden;
 }
 
 main {
@@ -26,13 +27,15 @@ main {
     letter-spacing: 1px;
   }
 
+
   & .mdl-navigation {
     flex-grow: 1;
     padding-top: 48px;
     padding-bottom: 8px;
-    .mdl-layout-spacer {
-      border-bottom: 1px solid unquote("rgba(#{$color-white}, 0.1)");
-      margin-bottom: 8px;
+    bottom: 0;
+    hr {
+      border-top: 1px solid $list-border-color;
+      margin: 8px 0;
     }
     & .mdl-navigation__link {
       @include typo-layout-navigation-link;
@@ -139,6 +142,22 @@ main {
     }
   }
 }
+
+// custom scroll
+::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $scrollbar-thumb;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+  background: $scrollbar-track;
+}
+
 
 @media screen and (max-width: $layout-screen-size-threshold) {
   .mdl-layout--fixed-drawer {

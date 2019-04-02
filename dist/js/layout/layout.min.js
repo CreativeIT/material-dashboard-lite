@@ -1,0 +1,1 @@
+"use strict";var ui_navigation=document.querySelectorAll(".sub-navigation");if(ui_navigation)for(var _length=ui_navigation.length,_loop=function(i){var n=ui_navigation[i];n.addEventListener("click",function(){n.classList.toggle("sub-navigation--show"),n.querySelector(".mdl-navigation__link").classList.toggle("mdl-navigation__link--current")})},i=0;_length>i;i++)_loop(i);

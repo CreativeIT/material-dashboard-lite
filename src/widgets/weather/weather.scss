@@ -1,5 +1,4 @@
 .weather {
-  height: 329px;
   .mdl-card__supporting-text {
     color: $card-text-color;
     background: url('../images/weather_bck.png') center center no-repeat;
@@ -18,6 +17,7 @@
     .weather-description {
       @include typo-weather-description;
       position: relative;
+      color: white;
       &:before {
         width: 35px;
         position: absolute;
@@ -25,7 +25,6 @@
         content: url(../images/cloudy_and_snow.svg);
       }
     }
-
   }
 
   .mdl-card__title {

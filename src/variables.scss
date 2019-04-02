@@ -4,7 +4,7 @@ $image_path: '../images';
 
 /* ==========  Color & Themes  ========== */
 $color-primary: 0, 188, 212;
-$color-secondary: 255, 82, 82;
+$color-secondary: 244, 67, 54;
 $color-baby-blue: 116, 199, 209;
 $color-cerulean: 80, 150, 215;
 $color-mint: 96, 196, 150;
@@ -12,6 +12,12 @@ $color-white: 255, 255, 255;
 $color-black: 0, 0, 0;
 
 @import "palette";
+
+$color-red: #ff5252;
+$color-blue: #51a8f9;
+$color-yellow: #ffc107;
+$color-light-blue: #00bcd4;
+$color-purple: #7726d3;
 
 $background-color: $color-gray;
 $background-color-header: $color-dark-gray;
@@ -93,13 +99,13 @@ $todo-input-text-highlight-color: unquote("rgba(#{$color-white}, 0.7)");
 /* ==========  Card  ========== */
 $card-background-color: $background-color;
 $card-text-color: unquote("rgba(#{$color-white}, 0.8)");
-$card-supporting-text-text-color: unquote("rgba(#{$color-white}, 0.8)");
+$card-supporting-text-text-color: unquote("rgba(#{$color-white}, 1)");
 $card-subtitle-color: unquote("rgba(#{$color-white}, 0.5)");
 $card-border-color: unquote("rgba(#{$color-white},0.05)");
 
-$card-title-background-color: unquote("rgba(#{$color-black}, 0.3)");
+$card-title-background-color: $color-dark-gray;
 $card-actions-background-color: unquote("rgba(#{$color-white},0.05)");
-$card-text-color: unquote("rgba(#{$color-white}, 0.8)");
+$card-text-color: unquote("rgba(#{$color-white}, 1)");
 $card-link-color: unquote("rgb(#{$color-primary})");
 $card-href-color: unquote("rgb(#{$color-primary})");
 
@@ -278,3 +284,8 @@ $weather-shadow-4px: 4px 4px 4px $weather-shadow-color;
 
 /* row */
 $row-col-padding: 30px;
+
+
+/* scroll */
+$scrollbar-thumb: #999;
+$scrollbar-track: #666;

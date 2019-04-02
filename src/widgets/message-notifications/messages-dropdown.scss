@@ -1,4 +1,7 @@
 .messages-dropdown {
+  &.mdl-menu {
+    width: 310px;
+  }
   .label {
     color: $messages-dropdown-label-text-color;
   }
@@ -6,7 +9,7 @@
     font-weight: 400;
     line-height: 18px;
     .mdl-list__item-avatar {
-      padding: ($list-avatar-size - $list-icon-size)/2;
+      padding: ($list-avatar-size - $list-icon-size);
       text-align: center;
       .material-icons {
         vertical-align: top;

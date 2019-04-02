@@ -48,7 +48,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- inject:css -->
     <!-- endinject -->
-
+    <script src="http://nvd3.org/assets/js/data/stream_layers.js"></script>
 </head>
 <body>
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header is-small-screen">
@@ -231,12 +231,14 @@
                         Settings
                     </span>
                 </li>
-                <li class="mdl-menu__item mdl-list__item">
-                    <span class="mdl-list__item-primary-content">
-                        <i class="material-icons mdl-list__item-icon text-color--secondary">exit_to_app</i>
-                        Log out
-                    </span>
-                </li>
+                <a href="login.html">
+                    <li class="mdl-menu__item mdl-list__item">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-list__item-icon text-color--secondary">exit_to_app</i>
+                            Log out
+                        </span>
+                    </li>
+                </a>
             </ul>
 
             <button id="more"
@@ -260,66 +262,102 @@
     </header>
 
     <div class="mdl-layout__drawer">
-        <header class="mdl-layout__drawer-header--full">darkboard</header>
-        <nav class="mdl-navigation">
-            <a class="mdl-navigation__link" href="index.html" title="Dashboard">
-                <i class="material-icons" role="presentation">dashboard</i>
-                Dashboard
-            </a>
-            <div class="sub-navigation">
-                <a class="mdl-navigation__link">
-                    <i class="material-icons">view_comfy</i>
-                    UI
-                    <i class="material-icons">keyboard_arrow_down</i>
-                </a>
-                <div class="mdl-navigation">
-                    <a class="mdl-navigation__link" href="ui-buttons.html">
-                        Buttons
-                    </a>
-                    <a class="mdl-navigation__link" href="ui-cards.html">
-                        Cards
-                    </a>
-                    <a class="mdl-navigation__link" href="ui-colors.html">
-                        Colors
-                    </a>
-                    <a class="mdl-navigation__link" href="ui-components.html">
-                        Components
-                    </a>
-                    <a class="mdl-navigation__link" href="ui-icons.html">
-                        Icons
-                    </a>
-                    <a class="mdl-navigation__link" href="ui-typography.html">
-                        Typography
-                    </a>
+        <header>darkboard</header>
+        <div class="scroll__wrapper" id="scroll__wrapper">
+            <div class="scroller" id="scroller">
+                <div class="scroll__container" id="scroll__container">
+                    <nav class="mdl-navigation">
+                        <a class="mdl-navigation__link" href="index.html">
+                            <i class="material-icons" role="presentation">dashboard</i>
+                            Dashboard
+                        </a>
+                        <div class="sub-navigation">
+                            <a class="mdl-navigation__link">
+                                <i class="material-icons">view_comfy</i>
+                                UI
+                                <i class="material-icons">keyboard_arrow_down</i>
+                            </a>
+                            <div class="mdl-navigation">
+                                <a class="mdl-navigation__link" href="ui-buttons.html">
+                                    Buttons
+                                </a>
+                                <a class="mdl-navigation__link" href="ui-cards.html">
+                                    Cards
+                                </a>
+                                <a class="mdl-navigation__link" href="ui-colors.html">
+                                    Colors
+                                </a>
+                                <a class="mdl-navigation__link" href="ui-form-components.html">
+                                    Forms
+                                </a>
+                                <a class="mdl-navigation__link" href="ui-icons.html">
+                                    Icons
+                                </a>
+                                <a class="mdl-navigation__link" href="ui-typography.html">
+                                    Typography
+                                </a>
+                                <a class="mdl-navigation__link" href="ui-tables.html">
+                                    Tables
+                                </a>
+                            </div>
+                        </div>
+                        <a class="mdl-navigation__link" href="ui-components.html">
+                            <i class="material-icons">developer_board</i>
+                            Components
+                        </a>
+                        <a class="mdl-navigation__link" href="forms.html">
+                            <i class="material-icons" role="presentation">person</i>
+                            Account
+                        </a>
+                        <a class="mdl-navigation__link" href="maps.html">
+                            <i class="material-icons" role="presentation">map</i>
+                            Maps
+                        </a>
+                        <a class="mdl-navigation__link mdl-navigation__link--current" href="charts.html">
+                            <i class="material-icons">multiline_chart</i>
+                            Charts
+                        </a>
+                        <div class="sub-navigation">
+                            <a class="mdl-navigation__link">
+                                <i class="material-icons">pages</i>
+                                Pages
+                                <i class="material-icons">keyboard_arrow_down</i>
+                            </a>
+                            <div class="mdl-navigation">
+                                <a class="mdl-navigation__link" href="login.html">
+                                    Sign in
+                                </a>
+                                <a class="mdl-navigation__link" href="sign-up.html">
+                                    Sign up
+                                </a>
+                                <a class="mdl-navigation__link" href="forgot-password.html">
+                                    Forgot password
+                                </a>
+                                <a class="mdl-navigation__link" href="404.html">
+                                    404
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="mdl-layout-spacer"></div>
+                        <hr>
+                        <a class="mdl-navigation__link" href="https://github.com/CreativeIT/getmdl-dashboard">
+                            <i class="material-icons" role="presentation">link</i>
+                            GitHub
+                        </a>
+                    </nav>
                 </div>
             </div>
-            <a class="mdl-navigation__link" href="forms.html" title="Account">
-                <i class="material-icons" role="presentation">person</i>
-                Account
-            </a>
-            <a class="mdl-navigation__link" href="maps.html"title="Map">
-                <i class="material-icons" role="presentation">map</i>
-                Maps
-            </a>
-            <a class="mdl-navigation__link  mdl-navigation__link--current" href="charts.html" title="Charts">
-                <i class="material-icons">donut_large</i>
-                Charts
-            </a>
-
-            <div class="mdl-layout-spacer"></div>
-            <a class="mdl-navigation__link" href="https://github.com/CreativeIT/getmdl-dashboard">
-                <i class="material-icons" role="presentation">link</i>
-                GitHub
-            </a>
-        </nav>
+            <div class='scroller__bar' id="scroller__bar"></div>
+        </div>
     </div>
 
     <main class="mdl-layout__content">
 
-        <div class="mdl-grid">
+        <div class="mdl-grid charts">
 
             <!--chart 1-->
-            <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--4-col-tablet mdl-cell--2-col-phone">
+            <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--6-col-tablet mdl-cell--2-col-phone">
                 <div class="mdl-card mdl-shadow--2dp">
                     <div class="mdl-card__title">
                         <h2 class="mdl-card__title-text">Browser Statistics</h2>
@@ -333,7 +371,7 @@
             </div>
 
             <!--chart 2-->
-            <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--4-col-tablet mdl-cell--2-col-phone">
+            <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--6-col-tablet mdl-cell--2-col-phone">
                 <div class="mdl-card mdl-shadow--2dp">
                     <div class="mdl-card__title">
                         <h2 class="mdl-card__title-text">Country Statistics</h2>
@@ -347,12 +385,12 @@
             </div>
 
             <!--chart 3-->
-            <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--6-col-tablet mdl-cell--12-col-phone">
+            <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
                 <div class="mdl-card mdl-shadow--2dp pie-chart">
                     <div class="mdl-card__title">
-                        <h2 class="mdl-card__title-text">Chart 3</h2>
+                        <h2 class="mdl-card__title-text">Discrete Bar Chart</h2>
                     </div>
-                    <div class="mdl-card__supporting-text">
+                    <div class="mdl-card__supporting-text mdl-card--expand">
                         <div class="discrete-bar-chart__container">
 
                         </div>
@@ -364,28 +402,57 @@
             <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--6-col-tablet mdl-cell--12-col-phone">
                 <div class="mdl-card mdl-shadow--2dp line-chart">
                     <div class="mdl-card__title">
-                        <h2 class="mdl-card__title-text">Chart 4</h2>
+                        <h2 class="mdl-card__title-text">Simple Line Chart 1</h2>
                     </div>
                     <div class="mdl-card__supporting-text">
+                        <div class="line-chart-1__container">
 
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!--how to use-->
-            <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+            <!--chart 5-->
+            <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--6-col-tablet mdl-cell--12-col-phone">
                 <div class="mdl-card mdl-shadow--2dp line-chart">
                     <div class="mdl-card__title">
-                        <h2 class="mdl-card__title-text">How to use</h2>
+                        <h2 class="mdl-card__title-text">Simple Line Chart 2</h2>
                     </div>
                     <div class="mdl-card__supporting-text">
-                        To use colors above for the element, you need to use Sass variable naming as the corresponding color in lowercase with prefix "color-".
-                        If the color name is composed of more than one word, the words are separated by a dash "-".<br>
-                        <i>Example: You want to use color naming "Light blue". Sass variable for this color is <b>$color-light-blue</b></i>
+                        <div class="line-chart-2__container">
+
+                        </div>
                     </div>
                 </div>
             </div>
 
+            <!--chart 6-->
+            <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--6-col-tablet mdl-cell--12-col-phone">
+                <div class="mdl-card mdl-shadow--2dp line-chart">
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">Line Plus Bar Chart</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <div class="line-plus-bar-chart__container">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--chart 7-->
+            <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--6-col-tablet mdl-cell--12-col-phone">
+                <div class="mdl-card mdl-shadow--2dp line-chart">
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">Stacked Bar Chart</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <div class="stacked-bar-chart__container">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
 

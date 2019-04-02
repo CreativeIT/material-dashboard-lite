@@ -55,7 +55,7 @@
     <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
             <div class="mdl-layout-spacer"></div>
-
+            <!-- Search-->
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
                 <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
                     <i class="material-icons">search</i>
@@ -71,7 +71,7 @@
                  data-badge="23">
                 notifications_none
             </div>
-
+            <!-- Notifications dropdown-->
             <ul class="mdl-menu mdl-list mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right mdl-shadow--2dp notifications-dropdown"
                 for="notification">
                 <li class="mdl-list__item">
@@ -129,7 +129,7 @@
             <div class="material-icons mdl-badge mdl-badge--overlap mdl-button--icon message" id="inbox" data-badge="4">
                 mail_outline
             </div>
-
+            <!-- Messages dropdown-->
             <ul class="mdl-menu mdl-list mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right mdl-shadow--2dp messages-dropdown"
                 for="inbox">
                 <li class="mdl-list__item">
@@ -190,9 +190,9 @@
 
             <div class="avatar-dropdown" id="icon">
                 <span>Luke</span>
-                <img src="images/Icon_header.png">
+                <img src="./images/Icon_header.png">
             </div>
-
+            <!-- Account dropdawn-->
             <ul class="mdl-menu mdl-list mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect mdl-shadow--2dp account-dropdown"
                 for="icon">
                 <li class="mdl-list__item mdl-list__item--two-line">
@@ -231,12 +231,14 @@
                         Settings
                     </span>
                 </li>
-                <li class="mdl-menu__item mdl-list__item">
-                    <span class="mdl-list__item-primary-content">
-                        <i class="material-icons mdl-list__item-icon text-color--secondary">exit_to_app</i>
-                        Log out
-                    </span>
-                </li>
+                <a href="login.html">
+                    <li class="mdl-menu__item mdl-list__item">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-list__item-icon text-color--secondary">exit_to_app</i>
+                            Log out
+                        </span>
+                    </li>
+                </a>
             </ul>
 
             <button id="more"
@@ -261,57 +263,96 @@
 
     <div class="mdl-layout__drawer">
         <header>darkboard</header>
-        <nav class="mdl-navigation">
-            <a class="mdl-navigation__link" href="index.html">
-                <i class="material-icons" role="presentation">dashboard</i>
-                Dashboard
-            </a>
-            <div class="sub-navigation sub-navigation--show">
-                <a class="mdl-navigation__link mdl-navigation__link--current">
-                    <i class="material-icons">view_comfy</i>
-                    UI
-                    <i class="material-icons">keyboard_arrow_down</i>
-                </a>
-                <div class="mdl-navigation">
-                    <a class="mdl-navigation__link" href="ui-buttons.html">
-                        Buttons
-                    </a>
-                    <a class="mdl-navigation__link" href="ui-cards.html">
-                        Cards
-                    </a>
-                    <a class="mdl-navigation__link" href="ui-colors.html">
-                        Colors
-                    </a>
-                    <a class="mdl-navigation__link mdl-navigation__link--current" href="ui-components.html">
-                        Components
-                    </a>
-                    <a class="mdl-navigation__link" href="ui-icons.html">
-                        Icons
-                    </a>
-                    <a class="mdl-navigation__link" href="ui-typography.html">
-                        Typography
-                    </a>
+        <div class="scroll__wrapper" id="scroll__wrapper">
+            <div class="scroller" id="scroller">
+                <div class="scroll__container" id="scroll__container">
+                    <nav class="mdl-navigation">
+                        <a class="mdl-navigation__link" href="index.html">
+                            <i class="material-icons" role="presentation">dashboard</i>
+                            Dashboard
+                        </a>
+                        <div class="sub-navigation">
+                            <a class="mdl-navigation__link">
+                                <i class="material-icons">view_comfy</i>
+                                UI
+                                <i class="material-icons">keyboard_arrow_down</i>
+                            </a>
+                            <div class="mdl-navigation">
+                                <a class="mdl-navigation__link" href="ui-buttons.html">
+                                    Buttons
+                                </a>
+                                <a class="mdl-navigation__link" href="ui-cards.html">
+                                    Cards
+                                </a>
+                                <a class="mdl-navigation__link" href="ui-colors.html">
+                                    Colors
+                                </a>
+                                <a class="mdl-navigation__link" href="ui-form-components.html">
+                                    Forms
+                                </a>
+                                <a class="mdl-navigation__link" href="ui-list-components.html">
+                                    List Components
+                                </a>
+                                <a class="mdl-navigation__link" href="ui-icons.html">
+                                    Icons
+                                </a>
+                                <a class="mdl-navigation__link" href="ui-typography.html">
+                                    Typography
+                                </a>
+                                <a class="mdl-navigation__link" href="ui-tables.html">
+                                    Tables
+                                </a>
+                            </div>
+                        </div>
+                        <a class="mdl-navigation__link mdl-navigation__link--current" href="ui-components.html">
+                            <i class="material-icons">developer_board</i>
+                            Components
+                        </a>
+                        <a class="mdl-navigation__link" href="forms.html">
+                            <i class="material-icons" role="presentation">person</i>
+                            Account
+                        </a>
+                        <a class="mdl-navigation__link" href="maps.html">
+                            <i class="material-icons" role="presentation">map</i>
+                            Maps
+                        </a>
+                        <a class="mdl-navigation__link" href="charts.html">
+                            <i class="material-icons">multiline_chart</i>
+                            Charts
+                        </a>
+                        <div class="sub-navigation">
+                            <a class="mdl-navigation__link">
+                                <i class="material-icons">pages</i>
+                                Pages
+                                <i class="material-icons">keyboard_arrow_down</i>
+                            </a>
+                            <div class="mdl-navigation">
+                                <a class="mdl-navigation__link" href="login.html">
+                                    Sign in
+                                </a>
+                                <a class="mdl-navigation__link" href="sign-up.html">
+                                    Sign up
+                                </a>
+                                <a class="mdl-navigation__link" href="forgot-password.html">
+                                    Forgot password
+                                </a>
+                                <a class="mdl-navigation__link" href="404.html">
+                                    404
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="mdl-layout-spacer"></div>
+                        <hr>
+                        <a class="mdl-navigation__link" href="https://github.com/CreativeIT/getmdl-dashboard">
+                            <i class="material-icons" role="presentation">link</i>
+                            GitHub
+                        </a>
+                    </nav>
                 </div>
             </div>
-            <a class="mdl-navigation__link" href="forms.html">
-                <i class="material-icons" role="presentation">person</i>
-                Account
-            </a>
-            <a class="mdl-navigation__link" href="maps.html">
-                <i class="material-icons" role="presentation">map</i>
-                Maps
-            </a>
-            <a class="mdl-navigation__link" href="charts.html">
-                <i class="material-icons">multiline_chart</i>
-                Charts
-            </a>
-
-            <div class="mdl-layout-spacer"></div>
-            <a class="mdl-navigation__link" href="https://github.com/CreativeIT/getmdl-dashboard">
-                <i class="material-icons" role="presentation">link</i>
-                GitHub
-            </a>
-        </nav>
+            <div class='scroller__bar' id="scroller__bar"></div>
+        </div>
     </div>
 
     <main class="mdl-layout__content">
@@ -605,7 +646,7 @@
             </div>
 
             <!--Sliders-->
-            <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+            <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
                 <div class="mdl-card mdl-shadow--2dp">
                     <div class="mdl-card__title">
                         <h2 class="mdl-card__title-text">Sliders</h2>
@@ -644,7 +685,7 @@
             </div>
 
             <!--Tooltips-->
-            <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+            <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
                 <div class="mdl-card mdl-shadow--2dp">
                     <div class="mdl-card__title">
                         <h2 class="mdl-card__title-text">Tooltips</h2>
@@ -735,7 +776,7 @@
             </div>
 
             <!--Badges-->
-            <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+            <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
                 <div class="mdl-card mdl-shadow--2dp">
                     <div class="mdl-card__title">
                         <h2 class="mdl-card__title-text">Badges</h2>
@@ -783,6 +824,192 @@
                         </ul>
                     </div>
                 </div>
+            </div>
+
+            <!--AVATARS LIST-->
+            <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell--top">
+
+                <div class="mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title">
+                        <h1 class="mdl-card__title-text">Simple avatar list</h1>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <ul class="mdl-list">
+                            <li class="mdl-list__item">
+                                <span class="mdl-list__item-primary-content">
+                                  <div class="mdl-list__item-avatar">
+                                      <img width="100%" src="images/nathan-fillion.png">
+                                  </div>
+                                  <span>Nathan Fillion</span>
+                                </span>
+                            </li>
+                            <li class="mdl-list__item">
+                                <span class="mdl-list__item-primary-content">
+                                  <div class="mdl-list__item-avatar">
+                                      <img width="100%" src="images/gina-torres.png">
+                                  </div>
+                                  <span>Gina Torres</span>
+                                </span>
+                            </li>
+                            <li class="mdl-list__item">
+                                <span class="mdl-list__item-primary-content">
+                                  <div class="mdl-list__item-avatar">
+                                      <img width="100%" src="images/tudyk.png">
+                                  </div>
+                                  <span>Alan Tudyk</span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <!--AVATARS AND ACTIONS-->
+            <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell--top">
+
+                <div class="mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title">
+                        <h1 class="mdl-card__title-text">Avatars and actions list</h1>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <ul class="mdl-list">
+                            <li class="mdl-list__item">
+                                    <span class="mdl-list__item-primary-content">
+                                      <div class="mdl-list__item-avatar">
+                                          <img width="100%" src="images/nathan-fillion.png">
+                                      </div>
+                                      <span>Nathan Fillion</span>
+                                    </span>
+                                <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                            </li>
+                            <li class="mdl-list__item">
+                                    <span class="mdl-list__item-primary-content">
+                                      <div class="mdl-list__item-avatar">
+                                          <img width="100%" src="images/gina-torres.png">
+                                      </div>
+                                      <span>Gina Torres</span>
+                                    </span>
+                                <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                            </li>
+                            <li class="mdl-list__item">
+                                    <span class="mdl-list__item-primary-content">
+                                      <div class="mdl-list__item-avatar">
+                                          <img width="100%" src="images/tudyk.png">
+                                      </div>
+                                      <span>Alan Tudyk</span>
+                                    </span>
+                                <span class="mdl-list__item-secondary-content">
+                                      <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                                  </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <!--AVATARS AND CONTROLS-->
+            <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell--top">
+
+                <div class="mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title">
+                        <h1 class="mdl-card__title-text">Avatars and controls list</h1>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <ul class="mdl-list">
+                            <li class="mdl-list__item">
+                                    <span class="mdl-list__item-primary-content">
+                                      <div class="mdl-list__item-avatar">
+                                          <img width="100%" src="images/nathan-fillion.png">
+                                      </div>
+                                      Nathan Fillion
+                                    </span>
+                                <span class="mdl-list__item-secondary-action">
+                                      <label class="mdl-checkbox checkbox--colored-light-blue mdl-js-checkbox mdl-js-ripple-effect" for="list-checkbox-1">
+                                        <input type="checkbox" id="list-checkbox-1" class="mdl-checkbox__input" checked />
+                                      </label>
+                                    </span>
+                            </li>
+                            <li class="mdl-list__item">
+                                    <span class="mdl-list__item-primary-content">
+                                      <div class="mdl-list__item-avatar">
+                                          <img width="100%" src="images/gina-torres.png">
+                                      </div>
+                                      Gina Torres
+                                    </span>
+                                <span class="mdl-list__item-secondary-action">
+                                      <label class="mdl-radio radio--colored-light-blue mdl-js-radio mdl-js-ripple-effect" for="list-option-1">
+                                        <input type="radio" id="list-option-1" class="mdl-radio__button" name="options" value="1" />
+                                      </label>
+                                    </span>
+                            </li>
+                            <li class="mdl-list__item">
+                                    <span class="mdl-list__item-primary-content">
+                                      <div class="mdl-list__item-avatar">
+                                          <img width="100%" src="images/tudyk.png">
+                                      </div>
+                                      Alan Tudyk
+                                    </span>
+                                <span class="mdl-list__item-secondary-action">
+                                      <label class="mdl-switch switch--colored-light-blue mdl-js-switch mdl-js-ripple-effect" for="list-switch-1">
+                                        <input type="checkbox" id="list-switch-1" class="mdl-switch__input" checked />
+                                      </label>
+                                    </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <!--TWO LINES-->
+            <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell--top">
+
+                <div class="mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title">
+                        <h1 class="mdl-card__title-text">Two lines list</h1>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <ul class="mdl-list">
+                            <li class="mdl-list__item mdl-list__item--two-line">
+                                    <span class="mdl-list__item-primary-content">
+                                      <div class="mdl-list__item-avatar">
+                                          <img width="100%" src="images/nathan-fillion.png">
+                                      </div>
+                                      <span>Nathan Fillion</span>
+                                      <span class="mdl-list__item-sub-title">Malcolm “Mal” Reynolds </span>
+                                    </span>
+                                <span class="mdl-list__item-secondary-content">
+                                      <span class="mdl-list__item-secondary-info">Star</span>
+                                      <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                                    </span>
+                            </li>
+                            <li class="mdl-list__item mdl-list__item--two-line">
+                                    <span class="mdl-list__item-primary-content">
+                                      <div class="mdl-list__item-avatar">
+                                          <img width="100%" src="images/gina-torres.png">
+                                      </div>
+                                      <span>Gina Torres</span>
+                                      <span class="mdl-list__item-sub-title"> Zoe Alleyne Washburne</span>
+                                    </span>
+                                <span class="mdl-list__item-secondary-content">
+                                      <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                                    </span>
+                            </li>
+                            <li class="mdl-list__item mdl-list__item--two-line">
+                                    <span class="mdl-list__item-primary-content">
+                                      <div class="mdl-list__item-avatar">
+                                          <img width="100%" src="images/tudyk.png">
+                                      </div>
+                                      <span>Alan Tudyk</span>
+                                      <span class="mdl-list__item-sub-title">Hoban “Wash” Washburne</span>
+                                    </span>
+                                <span class="mdl-list__item-secondary-content">
+                                      <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                                    </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
         </div>
     </main>

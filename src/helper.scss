@@ -54,34 +54,40 @@
   color: unquote("rgb(#{$palette-grey-500})");
 }
 
-//new colors
-.color-red {
-  color: $color-red;
+.text-color--white {
+  color: white !important;
 }
-.mdl-color--orange-50 {
-  color: $color-orange;
+
+.text-color--smooth-gray {
+  color: $color-smooth-gray !important;
 }
 
 .getmdl-select {
   .mdl-icon-toggle__label {
-	color: white;
-    }
+    color: white;
+  }
 
-    &.is-focused i.material-icons {
-	color: unquote("rgb(#{$color-primary})");
-    }
+  &.is-focused i.material-icons {
+    color: unquote("rgb(#{$color-primary})");
+  }
 
-    .mdl-menu__container {
-	margin-top: -45px !important;
+  .mdl-menu__container {
+    margin-top: -45px !important;
+    //box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+  }
 
-	.mdl-menu__outline {
+    .mdl-menu__outline {
       box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
-	}
     }
 
-    .mdl-menu .mdl-menu__item {
-	@include typo-employer-form-inputs();
-    }
+
+  .mdl-textfield__input {
+    cursor: pointer;
+  }
+
+  .mdl-menu .mdl-menu__item {
+    @include typo-employer-form-inputs();
+  }
 }
 
 .mdl-textfield {
@@ -90,18 +96,45 @@
     }
     
     &.is-focused {
-	&.getmdl-select {
-	    input, textarea {
-		font-weight: 300;
-	    }
-	}
+      &.getmdl-select {
+          input, textarea {
+          font-weight: 300;
+          }
+      }
 
-	input, textarea { 
-	    font-weight: 400;
-	}
+      input, textarea {
+          font-weight: 400;
+      }
+
     }
 
     &.is-disabled input{
 	border-bottom-width: 2px !important;
     }
+
+    &:not(.is-focused), &:not(.mdl-textfield--floating-label) {
+      .mdl-textfield__label {
+        color: $color-smoke !important;
+      }
+    }
+
+    &:not(.is-focused):not(.is-dirty) {
+      .mdl-textfield__label {
+        font-size: 14px !important;
+      }
+    }
+}
+
+.mdl-grid:not(.ui-typography) .mdl-card:not(.robot):not(.todo) {
+  //height: 100%;
+}
+
+h5{
+  &.mdl-card__title-text  {
+    font-size: 20px;
+  }
+}
+
+hr {
+  border-color: $list-border-color;
 }

@@ -55,7 +55,7 @@
         <header class="mdl-layout__header">
             <div class="mdl-layout__header-row">
                 <div class="mdl-layout-spacer"></div>
-
+                <!-- Search-->
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
                     <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
                         <i class="material-icons">search</i>
@@ -71,7 +71,7 @@
                      data-badge="23">
                     notifications_none
                 </div>
-
+                <!-- Notifications dropdown-->
                 <ul class="mdl-menu mdl-list mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right mdl-shadow--2dp notifications-dropdown"
                     for="notification">
                     <li class="mdl-list__item">
@@ -84,7 +84,7 @@
                         </span>
                         <span>You have 3 new orders.</span>
                     </span>
-                    <span class="mdl-list__item-secondary-content">
+                        <span class="mdl-list__item-secondary-content">
                       <span class="label">just now</span>
                     </span>
                     </li>
@@ -95,7 +95,7 @@
                         </span>
                       <span>Database error</span>
                     </span>
-                    <span class="mdl-list__item-secondary-content">
+                        <span class="mdl-list__item-secondary-content">
                       <span class="label">1 min</span>
                     </span>
                     </li>
@@ -106,7 +106,7 @@
                         </span>
                       <span>The Death Star is built!</span>
                     </span>
-                    <span class="mdl-list__item-secondary-content">
+                        <span class="mdl-list__item-secondary-content">
                       <span class="label">2 hours</span>
                     </span>
                     </li>
@@ -117,7 +117,7 @@
                         </span>
                       <span>You have 4 new mails.</span>
                     </span>
-                    <span class="mdl-list__item-secondary-content">
+                        <span class="mdl-list__item-secondary-content">
                       <span class="label">5 days</span>
                     </span>
                     </li>
@@ -129,7 +129,7 @@
                 <div class="material-icons mdl-badge mdl-badge--overlap mdl-button--icon message" id="inbox" data-badge="4">
                     mail_outline
                 </div>
-
+                <!-- Messages dropdown-->
                 <ul class="mdl-menu mdl-list mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right mdl-shadow--2dp messages-dropdown"
                     for="inbox">
                     <li class="mdl-list__item">
@@ -143,7 +143,7 @@
                         <span>Alice</span>
                         <span class="mdl-list__item-sub-title">Birthday Party</span>
                     </span>
-                    <span class="mdl-list__item-secondary-content">
+                        <span class="mdl-list__item-secondary-content">
                       <span class="label label--transparent">just now</span>
                     </span>
                     </li>
@@ -155,7 +155,7 @@
                         <span>Mike</span>
                         <span class="mdl-list__item-sub-title">No theme</span>
                     </span>
-                    <span class="mdl-list__item-secondary-content">
+                        <span class="mdl-list__item-secondary-content">
                       <span class="label label--transparent">5 min</span>
                     </span>
                     </li>
@@ -167,7 +167,7 @@
                         <span>Darth</span>
                         <span class="mdl-list__item-sub-title">Suggestion</span>
                     </span>
-                    <span class="mdl-list__item-secondary-content">
+                        <span class="mdl-list__item-secondary-content">
                       <span class="label label--transparent">23 hours</span>
                     </span>
                     </li>
@@ -179,7 +179,7 @@
                         <span>Don McDuket</span>
                         <span class="mdl-list__item-sub-title">NEWS</span>
                     </span>
-                    <span class="mdl-list__item-secondary-content">
+                        <span class="mdl-list__item-secondary-content">
                       <span class="label label--transparent">30 Nov</span>
                     </span>
                     </li>
@@ -192,7 +192,7 @@
                     <span>Luke</span>
                     <img src="images/Icon_header.png">
                 </div>
-
+                <!-- Account dropdawn-->
                 <ul class="mdl-menu mdl-list mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect mdl-shadow--2dp account-dropdown"
                     for="icon">
                     <li class="mdl-list__item mdl-list__item--two-line">
@@ -214,7 +214,7 @@
                         <i class="material-icons mdl-list__item-icon">check_box</i>
                         My tasks
                     </span>
-                    <span class="mdl-list__item-secondary-content">
+                        <span class="mdl-list__item-secondary-content">
                       <span class="label background-color--primary">3 new</span>
                     </span>
                     </li>
@@ -231,12 +231,14 @@
                         Settings
                     </span>
                     </li>
-                    <li class="mdl-menu__item mdl-list__item">
-                    <span class="mdl-list__item-primary-content">
-                        <i class="material-icons mdl-list__item-icon text-color--secondary">exit_to_app</i>
-                        Log out
-                    </span>
-                    </li>
+                    <a href="login.html">
+                        <li class="mdl-menu__item mdl-list__item">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-list__item-icon text-color--secondary">exit_to_app</i>
+                            Log out
+                        </span>
+                        </li>
+                    </a>
                 </ul>
 
                 <button id="more"
@@ -261,57 +263,93 @@
 
         <div class="mdl-layout__drawer">
             <header>darkboard</header>
-            <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href="index.html">
-                    <i class="material-icons" role="presentation">dashboard</i>
-                    Dashboard
-                </a>
-                <div class="sub-navigation">
-                    <a class="mdl-navigation__link">
-                        <i class="material-icons">view_comfy</i>
-                        UI
-                        <i class="material-icons">keyboard_arrow_down</i>
-                    </a>
-                    <div class="mdl-navigation">
-                        <a class="mdl-navigation__link" href="ui-buttons.html">
-                            Buttons
-                        </a>
-                        <a class="mdl-navigation__link" href="ui-cards.html">
-                            Cards
-                        </a>
-                        <a class="mdl-navigation__link" href="ui-colors.html">
-                            Colors
-                        </a>
-                        <a class="mdl-navigation__link" href="ui-components.html">
-                            Components
-                        </a>
-                        <a class="mdl-navigation__link" href="ui-icons.html">
-                            Icons
-                        </a>
-                        <a class="mdl-navigation__link" href="ui-typography.html">
-                            Typography
-                        </a>
+            <div class="scroll__wrapper" id="scroll__wrapper">
+                <div class="scroller" id="scroller">
+                    <div class="scroll__container" id="scroll__container">
+                        <nav class="mdl-navigation">
+                            <a class="mdl-navigation__link" href="index.html">
+                                <i class="material-icons" role="presentation">dashboard</i>
+                                Dashboard
+                            </a>
+                            <div class="sub-navigation">
+                                <a class="mdl-navigation__link">
+                                    <i class="material-icons">view_comfy</i>
+                                    UI
+                                    <i class="material-icons">keyboard_arrow_down</i>
+                                </a>
+                                <div class="mdl-navigation">
+                                    <a class="mdl-navigation__link" href="ui-buttons.html">
+                                        Buttons
+                                    </a>
+                                    <a class="mdl-navigation__link" href="ui-cards.html">
+                                        Cards
+                                    </a>
+                                    <a class="mdl-navigation__link" href="ui-colors.html">
+                                        Colors
+                                    </a>
+                                    <a class="mdl-navigation__link" href="ui-form-components.html">
+                                        Forms
+                                    </a>
+                                    <a class="mdl-navigation__link" href="ui-icons.html">
+                                        Icons
+                                    </a>
+                                    <a class="mdl-navigation__link" href="ui-typography.html">
+                                        Typography
+                                    </a>
+                                    <a class="mdl-navigation__link" href="ui-tables.html">
+                                        Tables
+                                    </a>
+                                </div>
+                            </div>
+                            <a class="mdl-navigation__link" href="ui-components.html">
+                                <i class="material-icons">developer_board</i>
+                                Components
+                            </a>
+                            <a class="mdl-navigation__link mdl-navigation__link--current" href="forms.html">
+                                <i class="material-icons" role="presentation">person</i>
+                                Account
+                            </a>
+                            <a class="mdl-navigation__link" href="maps.html">
+                                <i class="material-icons" role="presentation">map</i>
+                                Maps
+                            </a>
+                            <a class="mdl-navigation__link" href="charts.html">
+                                <i class="material-icons">multiline_chart</i>
+                                Charts
+                            </a>
+                            <div class="sub-navigation">
+                                <a class="mdl-navigation__link">
+                                    <i class="material-icons">pages</i>
+                                    Pages
+                                    <i class="material-icons">keyboard_arrow_down</i>
+                                </a>
+                                <div class="mdl-navigation">
+                                    <a class="mdl-navigation__link" href="login.html">
+                                        Sign in
+                                    </a>
+                                    <a class="mdl-navigation__link" href="sign-up.html">
+                                        Sign up
+                                    </a>
+                                    <a class="mdl-navigation__link" href="forgot-password.html">
+                                        Forgot password
+                                    </a>
+                                    <a class="mdl-navigation__link" href="404.html">
+                                        404
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="mdl-layout-spacer"></div>
+                            <hr>
+                            <a class="mdl-navigation__link" href="https://github.com/CreativeIT/getmdl-dashboard">
+                                <i class="material-icons" role="presentation">link</i>
+                                GitHub
+                            </a>
+                        </nav>
                     </div>
                 </div>
-                <a class="mdl-navigation__link mdl-navigation__link--current" href="forms.html">
-                    <i class="material-icons" role="presentation">person</i>
-                    Account
-                </a>
-                <a class="mdl-navigation__link" href="maps.html">
-                    <i class="material-icons" role="presentation">map</i>
-                    Maps
-                </a>
-                <a class="mdl-navigation__link" href="charts.html">
-                    <i class="material-icons">multiline_chart</i>
-                    Charts
-                </a>
-
-                <div class="mdl-layout-spacer"></div>
-                <a class="mdl-navigation__link" href="https://github.com/CreativeIT/getmdl-dashboard">
-                    <i class="material-icons" role="presentation">link</i>
-                    GitHub
-                </a>
-            </nav>
+                <div class='scroller__bar' id="scroller__bar"></div>
+            </div>
         </div>
 
         <main class="mdl-layout__content mdl-color--grey-100">

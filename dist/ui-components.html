@@ -1,0 +1,1041 @@
+<!doctype html>
+<!--
+  Material Design Lite
+  Copyright 2015 Google Inc. All rights reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <link rel="icon" type="image/png" href="images/DB_16х16.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Material Dashboard Lite</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,300,100,700,900' rel='stylesheet'
+          type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- inject:css -->
+    <link rel="stylesheet" href="css/lib/getmdl-select.min.css">
+    <link rel="stylesheet" href="css/lib/nv.d3.min.css">
+    <link rel="stylesheet" href="css/application.min.css">
+    <!-- endinject -->
+
+</head>
+<body>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+            <div class="mdl-layout-spacer"></div>
+            <!-- Search-->
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+                    <i class="material-icons">search</i>
+                </label>
+
+                <div class="mdl-textfield__expandable-holder">
+                    <input class="mdl-textfield__input" type="text" id="search"/>
+                    <label class="mdl-textfield__label" for="search">Enter your query...</label>
+                </div>
+            </div>
+
+            <div class="material-icons mdl-badge mdl-badge--overlap mdl-button--icon notification" id="notification"
+                 data-badge="23">
+                notifications_none
+            </div>
+            <!-- Notifications dropdown-->
+            <ul class="mdl-menu mdl-list mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right mdl-shadow--2dp notifications-dropdown"
+                for="notification">
+                <li class="mdl-list__item">
+                    You have 23 new notifications!
+                </li>
+                <li class="mdl-menu__item mdl-list__item list__item--border-top">
+                    <span class="mdl-list__item-primary-content">
+                        <span class="mdl-list__item-avatar background-color--primary">
+                            <i class="material-icons">plus_one</i>
+                        </span>
+                        <span>You have 3 new orders.</span>
+                    </span>
+                    <span class="mdl-list__item-secondary-content">
+                      <span class="label">just now</span>
+                    </span>
+                </li>
+                <li class="mdl-menu__item mdl-list__item list__item--border-top">
+                    <span class="mdl-list__item-primary-content">
+                        <span class="mdl-list__item-avatar background-color--secondary">
+                            <i class="material-icons">error_outline</i>
+                        </span>
+                      <span>Database error</span>
+                    </span>
+                    <span class="mdl-list__item-secondary-content">
+                      <span class="label">1 min</span>
+                    </span>
+                </li>
+                <li class="mdl-menu__item mdl-list__item list__item--border-top">
+                    <span class="mdl-list__item-primary-content">
+                        <span class="mdl-list__item-avatar background-color--primary">
+                            <i class="material-icons">new_releases</i>
+                        </span>
+                      <span>The Death Star is built!</span>
+                    </span>
+                    <span class="mdl-list__item-secondary-content">
+                      <span class="label">2 hours</span>
+                    </span>
+                </li>
+                <li class="mdl-menu__item mdl-list__item list__item--border-top">
+                    <span class="mdl-list__item-primary-content">
+                        <span class="mdl-list__item-avatar background-color--primary">
+                            <i class="material-icons">mail_outline</i>
+                        </span>
+                      <span>You have 4 new mails.</span>
+                    </span>
+                    <span class="mdl-list__item-secondary-content">
+                      <span class="label">5 days</span>
+                    </span>
+                </li>
+                <li class="mdl-list__item list__item--border-top">
+                    <button href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">ALL NOTIFICATIONS</button>
+                </li>
+            </ul>
+
+            <div class="material-icons mdl-badge mdl-badge--overlap mdl-button--icon message" id="inbox" data-badge="4">
+                mail_outline
+            </div>
+            <!-- Messages dropdown-->
+            <ul class="mdl-menu mdl-list mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right mdl-shadow--2dp messages-dropdown"
+                for="inbox">
+                <li class="mdl-list__item">
+                    You have 4 new messages!
+                </li>
+                <li class="mdl-menu__item mdl-list__item mdl-list__item--two-line list__item--border-top">
+                    <span class="mdl-list__item-primary-content">
+                        <span class="mdl-list__item-avatar background-color--primary">
+                            <text>A</text>
+                        </span>
+                        <span>Alice</span>
+                        <span class="mdl-list__item-sub-title">Birthday Party</span>
+                    </span>
+                    <span class="mdl-list__item-secondary-content">
+                      <span class="label label--transparent">just now</span>
+                    </span>
+                </li>
+                <li class="mdl-menu__item mdl-list__item mdl-list__item--two-line list__item--border-top">
+                    <span class="mdl-list__item-primary-content">
+                        <span class="mdl-list__item-avatar background-color--baby-blue">
+                            <text>M</text>
+                        </span>
+                        <span>Mike</span>
+                        <span class="mdl-list__item-sub-title">No theme</span>
+                    </span>
+                    <span class="mdl-list__item-secondary-content">
+                      <span class="label label--transparent">5 min</span>
+                    </span>
+                </li>
+                <li class="mdl-menu__item mdl-list__item mdl-list__item--two-line list__item--border-top">
+                    <span class="mdl-list__item-primary-content">
+                        <span class="mdl-list__item-avatar background-color--cerulean">
+                            <text>D</text>
+                        </span>
+                        <span>Darth</span>
+                        <span class="mdl-list__item-sub-title">Suggestion</span>
+                    </span>
+                    <span class="mdl-list__item-secondary-content">
+                      <span class="label label--transparent">23 hours</span>
+                    </span>
+                </li>
+                <li class="mdl-menu__item mdl-list__item mdl-list__item--two-line list__item--border-top">
+                    <span class="mdl-list__item-primary-content">
+                        <span class="mdl-list__item-avatar background-color--mint">
+                            <text>D</text>
+                        </span>
+                        <span>Don McDuket</span>
+                        <span class="mdl-list__item-sub-title">NEWS</span>
+                    </span>
+                    <span class="mdl-list__item-secondary-content">
+                      <span class="label label--transparent">30 Nov</span>
+                    </span>
+                </li>
+                <li class="mdl-list__item list__item--border-top">
+                    <button href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">SHOW ALL MESSAGES</button>
+                </li>
+            </ul>
+
+            <div class="avatar-dropdown" id="icon">
+                <span>Luke</span>
+                <img src="./images/Icon_header.png">
+            </div>
+            <!-- Account dropdawn-->
+            <ul class="mdl-menu mdl-list mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect mdl-shadow--2dp account-dropdown"
+                for="icon">
+                <li class="mdl-list__item mdl-list__item--two-line">
+                    <span class="mdl-list__item-primary-content">
+                        <span class="material-icons mdl-list__item-avatar"></span>
+                        <span>Luke</span>
+                        <span class="mdl-list__item-sub-title">Luke@skywalker.com</span>
+                    </span>
+                </li>
+                <li class="list__item--border-top"></li>
+                <li class="mdl-menu__item mdl-list__item">
+                    <span class="mdl-list__item-primary-content">
+                        <i class="material-icons mdl-list__item-icon">account_circle</i>
+                        My account
+                    </span>
+                </li>
+                <li class="mdl-menu__item mdl-list__item">
+                    <span class="mdl-list__item-primary-content">
+                        <i class="material-icons mdl-list__item-icon">check_box</i>
+                        My tasks
+                    </span>
+                    <span class="mdl-list__item-secondary-content">
+                      <span class="label background-color--primary">3 new</span>
+                    </span>
+                </li>
+                <li class="mdl-menu__item mdl-list__item">
+                    <span class="mdl-list__item-primary-content">
+                        <i class="material-icons mdl-list__item-icon">perm_contact_calendar</i>
+                        My events
+                    </span>
+                </li>
+                <li class="list__item--border-top"></li>
+                <li class="mdl-menu__item mdl-list__item">
+                    <span class="mdl-list__item-primary-content">
+                        <i class="material-icons mdl-list__item-icon">settings</i>
+                        Settings
+                    </span>
+                </li>
+                <a href="login.html">
+                    <li class="mdl-menu__item mdl-list__item">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-list__item-icon text-color--secondary">exit_to_app</i>
+                            Log out
+                        </span>
+                    </li>
+                </a>
+            </ul>
+
+            <button id="more"
+                    class="mdl-button mdl-js-button mdl-button--icon">
+                <i class="material-icons">more_vert</i>
+            </button>
+
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect mdl-shadow--2dp settings-dropdown"
+                for="more">
+                <li class="mdl-menu__item">
+                    Settings
+                </li>
+                <a class="mdl-menu__item" href="https://github.com/CreativeIT/getmdl-dashboard/issues">
+                    Support
+                </a>
+                <li class="mdl-menu__item">
+                    F.A.Q.
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="mdl-layout__drawer">
+        <header>darkboard</header>
+        <div class="scroll__wrapper" id="scroll__wrapper">
+            <div class="scroller" id="scroller">
+                <div class="scroll__container" id="scroll__container">
+                    <nav class="mdl-navigation">
+                        <a class="mdl-navigation__link" href="index.html">
+                            <i class="material-icons" role="presentation">dashboard</i>
+                            Dashboard
+                        </a>
+                        <div class="sub-navigation">
+                            <a class="mdl-navigation__link">
+                                <i class="material-icons">view_comfy</i>
+                                UI
+                                <i class="material-icons">keyboard_arrow_down</i>
+                            </a>
+                            <div class="mdl-navigation">
+                                <a class="mdl-navigation__link" href="ui-buttons.html">
+                                    Buttons
+                                </a>
+                                <a class="mdl-navigation__link" href="ui-cards.html">
+                                    Cards
+                                </a>
+                                <a class="mdl-navigation__link" href="ui-colors.html">
+                                    Colors
+                                </a>
+                                <a class="mdl-navigation__link" href="ui-form-components.html">
+                                    Forms
+                                </a>
+                                <a class="mdl-navigation__link" href="ui-list-components.html">
+                                    List Components
+                                </a>
+                                <a class="mdl-navigation__link" href="ui-icons.html">
+                                    Icons
+                                </a>
+                                <a class="mdl-navigation__link" href="ui-typography.html">
+                                    Typography
+                                </a>
+                                <a class="mdl-navigation__link" href="ui-tables.html">
+                                    Tables
+                                </a>
+                            </div>
+                        </div>
+                        <a class="mdl-navigation__link mdl-navigation__link--current" href="ui-components.html">
+                            <i class="material-icons">developer_board</i>
+                            Components
+                        </a>
+                        <a class="mdl-navigation__link" href="forms.html">
+                            <i class="material-icons" role="presentation">person</i>
+                            Account
+                        </a>
+                        <a class="mdl-navigation__link" href="maps.html">
+                            <i class="material-icons" role="presentation">map</i>
+                            Maps
+                        </a>
+                        <a class="mdl-navigation__link" href="charts.html">
+                            <i class="material-icons">multiline_chart</i>
+                            Charts
+                        </a>
+                        <div class="sub-navigation">
+                            <a class="mdl-navigation__link">
+                                <i class="material-icons">pages</i>
+                                Pages
+                                <i class="material-icons">keyboard_arrow_down</i>
+                            </a>
+                            <div class="mdl-navigation">
+                                <a class="mdl-navigation__link" href="login.html">
+                                    Sign in
+                                </a>
+                                <a class="mdl-navigation__link" href="sign-up.html">
+                                    Sign up
+                                </a>
+                                <a class="mdl-navigation__link" href="forgot-password.html">
+                                    Forgot password
+                                </a>
+                                <a class="mdl-navigation__link" href="404.html">
+                                    404
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="mdl-layout-spacer"></div>
+                        <hr>
+                        <a class="mdl-navigation__link" href="https://github.com/CreativeIT/getmdl-dashboard">
+                            <i class="material-icons" role="presentation">link</i>
+                            GitHub
+                        </a>
+                    </nav>
+                </div>
+            </div>
+            <div class='scroller__bar' id="scroller__bar"></div>
+        </div>
+    </div>
+
+    <main class="mdl-layout__content">
+        <div class="mdl-grid ui-components">
+            <!--Toggles-->
+            <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+                <div class="mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">Toggles</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <ul class="mdl-list pull-left">
+                            <li class="mdl-list__item">
+                                <span class="text-color--gray">RADIO BUTTON</span>
+                            </li>
+                            <li class="mdl-list__item">
+                                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect radio--colored-green" for="option-1">
+                                    <input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1">
+                                    <span class="mdl-radio__label">Apple</span>
+                                </label>
+                            </li>
+                            <li class="mdl-list__item">
+                                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect radio--colored-orange" for="option-2">
+                                    <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2" checked>
+                                    <span class="mdl-radio__label">Orange</span>
+                                </label>
+                            </li>
+                            <li class="mdl-list__item">
+                                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect radio--colored-purple" for="option-3">
+                                    <input type="radio" id="option-3" class="mdl-radio__button" name="options" value="3">
+                                    <span class="mdl-radio__label">Grapes</span>
+                                </label>
+                            </li>
+                            <li class="mdl-list__item">
+                                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect radio--colored-red" for="option-4">
+                                    <input type="radio" id="option-4" class="mdl-radio__button" name="options" value="4">
+                                    <span class="mdl-radio__label">Cherry</span>
+                                </label>
+                            </li>
+                        </ul>
+                        <ul class="mdl-list pull-left">
+                            <li class="mdl-list__item">
+                                <span class="text-color--gray">CHECKBOXES</span>
+                            </li>
+                            <li class="mdl-list__item">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect checkbox--colored-green" for="checkbox-1">
+                                    <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">Apple</span>
+                                </label>
+                            </li>
+                            <li class="mdl-list__item">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect checkbox--colored-orange" for="checkbox-2">
+                                    <input type="checkbox" id="checkbox-2" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">Orange</span>
+                                </label>
+                            </li>
+                            <li class="mdl-list__item">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect checkbox--colored-purple" for="checkbox-3">
+                                    <input type="checkbox" id="checkbox-3" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">Grapes</span>
+                                </label>
+                            </li>
+                            <li class="mdl-list__item">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect checkbox--colored-red" for="checkbox-4">
+                                    <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" checked>
+                                    <span class="mdl-checkbox__label">Cherry</span>
+                                </label>
+                            </li>
+                        </ul>
+                        <ul class="mdl-list pull-left">
+                            <li class="mdl-list__item">
+                                <span class="text-color--gray">SWITCHES</span>
+                            </li>
+                            <li class="mdl-list__item">
+                                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect switch--colored-green" for="switch-1">
+                                    <input type="checkbox" id="switch-1" class="mdl-switch__input" checked>
+                                    <span class="mdl-switch__label">Apple</span>
+                                </label>
+                            </li>
+                            <li class="mdl-list__item">
+                                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect switch--colored-orange" for="switch-2">
+                                    <input type="checkbox" id="switch-2" class="mdl-switch__input">
+                                    <span class="mdl-switch__label">Orange</span>
+                                </label>
+                            </li>
+                            <li class="mdl-list__item">
+                                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect switch--colored-purple" for="switch-3">
+                                    <input type="checkbox" id="switch-3" class="mdl-switch__input" checked>
+                                    <span class="mdl-switch__label">Grapes</span>
+                                </label>
+                            </li>
+                            <li class="mdl-list__item">
+                                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect switch--colored-red" for="switch-4">
+                                    <input type="checkbox" id="switch-4" class="mdl-switch__input">
+                                    <span class="mdl-switch__label">Cherry</span>
+                                </label>
+                            </li>
+                        </ul>
+                        <ul class="mdl-list pull-left">
+                            <li class="mdl-list__item">
+                                <span class="text-color--gray">ICON TOGGLE</span>
+                            </li>
+                            <li class="mdl-list__item">
+                                <label class="mdl-icon-toggle mdl-js-icon-toggle mdl-js-ripple-effect icon-toggle--colored-red" for="icon-toggle-1">
+                                    <input type="checkbox" id="icon-toggle-1" class="mdl-icon-toggle__input" checked>
+                                    <i class="mdl-icon-toggle__label material-icons">format_bold</i>
+                                </label>
+                                <label class="mdl-icon-toggle mdl-js-icon-toggle mdl-js-ripple-effect icon-toggle--colored-orange" for="icon-toggle-2">
+                                    <input type="checkbox" id="icon-toggle-2" class="mdl-icon-toggle__input" checked>
+                                    <i class="mdl-icon-toggle__label material-icons">format_italic</i>
+                                </label>
+                                <label class="mdl-icon-toggle mdl-js-icon-toggle mdl-js-ripple-effect icon-toggle--colored-green" for="icon-toggle-3">
+                                    <input type="checkbox" id="icon-toggle-3" class="mdl-icon-toggle__input">
+                                    <i class="mdl-icon-toggle__label material-icons">format_underlined</i>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--Progress bar-->
+            <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+                <div class="mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">Progress bar</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <ul class="mdl-list pull-left">
+                            <li class="mdl-list__item">
+                                <span class="text-color--gray">DEFAULT</span>
+                            </li>
+                            <li class="mdl-list__item">
+                                <div id="p1" class="mdl-progress mdl-js-progress progress--colored-red"></div>
+                                <script>
+                                    document.querySelector('#p1').addEventListener('mdl-componentupgraded', function() {
+                                        this.MaterialProgress.setProgress(44);
+                                    });
+                                </script>
+                            </li>
+                            <li class="mdl-list__item">
+                                <div id="p2" class="mdl-progress mdl-js-progress progress--colored-orange"></div>
+                                <script>
+                                    document.querySelector('#p2').addEventListener('mdl-componentupgraded', function() {
+                                        this.MaterialProgress.setProgress(44);
+                                    });
+                                </script>
+                            </li>
+                            <li class="mdl-list__item">
+                                <div id="p3" class="mdl-progress mdl-js-progress progress--colored-light-blue"></div>
+                                <script>
+                                    document.querySelector('#p3').addEventListener('mdl-componentupgraded', function() {
+                                        this.MaterialProgress.setProgress(86);
+                                    });
+                                </script>
+                            </li>
+                            <li class="mdl-list__item">
+                                <div id="p4" class="mdl-progress mdl-js-progress progress--colored-purple"></div>
+                                <script>
+                                    document.querySelector('#p4').addEventListener('mdl-componentupgraded', function() {
+                                        this.MaterialProgress.setProgress(66);
+                                    });
+                                </script>
+                            </li>
+                        </ul>
+                        <ul class="mdl-list pull-left">
+                            <li class="mdl-list__item">
+                                <span class="text-color--gray">INDETERMINATE</span>
+                            </li>
+                            <li class="mdl-list__item">
+                                <div id="p5" class="mdl-progress mdl-js-progress mdl-progress__indeterminate progress--colored-red"></div>
+                            </li>
+                            <li class="mdl-list__item">
+                                <div id="p6" class="mdl-progress mdl-js-progress mdl-progress__indeterminate progress--colored-orange"></div>
+                            </li>
+                            <li class="mdl-list__item">
+                                <div id="p7" class="mdl-progress mdl-js-progress mdl-progress__indeterminate progress--colored-light-blue"></div>
+                            </li>
+                            <li class="mdl-list__item">
+                                <div id="p8" class="mdl-progress mdl-js-progress mdl-progress__indeterminate progress--colored-purple"></div>
+                            </li>
+                        </ul>
+                        <ul class="mdl-list pull-left">
+                            <li class="mdl-list__item">
+                                <span class="text-color--gray">BUFFERING</span>
+                            </li>
+                            <li class="mdl-list__item">
+                                <div id="p9" class="mdl-progress mdl-js-progress progress--colored-red"></div>
+                                <script>
+                                    document.querySelector('#p9').addEventListener('mdl-componentupgraded', function() {
+                                        this.MaterialProgress.setProgress(33);
+                                        this.MaterialProgress.setBuffer(87);
+                                    });
+                                </script>
+                            </li>
+                            <li class="mdl-list__item">
+                                <div id="p10" class="mdl-progress mdl-js-progress progress--colored-orange"></div>
+                                <script>
+                                    document.querySelector('#p10').addEventListener('mdl-componentupgraded', function() {
+                                        this.MaterialProgress.setProgress(60);
+                                        this.MaterialProgress.setBuffer(60);
+                                    });
+                                </script>
+                            </li>
+                            <li class="mdl-list__item">
+                                <div id="pp1" class="mdl-progress mdl-js-progress progress--colored-light-blue"></div>
+                                <script>
+                                    document.querySelector('#pp1').addEventListener('mdl-componentupgraded', function() {
+                                        this.MaterialProgress.setProgress(50);
+                                        this.MaterialProgress.setBuffer(60);
+                                    });
+                                </script>
+                            </li>
+                            <li class="mdl-list__item">
+                                <div id="pp2" class="mdl-progress mdl-js-progress progress--colored-purple"></div>
+                                <script>
+                                    document.querySelector('#pp2').addEventListener('mdl-componentupgraded', function() {
+                                        this.MaterialProgress.setProgress(13);
+                                        this.MaterialProgress.setBuffer(77);
+                                    });
+                                </script>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--Chips-->
+            <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+                <div class="mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">Chips</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <ul class="mdl-list pull-left">
+                            <li class="mdl-list__item">
+                                <span class="text-color--gray">BASIC CHIP</span>
+                            </li>
+                            <li class="mdl-list__item">
+                                <span class="mdl-chip">
+                                    <span class="mdl-chip__text">Basic Chip</span>
+                                </span>
+                            </li>
+                        </ul>
+                        <ul class="mdl-list pull-left">
+                            <li class="mdl-list__item">
+                                <span class="text-color--gray">DELETABLE CHIP</span>
+                            </li>
+                            <li class="mdl-list__item">
+                                <span class="mdl-chip mdl-chip--deletable">
+                                    <span class="mdl-chip__text">Deletable Chip</span>
+                                    <button type="button" class="mdl-chip__action"><i class="material-icons">cancel</i></button>
+                                </span>
+                            </li>
+                        </ul>
+                        <ul class="mdl-list pull-left">
+                            <li class="mdl-list__item">
+                                <span class="text-color--gray">BUTTON CHIP</span>
+                            </li>
+                            <li class="mdl-list__item">
+                                <button type="button" class="mdl-chip color--teal mdl-color-text--white">
+                                    <span class="mdl-chip__text">Button Chip</span>
+                                </button>
+                            </li>
+                        </ul>
+                        <ul class="mdl-list pull-left">
+                            <li class="mdl-list__item">
+                                <span class="text-color--gray">CONTACT CHIP</span>
+                            </li>
+                            <li class="mdl-list__item">
+                               <span class="mdl-chip mdl-chip--contact">
+                                   <span class="mdl-chip__contact color--orange">A</span>
+                                   <span class="mdl-chip__text">Contact Chip</span>
+                               </span>
+                            </li>
+                        </ul>
+                        <ul class="mdl-list pull-left">
+                            <li class="mdl-list__item">
+                                <span class="text-color--gray">DELETABLE CONTACT CHIP</span>
+                            </li>
+                            <li class="mdl-list__item">
+                                <span class="mdl-chip mdl-chip--contact mdl-chip--deletable">
+                                    <img class="mdl-chip__contact" src="/images/Icon_header.png">
+                                    <span class="mdl-chip__text">Luke Skywalker</span>
+                                    <a href="#" class="mdl-chip__action"><i class="material-icons">cancel</i></a>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--Sliders-->
+            <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+                <div class="mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">Sliders</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <ul class="mdl-list pull-left">
+                            <li class="mdl-list__item">
+                                <span class="text-color--gray">DEFAULT SLIDER</span>
+                            </li>
+                            <li class="mdl-list__item">
+                                <input class="mdl-slider mdl-js-slider slider--colored-orange" type="range" min="0" max="100" value="0" tabindex="0">
+                            </li>
+                            <li class="mdl-list__item">
+                                <input class="mdl-slider mdl-js-slider slider--colored-green" type="range" min="0" max="100" value="0" tabindex="0">
+                            </li>
+                            <li class="mdl-list__item">
+                                <input class="mdl-slider mdl-js-slider slider--colored-purple" type="range" min="0" max="100" value="0" tabindex="0">
+                            </li>
+                        </ul>
+                        <ul class="mdl-list pull-left">
+                            <li class="mdl-list__item">
+                                <span class="text-color--gray">STARTING VALUE</span>
+                            </li>
+                            <li class="mdl-list__item">
+                                <input class="mdl-slider mdl-js-slider slider--colored-red" type="range" min="0" max="100" value="42" tabindex="0">
+                            </li>
+                            <li class="mdl-list__item">
+                                <input class="mdl-slider mdl-js-slider slider--colored-light-blue" type="range" min="0" max="100" value="12" tabindex="0">
+                            </li>
+                            <li class="mdl-list__item">
+                                <input class="mdl-slider mdl-js-slider slider--colored-teal" type="range" min="0" max="100" value="72" tabindex="0">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--Tooltips-->
+            <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+                <div class="mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">Tooltips</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <ul class="mdl-list pull-left">
+                            <li class="mdl-list__item">
+                                <span class="text-color--gray">SIMPLE</span>
+                            </li>
+                            <li class="mdl-list__item">
+                                <div id="tt1" class="icon material-icons color-text--green">directions_run</div>
+                                <div class="mdl-tooltip" data-mdl-for="tt1">
+                                    Walk
+                                </div>
+                            </li>
+                            <li class="mdl-list__item">
+                                <span class="text-color--gray">LEFT</span>
+                            </li>
+                            <li class="mdl-list__item">
+                                <div id="tt5" class="icon material-icons">flight</div>
+                                <div class="mdl-tooltip mdl-tooltip--left" data-mdl-for="tt5">
+                                    Left
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="mdl-list pull-left">
+                            <li class="mdl-list__item">
+                                <span class="text-color--gray">LARGE</span>
+                            </li>
+                            <li class="mdl-list__item">
+                                <div id="tt2" class="icon material-icons color-text--orange">directions_bike</div>
+                                <div class="mdl-tooltip mdl-tooltip--large" for="tt2">
+                                    Ride a bike
+                                </div>
+                            </li>
+                            <li class="mdl-list__item">
+                                <span class="text-color--gray">TOP</span>
+                            </li>
+                            <li class="mdl-list__item">
+                                <div id="tt6" class="icon material-icons">flight</div>
+                                <div class="mdl-tooltip mdl-tooltip--top" data-mdl-for="tt6">
+                                    Top
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="mdl-list pull-left">
+                            <li class="mdl-list__item">
+                                <span class="text-color--gray">RICH</span>
+                            </li>
+                            <li class="mdl-list__item">
+                                <div id="tt3" class="icon material-icons color-text--red">directions_bus</div>
+                                <div class="mdl-tooltip" data-mdl-for="tt3">
+                                    Travel by <b>BUS</b>
+                                </div>
+                            </li>
+                            <li class="mdl-list__item">
+                                <span class="text-color--gray">BOTTOM</span>
+                            </li>
+                            <li class="mdl-list__item">
+                                <div id="tt7" class="icon material-icons">flight</div>
+                                <div class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="tt7">
+                                    Bottom
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="mdl-list pull-left">
+                            <li class="mdl-list__item">
+                                <span class="text-color--gray">MULTIPLY LINES</span>
+                            </li>
+                            <li class="mdl-list__item">
+                                <div id="tt4" class="icon material-icons color-text--teal">directions_boat</div>
+                                <div class="mdl-tooltip" for="tt4">
+                                    Sail on<br>a boat
+                                </div>
+                            </li>
+                            <li class="mdl-list__item">
+                                <span class="text-color--gray">RIGHT</span>
+                            </li>
+                            <li class="mdl-list__item">
+                                <div id="tt8" class="icon material-icons">flight</div>
+                                <div class="mdl-tooltip mdl-tooltip--right" data-mdl-for="tt8">
+                                    Right
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--Badges-->
+            <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+                <div class="mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">Badges</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <ul class="mdl-list pull-left">
+                            <li class="mdl-list__item">
+                                <span class="text-color--gray">TEXT</span>
+                            </li>
+                            <li class="mdl-list__item">
+                                <small class="text-color--gray">Number</small>
+                            </li>
+                            <li class="mdl-list__item">
+                                <span class="mdl-badge" data-badge="4">Inbox</span>
+                            </li>
+                        </ul>
+                        <ul class="mdl-list pull-left">
+                            <li class="mdl-list__item"></li>
+                            <li class="mdl-list__item">
+                                <small class="text-color--gray">Icon</small>
+                            </li>
+                            <li class="mdl-list__item">
+                                <span class="mdl-badge" data-badge="♥">Mood</span>
+                            </li>
+                        </ul>
+                        <ul class="mdl-list pull-left">
+                            <li class="mdl-list__item">
+                                <span class="text-color--gray">ICON</span>
+                            </li>
+                            <li class="mdl-list__item">
+                                <small class="text-color--gray">Number</small>
+                            </li>
+                            <li class="mdl-list__item">
+                                <div class="material-icons mdl-badge mdl-badge--overlap badge--colored-red" data-badge="1">mail_outline</div>
+                            </li>
+                        </ul>
+                        <ul class="mdl-list pull-left">
+                            <li class="mdl-list__item"></li>
+                            <li class="mdl-list__item">
+                                <small class="text-color--gray">Icon</small>
+                            </li>
+                            <li class="mdl-list__item">
+                                <div class="material-icons mdl-badge mdl-badge--overlap badge--colored-red" data-badge="♥">account_circle</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--AVATARS LIST-->
+            <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell--top">
+
+                <div class="mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title">
+                        <h1 class="mdl-card__title-text">Simple avatar list</h1>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <ul class="mdl-list">
+                            <li class="mdl-list__item">
+                                <span class="mdl-list__item-primary-content">
+                                  <div class="mdl-list__item-avatar">
+                                      <img width="100%" src="images/nathan-fillion.png">
+                                  </div>
+                                  <span>Nathan Fillion</span>
+                                </span>
+                            </li>
+                            <li class="mdl-list__item">
+                                <span class="mdl-list__item-primary-content">
+                                  <div class="mdl-list__item-avatar">
+                                      <img width="100%" src="images/gina-torres.png">
+                                  </div>
+                                  <span>Gina Torres</span>
+                                </span>
+                            </li>
+                            <li class="mdl-list__item">
+                                <span class="mdl-list__item-primary-content">
+                                  <div class="mdl-list__item-avatar">
+                                      <img width="100%" src="images/tudyk.png">
+                                  </div>
+                                  <span>Alan Tudyk</span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <!--AVATARS AND ACTIONS-->
+            <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell--top">
+
+                <div class="mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title">
+                        <h1 class="mdl-card__title-text">Avatars and actions list</h1>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <ul class="mdl-list">
+                            <li class="mdl-list__item">
+                                    <span class="mdl-list__item-primary-content">
+                                      <div class="mdl-list__item-avatar">
+                                          <img width="100%" src="images/nathan-fillion.png">
+                                      </div>
+                                      <span>Nathan Fillion</span>
+                                    </span>
+                                <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                            </li>
+                            <li class="mdl-list__item">
+                                    <span class="mdl-list__item-primary-content">
+                                      <div class="mdl-list__item-avatar">
+                                          <img width="100%" src="images/gina-torres.png">
+                                      </div>
+                                      <span>Gina Torres</span>
+                                    </span>
+                                <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                            </li>
+                            <li class="mdl-list__item">
+                                    <span class="mdl-list__item-primary-content">
+                                      <div class="mdl-list__item-avatar">
+                                          <img width="100%" src="images/tudyk.png">
+                                      </div>
+                                      <span>Alan Tudyk</span>
+                                    </span>
+                                <span class="mdl-list__item-secondary-content">
+                                      <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                                  </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <!--AVATARS AND CONTROLS-->
+            <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell--top">
+
+                <div class="mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title">
+                        <h1 class="mdl-card__title-text">Avatars and controls list</h1>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <ul class="mdl-list">
+                            <li class="mdl-list__item">
+                                    <span class="mdl-list__item-primary-content">
+                                      <div class="mdl-list__item-avatar">
+                                          <img width="100%" src="images/nathan-fillion.png">
+                                      </div>
+                                      Nathan Fillion
+                                    </span>
+                                <span class="mdl-list__item-secondary-action">
+                                      <label class="mdl-checkbox checkbox--colored-light-blue mdl-js-checkbox mdl-js-ripple-effect" for="list-checkbox-1">
+                                        <input type="checkbox" id="list-checkbox-1" class="mdl-checkbox__input" checked />
+                                      </label>
+                                    </span>
+                            </li>
+                            <li class="mdl-list__item">
+                                    <span class="mdl-list__item-primary-content">
+                                      <div class="mdl-list__item-avatar">
+                                          <img width="100%" src="images/gina-torres.png">
+                                      </div>
+                                      Gina Torres
+                                    </span>
+                                <span class="mdl-list__item-secondary-action">
+                                      <label class="mdl-radio radio--colored-light-blue mdl-js-radio mdl-js-ripple-effect" for="list-option-1">
+                                        <input type="radio" id="list-option-1" class="mdl-radio__button" name="options" value="1" />
+                                      </label>
+                                    </span>
+                            </li>
+                            <li class="mdl-list__item">
+                                    <span class="mdl-list__item-primary-content">
+                                      <div class="mdl-list__item-avatar">
+                                          <img width="100%" src="images/tudyk.png">
+                                      </div>
+                                      Alan Tudyk
+                                    </span>
+                                <span class="mdl-list__item-secondary-action">
+                                      <label class="mdl-switch switch--colored-light-blue mdl-js-switch mdl-js-ripple-effect" for="list-switch-1">
+                                        <input type="checkbox" id="list-switch-1" class="mdl-switch__input" checked />
+                                      </label>
+                                    </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <!--TWO LINES-->
+            <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell--top">
+
+                <div class="mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title">
+                        <h1 class="mdl-card__title-text">Two lines list</h1>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <ul class="mdl-list">
+                            <li class="mdl-list__item mdl-list__item--two-line">
+                                    <span class="mdl-list__item-primary-content">
+                                      <div class="mdl-list__item-avatar">
+                                          <img width="100%" src="images/nathan-fillion.png">
+                                      </div>
+                                      <span>Nathan Fillion</span>
+                                      <span class="mdl-list__item-sub-title">Malcolm “Mal” Reynolds </span>
+                                    </span>
+                                <span class="mdl-list__item-secondary-content">
+                                      <span class="mdl-list__item-secondary-info">Star</span>
+                                      <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                                    </span>
+                            </li>
+                            <li class="mdl-list__item mdl-list__item--two-line">
+                                    <span class="mdl-list__item-primary-content">
+                                      <div class="mdl-list__item-avatar">
+                                          <img width="100%" src="images/gina-torres.png">
+                                      </div>
+                                      <span>Gina Torres</span>
+                                      <span class="mdl-list__item-sub-title"> Zoe Alleyne Washburne</span>
+                                    </span>
+                                <span class="mdl-list__item-secondary-content">
+                                      <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                                    </span>
+                            </li>
+                            <li class="mdl-list__item mdl-list__item--two-line">
+                                    <span class="mdl-list__item-primary-content">
+                                      <div class="mdl-list__item-avatar">
+                                          <img width="100%" src="images/tudyk.png">
+                                      </div>
+                                      <span>Alan Tudyk</span>
+                                      <span class="mdl-list__item-sub-title">Hoban “Wash” Washburne</span>
+                                    </span>
+                                <span class="mdl-list__item-secondary-content">
+                                      <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                                    </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+</div>
+
+<!-- inject:js -->
+<script src="js/d3.min.js"></script>
+<script src="js/getmdl-select.min.js"></script>
+<script src="js/material.min.js"></script>
+<script src="js/nv.d3.min.js"></script>
+<script src="js/layout/layout.min.js"></script>
+<script src="js/scroll/scroll.min.js"></script>
+<script src="js/widgets/charts/discreteBarChart.min.js"></script>
+<script src="js/widgets/charts/linePlusBarChart.min.js"></script>
+<script src="js/widgets/charts/stackedBarChart.min.js"></script>
+<script src="js/widgets/employer-form/employer-form.min.js"></script>
+<script src="js/widgets/line-chart/line-charts-nvd3.min.js"></script>
+<script src="js/widgets/map/maps.min.js"></script>
+<script src="js/widgets/pie-chart/pie-charts-nvd3.min.js"></script>
+<script src="js/widgets/table/table.min.js"></script>
+<script src="js/widgets/todo/todo.min.js"></script>
+<!-- endinject -->
+
+</body>
+</html>
