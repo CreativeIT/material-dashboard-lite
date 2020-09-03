@@ -36,7 +36,7 @@
     "gulp-uglify": "1.4.2",
     "gulp-watch": "4.3.11",
     "jshint-stylish": "2.0.1",
-    "node-sass": "4.3.0"
+    "node-sass": "4.14.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
